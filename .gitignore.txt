@@ -1,0 +1,9 @@
+/.idea
+/rbir-backend/.settings
+/rbir-backend/target
+/rbir-backend/.classpath
+/rbir-backend/.project
+/rbir-db/.settings
+/rbir-db/target
+/rbir-db/.classpath
+/rbir-db/.project
