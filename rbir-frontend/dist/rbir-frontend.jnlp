@@ -9,14 +9,14 @@
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
     <jar href="lib\dom4j-1.6.1.jar" size="313898" download="eager" />
-    <jar href="lib\jfoenix.jar" size="2350676" download="eager" />
+    <jar href="lib\jfoenix.jar" size="2354720" download="eager" />
     <jar href="lib\opencsv-3.9.jar" size="80720" download="eager" />
     <jar href="lib\pdfbox-app-2.0.5.jar" size="8003660" download="eager" />
     <jar href="lib\poi-3.9.jar" size="1869113" download="eager" />
     <jar href="lib\poi-ooxml-3.9.jar" size="936648" download="eager" />
     <jar href="lib\poi-ooxml-schemas-3.9.jar" size="4802621" download="eager" />
     <jar href="lib\xmlbeans-2.3.0.jar" size="2666695" download="eager" />
-    <jar href="rbir-frontend.jar" size="4978126" download="eager" />
+    <jar href="rbir-frontend.jar" size="4588205" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="rbir-frontend" >
     <param name="requiredFXVersion" value="8.0+"/>
