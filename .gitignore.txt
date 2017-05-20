@@ -11,3 +11,8 @@
 /rbir-db/target
 /rbir-db/.classpath
 /rbir-db/.project
+/rbir-frontend/build
+/rbir-frontend/dist
+/rbir-frontend/nbproject
+/rbir-frontend/build.xml
+/rbir-frontend/manifest.mf

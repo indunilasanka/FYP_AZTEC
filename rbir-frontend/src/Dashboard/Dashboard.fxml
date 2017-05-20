@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.canvas.*?>
 <?import javafx.scene.effect.*?>
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.paint.*?>
@@ -173,10 +174,46 @@
                               <AnchorPane fx:id="browse" minWidth="10.0">
                                  <children>
                                     <JFXButton fx:id="btnBrowse" layoutX="370.0" layoutY="28.0" onAction="#Browse" text="BROWSE" />
-                                    <TextField fx:id="filePath" layoutX="171.0" layoutY="62.0" prefHeight="25.0" prefWidth="176.0" />
+                                    <TextField fx:id="filePath" disable="true" editable="false" layoutX="171.0" layoutY="62.0" prefHeight="25.0" prefWidth="176.0" />
                                     <Text layoutX="171.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select a file for indexing" />
-                                    <Button fx:id="btnIndex" layoutX="370.0" layoutY="62.0" mnemonicParsing="false" onAction="#Index" prefHeight="25.0" prefWidth="67.0" text="INDEX" />
                                     <TextArea fx:id="stringOutput" layoutX="171.0" layoutY="139.0" prefHeight="302.0" prefWidth="267.0" />
+                                    <JFXButton fx:id="btnIndex" layoutX="370.0" layoutY="62.0" onAction="#Index" prefHeight="25.0" prefWidth="66.0" text="INDEX" />
+                                    <VBox prefHeight="200.0" prefWidth="100.0" />
+                                    <TitledPane fx:id="keywordList" layoutX="171.0" layoutY="139.0" prefHeight="302.0" prefWidth="267.0" text="Please select the keywords for the document" visible="false">
+                                       <content>
+                                          <ScrollPane prefHeight="302.0" prefWidth="267.0">
+                                             <content>
+                                                <VBox fx:id="keywordListLayout" prefHeight="302.0" prefWidth="253.0">
+                                                   <children>
+                                                      <HBox prefHeight="26.0" prefWidth="253.0" spacing="10.0">
+                                                         <children>
+                                                            <Button mnemonicParsing="false" onAction="#SelectAll" prefHeight="25.0" prefWidth="78.0" text="Select All" />
+                                                            <Button mnemonicParsing="false" onAction="#DeselectAll" text="Deselect All" />
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </padding>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                             </content>
+                                          </ScrollPane>
+                                       </content>
+                                    </TitledPane>
+                                    <AnchorPane fx:id="addKeyword" layoutX="171.0" layoutY="456.0" prefHeight="74.0" prefWidth="272.0" visible="false">
+                                       <children>
+                                          <HBox layoutY="23.0" prefHeight="31.0" prefWidth="272.0" spacing="10.0">
+                                             <children>
+                                                <TextField fx:id="keywordText" prefHeight="25.0" prefWidth="188.0" />
+                                                <JFXButton onAction="#AddKeyword" text="ADD" />
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </HBox>
+                                          <Label layoutX="14.0" layoutY="6.0" prefHeight="17.0" prefWidth="119.0" text="Add new keyword" />
+                                       </children>
+                                    </AnchorPane>
                                  </children></AnchorPane>
                            </children>
                         </StackPane>
