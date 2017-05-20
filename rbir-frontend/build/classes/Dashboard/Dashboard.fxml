@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.effect.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.MainController">
+   <children>
+      <Pane layoutX="253.0" layoutY="179.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <JFXTextField layoutX="33.0" layoutY="25.0" promptText="Username" />
+            <JFXPasswordField layoutX="33.0" layoutY="75.0" promptText="Password" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>-->
+
+<AnchorPane id="AnchorPane" fx:id="acMain" prefHeight="593.0" prefWidth="767.0" stylesheets="@../style/Application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Dashboard.DashboardController">
+   <children>
+      <StackPane layoutY="-9.0" prefHeight="593.0" prefWidth="767.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <AnchorPane fx:id="acDashBord">
+                     <children>
+                        <ScrollPane fx:id="leftSideBarScroolPan" prefHeight="678.0" prefViewportHeight="678.0" prefViewportWidth="128.0" prefWidth="128.0" translateX="1.0" translateY="1.0" translateZ="1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <AnchorPane BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Text fill="#cc3535" layoutX="9.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DashBoard">
+                                       <font>
+                                          <Font name="System Bold" size="21.0" />
+                                       </font>
+                                    </Text>
+                                    <ImageView fitHeight="5.0" fitWidth="114.0" layoutX="45.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icon/btnBreak.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button fx:id="btnHome" contentDisplay="TOP" layoutY="42.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="127.0" text="Home">
+                                       <graphic>
+                                          <ImageView fx:id="imgHomeBtn" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/home.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <ImageView fitHeight="5.0" fitWidth="114.0" layoutX="45.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icon/btnBreak.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button fx:id="btnStore" contentDisplay="TOP" layoutY="133.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="127.0" text="Store">
+                                       <graphic>
+                                          <ImageView fx:id="imgStoreBtn" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/stock.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="btnEmplopye" contentDisplay="TOP" layoutY="316.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="127.0" text="Employe">
+                                       <graphic>
+                                          <ImageView fx:id="imgEmployeBtn" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/employe.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <ImageView fitHeight="5.0" fitWidth="114.0" layoutX="45.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icon/btnBreak.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="5.0" fitWidth="114.0" layoutX="45.0" layoutY="398.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icon/btnBreak.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button fx:id="btnSell" contentDisplay="TOP" layoutY="225.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="127.0" text="Sell">
+                                       <graphic>
+                                          <ImageView fx:id="imgSellBtn" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/sell2.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <ImageView fitHeight="5.0" fitWidth="114.0" layoutX="45.0" layoutY="578.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icon/btnBreak.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button fx:id="btnSettings" contentDisplay="TOP" layoutY="405.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="127.0" text="Settings">
+                                       <graphic>
+                                          <ImageView fx:id="imgSettingsBtn" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/settings.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <ImageView fitHeight="5.0" fitWidth="114.0" layoutX="45.0" layoutY="489.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icon/btnBreak.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button fx:id="btnAbout" contentDisplay="TOP" layoutY="496.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="127.0" text="About">
+                                       <graphic>
+                                          <ImageView fx:id="imgAboutBtn" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/about.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                           <BorderPane.margin>
+                              <Insets />
+                           </BorderPane.margin>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <BorderPane fx:id="appContent" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <top>
+                        <AnchorPane fx:id="acHead" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="639.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" text="RULE BASED INFORMATION RETRIVAL SYSTEM" textFill="WHITE">
+                                       <graphic>
+                                          <JFXRippler />
+                                       </graphic>
+                                       <font>
+                                          <Font name="Arial" size="26.0" />
+                                       </font>
+                                    </Label>
+                                    <AnchorPane />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </top>
+                     <center>
+                        <StackPane fx:id="acContent" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <AnchorPane fx:id="browse" minWidth="10.0">
+                                 <children>
+                                    <JFXButton fx:id="btnBrowse" layoutX="370.0" layoutY="28.0" onAction="#Browse" text="BROWSE" />
+                                    <TextField fx:id="filePath" disable="true" editable="false" layoutX="171.0" layoutY="62.0" prefHeight="25.0" prefWidth="176.0" />
+                                    <Text layoutX="171.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select a file for indexing" />
+                                    <TextArea fx:id="stringOutput" layoutX="171.0" layoutY="139.0" prefHeight="302.0" prefWidth="267.0" />
+                                    <JFXButton fx:id="btnIndex" layoutX="370.0" layoutY="62.0" onAction="#Index" prefHeight="25.0" prefWidth="66.0" text="INDEX" />
+                                    <VBox prefHeight="200.0" prefWidth="100.0" />
+                                    <TitledPane fx:id="keywordList" layoutX="171.0" layoutY="139.0" prefHeight="302.0" prefWidth="267.0" text="Please select the keywords for the document" visible="false">
+                                       <content>
+                                          <ScrollPane prefHeight="302.0" prefWidth="267.0">
+                                             <content>
+                                                <VBox fx:id="keywordListLayout" prefHeight="302.0" prefWidth="253.0">
+                                                   <children>
+                                                      <HBox prefHeight="26.0" prefWidth="253.0" spacing="10.0">
+                                                         <children>
+                                                            <Button mnemonicParsing="false" onAction="#SelectAll" prefHeight="25.0" prefWidth="78.0" text="Select All" />
+                                                            <Button mnemonicParsing="false" onAction="#DeselectAll" text="Deselect All" />
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </padding>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                             </content>
+                                          </ScrollPane>
+                                       </content>
+                                    </TitledPane>
+                                    <AnchorPane fx:id="addKeyword" layoutX="171.0" layoutY="456.0" prefHeight="74.0" prefWidth="272.0" visible="false">
+                                       <children>
+                                          <HBox layoutY="23.0" prefHeight="31.0" prefWidth="272.0" spacing="10.0">
+                                             <children>
+                                                <TextField fx:id="keywordText" prefHeight="25.0" prefWidth="188.0" />
+                                                <JFXButton onAction="#AddKeyword" text="ADD" />
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </HBox>
+                                          <Label layoutX="14.0" layoutY="6.0" prefHeight="17.0" prefWidth="119.0" text="Add new keyword" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children></AnchorPane>
+                           </children>
+                        </StackPane>
+                     </center>
+                  </BorderPane>
+               </center>
+            </BorderPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>
