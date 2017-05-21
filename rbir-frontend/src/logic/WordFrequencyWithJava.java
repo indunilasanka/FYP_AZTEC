@@ -33,7 +33,9 @@ public class WordFrequencyWithJava {
         tokens = wordMap.keySet().toArray(tokens);
 
         String[] returnTokens = new String[numOfWords];
-
+        if(tokens.length < numOfWords)
+            return tokens;
+        
         for(int i = 0; i < numOfWords; i++){
             returnTokens[i] = tokens[i];
         }

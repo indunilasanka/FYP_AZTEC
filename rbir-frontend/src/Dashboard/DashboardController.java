@@ -21,6 +21,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.StageStyle;
 import javax.swing.JFileChooser;
 import logic.WordFrequencyWithJava;
@@ -144,6 +145,8 @@ public class DashboardController implements Initializable {
                     alert.setHeaderText("File type is not supported");
                     alert.setContentText("Please contact the administrator \n");
                     alert.initStyle(StageStyle.UNDECORATED);
+                    alert.initModality(Modality.APPLICATION_MODAL);
+                    alert.initOwner(btnBrowse.getScene().getWindow());
                     alert.showAndWait();
                     filePath.setText("");
                 }
