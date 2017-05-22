@@ -18,11 +18,11 @@
     <jar href="lib/poi-ooxml-schemas-3.9.jar" size="4802621" download="eager" />
     <jar href="lib/tika-app-1.14.jar" size="55799480" download="eager" />
     <jar href="lib/xmlbeans-2.3.0.jar" size="2666695" download="eager" />
-    <jar href="rbir-frontend.jar" size="4592158" download="eager" />
+    <jar href="rbir-frontend.jar" size="4596408" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="rbir-frontend" >
     <param name="requiredFXVersion" value="8.0+"/>
   </applet-desc>
-  <jfx:javafx-desc  width="800" height="600" main-class="Dashboard.Dashboard"  name="rbir-frontend" />
+  <jfx:javafx-desc  width="800" height="600" main-class="login.Login"  name="rbir-frontend" />
   <update check="always"/>
 </jnlp>
