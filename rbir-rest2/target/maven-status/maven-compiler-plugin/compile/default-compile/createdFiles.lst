@@ -1,0 +1,6 @@
+aztec\rbir_rest2\config\SpringSecConfig.class
+aztec\rbir_rest2\controllers\IndexController.class
+aztec\rbir_rest2\controllers\DocumentController.class
+aztec\rbir_rest2\SpringBootWebApplication.class
+aztec\rbir_rest2\config\SwaggerConfig.class
+aztec\rbir_rest2\config\WebConfig.class

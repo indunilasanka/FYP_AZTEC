@@ -1,0 +1,7 @@
+aztec\rbir_database\Entities\Document.class
+aztec\rbir_database\Entities\KeywordsInDocument.class
+aztec\rbir_database\dataacess\Data.class
+aztec\rbir_database\Entities\Stock.class
+aztec\rbir_database\App.class
+aztec\rbir_database\configurations\HibernateUtil.class
+aztec\rbir_database\Entities\Keyword.class
