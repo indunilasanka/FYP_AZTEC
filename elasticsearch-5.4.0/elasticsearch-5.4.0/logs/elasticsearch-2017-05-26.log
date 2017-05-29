@@ -1,0 +1,57 @@
+[2017-05-26T16:21:12,880][INFO ][o.e.n.Node               ] [] initializing ...
+[2017-05-26T16:21:13,227][INFO ][o.e.e.NodeEnvironment    ] [1fvPx_G] using [1] data paths, mounts [[OS (C:)]], net usable_space [196.4gb], net total_space [381.8gb], spins? [unknown], types [NTFS]
+[2017-05-26T16:21:13,230][INFO ][o.e.e.NodeEnvironment    ] [1fvPx_G] heap size [1.9gb], compressed ordinary object pointers [true]
+[2017-05-26T16:21:13,235][INFO ][o.e.n.Node               ] node name [1fvPx_G] derived from node ID [1fvPx_GST-Se7LAC7T1EDA]; set [node.name] to override
+[2017-05-26T16:21:13,236][INFO ][o.e.n.Node               ] version[5.4.0], pid[11660], build[780f8c4/2017-04-28T17:43:27.229Z], OS[Windows 8.1/6.3/amd64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/1.8.0_45/25.45-b02]
+[2017-05-26T16:21:15,031][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [aggs-matrix-stats]
+[2017-05-26T16:21:15,031][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [ingest-common]
+[2017-05-26T16:21:15,032][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [lang-expression]
+[2017-05-26T16:21:15,032][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [lang-groovy]
+[2017-05-26T16:21:15,032][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [lang-mustache]
+[2017-05-26T16:21:15,032][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [lang-painless]
+[2017-05-26T16:21:15,032][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [percolator]
+[2017-05-26T16:21:15,032][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [reindex]
+[2017-05-26T16:21:15,032][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [transport-netty3]
+[2017-05-26T16:21:15,033][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [transport-netty4]
+[2017-05-26T16:21:15,033][INFO ][o.e.p.PluginsService     ] [1fvPx_G] no plugins loaded
+[2017-05-26T16:21:19,585][INFO ][o.e.d.DiscoveryModule    ] [1fvPx_G] using discovery type [zen]
+[2017-05-26T16:21:20,173][INFO ][o.e.n.Node               ] initialized
+[2017-05-26T16:21:20,174][INFO ][o.e.n.Node               ] [1fvPx_G] starting ...
+[2017-05-26T16:21:21,052][INFO ][o.e.t.TransportService   ] [1fvPx_G] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2017-05-26T16:21:24,147][INFO ][o.e.c.s.ClusterService   ] [1fvPx_G] new_master {1fvPx_G}{1fvPx_GST-Se7LAC7T1EDA}{stsjiVhFQXmIo9AtPzulZA}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-elected-as-master ([0] nodes joined)
+[2017-05-26T16:21:24,230][INFO ][o.e.g.GatewayService     ] [1fvPx_G] recovered [0] indices into cluster_state
+[2017-05-26T16:21:24,597][INFO ][o.e.h.n.Netty4HttpServerTransport] [1fvPx_G] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2017-05-26T16:21:24,601][INFO ][o.e.n.Node               ] [1fvPx_G] started
+[2017-05-26T16:21:53,726][INFO ][o.e.b.Bootstrap          ] running graceful exit on windows
+[2017-05-26T16:21:53,727][INFO ][o.e.n.Node               ] [1fvPx_G] stopping ...
+[2017-05-26T16:21:53,746][INFO ][o.e.n.Node               ] [1fvPx_G] stopped
+[2017-05-26T16:21:53,746][INFO ][o.e.n.Node               ] [1fvPx_G] closing ...
+[2017-05-26T16:21:53,753][INFO ][o.e.n.Node               ] [1fvPx_G] closed
+[2017-05-26T16:33:37,618][INFO ][o.e.n.Node               ] [] initializing ...
+[2017-05-26T16:33:38,336][INFO ][o.e.e.NodeEnvironment    ] [1fvPx_G] using [1] data paths, mounts [[OS (C:)]], net usable_space [196.4gb], net total_space [381.8gb], spins? [unknown], types [NTFS]
+[2017-05-26T16:33:38,336][INFO ][o.e.e.NodeEnvironment    ] [1fvPx_G] heap size [1.9gb], compressed ordinary object pointers [true]
+[2017-05-26T16:33:38,340][INFO ][o.e.n.Node               ] node name [1fvPx_G] derived from node ID [1fvPx_GST-Se7LAC7T1EDA]; set [node.name] to override
+[2017-05-26T16:33:38,340][INFO ][o.e.n.Node               ] version[5.4.0], pid[4236], build[780f8c4/2017-04-28T17:43:27.229Z], OS[Windows 8.1/6.3/amd64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/1.8.0_45/25.45-b02]
+[2017-05-26T16:33:40,041][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [aggs-matrix-stats]
+[2017-05-26T16:33:40,042][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [ingest-common]
+[2017-05-26T16:33:40,042][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [lang-expression]
+[2017-05-26T16:33:40,042][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [lang-groovy]
+[2017-05-26T16:33:40,043][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [lang-mustache]
+[2017-05-26T16:33:40,043][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [lang-painless]
+[2017-05-26T16:33:40,043][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [percolator]
+[2017-05-26T16:33:40,043][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [reindex]
+[2017-05-26T16:33:40,043][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [transport-netty3]
+[2017-05-26T16:33:40,044][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [transport-netty4]
+[2017-05-26T16:33:40,045][INFO ][o.e.p.PluginsService     ] [1fvPx_G] no plugins loaded
+[2017-05-26T16:33:42,141][INFO ][o.e.d.DiscoveryModule    ] [1fvPx_G] using discovery type [zen]
+[2017-05-26T16:33:42,868][INFO ][o.e.n.Node               ] initialized
+[2017-05-26T16:33:42,868][INFO ][o.e.n.Node               ] [1fvPx_G] starting ...
+[2017-05-26T16:33:43,692][INFO ][o.e.t.TransportService   ] [1fvPx_G] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2017-05-26T16:33:46,752][INFO ][o.e.c.s.ClusterService   ] [1fvPx_G] new_master {1fvPx_G}{1fvPx_GST-Se7LAC7T1EDA}{y0iCnP2aQLy5L_2Qrb0Dog}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-elected-as-master ([0] nodes joined)
+[2017-05-26T16:33:46,841][INFO ][o.e.g.GatewayService     ] [1fvPx_G] recovered [0] indices into cluster_state
+[2017-05-26T16:33:47,173][INFO ][o.e.h.n.Netty4HttpServerTransport] [1fvPx_G] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2017-05-26T16:33:47,176][INFO ][o.e.n.Node               ] [1fvPx_G] started
+[2017-05-26T16:40:08,939][INFO ][o.e.n.Node               ] [1fvPx_G] stopping ...
+[2017-05-26T16:40:08,973][INFO ][o.e.n.Node               ] [1fvPx_G] stopped
+[2017-05-26T16:40:08,974][INFO ][o.e.n.Node               ] [1fvPx_G] closing ...
+[2017-05-26T16:40:08,986][INFO ][o.e.n.Node               ] [1fvPx_G] closed

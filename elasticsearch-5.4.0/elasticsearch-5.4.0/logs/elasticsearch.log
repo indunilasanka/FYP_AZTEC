@@ -1,0 +1,32 @@
+[2017-05-29T10:06:35,353][INFO ][o.e.n.Node               ] [] initializing ...
+[2017-05-29T10:06:35,958][INFO ][o.e.e.NodeEnvironment    ] [1fvPx_G] using [1] data paths, mounts [[OS (C:)]], net usable_space [189.9gb], net total_space [381.8gb], spins? [unknown], types [NTFS]
+[2017-05-29T10:06:35,960][INFO ][o.e.e.NodeEnvironment    ] [1fvPx_G] heap size [1.9gb], compressed ordinary object pointers [true]
+[2017-05-29T10:06:36,504][INFO ][o.e.n.Node               ] node name [1fvPx_G] derived from node ID [1fvPx_GST-Se7LAC7T1EDA]; set [node.name] to override
+[2017-05-29T10:06:36,505][INFO ][o.e.n.Node               ] version[5.4.0], pid[8820], build[780f8c4/2017-04-28T17:43:27.229Z], OS[Windows 8.1/6.3/amd64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/1.8.0_45/25.45-b02]
+[2017-05-29T10:06:40,017][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [aggs-matrix-stats]
+[2017-05-29T10:06:40,018][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [ingest-common]
+[2017-05-29T10:06:40,018][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [lang-expression]
+[2017-05-29T10:06:40,018][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [lang-groovy]
+[2017-05-29T10:06:40,019][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [lang-mustache]
+[2017-05-29T10:06:40,019][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [lang-painless]
+[2017-05-29T10:06:40,019][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [percolator]
+[2017-05-29T10:06:40,019][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [reindex]
+[2017-05-29T10:06:40,019][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [transport-netty3]
+[2017-05-29T10:06:40,020][INFO ][o.e.p.PluginsService     ] [1fvPx_G] loaded module [transport-netty4]
+[2017-05-29T10:06:40,020][INFO ][o.e.p.PluginsService     ] [1fvPx_G] no plugins loaded
+[2017-05-29T10:06:45,691][INFO ][o.e.d.DiscoveryModule    ] [1fvPx_G] using discovery type [zen]
+[2017-05-29T10:06:46,750][INFO ][o.e.n.Node               ] initialized
+[2017-05-29T10:06:46,750][INFO ][o.e.n.Node               ] [1fvPx_G] starting ...
+[2017-05-29T10:06:47,665][INFO ][o.e.t.TransportService   ] [1fvPx_G] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2017-05-29T10:06:50,869][INFO ][o.e.c.s.ClusterService   ] [1fvPx_G] new_master {1fvPx_G}{1fvPx_GST-Se7LAC7T1EDA}{RhgGoKfSQJe1EoFEaDa2Ag}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-elected-as-master ([0] nodes joined)
+[2017-05-29T10:06:51,397][INFO ][o.e.h.n.Netty4HttpServerTransport] [1fvPx_G] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2017-05-29T10:06:51,400][INFO ][o.e.n.Node               ] [1fvPx_G] started
+[2017-05-29T10:06:51,507][INFO ][o.e.g.GatewayService     ] [1fvPx_G] recovered [3] indices into cluster_state
+[2017-05-29T10:06:54,589][INFO ][o.e.c.r.a.AllocationService] [1fvPx_G] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[.kibana][0], [megacorp][1]] ...]).
+[2017-05-29T10:07:35,626][INFO ][o.e.c.m.MetaDataCreateIndexService] [1fvPx_G] [aztec] creating index, cause [auto(bulk api)], templates [], shards [5]/[1], mappings []
+[2017-05-29T10:07:37,559][INFO ][o.e.c.m.MetaDataMappingService] [1fvPx_G] [aztec/DGX5otk0RMew8TCUL5Ublg] create_mapping [document]
+[2017-05-29T11:41:12,666][INFO ][o.e.b.Bootstrap          ] running graceful exit on windows
+[2017-05-29T11:41:12,689][INFO ][o.e.n.Node               ] [1fvPx_G] stopping ...
+[2017-05-29T11:41:12,891][INFO ][o.e.n.Node               ] [1fvPx_G] stopped
+[2017-05-29T11:41:12,894][INFO ][o.e.n.Node               ] [1fvPx_G] closing ...
+[2017-05-29T11:41:12,928][INFO ][o.e.n.Node               ] [1fvPx_G] closed
