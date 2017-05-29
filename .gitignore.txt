@@ -34,3 +34,6 @@
 /rbir-brest2/target
 /rbir-rest2/.classpath
 /rbir-rest2/.project
+/elasticsearch-5.4.0
+/kibana-5.4.0-windows-x86
+/lib
