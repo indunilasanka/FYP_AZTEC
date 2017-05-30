@@ -22,6 +22,7 @@
 /rbir-database/target
 /rbir-database/.classpath
 /rbir-database/.project
+/Angular2/node_modules
 /rbir-parent/.idea
 /rbir-parent/rbir-parent.iml
 /rbir-parent/.settings

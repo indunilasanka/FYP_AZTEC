@@ -32,4 +32,8 @@ public class Data {
 		session.getTransaction().commit();
 	}
 	
+	public void getKeywordsOfDocument(int docId){
+		
+	}
+	
 }
