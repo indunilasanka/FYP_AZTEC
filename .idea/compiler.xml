@@ -11,7 +11,7 @@
         <module name="rbir-rest2" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="rbir-backend" target="1.8" />
       <module name="rbir-database" target="1.8" />
       <module name="rbir-parent" target="1.8" />
