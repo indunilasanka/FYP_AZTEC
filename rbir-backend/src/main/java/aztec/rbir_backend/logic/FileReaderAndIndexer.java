@@ -13,7 +13,7 @@ import java.util.Map;
  * Created by subhahs on 28/05/2017.
  */
 public class FileReaderAndIndexer {
-    public void indexDocument(String company,String filePath){
+    public String indexDocument(String company,String filePath){
         String fileName = new File(filePath).getName();
         String fileType = fileName.substring(fileName.indexOf('.')+1);
         fileName = fileName.substring(0, fileName.indexOf('.'));
@@ -34,8 +34,8 @@ public class FileReaderAndIndexer {
         IndexResponse response = client.prepareIndex(company, "document")
                 .setSource(myMap)
                 .get();
-
-        System.out.println(response.toString());
+        System.out.println(response);
+        return response.getResult().toString();
     }
 
 }

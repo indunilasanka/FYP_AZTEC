@@ -5,7 +5,10 @@ import org.apache.commons.vfs2.cache.OnCallRefreshFileObject;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.index.query.QueryBuilder;
+import org.elasticsearch.search.SearchHit;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Map;
 
 import static org.elasticsearch.index.query.QueryBuilders.matchQuery;
@@ -16,7 +19,10 @@ import static org.elasticsearch.index.query.QueryBuilders.termsQuery;
  * Created by subhahs on 29/05/2017.
  */
 public class DocumentSeeker {
-    public void searchDocument(String company,String[] keys){
+    public ArrayList<String> searchDocument(String company,String[] keys){
+        for (String val: keys)
+            System.out.println(val);
+        ArrayList<String> result = new ArrayList<String>();
         TransportClient client = ElasticSearchClient.getClient();
         QueryBuilder qb = termsQuery(
                 "keys",
@@ -24,8 +30,16 @@ public class DocumentSeeker {
         );
 
         SearchResponse response = client.prepareSearch(company).setTypes("document").setQuery(qb).get();
+        System.out.println(response);
 
-        System.out.println(response.toString());
+        Iterator iterator = response.getHits().iterator();
+        while (iterator.hasNext()){
+            SearchHit hit = (SearchHit) iterator.next();
+            result.add(hit.getSource().get("name").toString()+"."+hit.getSource().get("file_type").toString());
+        }
+
+        System.out.println(result);
+        return result;
 
     }
 }
