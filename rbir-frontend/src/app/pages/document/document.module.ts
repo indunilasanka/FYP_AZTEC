@@ -19,7 +19,11 @@ import {SearchResult}  from './searchResult/searchResult.component'
   declarations: [
     Document,
     SearchResult
+  ],
+  providers: [
+    DocumentService
   ]
+
 })
 export class DocumentModule {
 }

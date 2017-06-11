@@ -12,7 +12,7 @@ import { PieChart } from './pieChart';
 import { TrafficChart } from './trafficChart';
 import { UsersMap } from './usersMap';
 import { LineChart } from './lineChart';
-import { Feed } from './feed';
+import { Request } from './request';
 import { Todo } from './todo';
 import { Calendar } from './calendar';
 import { CalendarService } from './calendar/calendar.service';
@@ -24,6 +24,7 @@ import { TrafficChartService } from './trafficChart/trafficChart.service';
 import { UsersMapService } from './usersMap/usersMap.service';
 import {FileUploader} from './fileUploader';
 import {FileUploadService} from './fileUploader/fileUpload.service';
+import {RequestService} from "app/pages/dashboard/request/request.service";
 
 @NgModule({
   imports: [
@@ -39,7 +40,7 @@ import {FileUploadService} from './fileUploader/fileUpload.service';
     TrafficChart,
     UsersMap,
     LineChart,
-    Feed,
+    Request,
     Todo,
     Calendar,
     Dashboard,
@@ -53,6 +54,7 @@ import {FileUploadService} from './fileUploader/fileUpload.service';
     TodoService,
     TrafficChartService,
     UsersMapService,
+    RequestService,
     FileUploadService
   ]
 })
