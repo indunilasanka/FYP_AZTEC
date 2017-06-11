@@ -20,7 +20,8 @@ export class FileUploader {
   @ViewChild('inputText') public _inputText: ElementRef;
 
   data: Object = null;
-
+  fileName: string = '';
+  file: File = null;
 
   public uploadFileInProgress: boolean;
 
@@ -38,14 +39,22 @@ export class FileUploader {
     console.log("fileChange($event)");
     let files = this._fileUpload.nativeElement.files;
     if (files.length) {
-      const file = files[0];
-      console.log(file);
-      this.fileUploadService.uploadFiles(file).subscribe(
+      this.file = files[0];
+      this.fileName = this.file.name;
+      console.log("file name is   ", this.fileName);
+    }
+  }
+
+  startFileupload(){
+    if (this.file) {
+      this.fileUploadService.uploadFiles(this.file).subscribe(
         data => this.data = data,
         error => console.log(error)
       );
-
+    }else {
+      console.log("please insert file");
     }
+
   }
 }
 

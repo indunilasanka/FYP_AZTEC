@@ -15,6 +15,18 @@ export const PAGES_MENU = [
         }
       },
       {
+        path: 'document',
+        data: {
+          menu: {
+            title: 'Document',
+            icon: 'ion-clipboard',
+            selected: false,
+            expanded: false,
+            order: 200
+          }
+        }
+      },
+      {
         path: 'editors',
         data: {
           menu: {

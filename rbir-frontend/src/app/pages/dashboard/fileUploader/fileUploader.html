@@ -1,8 +1,11 @@
 <!--<input #fileUpload ngFileSelect type="file" [options]="fileUploaderOptions" (onUpload)="_onFileUpload($event)" (beforeUpload)="beforeFileUpload($event)" hidden="true">-->
 <input #fileUpload ngFileSelect type="file" (change)="beforeFileUpload($event)" hidden="true">
 <div class="input-group" [ngClass]="{uploading: uploadFileInProgress}">
-    <input #inputText type="text" [value]="defaultValue" class="form-control" readonly>
-    <span class="input-group-btn">
-      <button class="btn btn-success" type="button" (click)="bringFileSelector();">Browse</button>
+  <input #inputText type="text" value= {{fileName}} class="form-control" readonly>
+  <span class="input-group-btn">
+      <button class="btn btn-success btn-raised" type="button" (click)="bringFileSelector();">Browse</button>
   </span>
+</div>
+<div class="button-wrapper" align="right">
+  <button type="button" class="btn btn-success btn-raised" [disabled]="!file" (click)="startFileupload();">Submit</button>
 </div>
