@@ -6,19 +6,13 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import aztec.rbir_backend.indexer.Indexer;
 import aztec.rbir_backend.logic.DocumentSeeker;
-import aztec.rbir_backend.logic.FileReaderAndIndexer;
-import aztec.rbir_rest2.models.SuggestedKeys;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import aztec.rbir_database.Entities.Document;
-import aztec.rbir_database.Entities.Keyword;
-import aztec.rbir_database.dataacess.Data;
-
-import javax.ws.rs.QueryParam;
 
 
 @RestController
@@ -60,12 +54,13 @@ public class DocumentController {
                         file.transferTo(newFile);
                         System.out.println(newFile.getAbsolutePath());
 
-                        FileReaderAndIndexer indexer = new FileReaderAndIndexer();
-                        result = indexer.indexDocument("aztec",newFile.getPath());
+                        result = Indexer.indexFile(newFile.getPath());
+
                     } catch (Exception e) {
+                        result = "file saving error";
                     }
                 } else {
-                    result = "Invalid file";
+                    result = "Invalid File!";
                 }
         return new ResponseEntity<String>(result, HttpStatus.OK);
     }

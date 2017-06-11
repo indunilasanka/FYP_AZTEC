@@ -20,6 +20,8 @@
     <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.2" level="project" />
     <orderEntry type="library" name="Maven: cglib:cglib:2.2" level="project" />
     <orderEntry type="library" name="Maven: asm:asm:3.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-core:6.5.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-analyzers-common:6.5.1" level="project" />
     <orderEntry type="library" name="Maven: org.elasticsearch.client:transport:5.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.elasticsearch.plugin:transport-netty3-client:5.4.0" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty:3.10.6.Final" level="project" />
@@ -41,8 +43,6 @@
     <orderEntry type="library" name="Maven: com.github.spullara.mustache.java:compiler:0.9.3" level="project" />
     <orderEntry type="library" name="Maven: org.elasticsearch.plugin:percolator-client:5.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.elasticsearch:elasticsearch:5.4.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-core:6.5.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-analyzers-common:6.5.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-backward-codecs:6.5.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-grouping:6.5.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-highlighter:6.5.0" level="project" />

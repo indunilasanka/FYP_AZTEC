@@ -38,3 +38,7 @@
 /elasticsearch-5.4.0
 /kibana-5.4.0-windows-x86
 /lib
+/rbir-frontend/node_modules
+/rbir-frontend/.vscode
+/rbir-frontend/.idea
+/rbir-frontend/e2e
