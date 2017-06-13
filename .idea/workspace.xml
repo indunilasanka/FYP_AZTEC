@@ -2,641 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2063dfd8-8076-4440-a978-83fb969036f8" name="Default" comment="Add new libraries, &#10;Change the backend with facilitating elastic search&#10;Change .ignore file">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/contents/articles/011-changing-color-scheme/new-color-scheme.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/contents/images/favicon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/contents/images/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/contents/images/sky-preview.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/fonts/socicon.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/fonts/socicon.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/fonts/socicon.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/fonts/socicon.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/icon/android-icon-192x192.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/icon/apple-icon-114x114.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/icon/apple-icon-120x120.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/icon/apple-icon-144x144.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/icon/apple-icon-152x152.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/icon/apple-icon-180x180.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/icon/apple-icon-57x57.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/icon/apple-icon-60x60.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/icon/apple-icon-72x72.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/icon/apple-icon-76x76.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/icon/favicon-16x16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/icon/favicon-32x32.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/icon/favicon-96x96.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/icon/ms-icon-144x144.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/76ers.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/blazers.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/bucks.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/bulls.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/cavaliers.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/celtic.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/clippers.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/hawks.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/heat.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/hornets.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/jazz.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/kings.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/knicks.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/lakers.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/magic.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/mavericks.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/memphis.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/nets.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/nuggets.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/orleans.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/pacers.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/pistons.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/raptors.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/rockets.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/spurs.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/suns.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/thunder.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/timberwolves.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/warriors.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/images/wizards.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/feed/genom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/feed/my-little-kitten.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/feed/new-york-location.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/feed/vader-and-me-preview.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/my-app-logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/profile/Alexander.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/profile/Andrey.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/profile/Kostya.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/profile/Nasta.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/profile/Nick.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/profile/Vlad.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/skin-thumbnails/01_default.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/skin-thumbnails/02_transparent.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/skin-thumbnails/03_blue.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/skin-thumbnails/04_peachy.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/skin-thumbnails/05_material.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/skin-thumbnails/06_transblue.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/todo/check-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/typography/banner.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/typography/typo01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/typography/typo03.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/typography/typo04.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/typography/typo05.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/typography/typo06.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/typography/typo07.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/blue-bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/blur-bg-blurred.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/blur-bg-mobile.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/blur-bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/chernika.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/green-bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/peachy-bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/sky-bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/no-photo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/palette.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/vendor/ammap/arrowDown.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/vendor/ammap/arrowUp.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/vendor/ammap/export.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/vendor/ammap/homeIcon.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/vendor/ammap/homeIconWhite.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/vendor/ammap/minus.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/vendor/ammap/panDown.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/vendor/ammap/panLeft.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/vendor/ammap/panRight.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/vendor/ammap/panUp.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/vendor/ammap/plus.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/vendor/ammap/xIcon.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/vendor/ammap/xIconH.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/vendor/leaflet/marker-icon-2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/vendor/leaflet/marker-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/vendor/leaflet/marker-shadow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/transblue-bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_analyzers_common_6_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_core_6_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/.angular-cli.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/.editorconfig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/.stylelintrc.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/.vscode/launch.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/.vscode/settings.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/CHANGELOG.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/Dockerfile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/_VERSION" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/build.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/config.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/contents/articles/001-getting-started/index.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/contents/articles/002-installation-guidelines/index.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/contents/articles/011-changing-color-scheme/index.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/contents/articles/012-project-structure/index.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/contents/articles/013-create-new-page/index.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/contents/articles/014-switch-to-blur-theme/index.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/contents/articles/015-sidebar/index.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/contents/articles/016-spinner/index.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/contents/css/main.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/contents/images/why-design.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/contents/images/why-practices.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/contents/images/why-structure.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/contents/index.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/plugins/paginator.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/templates/article.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/templates/index.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/docs/templates/layout.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/e2e/tsconfig.e2e.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/karma.conf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/protractor.conf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/app.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/app.component.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/app.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/app.module.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/app.routing.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/app.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/app.translation.module.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/global.state.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/charts/charts.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/charts/charts.module.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/charts/charts.routing.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/charts/components/chartistJs/chartistJs.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/charts/components/chartistJs/chartistJs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/charts/components/chartistJs/chartistJs.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/charts/components/chartistJs/chartistJs.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/charts/components/chartistJs/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/charts/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/components/components.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/components/components.module.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/components/components.routing.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/components/components.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/components/components/treeView/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/components/components/treeView/treeView.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/components/components/treeView/treeView.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/components/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/calendar/calendar.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/calendar/calendar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/calendar/calendar.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/calendar/calendar.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/calendar/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/dashboard.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/dashboard.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/dashboard.module.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/dashboard.routing.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/dashboard.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/feed/feed.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/feed/feed.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/feed/feed.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/feed/feed.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/feed/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/fileUpload.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/fileUploader.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/fileUploader.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/fileUploader.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/lineChart/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/lineChart/lineChart.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/lineChart/lineChart.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/lineChart/lineChart.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/lineChart/lineChart.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/pieChart/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/pieChart/pieChart.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/pieChart/pieChart.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/pieChart/pieChart.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/pieChart/pieChart.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/popularApp/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/popularApp/popularApp.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/popularApp/popularApp.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/popularApp/popularApp.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/todo/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/todo/todo.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/todo/todo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/todo/todo.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/todo/todo.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/trafficChart/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/trafficChart/trafficChart.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/trafficChart/trafficChart.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/trafficChart/trafficChart.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/trafficChart/trafficChart.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/usersMap/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/usersMap/usersMap.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/usersMap/usersMap.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/usersMap/usersMap.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/usersMap/usersMap.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/document/document.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/document/document.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/document/document.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/document/document.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/document/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/editors/components/ckeditor/ckeditor.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/editors/components/ckeditor/ckeditor.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/editors/components/ckeditor/ckeditor.loader.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/editors/components/ckeditor/ckeditor.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/editors/components/ckeditor/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/editors/editors.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/editors/editors.module.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/editors/editors.routing.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/editors/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/inputs/components/checkboxInputs/checkboxInputs.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/inputs/components/checkboxInputs/checkboxInputs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/inputs/components/checkboxInputs/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/inputs/components/groupInputs/groupInputs.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/inputs/components/groupInputs/groupInputs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/inputs/components/groupInputs/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/inputs/components/ratinginputs/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/inputs/components/ratinginputs/ratinginputs.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/inputs/components/ratinginputs/ratinginputs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/inputs/components/selectInputs/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/inputs/components/selectInputs/selectInput.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/inputs/components/selectInputs/selectInputs.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/inputs/components/selectInputs/selectInputs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/inputs/components/standardInputs/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/inputs/components/standardInputs/standardInputs.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/inputs/components/standardInputs/standardInputs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/inputs/components/validationInputs/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/inputs/components/validationInputs/validationInputs.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/inputs/components/validationInputs/validationInputs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/inputs/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/inputs/inputs.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/inputs/inputs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/layouts/components/basicForm/basicForm.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/layouts/components/basicForm/basicForm.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/layouts/components/basicForm/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/layouts/components/blockForm/blockForm.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/layouts/components/blockForm/blockForm.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/layouts/components/blockForm/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/layouts/components/horizontalForm/horizontalForm.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/layouts/components/horizontalForm/horizontalForm.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/layouts/components/horizontalForm/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/layouts/components/inlineForm/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/layouts/components/inlineForm/inlineForm.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/layouts/components/inlineForm/inlineForm.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/layouts/components/inlineForm/inlineForm.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/layouts/components/withoutLabelsForm/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/layouts/components/withoutLabelsForm/withoutLabelsForm.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/layouts/components/withoutLabelsForm/withoutLabelsForm.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/layouts/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/layouts/layouts.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/components/layouts/layouts.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/forms.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/forms.module.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/forms.routing.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/forms/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/login/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/login/login.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/login/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/login/login.module.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/login/login.routing.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/login/login.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/maps/components/bubbleMaps/bubbleMaps.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/maps/components/bubbleMaps/bubbleMaps.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/maps/components/bubbleMaps/bubbleMaps.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/maps/components/bubbleMaps/bubbleMaps.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/maps/components/bubbleMaps/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/maps/components/googleMaps/googleMaps.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/maps/components/googleMaps/googleMaps.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/maps/components/googleMaps/googleMaps.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/maps/components/googleMaps/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/maps/components/leafletMaps/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/maps/components/leafletMaps/leafletMaps.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/maps/components/leafletMaps/leafletMaps.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/maps/components/leafletMaps/leafletMaps.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/maps/components/lineMaps/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/maps/components/lineMaps/lineMaps.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/maps/components/lineMaps/lineMaps.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/maps/components/lineMaps/lineMaps.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/maps/components/lineMaps/lineMaps.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/maps/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/maps/maps.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/maps/maps.module.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/maps/maps.routing.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/pages.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/pages.menu.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/pages.module.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/pages.routing.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/register/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/register/register.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/register/register.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/register/register.module.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/register/register.routing.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/register/register.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/basicTables.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/basicTables.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/basicTables.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/basicTables.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/components/borderedTable/borderedTable.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/components/borderedTable/borderedTable.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/components/borderedTable/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/components/condensedTable/condensedTable.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/components/condensedTable/condensedTable.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/components/condensedTable/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/components/contextualTable/contextualTable.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/components/contextualTable/contextualTable.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/components/contextualTable/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/components/hoverTable/hoverTable.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/components/hoverTable/hoverTable.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/components/hoverTable/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/components/responsiveTable/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/components/responsiveTable/responsiveTable.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/components/responsiveTable/responsiveTable.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/components/stripedTable/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/components/stripedTable/stripedTable.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/components/stripedTable/stripedTable.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/basicTables/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/dataTables/data-filter.pipe.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/dataTables/dataTables.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/dataTables/dataTables.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/dataTables/dataTables.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/dataTables/dataTables.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/dataTables/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/hotTables/handsontable-section.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/hotTables/handsontable/advanced-demo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/hotTables/handsontable/advanced-demo.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/hotTables/handsontable/basic-demo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/hotTables/handsontable/basic-demo.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/hotTables/handsontable/data.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/hotTables/handsontable/finance-demo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/hotTables/handsontable/finance-demo.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/hotTables/handsontable/science-demo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/hotTables/handsontable/science-demo.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/hotTables/handsontable/science-demo.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/hotTables/handsontable/sheet-demo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/hotTables/handsontable/sheet-demo.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/hotTables/handsontable/sport-demo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/hotTables/handsontable/sport-demo.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/hotTables/hotTables.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/hotTables/hotTables.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/hotTables/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/smartTables/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/smartTables/smartTables.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/smartTables/smartTables.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/smartTables/smartTables.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/components/smartTables/smartTables.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/tables.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/tables.module.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/tables/tables.routing.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/buttons.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/buttons.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/buttons.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/disabledButtons/disabledButtons.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/disabledButtons/disabledButtons.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/disabledButtons/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/dropdownButtons/dropdownButtons.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/dropdownButtons/dropdownButtons.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/dropdownButtons/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/flatButtons/flatButtons.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/flatButtons/flatButtons.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/flatButtons/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/groupButtons/groupButtons.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/groupButtons/groupButtons.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/groupButtons/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/iconButtons/iconButtons.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/iconButtons/iconButtons.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/iconButtons/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/largeButtons/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/largeButtons/largeButtons.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/largeButtons/largeButtons.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/raisedButtons/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/raisedButtons/raisedButtons.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/raisedButtons/raisedButtons.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/sizedButtons/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/sizedButtons/sizedButtons.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/components/sizedButtons/sizedButtons.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/buttons/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/grid/grid.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/grid/grid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/grid/grid.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/grid/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/icons/icons.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/icons/icons.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/icons/icons.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/icons/icons.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/icons/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/modals/default-modal/default-modal.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/modals/default-modal/default-modal.component.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/modals/default-modal/default-modal.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/modals/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/modals/modals.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/modals/modals.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/modals/modals.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/slim/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/slim/slim.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/slim/slim.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/slim/slim.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/typography/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/typography/typography.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/components/typography/typography.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/ui.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/ui.module.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/ui/ui.routing.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baAmChart/baAmChart.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baAmChart/baAmChart.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baAmChart/baAmChart.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baAmChart/baAmChartTheme.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baAmChart/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baBackTop/baBackTop.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baBackTop/baBackTop.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baBackTop/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baCard/baCard.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baCard/baCard.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baCard/baCardBlur.directive.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baCard/baCardBlurHelper.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baCard/bgMetrics.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baCard/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baChartistChart/baChartistChart.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baChartistChart/baChartistChart.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baChartistChart/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baCheckbox/baCheckbox.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baCheckbox/baCheckbox.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baCheckbox/baCheckbox.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baCheckbox/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baContentTop/baContentTop.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baContentTop/baContentTop.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baContentTop/baContentTop.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baContentTop/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baFileUploader/baFileUploader.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baFileUploader/baFileUploader.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baFileUploader/baFileUploader.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baFileUploader/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baFullCalendar/baFullCalendar.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baFullCalendar/baFullCalendar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baFullCalendar/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baMenu/baMenu.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baMenu/baMenu.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baMenu/baMenu.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baMenu/components/baMenuItem/baMenuItem.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baMenu/components/baMenuItem/baMenuItem.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baMenu/components/baMenuItem/baMenuItem.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baMenu/components/baMenuItem/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baMenu/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baMsgCenter/baMsgCenter.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baMsgCenter/baMsgCenter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baMsgCenter/baMsgCenter.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baMsgCenter/baMsgCenter.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baMsgCenter/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baMultiCheckbox/baMultiCheckbox.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baMultiCheckbox/baMultiCheckbox.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baMultiCheckbox/baMultiCheckbox.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baMultiCheckbox/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baPageTop/baPageTop.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baPageTop/baPageTop.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baPageTop/baPageTop.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baPageTop/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baPictureUploader/baPictureUploader.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baPictureUploader/baPictureUploader.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baPictureUploader/baPictureUploader.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baPictureUploader/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baSidebar/baSidebar.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baSidebar/baSidebar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baSidebar/baSidebar.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/baSidebar/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/components/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/directives/baScrollPosition/baScrollPosition.directive.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/directives/baScrollPosition/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/directives/baSlimScroll/baSlimScroll.directive.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/directives/baSlimScroll/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/directives/baThemeRun/baThemeRun.directive.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/directives/baThemeRun/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/directives/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/nga.module.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/pipes/baAppPicture/baAppPicture.pipe.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/pipes/baAppPicture/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/pipes/baKameleonPicture/baKameleonPicture.pipe.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/pipes/baKameleonPicture/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/pipes/baProfilePicture/baProfilePicture.pipe.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/pipes/baProfilePicture/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/pipes/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/_auth.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/_buttons.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/_fonts.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/_form.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/_icons.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/_ionicons.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/_layout.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/_modal.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/_preloader.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/_socicon.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/_table.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/_treeView.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/_typography.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/bootstrap-overrides/_card.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/bootstrap-overrides/_dropdown.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/bootstrap-overrides/_tabs.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/bootstrap-overrides/overrides.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/conf/_mixins.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/conf/_variables.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/conf/colorSchemes/_blur.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/conf/colorSchemes/_mint.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/conf/colorSchemes/_ng2.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/sass/conf/conf.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/services/baImageLoader/baImageLoader.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/services/baImageLoader/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/services/baMenu/baMenu.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/services/baMenu/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/services/baThemePreloader/baThemePreloader.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/services/baThemePreloader/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/services/baThemeSpinner/baThemeSpinner.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/services/baThemeSpinner/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/services/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/theme.config.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/theme.configProvider.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/theme.constants.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/theme.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/validators/email.validator.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/validators/equalPasswords.validator.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/theme/validators/index.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/css/handsontable.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/fonts/socicon.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/i18n/US/en.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/browsers/chrome.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/browsers/firefox.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/browsers/ie.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/browsers/opera.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/app/browsers/safari.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/arrow-green-up.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/arrow-red-down.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/comments.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/face.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/money.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/person.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/refresh.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/shopping-cart.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/feed/feed-image.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/feed/feed-location.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/feed/feed-video.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Alien.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Analytics.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Apartment.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Batman.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Beach.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Bell.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Bonsai.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Boss-3.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Boss-5.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Burglar.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Bus.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Candy.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Checklist.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Cheese.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Chessboard.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Clipboard-Plan.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Desert.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Dna.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Euro-Coin.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Food-Dome.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Hacker.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Images.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Key.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Laptop-Signal.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Locked-Cloud.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Love-Letter.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Magician.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Makeup.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Medal-2.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Microscope.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Mind-Map-Paper.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Money-Increase.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Music-Equalizer.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Ninja.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Online-Shopping.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Pantone.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Party-Poppers.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Phone-Booth.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Programming.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Santa.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Shop.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Street-View.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Student-3.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Surfer.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Surgeon.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Tower.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/assets/img/theme/icon/kameleon/Vector.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/environments/environment.prod.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/environments/environment.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/main.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/meta/humans.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/meta/robots.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/polyfills.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/styles.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/test.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/tsconfig.app.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/tsconfig.spec.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/src/typings.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/tsconfig.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/tslint.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbir-frontend/yarn.lock" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/dom4j-1.6.1.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-backend/target/classes/aztec/rbir_backend/App.class" afterPath="$PROJECT_DIR$/rbir-backend/target/classes/aztec/rbir_backend/App.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore.txt" afterPath="$PROJECT_DIR$/.gitignore.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/New_Project.iml" afterPath="$PROJECT_DIR$/.idea/New_Project.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic___logback_version_.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang___commons_lang_version_.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__nz_ac_waikato_cms_weka_weka_stable___weka_version_.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok___lombok_version_.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-rest2/target/classes/aztec/rbir_rest2/SpringBootWebApplication.class" afterPath="$PROJECT_DIR$/rbir-rest2/target/classes/aztec/rbir_rest2/SpringBootWebApplication.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-rest2/target/classes/aztec/rbir_rest2/controllers/DocumentController.class" afterPath="$PROJECT_DIR$/rbir-rest2/target/classes/aztec/rbir_rest2/controllers/DocumentController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-backend/pom.xml" afterPath="$PROJECT_DIR$/rbir-backend/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-backend/rbir-backend.iml" afterPath="$PROJECT_DIR$/rbir-backend/rbir-backend.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/App.java" afterPath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-parent/rbir-parent.iml" afterPath="$PROJECT_DIR$/rbir-parent/rbir-parent.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-frontend/package.json" afterPath="$PROJECT_DIR$/rbir-frontend/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/dashboard.module.ts" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/dashboard.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/fileUpload.service.ts" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/fileUpload.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/fileUploader.component.ts" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/fileUploader.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/fileUploader.html" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/fileUploader.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-frontend/src/app/pages/document/document.component.ts" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/document/document.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-frontend/src/app/pages/document/document.html" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/document/document.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-frontend/src/app/pages/document/document.service.ts" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/document/document.service.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-rest2/rbir-rest2.iml" afterPath="$PROJECT_DIR$/rbir-rest2/rbir-rest2.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/SpringBootWebApplication.java" afterPath="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/SpringBootWebApplication.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java" afterPath="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/rbir-backend/target/" />
@@ -663,50 +49,10 @@
       <file leaf-file-name="DocumentController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" column="55" lean-forward="false" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
+            <state relative-caret-position="1003">
+              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Index.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/indexer/Index.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="12" column="42" lean-forward="false" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Terms.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/indexer/Terms.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="52" column="52" lean-forward="false" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Searcher.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/queryprocess/Searcher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="56" column="28" lean-forward="false" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#825#833#0" expanded="true" />
-                <element signature="e#939#947#0" expanded="true" />
-                <element signature="e#1499#1507#0" expanded="true" />
-                <element signature="e#1612#1620#0" expanded="true" />
-                <element signature="e#2039#2047#0" expanded="true" />
-                <element signature="e#2167#2176#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -715,8 +61,44 @@
       <file leaf-file-name="Indexer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/indexer/Indexer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="15" column="62" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="62" />
+            <state relative-caret-position="170">
+              <caret line="13" column="28" lean-forward="false" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Terms.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/indexer/Terms.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Index.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/indexer/Index.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpringBootWebApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/SpringBootWebApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="31" lean-forward="false" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -724,12 +106,56 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/App.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rbir-backend/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+            <state relative-caret-position="266">
+              <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractClassifier.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/AbstractClassifier.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-265">
+              <caret line="25" column="41" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fileUploader.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/fileUploader.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1156">
+              <caret line="71" column="47" lean-forward="false" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="searchResult.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rbir-frontend/src/app/pages/document/searchResult/searchResult.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="67" lean-forward="false" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Searcher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/queryprocess/Searcher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -745,6 +171,16 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>searchDocuments</find>
+      <find>pop</find>
+      <find>popup</find>
+    </findStrings>
+    <dirStrings>
+      <dir>E:\Semister 7\FYP\New_Project\rbir-frontend\src\app\pages\dashboard</dir>
+    </dirStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -756,16 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/FileReader.java" />
-        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/CSVFileReader.java" />
-        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/PDFFileReader.java" />
-        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/XLSFileReader.java" />
-        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/XLSXFileReader.java" />
-        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/DOCXFileReader.java" />
-        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/PPTXFileReader.java" />
-        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/FileReadService.java" />
-        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/CSVFileReadService.java" />
-        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/DOCXFileReadService.java" />
         <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/PDFFileReadService.java" />
         <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/PPTXFileReadService.java" />
         <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/TXTFileReadService.java" />
@@ -796,17 +222,27 @@
         <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/DocumentSeeker.java" />
         <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/crawler/URLParser.java" />
         <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/indexer/WordFrequency.java" />
-        <option value="$PROJECT_DIR$/rbir-backend/pom.xml" />
         <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/indexer/Document.java" />
         <option value="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/globals/Global.java" />
         <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/globals/Global.java" />
         <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/indexer/Index.java" />
+        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/queryprocess/Terms.java" />
+        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/App.java" />
+        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/queryprocess/Searcher.java" />
+        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/indexer/Terms.java" />
+        <option value="$PROJECT_DIR$/rbir-frontend/src/app/pages/document/document.html" />
+        <option value="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/fileUpload.service.ts" />
+        <option value="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/dashboard.module.ts" />
+        <option value="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/fileUploader.html" />
+        <option value="$PROJECT_DIR$/rbir-frontend/src/app/pages/document/document.service.ts" />
+        <option value="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/models/Document.java" />
+        <option value="$PROJECT_DIR$/rbir-frontend/src/app/pages/document/document.component.ts" />
         <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/indexer/Indexer.java" />
         <option value="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java" />
-        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/queryprocess/Terms.java" />
-        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/indexer/Terms.java" />
-        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/queryprocess/Searcher.java" />
-        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/App.java" />
+        <option value="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/fileUploader.component.ts" />
+        <option value="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/SpringBootWebApplication.java" />
+        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/AbstractClassifier.java" />
+        <option value="$PROJECT_DIR$/rbir-backend/pom.xml" />
       </list>
     </option>
   </component>
@@ -869,94 +305,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rbir-rest2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="New_Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="New_Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rbir-rest2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="New_Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="New_Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rbir-rest2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="New_Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="New_Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rbir-rest2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="New_Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="New_Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="rbir-backend" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1026,36 +374,6 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="queryprocess" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="New_Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="New_Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rbir-backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1083,78 +401,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="indexer" />
+              <option name="myItemId" value="classifier" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="New_Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="New_Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rbir-backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="globals" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="New_Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="New_Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rbir-backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rbir_backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ClassTreeNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -1170,16 +424,12 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit3" />
+    <property name="typescript-compiler-editor-notification" value="false" />
+    <property name="editor.config.accepted" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="aztec.rbir_backend.logic" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Semister 7\FYP\New_Project\rbir-backend\src\main\resources\urlList" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="aztec.rbir_backend.indexer" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="junit.framework.TestCase" />
@@ -1188,8 +438,14 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Semister 7\FYP\New_Project\rbir-backend\src\main\resources" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="aztec.rbir_backend.indexer" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Semister 7\FYP\New_Project\rbir-backend\src\main\resources\urlList" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="Spring Boot.SpringBootWebApplication">
     <configuration default="false" name="XLSXMyFileReaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1754,6 +1010,10 @@
       <workItem from="1496209479864" duration="15927000" />
       <workItem from="1497055062974" duration="15803000" />
       <workItem from="1497088631535" duration="19187000" />
+      <workItem from="1497179075014" duration="8330000" />
+      <workItem from="1497244227852" duration="8063000" />
+      <workItem from="1497253404694" duration="7681000" />
+      <workItem from="1497291670892" duration="838000" />
     </task>
     <task id="LOCAL-00001" summary="Add new libraries, &#10;Change the backend with facilitating elastic search">
       <created>1496037944013</created>
@@ -1805,7 +1065,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89767000" />
+    <option name="totallyTimeSpent" value="114679000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1370" height="735" extended-state="0" />
@@ -1824,17 +1084,16 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3986711" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33388704" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30152673" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30610687" sideWeight="0.51104975" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31984732" sideWeight="0.48895028" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1843,9 +1102,46 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3986711" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33388704" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30610687" sideWeight="0.51104975" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31526718" sideWeight="0.48895028" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -1860,7 +1156,27 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="37" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/indexer/Index.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/indexer/Terms.java</url>
+          <line>30</line>
+          <properties />
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java</url>
+          <line>75</line>
+          <properties />
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="42" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -1873,117 +1189,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/test/java/aztec/rbir_backend/logic/TXTMyFileReaderTest.java" />
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/TXTMyFileReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/test/java/aztec/rbir_backend/logic/DOCXMyFileReaderTest.java" />
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/test/java/aztec/rbir_backend/logic/PPTXMyFileReaderTest.java" />
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/PPTXMyFileReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/test/java/aztec/rbir_backend/logic/XLSMyFileReaderTest.java" />
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/XLSMyFileReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/test/java/aztec/rbir_backend/logic/XLSXMyFileReaderTest.java" />
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/XLSXMyFileReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/test/java/aztec/rbir_backend/logic/PDFMyFileReaderTest.java" />
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/PDFMyFileReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="18" column="66" lean-forward="true" selection-start-line="18" selection-start-column="66" selection-end-line="18" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/test/java/aztec/rbir_backend/logic/CSVMyFileReaderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="51" lean-forward="true" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/CSVMyFileReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/DOCXMyFileReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="24" column="23" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="24" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-parent/rbir-parent.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular2/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular2/app/app.module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular2/app/dashboard/dashboard.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular2/app/sidebar/sidebar.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="62" lean-forward="true" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular2/app/dashboard/dashboard.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/MyFileReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rbir-database/src/main/java/aztec/rbir_database/Entities/Document.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -2060,23 +1265,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
-          <folding>
-            <element signature="e#929#937#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/SpringBootWebApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/models/SuggestedKeys.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -2091,139 +1279,277 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/indexer/Document.java" />
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/WordFrequency.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="84" column="19" lean-forward="false" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/globals/Global.java" />
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/FileReaderAndIndexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="37" column="30" lean-forward="true" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/queryprocess/Terms.java" />
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/globals/Global.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="22" column="91" lean-forward="true" selection-start-line="22" selection-start-column="91" selection-end-line="22" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="36" column="37" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-frontend/src/app/pages/document/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-frontend/src/app/pages/document/searchResult/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-frontend/src/app/pages/document/searchResult/searchResult.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-frontend/src/app/pages/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-frontend/src/app/pages/pages.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="37" lean-forward="true" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-frontend/src/app/models/document.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/dashboard.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/fileUploader.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="36" lean-forward="false" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-frontend/src/app/pages/document/document.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/FileReaderFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/indexer/Document.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/WordFrequency.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="84" column="19" lean-forward="false" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/globals/Global.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="59" column="21" lean-forward="false" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/FileReaderAndIndexer.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="37" column="30" lean-forward="true" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
-          <folding />
+          <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java">
+    <entry file="file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/models/Document.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="55" lean-forward="false" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
+        <state relative-caret-position="177">
+          <caret line="29" column="26" lean-forward="false" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/models/SuggestedKeys.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-frontend/src/app/pages/document/document.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="34" column="35" lean-forward="false" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-frontend/src/app/pages/document/document.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="36" column="18" lean-forward="false" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/queryprocess/Terms.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/indexer/Index.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="42" lean-forward="false" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/indexer/Terms.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="52" column="52" lean-forward="false" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/globals/Global.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="22" column="91" lean-forward="true" selection-start-line="22" selection-start-column="91" selection-end-line="22" selection-end-column="91" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1124#1125#0" expanded="false" />
-            <element signature="e#1156#1157#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/indexer/Indexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="15" column="62" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#40#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/queryprocess/Searcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="56" column="28" lean-forward="false" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
+        <state relative-caret-position="119">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#825#833#0" expanded="true" />
-            <element signature="e#939#947#0" expanded="true" />
-            <element signature="e#1499#1507#0" expanded="true" />
-            <element signature="e#1612#1620#0" expanded="true" />
-            <element signature="e#2039#2047#0" expanded="true" />
-            <element signature="e#2167#2176#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/App.java">
+    <entry file="file://$PROJECT_DIR$/rbir-frontend/src/app/pages/document/searchResult/searchResult.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+        <state relative-caret-position="34">
+          <caret line="2" column="67" lean-forward="false" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="67" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/indexer/Indexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="28" lean-forward="false" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/fileUpload.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="48" column="29" lean-forward="false" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/fileUploader.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="71" column="47" lean-forward="false" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/indexer/Terms.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/indexer/Index.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/config/SpringSecConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/config/SwaggerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-129">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/config/WebConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/1.4.2.RELEASE/spring-boot-1.4.2.RELEASE-sources.jar!/org/springframework/boot/SpringApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-191">
+          <caret line="296" column="42" lean-forward="false" selection-start-line="296" selection-start-column="42" selection-end-line="296" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/SpringBootWebApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="31" lean-forward="false" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/AbstractClassifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-265">
+          <caret line="25" column="41" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

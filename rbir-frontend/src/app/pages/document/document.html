@@ -4,7 +4,7 @@
       <span class="input-group-addon input-group-addon-primary addon-left" id="basic-addon1" (click)="searchDocuments(searchQuary.value)"><i
         class="ion-ios-search-strong" ng-click="startSearch()"></i></span>
       <input aria-describedby="basic-addon1" class="form-control with-primary-addon" placeholder="Search for..."
-             type="text" #searchQuary (keyup.enter)="searchDocuments(searchQuary.value)">
+             type="text" #searchQuary (keyup.enter)="(searchQuary.value)">
     </div>
     <ba-card title="Search result"
              baCardClass="large-card with-scroll feed-panel">

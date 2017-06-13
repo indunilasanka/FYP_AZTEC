@@ -25,6 +25,7 @@ import { UsersMapService } from './usersMap/usersMap.service';
 import {FileUploader} from './fileUploader';
 import {FileUploadService} from './fileUploader/fileUpload.service';
 import {RequestService} from "app/pages/dashboard/request/request.service";
+import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import {RequestService} from "app/pages/dashboard/request/request.service";
     FormsModule,
     AppTranslationModule,
     NgaModule,
-    routing
+    routing,
+    Ng2Bs3ModalModule
   ],
   declarations: [
     PopularApp,

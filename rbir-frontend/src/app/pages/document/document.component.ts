@@ -11,7 +11,7 @@ import {DocumentService} from './document.service';
 
 export class Document {
 
-  data: Object = null;
+  data: Array<Object> = null;
   searchResults : Array<DocumentModel>;
   doc1 : DocumentModel;
   doc2 : DocumentModel;
@@ -25,23 +25,25 @@ export class Document {
 
   searchDocuments(searchQuary : string){
     console.log("searchDocuments()", searchQuary);
-    this.loadDocuments();
+    this.documentServece.getDocuments(searchQuary).subscribe(
+      data => {
+        this.data = data;
+        this.loadDocuments();
+      },
+      error => console.log(error)
+    );
   }
 
   loadDocuments(){
 
     this.searchResults = new Array<DocumentModel>();
-    this.doc1 = new DocumentModel;
-    this.doc1.title = "File1.txt";
-    this.doc1.summary = "Sorry maybe my question was not clear. What I wanted to do was to find a definition for userTestStatus so that Typescript would allow me to check where it is used and so for example I could not enter userTestStatus";
-    this.searchResults.push(this.doc1);
-
-
-    this.documentServece.getDocuments().subscribe(
-      data => this.data = data,
-      error => console.log(error)
-    );
-
+    for (let entry of this.data) {
+      console.log(entry);
+      let doc:DocumentModel = new DocumentModel;
+      doc.title = entry["title"];
+      doc.summary = entry["summary"];
+      this.searchResults.push(doc);
+    }
     console.log(this.data);
 
 

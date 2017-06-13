@@ -20,7 +20,7 @@ export class FileUploadService {
     // I included these headers because otherwise FireFox
     // will request text/html instead of application/json
     let headers = new Headers();
-    headers.append('Accept', 'application/json');
+    headers.append('Access-Control-Allow-Origin', '*');
     return headers;
   }
 
@@ -31,7 +31,7 @@ export class FileUploadService {
       .catch(this.handleError));
 
     return this.http.get(this.baseUrl+'/list',{headers: this.getHeaders()})
-      .map(response => response.json())
+      .map(response => response)
       .catch(this.handleError);
   }
 
@@ -44,10 +44,9 @@ export class FileUploadService {
     headers.append('Content-Type', 'multipart/form-data');
     headers.append('Accept', 'application/json');
     headers.append('Access-Control-Allow-Origin', '*');
-    //headers.append('enctype', 'multipart/form-data');
 
     return this.http.post(this.baseUrl+'/upload', formData, {headers: this.getHeaders()})
-      .map(response => response.json())
+      .map(response => response.text())
       .catch(this.handleError);
 
   }

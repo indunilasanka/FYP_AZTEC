@@ -5,9 +5,14 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import aztec.rbir_backend.indexer.Indexer;
 import aztec.rbir_backend.logic.DocumentSeeker;
+import aztec.rbir_backend.logic.FileReaderFactory;
+import aztec.rbir_backend.queryprocess.Searcher;
+import aztec.rbir_rest2.models.Document;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,19 +25,35 @@ import org.springframework.web.multipart.MultipartFile;
 public class DocumentController {
 
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value = "/list", method = RequestMethod.POST)
     public
     @ResponseBody
-    ResponseEntity<ArrayList<String>> list(@RequestBody String[] keys) {
-        ArrayList<String> documents = new ArrayList<String>();
-        DocumentSeeker seeker = new DocumentSeeker();
-        documents = seeker.searchDocument("aztec", keys);
+    ResponseEntity<Set<Document>> list(@RequestParam("query") String query) {
+        System.out.println("Query "+query);
+        Set<String> result = new HashSet<String>();
+        if(query.split(" ").length == 1)
+            result = Searcher.searchOWQ(query);
+        else if(query.indexOf('"') != -1){
+            String search = query.substring(1,query.length()-1);
+            result = Searcher.searchPQ(search);
+        }
+        else{
+            result = Searcher.searchFTQ(query);
+        }
 
-        return new ResponseEntity<ArrayList<String>>(documents, HttpStatus.OK);
+        Set<Document> response = new HashSet<Document>();
+        if(result != null) {
+            for (String doc : result) {
+                String content = FileReaderFactory.read(doc);
+                Document document = new Document(doc, content.substring(0, 200));
+                response.add(document);
+            }
+        }
+        return new ResponseEntity<Set<Document>>(response, HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public
     @ResponseBody
@@ -51,16 +72,20 @@ public class DocumentController {
                         String newFileName = filename+"_"+dateFormat.format(date)+"."+fileextention;
                         System.out.println(newFileName);
                         File newFile = new File("E://"+newFileName);
-                        file.transferTo(newFile);
-                        System.out.println(newFile.getAbsolutePath());
+                        if(!newFile.exists()) {
+                            file.transferTo(newFile);
+                            System.out.println(newFile.getAbsolutePath());
 
-                        result = Indexer.indexFile(newFile.getPath());
+                            result = Indexer.indexFile(newFile.getPath());
+                        }
+                        else
+                            result = "File already exist";
 
                     } catch (Exception e) {
-                        result = "file saving error";
+                        result = "fail";
                     }
                 } else {
-                    result = "Invalid File!";
+                    result = "fail";
                 }
         return new ResponseEntity<String>(result, HttpStatus.OK);
     }

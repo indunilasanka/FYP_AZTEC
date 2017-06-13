@@ -20,13 +20,18 @@ export class DocumentService {
   }
 
 
-  getDocuments(): Observable<Object> {
+  getDocuments(query : string): Observable<Object[]> {
 
     // console.log(this.http.get(this.baseUrl+'/list', {headers: this.getHeaders()})
     //   .map(response => response.json())
     //   .catch(this.handleError));
+    let formData:FormData = new FormData();
+    formData.append('query', query);
+    let headers = new Headers();
+    headers.append('Accept', 'application/json');
+    headers.append('Access-Control-Allow-Origin', '*');
 
-    return this.http.get(this.baseUrl+'/list',{headers: this.getHeaders()})
+    return this.http.post(this.baseUrl+'/list',formData,{headers: this.getHeaders()})
       .map(response => response.json())
       .catch(this.handleError);
   }
