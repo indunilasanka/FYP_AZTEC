@@ -24,7 +24,7 @@ export class FileUploader {
   fileName: string = '';
   file: File = null;
   popupTitle: String = '';
-  message: String = '';
+  popupMessage: String = '';
 
   public uploadFileInProgress: boolean;
 
@@ -53,38 +53,29 @@ export class FileUploader {
       this.fileUploadService.uploadFiles(this.file).subscribe(
         data => {
           this.data = data;
-          console.log("data is : " + this.data);
+          console.log('data is : ' + this.data);
+          if (this.data.toString() === 'success' ) {
+            this.popUp('Success', 'File Successfully Indexed!');
+          }else {
+            this.popUp( 'Fail', 'File Indexing Failed!');
+          }
         },
         error => {
-          console.log(error);
+          console.log('error ' + error.toString());
           this.data = error.toString();
+          this.popUp('Fail', this.data.toString());
         },
-        () => {
-          if(this.data.toString() == "success"){
-            this.message = "File Successfully Indexed!" ;
-            this.popupTitle = "Success";
-          }
-          else if(this.data.toString() == "fail"){
-            this.message = "File Indexing Failed!" ;
-            this.popupTitle = "Fail";
-          }
-          else{
-            this.message = this.data.toString() ;
-            this.popupTitle = "Fail";
-          }
-          this.popUp();
-        }
       );
     } else {
       console.log("please insert file");
-      this.message = "Please Insert File" ;
-      this.popupTitle = "Fail";
-      this.popUp();
+      this.popUp('Fail', 'Please Insert File');
     }
   }
 
-  popUp(){
+  popUp(title: String, message: String) {
     console.log("test");
+    this.popupTitle = title;
+    this.popupMessage = message;
     jQuery(this._model).trigger("open");
   }
 }
