@@ -10,7 +10,9 @@ public final class FileReaderFactory {
     public static String read(String filePath){
         String fileType = getFileExtension(filePath);
         MyFileReader reader = getFileReaderInstance(fileType);
-        return reader.read(filePath);
+        if(reader != null)
+            return reader.read(filePath);
+        return null;
     }
 
     private static MyFileReader getFileReaderInstance(String fileType){
@@ -36,6 +38,7 @@ public final class FileReaderFactory {
             case "XLSX":
             case "xlsx":
                 return new XLSXMyFileReader();
+
         }
         return null;
     }

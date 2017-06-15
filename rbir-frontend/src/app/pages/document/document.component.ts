@@ -41,6 +41,7 @@ export class Document {
       console.log(entry);
       let doc:DocumentModel = new DocumentModel;
       doc.title = entry["title"];
+      doc.category = entry["category"];
       doc.summary = entry["summary"];
       this.searchResults.push(doc);
     }

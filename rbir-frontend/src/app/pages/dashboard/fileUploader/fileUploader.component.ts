@@ -56,7 +56,10 @@ export class FileUploader {
           console.log('data is : ' + this.data);
           if (this.data.toString() === 'success' ) {
             this.popUp('Success', 'File Successfully Indexed!');
-          }else {
+          }
+          else if(this.data.toString() === "Invalid File Type")
+            this.popUp( 'Fail', 'Invalid File Type!');
+          else {
             this.popUp( 'Fail', 'File Indexing Failed!');
           }
         },

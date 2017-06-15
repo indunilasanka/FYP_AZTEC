@@ -8,6 +8,8 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import aztec.rbir_backend.classifier.Classify;
+import aztec.rbir_backend.globals.Global;
 import aztec.rbir_backend.indexer.Indexer;
 import aztec.rbir_backend.logic.DocumentSeeker;
 import aztec.rbir_backend.logic.FileReaderFactory;
@@ -46,7 +48,7 @@ public class DocumentController {
         if(result != null) {
             for (String doc : result) {
                 String content = FileReaderFactory.read(doc);
-                Document document = new Document(doc, content.substring(0, 200));
+                Document document = new Document(doc, content.substring(0, content.length() > 200?200:content.length()), Global.getHashtableFiles().get(doc));
                 response.add(document);
             }
         }
@@ -77,6 +79,15 @@ public class DocumentController {
                             System.out.println(newFile.getAbsolutePath());
 
                             result = Indexer.indexFile(newFile.getPath());
+                            Classify.classify(newFile.getPath());
+                            new Thread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Global.writeToFile();
+                                    System.out.println("wrote to file");
+                                }
+                            }).start();
+
                         }
                         else
                             result = "File already exist";

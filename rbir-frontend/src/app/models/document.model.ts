@@ -4,5 +4,6 @@
 export class DocumentModel{
   title: string;
   file: File;
+  category: String;
   summary: string;
 }

@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {layoutPaths} from '../../../theme';
 
 @Component({
   selector: 'search-result',
@@ -7,6 +8,7 @@ import {Component, Input} from '@angular/core';
 })
 export class SearchResult {
 
+  path:String = layoutPaths.images.profile+"doc.jpg";
   @Input() searchResults:Array<Object>;
 
   constructor() {
