@@ -1,0 +1,5 @@
+Security is the degree of resistance to, or protection from, harm. It applies to any vulnerable and/or valuable asset, such as a person, dwelling, community, item, nation, or organization.
+
+As noted by the Institute for Security and Open Methodologies (ISECOM) in the OSSTMM 3, security provides "a form of protection where a separation is created between the assets and the threat." These separations are generically called "controls," and sometimes include changes to the asset or the threat.[1]
+
+One of the most important and widespread aspects of security is national security. National security is a concept that a government, along with its parliaments, should protect the state and its citizens against all kind of "national" crises through a variety of power projections, such as political power, diplomacy, economic power, military might, and so on.
