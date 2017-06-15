@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2063dfd8-8076-4440-a978-83fb969036f8" name="Default" comment="Add new libraries, &#10;Change the backend with facilitating elastic search&#10;Change .ignore file">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang___commons_lang_version_.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__nz_ac_waikato_cms_weka_weka_stable___weka_version_.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok___lombok_version_.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-rest2/target/classes/aztec/rbir_rest2/SpringBootWebApplication.class" afterPath="$PROJECT_DIR$/rbir-rest2/target/classes/aztec/rbir_rest2/SpringBootWebApplication.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-rest2/target/classes/aztec/rbir_rest2/controllers/DocumentController.class" afterPath="$PROJECT_DIR$/rbir-rest2/target/classes/aztec/rbir_rest2/controllers/DocumentController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-backend/pom.xml" afterPath="$PROJECT_DIR$/rbir-backend/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-backend/rbir-backend.iml" afterPath="$PROJECT_DIR$/rbir-backend/rbir-backend.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/FileReaderFactory.java" afterPath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/FileReaderFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-frontend/src/app/models/document.model.ts" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/models/document.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/feed/feed.scss" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/feed/feed.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/fileUploader.component.ts" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/fileUploader.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-frontend/src/app/pages/document/document.component.ts" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/document/document.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-frontend/src/app/pages/document/searchResult/searchResult.component.ts" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/document/searchResult/searchResult.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-frontend/src/app/pages/document/searchResult/searchResult.html" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/document/searchResult/searchResult.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-frontend/src/app/pages/document/searchResult/searchResult.scss" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/document/searchResult/searchResult.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-parent/rbir-parent.iml" afterPath="$PROJECT_DIR$/rbir-parent/rbir-parent.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-rest2/rbir-rest2.iml" afterPath="$PROJECT_DIR$/rbir-rest2/rbir-rest2.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/SpringBootWebApplication.java" afterPath="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/SpringBootWebApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java" afterPath="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java" />
-    </list>
+    <list default="true" id="2063dfd8-8076-4440-a978-83fb969036f8" name="Default" comment="Add new libraries, &#10;Change the backend with facilitating elastic search&#10;Change .ignore file" />
     <ignored path="$PROJECT_DIR$/rbir-backend/target/" />
     <ignored path="$PROJECT_DIR$/rbir-database/target/" />
     <ignored path="$PROJECT_DIR$/rbir-rest2/target/" />
