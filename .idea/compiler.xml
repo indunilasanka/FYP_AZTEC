@@ -12,10 +12,10 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="rbir-backend" target="1.8" />
-      <module name="rbir-database" target="1.8" />
-      <module name="rbir-parent" target="1.8" />
-      <module name="rbir-rest2" target="1.8" />
+      <module name="rbir-backend" target="1.7" />
+      <module name="rbir-database" target="1.5" />
+      <module name="rbir-parent" target="1.5" />
+      <module name="rbir-rest2" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
