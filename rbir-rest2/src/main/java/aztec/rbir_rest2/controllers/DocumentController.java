@@ -73,7 +73,7 @@ public class DocumentController {
                         Date date = new Date();
                         String newFileName = filename+"_"+dateFormat.format(date)+"."+fileextention;
                         System.out.println(newFileName);
-                        File newFile = new File("E://"+newFileName);
+                        File newFile = new File("E://project/"+newFileName);
                         if(!newFile.exists()) {
                             file.transferTo(newFile);
                             System.out.println(newFile.getAbsolutePath());
