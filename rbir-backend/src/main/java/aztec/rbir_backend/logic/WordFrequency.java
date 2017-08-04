@@ -31,7 +31,7 @@ public class WordFrequency {
 
         String[] tokens = {};
         tokens = wordMap.keySet().toArray(tokens);
-
+        //remove common words
         String[] returnTokens = new String[numOfWords];
         if(tokens.length < numOfWords)
             return tokens;
@@ -39,7 +39,6 @@ public class WordFrequency {
         for(int i = 0; i < numOfWords; i++){
             returnTokens[i] = tokens[i];
         }
-
         return  returnTokens;
     }
 

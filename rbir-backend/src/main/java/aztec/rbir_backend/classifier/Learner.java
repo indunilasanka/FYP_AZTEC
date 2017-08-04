@@ -1,7 +1,11 @@
 package aztec.rbir_backend.classifier;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
+import java.io.FileWriter;
+import java.util.Scanner;
 
 import weka.classifiers.Evaluation;
 import weka.classifiers.bayes.NaiveBayes;
@@ -131,4 +135,95 @@ public class Learner {
         learner.learn();
         learner.saveModel();
     }
+
+    public void writeToArffFile(String[] dataSet)  {
+
+        //InitialProcess();
+        HashSet<String> keys_set = new HashSet<String>();
+        BufferedWriter writer = null;
+        //Scanner scan = new Scanner(System.in);
+        //String File_Type = scan.next();
+
+        try {
+            writer = new BufferedWriter(new FileWriter("rbir-backend/src/main/resources/keys.arff",true));
+            keys_set = read();
+
+            for(String str : dataSet)
+            {
+                if(!keys_set.contains(str))
+                {
+                    System.out.println(str);
+                    keys_set.add(str);
+                    writer.append("\nLow-Sensitive,"+"'"+str+"'");
+                    writer.flush();
+                }
+            }
+            write(keys_set);
+            writer.close();
+            trainModel(); // train the model after appending new keywords to the keys file
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void write (HashSet<String> keys_set) throws IOException{
+        try {
+            FileOutputStream fos = new FileOutputStream("rbir-backend/src/main/resources/file.bin");
+            ObjectOutputStream out = new ObjectOutputStream(fos);
+            out.writeObject(keys_set);
+            out.flush();
+            out.close();
+        }
+        catch (IOException e) {
+            System.out.println(e);
+        }
+    }
+
+    public HashSet<String> read () {
+
+        HashSet<String> keys_set = null;
+        try {
+            ObjectInputStream input = new ObjectInputStream( new FileInputStream("rbir-backend/src/main/resources/file.bin"));
+            keys_set = (HashSet<String>) (input.readObject());
+        }
+        catch (Exception e) {
+            keys_set = new HashSet<String >();
+            System.out.println(e);
+        }
+
+        return keys_set;
+    }
+
+    public void InitialProcess()
+    {
+        ClassLoader classLoader = getClass().getClassLoader();
+        InputStream arffFile = null;
+        try {
+
+            arffFile = classLoader.getResource("keys.arff").openStream();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(arffFile));
+            ArffReader arff = new ArffReader(reader);
+            HashSet<String> keys_set = new HashSet<String>();
+            reader.close();
+
+            String arffContent = arff.getData().toString();
+            String[] parts = arffContent.split("@data");
+            String[] tags = parts[1].split("\n");
+
+            for(int i=0;i<tags.length;i++)
+            {
+                tags[i]= tags[i].substring(tags[i].lastIndexOf(",") + 1);
+                tags[i] = tags[i].replaceAll("[']","");
+                keys_set.add(tags[i]);
+            }
+            write(keys_set);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }

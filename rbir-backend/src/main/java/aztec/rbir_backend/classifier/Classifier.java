@@ -67,9 +67,11 @@ public class Classifier {
     public void makeInstance() {
         // Create the attributes, class and text
         FastVector fvNominalVal = new FastVector(2);
-        fvNominalVal.addElement("personal");
-        fvNominalVal.addElement("security");
-        fvNominalVal.addElement("financial");
+        fvNominalVal.addElement("Critical-Sensitive");
+        fvNominalVal.addElement("High-Sensitive");
+        fvNominalVal.addElement("Medium-Sensitive");
+        fvNominalVal.addElement("Low-Sensitive");
+        fvNominalVal.addElement("Non-Sensitive");
         Attribute attribute1 = new Attribute("class", fvNominalVal);
         Attribute attribute2 = new Attribute("text", (FastVector) null);
         // Create list of instances with one element
