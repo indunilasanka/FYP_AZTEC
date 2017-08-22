@@ -40,7 +40,6 @@ public class Terms {
 
     private static String preprocess(String content){
         String cleanedStr = content.replaceAll("[^a-zA-Z0-9 ]", " ").toLowerCase();
-        System.out.println(cleanedStr);
 
         EnglishAnalyzer analyzer = new EnglishAnalyzer(); //stop words
 

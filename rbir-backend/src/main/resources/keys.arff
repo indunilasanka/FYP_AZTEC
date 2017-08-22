@@ -6,3 +6,6 @@
 @data
 Critical-Sensitive,'war'
 High-Sensitive,'murder'
+Medium-Sensitive,'govern'
+Low-Sensitive,'univers'
+Non-Sensitive,'studi'

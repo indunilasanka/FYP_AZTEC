@@ -136,7 +136,7 @@ public class Learner {
         learner.saveModel();
     }
 
-    public void writeToArffFile(String[] dataSet)  {
+    public void writeToArffFile(ArrayList<String> dataSet)  {
 
         //InitialProcess();
         HashSet<String> keys_set = new HashSet<String>();
