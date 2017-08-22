@@ -21,9 +21,7 @@ public class WordFrequency {
 
         HashMap<String,Integer> wordMap = new HashMap<String,Integer>();
 
-        System.out.println(content);
         content = preprocess(content);
-        System.out.println(content);
 
         String[] contentArray = content.split("\\s+");
         addWordsToMap(contentArray, wordMap);
@@ -31,6 +29,10 @@ public class WordFrequency {
 
         String[] tokens = {};
         tokens = wordMap.keySet().toArray(tokens);
+        //remove common words
+        for(int i = 0; i < tokens.length; i++){
+            System.out.print(tokens[i]+" ");
+        }
 
         String[] returnTokens = new String[numOfWords];
         if(tokens.length < numOfWords)
@@ -39,7 +41,6 @@ public class WordFrequency {
         for(int i = 0; i < numOfWords; i++){
             returnTokens[i] = tokens[i];
         }
-
         return  returnTokens;
     }
 
