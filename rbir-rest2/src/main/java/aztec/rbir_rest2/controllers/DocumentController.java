@@ -1,6 +1,7 @@
 package aztec.rbir_rest2.controllers;
 
 import java.io.File;
+import java.nio.file.Paths;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -8,9 +9,9 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import aztec.rbir_backend.classifier.Classify;
+import aztec.rbir_backend.classifier.*;
+import aztec.rbir_backend.clustering.*;
 import aztec.rbir_backend.globals.Global;
-import aztec.rbir_backend.indexer.Indexer;
 import aztec.rbir_backend.logic.DocumentSeeker;
 import aztec.rbir_backend.logic.FileReaderFactory;
 import aztec.rbir_backend.queryprocess.Searcher;
@@ -25,7 +26,6 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequestMapping("/documents")
 public class DocumentController {
-
 
     @CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value = "/list", method = RequestMethod.POST)
@@ -78,7 +78,7 @@ public class DocumentController {
                             file.transferTo(newFile);
                             System.out.println(newFile.getAbsolutePath());
 
-                            result = Indexer.indexFile(newFile.getPath());
+                            //result = Indexer.indexFile(newFile.getPath());
                             Classify.classify(newFile.getPath());
                             new Thread(new Runnable() {
                                 @Override
@@ -108,10 +108,39 @@ public class DocumentController {
     @ResponseBody
     ResponseEntity<String> handleInitialSetup(@RequestParam("file") ArrayList<MultipartFile> files, @RequestParam("category") ArrayList<String> categories)
     {
+        System.out.println();
 
-        for (int i=0; i<files.size();i++){
-            System.out.println(files.get(i).getName()+ "    "+ categories.get(i));
-        }
+        DocumentsList documentList1 = new DocumentsList(files, categories);
+        DocumentsList documentList2 = new DocumentsList(files, categories);
+
+        Thread clusteringThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Encoder encoder = new TfIdfEncoder(10000);
+                encoder.encode(documentList1);
+                Distance distance = new CosineDistance();
+                Clusterer clusterer = new KMeanClusterer(distance, 0.4, 1000);
+                ClustersList clusterList = clusterer.cluster(documentList1,5);
+                System.out.println(clusterList.toString());
+            }
+        });
+
+        Thread classificationThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                TrainingModel.calculateTrainingWords(documentList2);
+                documentList2.forEach(e -> {
+                    String predictedCategory = Classifier.getCategory(e.getContents());
+                    e.setPredictedCategory(predictedCategory);
+                });
+            }
+        });
+
+        clusteringThread.start();
+        classificationThread.start();
+
+        System.out.println("test");
+
 
         return new ResponseEntity<String>("success", HttpStatus.OK);
     }

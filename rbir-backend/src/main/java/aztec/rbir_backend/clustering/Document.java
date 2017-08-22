@@ -1,4 +1,4 @@
-package aztec.rbir_backend.classifier;
+package aztec.rbir_backend.clustering;
 
 
 /**
@@ -12,21 +12,25 @@ public class Document implements Comparable<Document> {
     private final String contents;
     private final long id;
     private String category;
+    private String filePath;
+    private String predictedCategory;
 
     // whether document has been allocated to a cluster
     private boolean allocated;
     // document word histogram
     private Vector histogram;
+
     // encoded document vector (TF-IDF)
     private Vector vector;
     // precalculated document vector norms
     private double norm;
 
-    public Document(long id, String title, String contents, String category) {
+    public Document(long id, String title, String contents, String category, String filePath) {
         this.id = id;
         this.title = title;
         this.contents = contents;
         this.category = category;
+        this.filePath = filePath;
     }
 
     //setters
@@ -46,6 +50,12 @@ public class Document implements Comparable<Document> {
         allocated = false;
     }
     public void setCategory(String category){this.category = category;}
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
+    public void setPredictedCategory(String predictedCategory) {
+        this.predictedCategory = predictedCategory;
+    }
 
     //getters
     public boolean isAllocated() {
@@ -67,6 +77,13 @@ public class Document implements Comparable<Document> {
         return norm;
     }
     public String getCategory(){return category;}
+    public String getFilePath() {
+        return filePath;
+    }
+    public String getPredictedCategory() {
+        return predictedCategory;
+    }
+
 
     //compare documents ids
     public int compareTo(Document document) {

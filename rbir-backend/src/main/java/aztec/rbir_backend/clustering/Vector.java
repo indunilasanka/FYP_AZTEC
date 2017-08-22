@@ -1,4 +1,4 @@
-package aztec.rbir_backend.classifier;
+package aztec.rbir_backend.clustering;
 
 /**
  * Created by subhahs on 03/08/2017.
