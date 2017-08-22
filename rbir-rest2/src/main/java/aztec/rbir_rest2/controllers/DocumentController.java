@@ -100,4 +100,19 @@ public class DocumentController {
                 }
         return new ResponseEntity<String>(result, HttpStatus.OK);
     }
+
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @RequestMapping(value = "/setup", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    ResponseEntity<String> handleInitialSetup(@RequestParam("file") ArrayList<MultipartFile> files, @RequestParam("category") ArrayList<String> categories)
+    {
+
+        for (int i=0; i<files.size();i++){
+            System.out.println(files.get(i).getName()+ "    "+ categories.get(i));
+        }
+
+        return new ResponseEntity<String>("success", HttpStatus.OK);
+    }
 }
