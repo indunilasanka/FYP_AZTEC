@@ -1,22 +1,24 @@
 /**
  * Created by EMS on 5/31/2017.
  */
-import { Injectable, Component } from '@angular/core';
-import { Http, RequestOptions, Response, Headers } from '@angular/http';
+import { Injectable,Component } from '@angular/core';
+import { Http,RequestOptions, Response,Headers} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import { DocumentModel } from '../../../models/document.model';
+
 
 @Injectable()
 export class FileUploadService {
 
   private baseUrl: string = 'http://localhost:8080/documents';
 
-  constructor(private http: Http) {
+  constructor(private http : Http){
   }
 
 
-  private getHeaders() {
+  private getHeaders(){
     // I included these headers because otherwise FireFox
     // will request text/html instead of application/json
     let headers = new Headers();
@@ -26,18 +28,18 @@ export class FileUploadService {
 
   getDocuments(): Observable<Object> {
 
-    console.log(this.http.get(this.baseUrl + '/list', { headers: this.getHeaders() })
+    console.log(this.http.get(this.baseUrl+'/list', {headers: this.getHeaders()})
       .map(response => response.json())
       .catch(this.handleError));
 
-    return this.http.get(this.baseUrl + '/list', { headers: this.getHeaders() })
+    return this.http.get(this.baseUrl+'/list',{headers: this.getHeaders()})
       .map(response => response)
       .catch(this.handleError);
   }
 
   uploadFiles(file: File): Observable<Object[]> {
     console.log("came for uploading3");
-    let formData: FormData = new FormData();
+    let formData:FormData = new FormData();
     formData.append('file', file, file.name);
 
     let headers = new Headers();
@@ -45,23 +47,24 @@ export class FileUploadService {
     headers.append('Accept', 'application/json');
     headers.append('Access-Control-Allow-Origin', '*');
 
-    return this.http.post(this.baseUrl + '/upload', formData, { headers: this.getHeaders() })
+    return this.http.post(this.baseUrl+'/upload', formData, {headers: this.getHeaders()})
       .map(response => response.text())
       .catch(this.handleError);
 
   }
 
-  uploadFolder(files: File[]): Observable<Object[]> {
+
+  uploadFolder(files: DocumentModel[]): Observable<Object[]> {
     const formData: FormData = new FormData();
     const fileCount: number = files.length;
     if (fileCount > 0) {
       files.forEach(element => {
-        console.log(element.size);
-        formData.append('file', element, element.name);
+        formData.append('file', element.file );
+        formData.append('level', element.securityLevel );
       });
 
       const headers = new Headers();
-      headers.append('Content-Type', 'multipart/form-data');
+      headers.append('Content-Type', undefined);
       headers.append('Accept', 'application/json');
       headers.append('Access-Control-Allow-Origin', '*');
 
@@ -69,10 +72,10 @@ export class FileUploadService {
         .map(response => response.text())
         .catch(this.handleError);
     }
-  }
+  }  
 
 
-  private handleError(error: Response | any) {
+  private handleError (error: Response | any) {
     // In a real world app, you might use a remote logging infrastructure
     let errMsg: string;
     if (error instanceof Response) {

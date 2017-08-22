@@ -25,6 +25,18 @@ export const PAGES_MENU = [
             order: 200
           }
         }
+      },
+      {
+        path: 'initial-config',
+        data: {
+          menu: {
+            title: 'Initial Configuration',
+            icon: 'ion-gear-a',
+            selected: false,
+            expanded: false,
+            order: 200
+          }
+        }
       }
     ]
   }
