@@ -1,6 +1,8 @@
 package aztec.rbir_rest2.controllers;
 
+import java.awt.List;
 import java.io.File;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -15,6 +17,7 @@ import aztec.rbir_backend.logic.DocumentSeeker;
 import aztec.rbir_backend.logic.FileReaderFactory;
 import aztec.rbir_backend.queryprocess.Searcher;
 import aztec.rbir_rest2.models.Document;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -81,7 +84,6 @@ public class DocumentController {
                             result = Indexer.indexFile(newFile.getPath());
                             Classify.classify(newFile.getPath());
                             new Thread(new Runnable() {
-                                @Override
                                 public void run() {
                                     Global.writeToFile();
                                     System.out.println("wrote to file");
@@ -100,4 +102,22 @@ public class DocumentController {
                 }
         return new ResponseEntity<String>(result, HttpStatus.OK);
     }
+    
+    @CrossOrigin(origins = "http://localhost:4200")
+    @RequestMapping(value = "/uploadfolder", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    ResponseEntity<String> handleFolderUpload(@RequestParam("file")ArrayList<MultipartFile> file ,@RequestParam("level")ArrayList<String> level) {
+    	String result = "Success";
+    	
+    	
+    	for (int i = 0; i < file.size(); i++) {
+			System.out.println(file.get(i).getOriginalFilename()+ " level --  " +  level.get(i));
+			
+		}
+    	return new ResponseEntity<String>(result, HttpStatus.OK);
+    }
+    
 }
+    
+
