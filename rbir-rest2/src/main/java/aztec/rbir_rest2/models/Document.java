@@ -1,5 +1,9 @@
 package aztec.rbir_rest2.models;
 
+import java.io.File;
+
+import org.springframework.web.multipart.MultipartFile;
+
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
@@ -7,37 +11,70 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
  */
 @JsonSerialize
 public class Document {
-    private String title;
-    private String summary;
-    private String category;
+	public String title;
+	public MultipartFile file;
+	public String category;
+	public String summary;
+	public String securityLevel;
+	
+    public MultipartFile getFile() {
+		return file;
+	}
 
-    public Document(String title,String summary,String category){
+
+
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
+
+
+
+	public Document(String title,String summary,String category){
         this.title = title;
         this.summary = summary;
         this.category = category;
     }
+    
+    
+    
+    public Document() {
+	}
 
-    public String getTitle(){
-        return this.title;
-    }
 
-    public void setTitle(String title){
-        this.title = title;
-    }
 
-    public String getSummary(){
-        return this.summary;
+	public Document(String title){
+    	this.title = title;
     }
+	
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+//	public File getFile() {
+//		return file;
+//	}
+//	public void setFile(File file) {
+//		this.file = file;
+//	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public String getSummary() {
+		return summary;
+	}
+	public void setSummary(String summary) {
+		this.summary = summary;
+	}
+	public String getSecurityLevel() {
+		return securityLevel;
+	}
+	public void setSecurityLevel(String securityLevel) {
+		this.securityLevel = securityLevel;
+	}
 
-    public void setSummary(String summary){
-        this.title = summary;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
 }

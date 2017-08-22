@@ -2,6 +2,7 @@ import { Component, ViewChild, Input, Output, EventEmitter, ElementRef, Renderer
 
 import { FileUploadService } from './fileUpload.service';
 import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
+import { DocumentModel } from '../../../models/document.model';
 
 @Component({
   selector: 'file-uploader-com',
@@ -15,6 +16,7 @@ export class FileUploader {
   // @Output() onFileUpload = new EventEmitter<any>();
   @Output() onFileUploadCompleted = new EventEmitter<any>();
   @Input() defaultValue: string = '';
+  @Input() selectedSLvl: string = null;
 
   @ViewChild('fileUpload') public _fileUpload: ElementRef;
   @ViewChild('inputText') public _inputText: ElementRef;
@@ -24,6 +26,7 @@ export class FileUploader {
   fileName: string = '';
   popupTitle: String = '';
   popupMessage: String = '';
+  documents: DocumentModel[] = [];
   fileList: File[] = null;
 
   public uploadFileInProgress: boolean;
@@ -33,13 +36,14 @@ export class FileUploader {
   }
 
   bringFileSelector(): boolean {
+    console.log("bringFileSelector()");
     this.renderer.invokeElementMethod(this._fileUpload.nativeElement, 'click');
     return false;
   }
 
   beforeFileUpload($event) {
     const files = this._fileUpload.nativeElement.files;
-    this.fileList = [];
+    console.log("selectted level -------------------->", this.selectedSLvl);
     if (files.length) {
       const fileCount = files.length;
       if (fileCount > 0) {
@@ -52,9 +56,12 @@ export class FileUploader {
         for (let i = 0; i < fileCount; i++) {
           const fielType: String = files.item(i).type;
           if (fielType.includes('pdf') || fielType.includes('officedocument.word')) {
-            this.fileList.push(files.item(i));
+            const document: DocumentModel = new DocumentModel();
+            document.securityLevel = this.selectedSLvl;
+            document.file = files.item(i);
+            console.log(i, files.item(i).name, document.securityLevel);
+            this.documents.push(document);
           }
-
           // console.log(fielType);
         }
       }
@@ -62,14 +69,14 @@ export class FileUploader {
   }
 
 
-  removeDocument(document: File) {
-    this.fileList = this.fileList.filter(item => item !== document);
+  removeDocument(document: DocumentModel) {
+    this.documents = this.documents.filter(item => item !== document);
   }
 
   startFileupload() {
 
-    if (this.fileList) {
-      this.fileUploadService.uploadFolder(this.fileList).subscribe(
+    if (this.documents) {
+      this.fileUploadService.uploadFolder(this.documents).subscribe(
 
 
         data => {

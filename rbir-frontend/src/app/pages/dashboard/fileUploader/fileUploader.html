@@ -1,21 +1,30 @@
 <!--<input #fileUpload ngFileSelect type="file" [options]="fileUploaderOptions" (onUpload)="_onFileUpload($event)" (beforeUpload)="beforeFileUpload($event)" hidden="true">-->
-<input #fileUpload ngFileSelect type="file" (change)="beforeFileUpload($event)" hidden="true">
+<input #fileUpload ngFileSelect type="file" webkitdirectory directory multiple (change)="beforeFileUpload($event)" hidden="true">
 <div class="input-group" [ngClass]="{uploading: uploadFileInProgress}">
   <input #inputText type="text" value= {{fileName}} class="form-control" readonly>
   <span class="input-group-btn">
       <button class="btn btn-success btn-raised" type="button" (click)="bringFileSelector();">Browse</button>
   </span>
 </div>
+
+<ba-card title="Hover Rows" baCardClass="xmedium-card with-scroll table-panel">
+  <div class="horizontal-scroll">
+    <table class="table table-hover">
+      <tbody>
+        <tr *ngFor="let document of fileList" class="no-top-border">
+          <td class="col-md-11" style="text-align: left">
+           {{ document.name }}
+          </td>
+        <td class="col-md-1">
+          <button type="button" class="btn btn btn-danger btn-icon" (click)="removeDocument(document)"><i class="ion-close-round"></i></button>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ba-card>
+
 <div class="button-wrapper" align="right">
   <button type="button" class="btn btn-success btn-raised" [disabled]="!file" (click)="startFileupload()">Submit</button>
 </div>
 
-<modal #modal>
-  <modal-header [show-close]="true">
-    <h4 class="modal-title">{{popupTitle}}</h4>
-  </modal-header>
-  <modal-body>
-    {{popupMessage}}
-  </modal-body>
-  <modal-footer [show-default-buttons]="true"></modal-footer>
-</modal>
