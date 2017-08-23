@@ -61,11 +61,11 @@ export class FileUploadService {
       });
 
       const headers = new Headers();
-      headers.append('Content-Type', 'multipart/form-data');
+      headers.append('Content-Type', 'multipart/json');
       headers.append('Accept', 'application/json');
       headers.append('Access-Control-Allow-Origin', '*');
 
-      return this.http.post(this.baseUrl + '/uploadfolder', formData, { headers: this.getHeaders() })
+      return this.http.post(this.baseUrl + '/uploadFolder', formData, { headers: this.getHeaders() })
         .map(response => response.text())
         .catch(this.handleError);
     }

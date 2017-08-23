@@ -59,7 +59,7 @@ public class TfIdfEncoderClassifier {
             wholeContent = wholeContent + document.getContents();
             calcHistogram(document);
         }
-        return calcHistogram(new Document(0,"whole_document",wholeContent,""));
+        return calcHistogram(new Document(0,"whole_document",wholeContent,"", ""));
     }
 
     //calculate IDF

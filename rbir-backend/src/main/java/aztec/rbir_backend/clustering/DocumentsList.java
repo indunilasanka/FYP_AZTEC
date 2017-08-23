@@ -28,7 +28,7 @@ public class DocumentsList extends ArrayList<Document> {
 
         for (int i=0; i<files.size(); i++){
             String fullfilename = files.get(i).getOriginalFilename();
-            String filename = fullfilename.substring(fullfilename.lastIndexOf('\\')+1,fullfilename.lastIndexOf('.'));
+            String filename = fullfilename.substring(fullfilename.lastIndexOf('/')+1,fullfilename.lastIndexOf('.'));
             String fileextention = fullfilename.substring(fullfilename.lastIndexOf('.')+1);
             System.out.println(fullfilename);
 
@@ -37,7 +37,8 @@ public class DocumentsList extends ArrayList<Document> {
             String newFileName = filename+"_"+dateFormat.format(date)+"."+fileextention;
             System.out.println(newFileName);
 
-            File newFile = new File(Paths.get(FILES_TO_INDEX_DIRECTORY) + newFileName);
+            File newFile = new File("E://FYPSavingFolder/" + newFileName);
+            System.out.println(newFile.getAbsolutePath());
             try {
                 files.get(i).transferTo(newFile);
                 long documentID = i;
@@ -46,7 +47,7 @@ public class DocumentsList extends ArrayList<Document> {
                 String category = categories.get(i);
                 String filePath = newFile.getAbsolutePath();
                 add(new Document(documentID, title, contents, category, filePath));
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

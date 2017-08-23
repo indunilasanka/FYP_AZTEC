@@ -68,7 +68,7 @@ export class FileUploadService {
       headers.append('Accept', 'application/json');
       headers.append('Access-Control-Allow-Origin', '*');
 
-      return this.http.post(this.baseUrl + '/uploadfolder', formData, { headers: this.getHeaders() })
+      return this.http.post(this.baseUrl + '/setup', formData, { headers: this.getHeaders() })
         .map(response => response.text())
         .catch(this.handleError);
     }

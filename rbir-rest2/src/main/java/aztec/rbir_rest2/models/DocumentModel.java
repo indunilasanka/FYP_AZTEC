@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
  * Created by subhahs on 12/06/2017.
  */
 @JsonSerialize
-public class Document {
+public class DocumentModel {
 	public String title;
 	public MultipartFile file;
 	public String category;
@@ -29,7 +29,7 @@ public class Document {
 
 
 
-	public Document(String title,String summary,String category){
+	public DocumentModel(String title, String summary, String category){
         this.title = title;
         this.summary = summary;
         this.category = category;
@@ -37,12 +37,12 @@ public class Document {
     
     
     
-    public Document() {
+    public DocumentModel() {
 	}
 
 
 
-	public Document(String title){
+	public DocumentModel(String title){
     	this.title = title;
     }
 	

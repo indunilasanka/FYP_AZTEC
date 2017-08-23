@@ -1,7 +1,6 @@
 package aztec.rbir_rest2.controllers;
 
 import java.io.File;
-import java.nio.file.Paths;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -9,13 +8,12 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import aztec.rbir_rest2.models.*;
 import aztec.rbir_backend.classifier.*;
 import aztec.rbir_backend.clustering.*;
 import aztec.rbir_backend.globals.Global;
-import aztec.rbir_backend.logic.DocumentSeeker;
 import aztec.rbir_backend.logic.FileReaderFactory;
 import aztec.rbir_backend.queryprocess.Searcher;
-import aztec.rbir_rest2.models.Document;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +29,7 @@ public class DocumentController {
     @RequestMapping(value = "/list", method = RequestMethod.POST)
     public
     @ResponseBody
-    ResponseEntity<Set<Document>> list(@RequestParam("query") String query) {
+    ResponseEntity<Set<DocumentModel>> list(@RequestParam("query") String query) {
         System.out.println("Query "+query);
         Set<String> result = new HashSet<String>();
         if(query.split(" ").length == 1)
@@ -44,15 +42,15 @@ public class DocumentController {
             result = Searcher.searchFTQ(query);
         }
 
-        Set<Document> response = new HashSet<Document>();
+        Set<DocumentModel> response = new HashSet<DocumentModel>();
         if(result != null) {
             for (String doc : result) {
                 String content = FileReaderFactory.read(doc);
-                Document document = new Document(doc, content.substring(0, content.length() > 200?200:content.length()), Global.getHashtableFiles().get(doc));
+                DocumentModel document = new DocumentModel(doc, content.substring(0, content.length() > 200?200:content.length()), Global.getHashtableFiles().get(doc));
                 response.add(document);
             }
         }
-        return new ResponseEntity<Set<Document>>(response, HttpStatus.OK);
+        return new ResponseEntity<Set<DocumentModel>>(response, HttpStatus.OK);
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
@@ -106,38 +104,44 @@ public class DocumentController {
     @RequestMapping(value = "/setup", method = RequestMethod.POST)
     public
     @ResponseBody
-    ResponseEntity<String> handleInitialSetup(@RequestParam("file") ArrayList<MultipartFile> files, @RequestParam("category") ArrayList<String> categories)
+    ResponseEntity<String> handleInitialSetup(@RequestParam("file") ArrayList<MultipartFile> files, @RequestParam("level") ArrayList<String> categories)
     {
         System.out.println();
 
         DocumentsList documentList1 = new DocumentsList(files, categories);
-        DocumentsList documentList2 = new DocumentsList(files, categories);
+        DocumentsList documentList2 = (DocumentsList) documentList1.clone();
 
-        Thread clusteringThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
+       // Thread clusteringThread = new Thread(new Runnable() {
+      //      @Override
+       //     public void run() {
                 Encoder encoder = new TfIdfEncoder(10000);
                 encoder.encode(documentList1);
                 Distance distance = new CosineDistance();
-                Clusterer clusterer = new KMeanClusterer(distance, 0.4, 1000);
-                ClustersList clusterList = clusterer.cluster(documentList1,5);
+                Clusterer clusterer = new KMeanClusterer(distance, 0.4, 500);
+                ClustersList clusterList = clusterer.cluster(documentList1,2);
                 System.out.println(clusterList.toString());
-            }
-        });
+       //     }
+     //   });
 
-        Thread classificationThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                TrainingModel.calculateTrainingWords(documentList2);
+     //   Thread classificationThread = new Thread(new Runnable() {
+     ///       @Override
+     //       public void run() {
+          /*      TrainingModel.calculateTrainingWords(documentList2);
                 documentList2.forEach(e -> {
                     String predictedCategory = Classifier.getCategory(e.getContents());
                     e.setPredictedCategory(predictedCategory);
-                });
-            }
-        });
+                });*/
+      //      }
+     //   });
 
-        clusteringThread.start();
+       /* clusteringThread.start();
         classificationThread.start();
+        try {
+            clusteringThread.join();
+            classificationThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
 
         System.out.println("test");
 

@@ -33,6 +33,7 @@ public class Document implements Comparable<Document> {
         this.filePath = filePath;
     }
 
+
     //setters
     public void setVector(Vector vector) {
         this.vector = vector;
