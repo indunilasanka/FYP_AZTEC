@@ -89,7 +89,7 @@ public class WordFrequency {
         }
     }
 
-    private static <K, V extends Comparable<? super V>> HashMap<K, V> sortByValue(Map<K, V> map) {
+    public static <K, V extends Comparable<? super V>> HashMap<K, V> sortByValue(Map<K, V> map) {
         return map.entrySet()
                 .stream()
                 .sorted(Map.Entry.comparingByValue(Collections.reverseOrder()))

@@ -101,7 +101,7 @@ public class KMeanClusterer extends Clusterer {
         Cluster nearestCluster = clusterList.findNearestCluster(distance, document);
         nearestCluster.add(document);
         nearestCluster.updateCentroid();
-        return document.getCategory();
+        return document.getPredictedCategory();
     }
 
     public DocumentsList findCluster(DocumentsList documentList, ClustersList clusterList){
