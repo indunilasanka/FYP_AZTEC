@@ -8,6 +8,8 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.servlet.http.HttpServletRequest;
+
 import aztec.rbir_backend.classifier.Classify;
 import aztec.rbir_backend.globals.Global;
 import aztec.rbir_backend.indexer.Indexer;
@@ -15,8 +17,12 @@ import aztec.rbir_backend.logic.DocumentSeeker;
 import aztec.rbir_backend.logic.FileReaderFactory;
 import aztec.rbir_backend.queryprocess.Searcher;
 import aztec.rbir_rest2.models.Document;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -27,7 +33,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class DocumentController {
 
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    //@CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value = "/list", method = RequestMethod.POST)
     public
     @ResponseBody
@@ -55,7 +61,7 @@ public class DocumentController {
         return new ResponseEntity<Set<Document>>(response, HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    //@CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public
     @ResponseBody
@@ -100,4 +106,8 @@ public class DocumentController {
                 }
         return new ResponseEntity<String>(result, HttpStatus.OK);
     }
+    
+
+    
+    
 }

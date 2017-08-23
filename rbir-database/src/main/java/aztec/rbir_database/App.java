@@ -2,12 +2,8 @@ package aztec.rbir_database;
 
 import java.util.ArrayList;
 
-import org.hibernate.Session;
-
 import aztec.rbir_database.Entities.Document;
 import aztec.rbir_database.Entities.Keyword;
-import aztec.rbir_database.Entities.Stock;
-import aztec.rbir_database.configurations.HibernateUtil;
 import aztec.rbir_database.dataacess.Data;
 
 /**

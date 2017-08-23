@@ -14,8 +14,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-
-
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -26,8 +24,11 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+
+
 		</dependencies>
 	</dependencyManagement>
+
 	<dependencies>
 
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
@@ -96,11 +97,46 @@
 			<artifactId>elasticsearch</artifactId>
 			<version>5.4.0</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-jwt</artifactId>
+			<version>1.0.7.RELEASE</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.security.oauth/spring-security-oauth2 -->
+		<dependency>
+			<groupId>org.springframework.security.oauth</groupId>
+			<artifactId>spring-security-oauth2</artifactId>
+			<version>2.1.0.RELEASE</version>
+		</dependency>
+
 	</dependencies>
 
 	<modules>
 		<module>../rbir-database</module>
-		<module>../rbir-backend</module> 
+		<module>../rbir-backend</module>
 		<module>../rbir-rest2</module>
 	</modules>
+	
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.2</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+		</plugins>
+
+
+	</build>
 </project>

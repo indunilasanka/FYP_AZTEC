@@ -14,9 +14,11 @@
         <property name="show_sql">true</property>
         
         
-        <mapping class="aztec.rbir_database.Entities.Stock"></mapping>
         <mapping class="aztec.rbir_database.Entities.Document"></mapping>
         <mapping class="aztec.rbir_database.Entities.Keyword"></mapping>
         <mapping class="aztec.rbir_database.Entities.KeywordsInDocument"></mapping>
+        <mapping class="aztec.rbir_database.Entities.User"></mapping>
+        <mapping class="aztec.rbir_database.Entities.Role"></mapping>
+        <mapping class="aztec.rbir_database.Entities.UserRole"></mapping>
     </session-factory>
 </hibernate-configuration>
