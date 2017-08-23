@@ -1,6 +1,6 @@
-import {Component, ViewChild, Input, Output, EventEmitter, ElementRef, Renderer} from '@angular/core';
+import { Component, ViewChild, Input, Output, EventEmitter, ElementRef, Renderer } from '@angular/core';
 
-import {FileUploadService} from './fileUpload.service';
+import { FileUploadService } from './fileUpload.service';
 import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
 
 @Component({
@@ -22,9 +22,9 @@ export class FileUploader {
 
   data: Object = null;
   fileName: string = '';
-  file: File = null;
   popupTitle: String = '';
   popupMessage: String = '';
+  fileList: File[] = null;
 
   public uploadFileInProgress: boolean;
 
@@ -33,45 +33,59 @@ export class FileUploader {
   }
 
   bringFileSelector(): boolean {
-    console.log("bringFileSelector()");
     this.renderer.invokeElementMethod(this._fileUpload.nativeElement, 'click');
     return false;
   }
 
   beforeFileUpload($event) {
-    console.log("fileChange($event)");
-    let files = this._fileUpload.nativeElement.files;
+    const files = this._fileUpload.nativeElement.files;
+    this.fileList = [];
     if (files.length) {
-      this.file = files[0];
-      this.fileName = this.file.name;
-      console.log("file name is   ", this.fileName);
+      const fileCount = files.length;
+      if (fileCount > 0) {
+
+        const firstFile: File = files[0];
+        this.fileName = firstFile.webkitRelativePath;
+        const fileNamepart: string[] = this.fileName.split('/');
+        this.fileName = fileNamepart[0];
+
+        for (let i = 0; i < fileCount; i++) {
+          const fielType: String = files.item(i).type;
+          if (fielType.includes('pdf') || fielType.includes('officedocument.word')) {
+            this.fileList.push(files.item(i));
+          }
+
+          // console.log(fielType);
+        }
+      }
     }
   }
 
+
+  removeDocument(document: File) {
+    this.fileList = this.fileList.filter(item => item !== document);
+  }
+
   startFileupload() {
-    if (this.file) {
-      this.fileUploadService.uploadFiles(this.file).subscribe(
+
+    if (this.fileList) {
+      this.fileUploadService.uploadFolder(this.fileList).subscribe(
+
+
         data => {
           this.data = data;
-          console.log('data is : ' + this.data);
-          if (this.data.toString() === 'success' ) {
+          if (this.data.toString() === 'success') {
             this.popUp('Success', 'File Successfully Indexed!');
-          }
-          else if(this.data.toString() === "Invalid File Type")
-            this.popUp( 'Fail', 'Invalid File Type!');
-          else {
-            this.popUp( 'Fail', 'File Indexing Failed!');
+          } else {
+            this.popUp('Fail', 'File Indexing Failed!');
           }
         },
         error => {
-          console.log('error ' + error.toString());
           this.data = error.toString();
           this.popUp('Fail', this.data.toString());
         },
       );
-    } else {
-      console.log("please insert file");
-      this.popUp('Fail', 'Please Insert File');
+
     }
   }
 

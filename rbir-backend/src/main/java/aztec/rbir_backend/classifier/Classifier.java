@@ -5,6 +5,7 @@ package aztec.rbir_backend.classifier;
  */
 import java.io.*;
 
+import aztec.rbir_backend.indexer.Terms;
 import com.google.common.io.Resources;
 import weka.classifiers.meta.FilteredClassifier;
 import weka.core.*;
@@ -22,21 +23,20 @@ public class Classifier {
     FilteredClassifier classifier;
 
 
-    public void load(String filePath) {
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(filePath));
-            String line;
-            text = "";
-            while ((line = reader.readLine()) != null) {
-                text = text + " " + line;
-            }
-            System.out
-                    .println("===== Loaded text data: " + filePath + " =====");
-            reader.close();
-            System.out.println(text);
-        } catch (IOException e) {
-            System.out.println("Problem found when reading: " + filePath);
-        }
+    public void load(String content) {
+
+        /*BufferedReader reader = new BufferedReader(new FileReader(filePath));
+        String line;
+        text = "";
+        while ((line = reader.readLine()) != null) {
+            text = text + " " + line;
+        }*/
+        text = Terms.getTerms(content);
+        System.out
+                .println("===== Loaded text data: " + content + " =====");
+       // reader.close();
+        System.out.println(text);
+
     }
 
     /**
@@ -67,9 +67,11 @@ public class Classifier {
     public void makeInstance() {
         // Create the attributes, class and text
         FastVector fvNominalVal = new FastVector(2);
-        fvNominalVal.addElement("personal");
-        fvNominalVal.addElement("security");
-        fvNominalVal.addElement("financial");
+        fvNominalVal.addElement("Critical-Sensitive");
+        fvNominalVal.addElement("High-Sensitive");
+        fvNominalVal.addElement("Medium-Sensitive");
+        fvNominalVal.addElement("Low-Sensitive");
+        fvNominalVal.addElement("Non-Sensitive");
         Attribute attribute1 = new Attribute("class", fvNominalVal);
         Attribute attribute2 = new Attribute("text", (FastVector) null);
         // Create list of instances with one element
@@ -107,7 +109,7 @@ public class Classifier {
         }
     }
 
-    public static String getCategory(String filePath) {
+    public static String getCategory(String content) {
 
         Classifier classifier;
 
@@ -115,7 +117,7 @@ public class Classifier {
         String dataModel = "/myClassifier.dat";
         System.out.println(dataModel);
         classifier = new Classifier();
-        classifier.load(filePath);
+        classifier.load(content);
         classifier.loadModel(dataModel);
         classifier.makeInstance();
         return classifier.classify();

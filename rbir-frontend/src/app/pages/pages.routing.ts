@@ -27,9 +27,10 @@ export const routes: Routes = [
       { path: 'forms', loadChildren: './forms/forms.module#FormsModule' },
       { path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
       { path: 'maps', loadChildren: './maps/maps.module#MapsModule' },
-      { path: 'document', loadChildren: './document/document.module#DocumentModule'}
-    ]
-  }
+      { path: 'document', loadChildren: './document/document.module#DocumentModule'},
+      { path: 'initial-config', loadChildren: './initialConfig/initialConfig.module#InitialConfigModule' },
+    ],
+  },
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forChild(routes);
