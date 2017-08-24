@@ -16,12 +16,14 @@ export class FileUploader {
   // @Output() onFileUpload = new EventEmitter<any>();
   @Output() onFileUploadCompleted = new EventEmitter<any>();
   @Input() defaultValue: string = '';
-  @Input() selectedSLvl: string = null;
 
   @ViewChild('fileUpload') public _fileUpload: ElementRef;
   @ViewChild('inputText') public _inputText: ElementRef;
   @ViewChild('modal') public _model: ElementRef;
 
+  numberOfLevel: number;
+  securityLvls: string[];
+  selectedLvl: string;
   data: Object = null;
   fileName: string = '';
   popupTitle: String = '';
@@ -29,10 +31,20 @@ export class FileUploader {
   documents: DocumentModel[] = [];
   fileList: File[] = null;
 
-  public uploadFileInProgress: boolean;
+  uploadFileInProgress: boolean;
 
-  constructor(private renderer: Renderer, private fileUploadService: FileUploadService) {
-    // constructor(private renderer: Renderer) {
+  constructor(private renderer: Renderer, private fileUploadService: FileUploadService) { }
+
+  setSecurityLevel(numberOfLevels: number) {
+    this.numberOfLevel = numberOfLevels;
+    this.securityLvls = [];
+    for (let i = 1; i <= this.numberOfLevel; i++) {
+      this.securityLvls.push('Security Level ' + i);
+    } this.selectedLvl = 'Security Level 1';
+  }
+
+  setSelectedLvl(lvl: string) {
+    this.selectedLvl = lvl;
   }
 
   bringFileSelector(): boolean {
@@ -43,7 +55,6 @@ export class FileUploader {
 
   beforeFileUpload($event) {
     const files = this._fileUpload.nativeElement.files;
-    console.log("selectted level -------------------->", this.selectedSLvl);
     if (files.length) {
       const fileCount = files.length;
       if (fileCount > 0) {
@@ -57,9 +68,8 @@ export class FileUploader {
           const fielType: String = files.item(i).type;
           if (fielType.includes('pdf') || fielType.includes('officedocument.word')) {
             const document: DocumentModel = new DocumentModel();
-            document.securityLevel = this.selectedSLvl;
+            document.securityLevel = this.selectedLvl;
             document.file = files.item(i);
-            console.log(i, files.item(i).name, document.securityLevel);
             this.documents.push(document);
           }
           // console.log(fielType);
