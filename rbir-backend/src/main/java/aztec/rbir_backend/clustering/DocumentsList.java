@@ -1,19 +1,13 @@
 package aztec.rbir_backend.clustering;
 
-import aztec.rbir_backend.indexer.Terms;
-import aztec.rbir_backend.logic.FileReaderFactory;
-import org.springframework.web.multipart.MultipartFile;
 
+import aztec.rbir_backend.indexer.Terms;
+import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Paths;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.StringTokenizer;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Created by subhahs on 03/08/2017.
@@ -53,6 +47,10 @@ public class DocumentsList extends ArrayList<Document> {
         }
     }
 
+    public DocumentsList(){
+        super();
+    }
+
 
 
     /**
@@ -61,7 +59,7 @@ public class DocumentsList extends ArrayList<Document> {
     public void clearIsAllocated() {
         for (Document document : this) {
             document.clearIsAllocated();
-            document.setCategory(null);
+            //document.setCategory(null);
         }
     }
 

@@ -154,7 +154,7 @@ public class Learner {
                 {
                     System.out.println(str);
                     keys_set.add(str);
-                    writer.append("\nLow-Sensitive,"+"'"+str+"'");
+                    writer.append(str);
                     writer.flush();
                 }
             }

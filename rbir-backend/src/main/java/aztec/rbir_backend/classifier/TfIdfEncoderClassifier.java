@@ -1,7 +1,13 @@
 package aztec.rbir_backend.classifier;
 
-
 import aztec.rbir_backend.clustering.*;
+import aztec.rbir_backend.clustering.Vector;
+import aztec.rbir_backend.logic.WordFrequency;
+
+import java.util.*;
+
+import static com.google.common.primitives.Ints.min;
+import org.apache.commons.lang.math.NumberUtils;
 
 /**
  * Created by subhahs on 03/08/2017.
@@ -14,56 +20,47 @@ public class TfIdfEncoderClassifier {
     private final int numFeatures;
     // inverse document frequency used for normalization of feature vectors
     private Vector inverseDocumentFrequency = null;
-    String [][] TermFrequencyArray = null;
+
     public TfIdfEncoderClassifier(int numFeatures)
     {
         this.numFeatures = numFeatures;
     }
 
+    private HashMap<Integer, ArrayList<String>> termFrequencyMap;
+    private HashMap<Integer, Double> tfMap;
+    private HashMap<Integer, Double> idfMap;
+
     // Calculate word histogram for document
-    public String [][]  calcHistogram(Document document) {
+    public void calcHistogram(Document document) {
 
         String[] words = document.getContents().split("[^\\w]+");
         Vector histogram = new Vector(numFeatures);
 
-        if(document.getId()!=0)
-        {
-            for (int i = 0; i < words.length; i++) {
+        termFrequencyMap = new HashMap<Integer, ArrayList<String>>();
+        //termFrequencyMap = WordFrequency.getMostFrequentWords(document.getContents());
+
+
+        for (int i = 0; i < words.length; i++) {
                 int hashCode = hashWord(words[i]);
                 histogram.increment(hashCode);
-            }
-        }
-        else
-        {
-            TermFrequencyArray = new String [numFeatures][3];
-            for (int i = 0; i < words.length; i++) {
-                int hashCode = hashWord(words[i]);
-                TermFrequencyArray[hashCode][0] = words[i];
-                histogram.increment(hashCode);
-            }
-            for(int n = 0; n < numFeatures; n++)
-            {
-                TermFrequencyArray[n][1] = String.valueOf(histogram.get(n));
-            }
         }
 
-        // histogram.logFrequency();
+        histogram.logFrequency();
         document.setHistogram(histogram);
-        return TermFrequencyArray;
     }
 
     //calculate histogram for all documents
-    private String [][]  calcHistogram(DocumentsList documentList) {
-        String wholeContent = "";
+    private Vector calcHistogram(ArrayList<Document>  documentList) {
+        Vector wholeHistogram = new Vector(numFeatures);
         for (Document document : documentList) {
-            wholeContent = wholeContent + document.getContents();
-            calcHistogram(document);
+            Vector vector = document.getHistogram();
+            wholeHistogram.plus(vector);
         }
-        return calcHistogram(new Document(0,"whole_document",wholeContent,"", ""));
+        return wholeHistogram;
     }
 
     //calculate IDF
-    private String[][] calcInverseDocumentFrequency(DocumentsList documentList, String[][] termDocFrequencyArray) {
+    private Vector calcInverseDocumentFrequency(ArrayList<Document>  documentList) {
 
         inverseDocumentFrequency = new Vector(numFeatures);
         for (Document document : documentList) {
@@ -78,11 +75,7 @@ public class TfIdfEncoderClassifier {
         inverseDocumentFrequency.multiply(documentList.size());
         inverseDocumentFrequency.log();
 
-        for(int n = 0; n < numFeatures; n++)
-        {
-            termDocFrequencyArray[n][2] = String.valueOf(inverseDocumentFrequency.get(n));
-        }
-        return termDocFrequencyArray;
+        return inverseDocumentFrequency;
     }
 
     //encode document with TF-IDF
@@ -109,14 +102,93 @@ public class TfIdfEncoderClassifier {
     }
 
     //encode all documents
-    public String [][] encode(DocumentsList documentList) {
-        String [][] termDocFrequencyArray = null;
-        termDocFrequencyArray = calcHistogram(documentList);
-        termDocFrequencyArray = calcInverseDocumentFrequency(documentList,termDocFrequencyArray);
-        for (Document document : documentList) {
-            encode(document);
+    public ArrayList<String> encode(ArrayList<Document>  documentList) {
+
+        Vector wholeHistogram = null;
+        Vector inverseDocumentFrequency = null;
+        tfMap = new HashMap<Integer, Double>();
+        idfMap = new HashMap<Integer, Double>();
+        ArrayList<String> finalWordList  = new ArrayList<String>();
+
+        for (Document document: documentList){
+            calcHistogram(document);
         }
-        return termDocFrequencyArray;
+
+        for (Document document: documentList)
+        {
+            String[] words = document.getContents().split("[^\\w]+");
+
+            for (int i = 0; i < words.length; i++) {
+                int hashCode = hashWord(words[i]);
+
+                if(termFrequencyMap.get(hashCode) == null){
+                    ArrayList<String> tokens = new ArrayList<String>();
+                    tokens.add(words[i]);
+                    termFrequencyMap.put(hashCode, tokens);
+                }
+                else {
+                    termFrequencyMap.get(hashCode).add(words[i]);
+                }
+
+            }
+        }
+
+        wholeHistogram = calcHistogram(documentList);
+        inverseDocumentFrequency = calcInverseDocumentFrequency(documentList);
+
+        for(int i=0; i< min(wholeHistogram.length(),inverseDocumentFrequency.length()); i++)
+        {
+            if(wholeHistogram.get(i) != 0.0) {
+                tfMap.put(i, wholeHistogram.get(i));
+                idfMap.put(i, inverseDocumentFrequency.get(i));
+            }
+        }
+
+
+        ArrayList<String> tokens = new ArrayList<String>();
+        Set<String> tokenSet;
+
+        tfMap = WordFrequency.sortByValue(tfMap);
+        for ( int key : tfMap.keySet() ) {
+            tokens = termFrequencyMap.get(key);
+            tokenSet = new HashSet<>();
+            tokenSet.addAll(tokens);
+
+            for(String token : tokenSet)
+            {
+                if((!finalWordList.contains(token))&(!NumberUtils.isNumber(token))&(token.length() != 1))
+                {
+                    finalWordList.add(token);
+                }
+            }
+
+            if(finalWordList.size() >= (documentList.size()*5))
+            {
+                break;
+            }
+        }
+
+
+        idfMap = WordFrequency.sortByValue(idfMap);
+        for ( int key : idfMap.keySet() ) {
+            tokens = termFrequencyMap.get(key);
+            tokenSet = new HashSet<>();
+            tokenSet.addAll(tokens);
+
+            for(String token : tokenSet)
+            {
+                if((!finalWordList.contains(token))&(!NumberUtils.isNumber(token))&(token.length() != 1))
+                {
+                    finalWordList.add(token);
+                }
+            }
+
+            if(finalWordList.size() >= (documentList.size()*10))
+            {
+                break;
+            }
+        }
+        return finalWordList;
     }
 
 }
