@@ -8,7 +8,7 @@
 
 <div class="form-group">
   <label> Select Security Level </label>
-  <select #lvlSelect class="form-control" (click)="selectSecurityLvl(lvlSelect.value)">
+  <select #lvlSelect class="form-control" (click)="setSelectedLvl(lvlSelect.value)">
     <option  [value]="levl" *ngFor = "let levl of securityLvls;"  >{{levl}}</option>
   </select>
 </div>
