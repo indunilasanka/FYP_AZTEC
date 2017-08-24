@@ -3,23 +3,7 @@
   <div class="col-xlg-3 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
 
     <ba-card title="File Uploader" baCardClass="large-card">
-      
-      <label>Enter Number of Security Levels</label>
-      <div class="input-group">
-        <input #numberOfLevels type="text" class="form-control">
-        <span class="input-group-btn">
-          <button class="btn btn-success btn-raised" type="button" (click)="setSecurityLevel(numberOfLevels.value);">OK</button>
-        </span>
-      </div>
-
-      <div class="form-group">
-        <label for="exampleSelect1">Select Security Level</label>
-        <select #lvlSelect class="form-control" (click)="selectSecurityLvl(lvlSelect.value)">
-          <option  [value]="levl" *ngFor = "let levl of securityLvl;"  >{{levl}}</option>
-        </select>
-      </div>
-
-      <file-uploader-com [selectedSLvl]="selectLvl"></file-uploader-com>
+      <file-uploader-com></file-uploader-com>
 
     </ba-card>
   </div>
