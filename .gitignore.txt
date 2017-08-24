@@ -1,4 +1,5 @@
 /.idea
+/.vscode
 /rbir-backend/.idea
 /rbir-backend/rbir-backend.iml
 /rbir-backend/.settings
