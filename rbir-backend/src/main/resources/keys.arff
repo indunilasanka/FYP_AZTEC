@@ -1,6 +1,6 @@
 @relation sms_test
 
-@attribute spamclass {Critical-Sensitive,High-Sensitive,Medium-Sensitive,Low-Sensitive,Non-Sensitive}
+@attribute spamclass {Security_Level_1,Security_Level_2,Security_Level_3,Security_Level_4,Security_Level_5}
 @attribute text String
 
 @data
