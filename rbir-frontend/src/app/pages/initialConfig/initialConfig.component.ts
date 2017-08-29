@@ -18,17 +18,5 @@ export class InitialConfig {
   };
 
   constructor() {
-  }
-
-  setSecurityLevel(numberOfLevels: number) {
-    this.numberOfLevel = numberOfLevels;
-    this.securityLvl = [];
-    for (let i = 1; i <= this.numberOfLevel; i++) {
-      this.securityLvl.push('Security Level ' + i);
-    }
-  }
-
-  selectSecurityLvl(lvl: String) {
-    this.selectLvl = lvl;
-  }
+  } 
 }
