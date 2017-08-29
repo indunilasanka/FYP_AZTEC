@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
 import aztec.rbir_database.Entities.User;
+import aztec.rbir_database.Entities.UserRole;
 import aztec.rbir_database.service.UserDataService;
 
 @Component
@@ -22,13 +23,15 @@ public class UserService implements UserDetailsService {
 		User user = UserDataService.retrieveFromUserName(arg0);
 		
 		List<GrantedAuthority> authorities = new ArrayList<>();
+
+		//long userId = user.getUserId();
 		
+		List<UserRole> userRoles = UserDataService.getAllUserRoles(user);
 		
-		authorities.add(new SimpleGrantedAuthority("NORMAL_USER"));
-		
-		
-		
-		
+		for(UserRole userRole:userRoles){
+			authorities.add(new SimpleGrantedAuthority(userRole.getRole().getRoleName()));
+		}
+
 		UserDetails userDetails = new org.springframework.security.core.userdetails.
                 User(user.getUsername(),user.getPassword(), authorities);
 		

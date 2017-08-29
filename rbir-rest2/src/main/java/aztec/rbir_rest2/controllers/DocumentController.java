@@ -8,25 +8,18 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-<<<<<<< HEAD
+
 import javax.servlet.http.HttpServletRequest;
 
 import aztec.rbir_backend.classifier.Classify;
-=======
 import aztec.rbir_rest2.models.*;
 import aztec.rbir_backend.classifier.*;
 import aztec.rbir_backend.clustering.*;
->>>>>>> b1891e193f451fc89a6db5f7ae199e5f04f44e00
 import aztec.rbir_backend.globals.Global;
 import aztec.rbir_backend.logic.FileReaderFactory;
 import aztec.rbir_backend.queryprocess.Searcher;
-<<<<<<< HEAD
-import aztec.rbir_rest2.models.Document;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
-
-=======
->>>>>>> b1891e193f451fc89a6db5f7ae199e5f04f44e00
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -39,12 +32,8 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/documents")
 public class DocumentController {
 
-<<<<<<< HEAD
 
-    //@CrossOrigin(origins = "http://localhost:4200")
-=======
     @CrossOrigin(origins = "http://localhost:4200")
->>>>>>> b1891e193f451fc89a6db5f7ae199e5f04f44e00
     @RequestMapping(value = "/list", method = RequestMethod.POST)
     public
     @ResponseBody
@@ -117,12 +106,7 @@ public class DocumentController {
                 }
         return new ResponseEntity<String>(result, HttpStatus.OK);
     }
-<<<<<<< HEAD
-    
 
-    
-    
-=======
 
 
     @CrossOrigin(origins = "http://localhost:4200")
@@ -177,5 +161,5 @@ public class DocumentController {
 
         return new ResponseEntity<String>("success", HttpStatus.OK);
     }
->>>>>>> b1891e193f451fc89a6db5f7ae199e5f04f44e00
+
 }
