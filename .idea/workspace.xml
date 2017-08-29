@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2063dfd8-8076-4440-a978-83fb969036f8" name="Default" comment="Add new libraries, &#10;Change the backend with facilitating elastic search&#10;Change .ignore file">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/rbir-backend/rbir-backend.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/rbir-backend/src/main/resources/file.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/rbir-database/rbir-database.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/rbir-parent/rbir-parent.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/rbir-rest2/rbir-rest2.iml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/DocumentsList.java" afterPath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/DocumentsList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-backend/src/main/resources/keys.arff" afterPath="$PROJECT_DIR$/rbir-backend/src/main/resources/keys.arff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/fileUpload.service.ts" afterPath="$PROJECT_DIR$/rbir-frontend/src/app/pages/dashboard/fileUploader/fileUpload.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java" afterPath="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/rbir-backend/target/" />
     <ignored path="$PROJECT_DIR$/rbir-database/target/" />
@@ -781,12 +772,12 @@
       <workItem from="1503586788003" duration="839000" />
       <workItem from="1503587646416" duration="15000" />
       <workItem from="1503587795242" duration="1204000" />
-      <workItem from="1504013435139" duration="1081000" />
+      <workItem from="1504013435139" duration="1124000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47091000" />
+    <option name="totallyTimeSpent" value="47134000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
