@@ -47,9 +47,9 @@ public class TrainingModel {
             finalWordList.replaceAll(word -> "\n"+category+","+"'"+word+"'");
             writeToArffFile(finalWordList);
         }
-
+        System.out.println("asdfghjkl");
         learner.trainModel();
-
+        System.out.println("asdfghjk");
         try {
             write(keys_set);
 

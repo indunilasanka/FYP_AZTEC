@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/rbir-backend/rbir-backend.iml" filepath="$PROJECT_DIR$/rbir-backend/rbir-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rbir-database/rbir-database.iml" filepath="$PROJECT_DIR$/rbir-database/rbir-database.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rbir-parent/rbir-parent.iml" filepath="$PROJECT_DIR$/rbir-parent/rbir-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rbir-rest2/rbir-rest2.iml" filepath="$PROJECT_DIR$/rbir-rest2/rbir-rest2.iml" />
+    </modules>
+  </component>
+</project>
