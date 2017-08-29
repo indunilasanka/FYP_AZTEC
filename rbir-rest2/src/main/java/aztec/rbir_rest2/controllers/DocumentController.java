@@ -8,14 +8,21 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+
+import javax.servlet.http.HttpServletRequest;
+
+import aztec.rbir_backend.classifier.Classify;
 import aztec.rbir_rest2.models.*;
 import aztec.rbir_backend.classifier.*;
 import aztec.rbir_backend.clustering.*;
 import aztec.rbir_backend.globals.Global;
 import aztec.rbir_backend.logic.FileReaderFactory;
 import aztec.rbir_backend.queryprocess.Searcher;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,6 +31,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequestMapping("/documents")
 public class DocumentController {
+
 
     @CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value = "/list", method = RequestMethod.POST)
@@ -53,51 +61,24 @@ public class DocumentController {
         return new ResponseEntity<Set<DocumentModel>>(response, HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    //@CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public
     @ResponseBody
-    ResponseEntity<String> handleFileUpload(@RequestParam("file") MultipartFile file) {
-                String fullfilename = file.getOriginalFilename();
-                String filename = fullfilename.substring(fullfilename.lastIndexOf('\\')+1,fullfilename.lastIndexOf('.'));
-                String fileextention = fullfilename.substring(fullfilename.lastIndexOf('.')+1);
-                System.out.println(filename);
-                System.out.println(fileextention);
-                String result = null;
-                if (!file.isEmpty()) {
-                    try {
-                        System.out.println(file.getOriginalFilename());
-                        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                        Date date = new Date();
-                        String newFileName = filename+"_"+dateFormat.format(date)+"."+fileextention;
-                        System.out.println(newFileName);
-                        File newFile = new File("E://project/"+newFileName);
-                        if(!newFile.exists()) {
-                            file.transferTo(newFile);
-                            System.out.println(newFile.getAbsolutePath());
+    ResponseEntity<String> handleFileUpload(@RequestParam("file") ArrayList<MultipartFile> files) {
 
-                            //result = Indexer.indexFile(newFile.getPath());
-                            Classify.classify(newFile.getPath());
-                            new Thread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    Global.writeToFile();
-                                    System.out.println("wrote to file");
-                                }
-                            }).start();
+        String result = null;
+        DocumentsList documentList = new DocumentsList(files);
+        documentList.forEach(e -> {
+            String predictedCategory = Classifier.getCategory(e.getContents());
+            e.setPredictedCategory(predictedCategory);
+        });
 
-                        }
-                        else
-                            result = "File already exist";
+        System.out.println("test");
 
-                    } catch (Exception e) {
-                        result = "fail";
-                    }
-                } else {
-                    result = "fail";
-                }
         return new ResponseEntity<String>(result, HttpStatus.OK);
     }
+
 
 
     @CrossOrigin(origins = "http://localhost:4200")
@@ -152,4 +133,5 @@ public class DocumentController {
 
         return new ResponseEntity<String>("success", HttpStatus.OK);
     }
+
 }
