@@ -53,7 +53,7 @@
 		<dependency>
 			<groupId>com.auth0</groupId>
 			<artifactId>mvc-auth-commons</artifactId>
-			<version>1.0.0</version>
+			<version>LATEST</version>
 		</dependency>
 
 
@@ -69,7 +69,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.6.2</version>
+				<version>LATEST</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>

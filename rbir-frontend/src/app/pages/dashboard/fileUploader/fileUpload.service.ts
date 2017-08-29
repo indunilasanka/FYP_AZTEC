@@ -57,7 +57,7 @@ export class FileUploadService {
     if (fileCount > 0) {
       files.forEach(element => {
         console.log(element.size);
-        formData.append('file', element.file, element.name);
+        formData.append('file', element, element.name);
       });
 
       const headers = new Headers();
