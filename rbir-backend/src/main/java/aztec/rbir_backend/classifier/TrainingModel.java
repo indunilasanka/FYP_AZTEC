@@ -48,9 +48,11 @@ public class TrainingModel {
             writeToArffFile(finalWordList);
         }
 
+        learner.trainModel();
+
         try {
             write(keys_set);
-            learner.trainModel();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -58,7 +60,6 @@ public class TrainingModel {
 
     public static void writeToArffFile(ArrayList<String> dataSet)  {
 
-        //InitialProcess();
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter("rbir-backend/src/main/resources/keys.arff",true));

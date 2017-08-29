@@ -112,6 +112,7 @@ public class TfIdfEncoderClassifier {
 
         for (Document document: documentList){
             calcHistogram(document);
+            System.out.println(document.getContents());
         }
 
         for (Document document: documentList)
