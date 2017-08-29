@@ -57,7 +57,7 @@ export class FileUploadService {
     if (fileCount > 0) {
       files.forEach(element => {
         console.log(element.size);
-        formData.append('file', element, element.name);
+        formData.append('file', element.file, element.name);
       });
 
       const headers = new Headers();
@@ -65,7 +65,7 @@ export class FileUploadService {
       headers.append('Accept', 'application/json');
       headers.append('Access-Control-Allow-Origin', '*');
 
-      return this.http.post(this.baseUrl + '/uploadFolder', formData, { headers: this.getHeaders() })
+      return this.http.post(this.baseUrl + '/upload', formData, { headers: this.getHeaders() })
         .map(response => response.text())
         .catch(this.handleError);
     }
