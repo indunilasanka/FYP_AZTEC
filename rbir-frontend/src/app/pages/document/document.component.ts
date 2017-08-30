@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {DocumentModel} from '../../models/document.model';
-
-import {DocumentService} from './document.service';
+import { Component, Input } from '@angular/core';
+import { DocumentModel } from '../../models/document.model';
+import { RequestModel } from '../../models/request.model';
+import { DocumentService } from './document.service';
 
 @Component({
   selector: 'document',
@@ -15,6 +15,8 @@ export class Document {
   searchResults : Array<DocumentModel>;
   doc1 : DocumentModel;
   doc2 : DocumentModel;
+  request: RequestModel = null;
+  quary: string = '';
 
   constructor(private documentServece: DocumentService) {
   }
@@ -46,7 +48,11 @@ export class Document {
       this.searchResults.push(doc);
     }
     console.log(this.data);
+  }
 
-
+  someMethod(event: RequestModel) {
+    this.request = event;
+    this.quary = this.request.content;
+    console.log("parent clicked",event);
   }
 }
