@@ -47,6 +47,34 @@ public class DocumentsList extends ArrayList<Document> {
         }
     }
 
+    public DocumentsList(ArrayList<MultipartFile> files) {
+
+        for (int i=0; i<files.size(); i++){
+            String fullfilename = files.get(i).getOriginalFilename();
+            String filename = fullfilename.substring(fullfilename.lastIndexOf('/')+1,fullfilename.lastIndexOf('.'));
+            String fileextention = fullfilename.substring(fullfilename.lastIndexOf('.')+1);
+            System.out.println(fullfilename);
+
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            Date date = new Date();
+            String newFileName = filename+"_"+dateFormat.format(date)+"."+fileextention;
+            System.out.println(newFileName);
+
+            File newFile = new File("E://FYPSavingFolder/" + newFileName);
+            System.out.println(newFile.getAbsolutePath());
+            try {
+                files.get(i).transferTo(newFile);
+                long documentID = i;
+                String title = newFile.getName();
+                String contents = Terms.getTerms(newFile.getAbsolutePath());
+                String filePath = newFile.getAbsolutePath();
+                add(new Document(documentID, title, contents,null, filePath));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public DocumentsList(){
         super();
     }
