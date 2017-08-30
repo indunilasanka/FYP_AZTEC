@@ -99,23 +99,23 @@ public class DocumentController {
        // Thread clusteringThread = new Thread(new Runnable() {
       //      @Override
        //     public void run() {
-           /*     Encoder encoder = new TfIdfEncoder(10000);
+               Encoder encoder = new TfIdfEncoder(10000);
                 encoder.encode(documentList1);
                 Distance distance = new CosineDistance();
-                Clusterer clusterer = new KMeanClusterer(distance, 0.5, 600);
+                Clusterer clusterer = new KMeanClusterer(distance, 0.5, 1000);
                 ClustersList clusterList = clusterer.cluster(documentList1,2);
-                System.out.println(clusterList.toString());*/
+                System.out.println(clusterList.toString());
        //     }
      //   });
 
      //   Thread classificationThread = new Thread(new Runnable() {
      ///       @Override
      //       public void run() {
-               TrainingModel.calculateTrainingWords(documentList2);
+       /*        TrainingModel.calculateTrainingWords(documentList2);
                 documentList2.forEach(e -> {
                     String predictedCategory = Classifier.getCategory(e.getContents());
                     e.setPredictedCategory(predictedCategory);
-                });
+                });*/
       //      }
      //   });
 
