@@ -49,12 +49,7 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.auth0/mvc-auth-commons -->
-		<dependency>
-			<groupId>com.auth0</groupId>
-			<artifactId>mvc-auth-commons</artifactId>
-			<version>LATEST</version>
-		</dependency>
+
 
 
 
