@@ -22,9 +22,6 @@ public class SpringBootWebApplication {
 	
     @SuppressWarnings("unchecked")
 	public static void main(String[] args) {
-        //Global global = new Global();
-        Learner learner = new Learner();
-        learner.trainModel();
         
         Session session = HibernateUtil.getSessionFactory().openSession();
         
@@ -59,9 +56,6 @@ public class SpringBootWebApplication {
 			e.printStackTrace();
 			session.getTransaction().rollback();
 		}
-        
-        
-        
 
         SpringApplication.run(SpringBootWebApplication.class, args);
     }

@@ -61,7 +61,7 @@ public class DocumentController {
         return new ResponseEntity<Set<DocumentModel>>(response, HttpStatus.OK);
     }
 
-    //@CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public
     @ResponseBody
