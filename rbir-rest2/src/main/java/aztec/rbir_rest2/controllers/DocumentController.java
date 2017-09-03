@@ -61,49 +61,21 @@ public class DocumentController {
         return new ResponseEntity<Set<DocumentModel>>(response, HttpStatus.OK);
     }
 
-    //@CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public
     @ResponseBody
-    ResponseEntity<String> handleFileUpload(@RequestParam("file") MultipartFile file) {
-                String fullfilename = file.getOriginalFilename();
-                String filename = fullfilename.substring(fullfilename.lastIndexOf('\\')+1,fullfilename.lastIndexOf('.'));
-                String fileextention = fullfilename.substring(fullfilename.lastIndexOf('.')+1);
-                System.out.println(filename);
-                System.out.println(fileextention);
-                String result = null;
-                if (!file.isEmpty()) {
-                    try {
-                        System.out.println(file.getOriginalFilename());
-                        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                        Date date = new Date();
-                        String newFileName = filename+"_"+dateFormat.format(date)+"."+fileextention;
-                        System.out.println(newFileName);
-                        File newFile = new File("E://project/"+newFileName);
-                        if(!newFile.exists()) {
-                            file.transferTo(newFile);
-                            System.out.println(newFile.getAbsolutePath());
+    ResponseEntity<String> handleFileUpload(@RequestParam("file") ArrayList<MultipartFile> files) {
 
-                            //result = Indexer.indexFile(newFile.getPath());
-                            Classify.classify(newFile.getPath());
-                            new Thread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    Global.writeToFile();
-                                    System.out.println("wrote to file");
-                                }
-                            }).start();
+        String result = null;
+        DocumentsList documentList = new DocumentsList(files);
+        documentList.forEach(e -> {
+            String predictedCategory = Classifier.getCategory(e.getContents());
+            e.setPredictedCategory(predictedCategory);
+        });
 
-                        }
-                        else
-                            result = "File already exist";
+        System.out.println("test");
 
-                    } catch (Exception e) {
-                        result = "fail";
-                    }
-                } else {
-                    result = "fail";
-                }
         return new ResponseEntity<String>(result, HttpStatus.OK);
     }
 
@@ -127,23 +99,23 @@ public class DocumentController {
        // Thread clusteringThread = new Thread(new Runnable() {
       //      @Override
        //     public void run() {
-           /*     Encoder encoder = new TfIdfEncoder(10000);
+               Encoder encoder = new TfIdfEncoder(10000);
                 encoder.encode(documentList1);
                 Distance distance = new CosineDistance();
-                Clusterer clusterer = new KMeanClusterer(distance, 0.5, 600);
+                Clusterer clusterer = new KMeanClusterer(distance, 0.5, 1000);
                 ClustersList clusterList = clusterer.cluster(documentList1,2);
-                System.out.println(clusterList.toString());*/
+                System.out.println(clusterList.toString());
        //     }
      //   });
 
      //   Thread classificationThread = new Thread(new Runnable() {
      ///       @Override
      //       public void run() {
-               TrainingModel.calculateTrainingWords(documentList2);
+       /*        TrainingModel.calculateTrainingWords(documentList2);
                 documentList2.forEach(e -> {
                     String predictedCategory = Classifier.getCategory(e.getContents());
                     e.setPredictedCategory(predictedCategory);
-                });
+                });*/
       //      }
      //   });
 

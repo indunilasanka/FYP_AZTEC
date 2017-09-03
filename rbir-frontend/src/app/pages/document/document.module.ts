@@ -4,25 +4,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgaModule } from '../../theme/nga.module';
-
 import { routing } from './document.routing';
 import { Document } from './document.component';
-import { DocumentService } from './document.service'
-import {SearchResult} from './searchResult/searchResult.component'
+import { DocumentService } from './document.service';
+import {SearchResult} from './searchResult/searchResult.component';
+import {Request} from './request/request.component';
+import {RequestService} from './request/request.service';
+
 
 @NgModule({
   imports: [
     CommonModule,
     NgaModule,
-    routing
+    routing,
   ],
   declarations: [
     Document,
-    SearchResult
+    SearchResult,
+    Request,
   ],
   providers: [
-    DocumentService
-  ]
+    DocumentService,
+    RequestService,
+  ],
 
 })
 export class DocumentModule {

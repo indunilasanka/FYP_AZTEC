@@ -1,0 +1,40 @@
+<div class="feed-messages-container">
+  <div class="feed-message" *ngFor="let message of requests" (click)="expandMessage(message)">
+    <div class="message-icon">
+      <img *ngIf="!message.user.profPic" class="photo-icon" src="{{ ( 'avatar' | baProfilePicture ) }}">
+    </div>
+    <!--<div class="message-icon" *ngIf="message.type != 'text-message'">-->
+    <!--<img class="photo-icon" src="{{ ( message.author | baProfilePicture ) }}">-->
+    <!--<span class="sub-photo-icon" [ngClass]="message.type"></span>-->
+    <!--</div>-->
+
+    <div class="text-block text-message">
+      <div class="message-header">
+        <span class="author">{{ message.user.name }}
+          <!--<a href="{{ message.user.email }}" target="_blank"> {{ message.user.email }}</a>-->
+        </span>
+        <div class="message-options">
+          <i class="socicon starticon" (click)="startSearch(message)">L</i>
+          <i class="ion-close-round cancelicon" (click)="closeSearch()"></i>
+        </div>
+      </div>
+      <div class="message-content line-clamp" [ngClass]="{'line-clamp-2' : !message.expanded}">
+        <span *ngIf="message.preview">{{ message.header }} </span>{{ message.content }}
+      </div>
+      <div class="preview" [ngClass]="{'hidden': !message.expanded}" *ngIf="message.preview">
+        <!--<a href="{{ message.link }}" target="_blank">-->
+        <!--<img src="{{ ( message.preview | baAppPicture )}}">-->
+        <!--</a>-->
+      </div>
+      <div [ngClass]="{'hidden': !message.expanded}" class="message-time">
+
+        <div class="post-time">
+          12 min
+        </div>
+        <div class="ago-time">
+          1hr ago
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

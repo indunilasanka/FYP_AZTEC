@@ -1,12 +1,8 @@
 package aztec.rbir_backend.classifier;
 
-/**
- * Created by subhahs on 14/06/2017.
- */
-import java.io.*;
-
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import aztec.rbir_backend.indexer.Terms;
-import com.google.common.io.Resources;
 import weka.classifiers.meta.FilteredClassifier;
 import weka.core.*;
 
@@ -17,34 +13,40 @@ public class Classifier {
      * String that stores the text to classify
      */
     String text;
-
+    /**
+     * Object that stores the instance.
+     */
     Instances instances;
-
+    /**
+     * Object that stores the classifier.
+     */
     FilteredClassifier classifier;
 
 
     public void load(String content) {
 
-        /*BufferedReader reader = new BufferedReader(new FileReader(filePath));
-        String line;
-        text = "";
-        while ((line = reader.readLine()) != null) {
-            text = text + " " + line;
-        }*/
-        text = Terms.getTerms(content);
-        System.out
-                .println("===== Loaded text data: " + content + " =====");
-       // reader.close();
+        text = Terms.getProcessedContent(content);
         System.out.println(text);
+        System.out
+                .println("===== Loaded text data: " + text + " =====");
 
+        /*try {
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            String line;
+            text = "";
+            while ((line = reader.readLine()) != null) {
+                text = text + " " + line;
+            }
+            System.out
+                    .println("===== Loaded text data: " + fileName + " =====");
+            reader.close();
+            System.out.println(text);
+        } catch (IOException e) {
+            System.out.println("Problem found when reading: " + fileName);
+        }*/
     }
 
-    /**
-     * This method loads the model to be used as classifier.
-     *
-     * @param fileName
-     *            The name of the file that stores the text.
-     */
+
     public void loadModel(String fileName) {
         try {
             ObjectInputStream in = new ObjectInputStream(new FileInputStream(
@@ -60,10 +62,8 @@ public class Classifier {
         }
     }
 
-    /**
-     * This method creates the instance to be classified, from the text that has
-     * been read.
-     */
+
+
     public void makeInstance() {
         // Create the attributes, class and text
         FastVector fvNominalVal = new FastVector(2);
@@ -96,7 +96,10 @@ public class Classifier {
         System.out.println(instances);
     }
 
-
+    /**
+     * This method performs the classification of the instance. Output is done
+     * at the command-line.
+     */
     public String classify() {
         try {
             double pred = classifier.classifyInstance(instances.instance(0));
@@ -109,17 +112,17 @@ public class Classifier {
         }
     }
 
+
     public static String getCategory(String content) {
 
         Classifier classifier;
-
-
-        String dataModel = "/myClassifier.dat";
-        System.out.println(dataModel);
+        //String testFile = "rbir-backend/src/main/resources/document.txt";
+        String dataModel = "rbir-backend/src/main/resources/myClassifier.dat";
         classifier = new Classifier();
         classifier.load(content);
         classifier.loadModel(dataModel);
         classifier.makeInstance();
         return classifier.classify();
+
     }
 }

@@ -38,6 +38,12 @@ public class Terms {
         return terms.trim();
     }
 
+    public static String getProcessedContent(String content)
+    {
+        content = preprocess(content);
+        return content.trim();
+    }
+
     private static String preprocess(String content){
         String cleanedStr = content.replaceAll("[^a-zA-Z0-9 ]", " ").toLowerCase();
 

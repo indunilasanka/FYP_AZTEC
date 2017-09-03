@@ -3,7 +3,7 @@ import {Component} from '@angular/core';
 import {FeedService} from './feed.service';
 
 @Component({
-  selector: 'feed',
+  selector: 'requests',
   templateUrl: './feed.html',
   styleUrls: ['./feed.scss']
 })

@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {layoutPaths} from '../../../theme';
+import {RequestModel} from '../../../models/request.model';
 
 @Component({
   selector: 'search-result',
@@ -11,6 +12,7 @@ export class SearchResult {
   path:String = layoutPaths.images.profile+"doc.jpg";
   @Input() searchResults:Array<Object>;
 
+
   constructor() {
   }
 
@@ -21,7 +23,7 @@ export class SearchResult {
     message.expanded = !message.expanded;
   }
 
-  test(){
+  test() {
     console.log("test clicked" ,this.searchResults);
   }
 }
