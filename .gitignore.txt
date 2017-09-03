@@ -33,7 +33,7 @@
 /rbir-rest2/.idea
 /rbir-rest2/rbir-rest2.iml
 /rbir-rest2/.settings
-/rbir-brest2/target
+/rbir-rest2/target
 /rbir-rest2/.classpath
 /rbir-rest2/.project
 /elasticsearch-5.4.0
