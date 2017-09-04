@@ -1,0 +1,9 @@
+@import '../../../theme/sass/conf/conf';
+
+:host /deep/ {
+
+    .medium-card {
+            height: 70%;
+            width: 100%;
+        }
+}

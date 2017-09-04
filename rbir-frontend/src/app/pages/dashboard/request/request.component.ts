@@ -9,11 +9,10 @@ import {RequestService} from './request.service';
 })
 export class Request {
 
-  public feed:Array<Object>;
-
   constructor(private _requestService: RequestService) {
   }
 
   ngOnInit() {
+    console.log("request component");
   }
 }
