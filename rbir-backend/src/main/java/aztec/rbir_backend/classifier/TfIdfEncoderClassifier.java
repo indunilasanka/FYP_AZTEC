@@ -4,6 +4,7 @@ import aztec.rbir_backend.clustering.*;
 import aztec.rbir_backend.clustering.Vector;
 import aztec.rbir_backend.logic.WordFrequency;
 
+import java.io.*;
 import java.util.*;
 
 import static com.google.common.primitives.Ints.min;
@@ -109,6 +110,9 @@ public class TfIdfEncoderClassifier {
         tfMap = new HashMap<Integer, Double>();
         idfMap = new HashMap<Integer, Double>();
         ArrayList<String> finalWordList  = new ArrayList<String>();
+        HashSet<String> keys_set = new HashSet<String>();
+
+        keys_set = read();
 
         for (Document document: documentList){
             calcHistogram(document);
@@ -152,13 +156,15 @@ public class TfIdfEncoderClassifier {
         for ( int key : tfMap.keySet() ) {
             tokens = termFrequencyMap.get(key);
             tokenSet = new HashSet<>();
-            tokenSet.addAll(tokens);
+            tokenSet.addAll(tokens); // add the arraylist to hashset to remove common terms
+            tokenSet.removeAll(keys_set); // remove tokens already in the arff file
 
             for(String token : tokenSet)
             {
                 if((!finalWordList.contains(token))&(!NumberUtils.isNumber(token))&(token.length() != 1))
                 {
                     finalWordList.add(token);
+                    keys_set.add(token);
                 }
             }
 
@@ -174,12 +180,15 @@ public class TfIdfEncoderClassifier {
             tokens = termFrequencyMap.get(key);
             tokenSet = new HashSet<>();
             tokenSet.addAll(tokens);
+            tokenSet.addAll(tokens); // add the arraylist to hashset to remove common terms
+            tokenSet.removeAll(keys_set); // remove tokens already in the arff file
 
             for(String token : tokenSet)
             {
                 if((!finalWordList.contains(token))&(!NumberUtils.isNumber(token))&(token.length() != 1))
                 {
                     finalWordList.add(token);
+                    keys_set.add(token);
                 }
             }
 
@@ -188,7 +197,43 @@ public class TfIdfEncoderClassifier {
                 break;
             }
         }
+
+        try {
+            write(keys_set);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return finalWordList;
     }
+
+    public HashSet<String> read () {
+
+        HashSet<String> keys_set = null;
+        try {
+            ObjectInputStream input = new ObjectInputStream( new FileInputStream("rbir-backend/src/main/resources/file.bin"));
+            keys_set = (HashSet<String>) (input.readObject());
+        }
+        catch (Exception e) {
+            keys_set = new HashSet<String >();
+            System.out.println(e);
+        }
+
+        return keys_set;
+    }
+
+    public void write (HashSet<String> keys_set) throws IOException {
+        try {
+            FileOutputStream fos = new FileOutputStream("rbir-backend/src/main/resources/file.bin");
+            ObjectOutputStream out = new ObjectOutputStream(fos);
+            out.writeObject(keys_set);
+            out.flush();
+            out.close();
+        }
+        catch (IOException e) {
+            System.out.println(e);
+        }
+    }
+
+
 
 }

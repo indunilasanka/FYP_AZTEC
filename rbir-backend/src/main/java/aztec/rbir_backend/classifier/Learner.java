@@ -75,6 +75,7 @@ public class Learner {
             System.out.println(eval.toClassDetailsString());
 
         } catch (Exception e) {
+            System.out.println(e);
             System.out.println("Problem found when evaluating");
         }
     }
@@ -105,7 +106,7 @@ public class Learner {
 
         try {
             ObjectOutputStream out = new ObjectOutputStream(
-                    new FileOutputStream("/myClassifier.dat"));
+                    new FileOutputStream("rbir-backend/src/main/resources/myClassifier.dat"));
             out.writeObject(classifier);
             out.close();
             System.out.println("===== Saved model: "  + " =====");
@@ -121,7 +122,8 @@ public class Learner {
         ClassLoader classLoader = getClass().getClassLoader();
         InputStream arffFile = null;
         try {
-            arffFile = classLoader.getResource("keys.arff").openStream();
+
+            arffFile =  new FileInputStream("rbir-backend/src/main/resources/keys.arff");//classLoader.getResource("keys.arff").openStream();
         } catch (IOException e) {
             e.printStackTrace();
         }
