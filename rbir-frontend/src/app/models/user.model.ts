@@ -9,6 +9,4 @@ export class UserModel{
   public telephone: string;
   public email: string;
   public profPic: string;
-
 }
-

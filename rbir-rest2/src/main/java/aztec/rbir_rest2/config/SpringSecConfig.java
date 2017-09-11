@@ -1,6 +1,7 @@
 package aztec.rbir_rest2.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -17,11 +18,29 @@ import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+import com.google.common.collect.ImmutableList;
+import com.google.common.net.HttpHeaders;
+
+//import org.springframework.web.filter.CorsFilter;
+
+import java.io.IOException;
+import java.util.*;
+
+import javax.security.sasl.AuthenticationException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SpringSecConfig extends WebSecurityConfigurerAdapter {
     static final String SIGNING_KEY = "MaYzkSjmkzPC57L";
     static final Integer ENCODING_STRENGTH = 256;
@@ -45,33 +64,53 @@ public class SpringSecConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userDetailsService);//make sure to encode password before checking
     }
 
+    
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
-                .authorizeRequests()
-                .antMatchers("/documents/**").permitAll()
-                .antMatchers(HttpMethod.GET,"/webjars/**","/swagger-ui.html/**","/swagger-resources/**", "/v2/api-docs/**").permitAll()
-                .and()
-                .httpBasic()
-                .realmName(SECURITY_REALM)
-                .and()
-                .csrf()
-                .disable();
+    	http.addFilterBefore(corsFilter(), UsernamePasswordAuthenticationFilter.class)
+        .authorizeRequests()
+        .antMatchers("/**").permitAll();
         
+    	http.headers().cacheControl();
 
     }
+   
     
-    //this implementation should be changed in the future
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers(HttpMethod.OPTIONS, "/**").antMatchers(HttpMethod.GET,"/webjars/**","/swagger-ui.html","/swagger-resources/**", "/v2/api-docs/**")
+        .antMatchers("/documents/**");
+    }
+    
+    @Bean
+    public CorsFilter corsFilter() throws Exception {
+        return new CorsFilter();
+    }
+
+    
+    /*
+    @Bean
+	CorsConfigurationSource corsConfigurationSource() {
+		CorsConfiguration configuration = new CorsConfiguration();
+		configuration.setAllowedOrigins(Arrays.asList("*"));
+		configuration.setAllowedMethods(Arrays.asList("GET","POST","OPTIONS"));
+		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+		source.registerCorsConfiguration("/**", configuration);
+		return source;
+	}
+*/
+    
+    /*
+   //this implementation should be changed in the future
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers(HttpMethod.GET,"/webjars/**","/swagger-ui.html","/swagger-resources/**", "/v2/api-docs/**")
-        .antMatchers("/documents/**");
-        
+        .antMatchers("/documents/**")
+        .antMatchers(HttpMethod.OPTIONS, "/**");
         super.configure(web);
     }
+    */
+    
     
 
     @Bean
@@ -97,3 +136,6 @@ public class SpringSecConfig extends WebSecurityConfigurerAdapter {
     
     
 }
+
+
+

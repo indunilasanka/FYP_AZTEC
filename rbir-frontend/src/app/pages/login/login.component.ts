@@ -1,5 +1,8 @@
 import {Component} from '@angular/core';
 import {FormGroup, AbstractControl, FormBuilder, Validators, FormControl} from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'login',
@@ -13,7 +16,8 @@ export class Login {
   public password:AbstractControl;
   public submitted:boolean = false;
 
-  constructor(fb:FormBuilder) {
+  constructor(fb:FormBuilder,private router: Router,
+    private authenticationService: AuthenticationService) {
     this.form = fb.group({
       'email': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(4)])]
@@ -21,13 +25,31 @@ export class Login {
 
     this.email = this.form.controls['email'];
     this.password = this.form.controls['password'];
+
+    
+  }
+
+  ngOnInit() {
+        // reset login status
+        this.authenticationService.logout();
   }
 
   public onSubmit(values:Object):void {
     this.submitted = true;
     if (this.form.valid) {
-      // your code goes here
-      // console.log(values);
+      console.log("submitting password for service");
+      
+      this.authenticationService.login(this.email.value,this.password.value).subscribe(
+      result => {
+         if (result === true) {
+                    // login successful
+              console.log("navigating to dashboard")
+              this.router.navigate(['/pages/dashboard']);
+        } 
+        
+      },
+      error => console.log(error)
+    );
     }
   }
 }
