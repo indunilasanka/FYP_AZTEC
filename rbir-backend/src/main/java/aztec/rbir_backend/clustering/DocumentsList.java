@@ -2,8 +2,11 @@ package aztec.rbir_backend.clustering;
 
 
 import aztec.rbir_backend.indexer.Terms;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Paths;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -17,6 +20,7 @@ import java.util.Date;
 public class DocumentsList extends ArrayList<Document> {
 
     private static final String FILES_TO_INDEX_DIRECTORY = "fileStore";
+    private ResourceLoader resourceLoader;
 
     public DocumentsList(ArrayList<MultipartFile> files, ArrayList<String> categories) {
 
@@ -31,7 +35,7 @@ public class DocumentsList extends ArrayList<Document> {
             String newFileName = filename+"_"+dateFormat.format(date)+"."+fileextention;
             System.out.println(newFileName);
 
-            File newFile = new File("E://FYPSavingFolder/" + newFileName);
+            File newFile = new File("E:/FYPSavingFolder/nonIndexedFiles/"+newFileName);
             System.out.println(newFile.getAbsolutePath());
             try {
                 files.get(i).transferTo(newFile);
@@ -60,7 +64,7 @@ public class DocumentsList extends ArrayList<Document> {
             String newFileName = filename+"_"+dateFormat.format(date)+"."+fileextention;
             System.out.println(newFileName);
 
-            File newFile = new File("E://FYPSavingFolder/" + newFileName);
+            File newFile = new File("E:/FYPSavingFolder/nonIndexedFiles/" + newFileName);
             System.out.println(newFile.getAbsolutePath());
             try {
                 files.get(i).transferTo(newFile);

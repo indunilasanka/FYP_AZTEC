@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2063dfd8-8076-4440-a978-83fb969036f8" name="Default" comment="Add new libraries, &#10;Change the backend with facilitating elastic search&#10;Change .ignore file">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rbir-backend/src/main/resources/myClassifier.dat" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-rest2/target/classes/aztec/rbir_rest2/SpringBootWebApplication.class" afterPath="$PROJECT_DIR$/rbir-rest2/target/classes/aztec/rbir_rest2/SpringBootWebApplication.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/DocumentsList.java" afterPath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/DocumentsList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-backend/src/main/resources/file.bin" afterPath="$PROJECT_DIR$/rbir-backend/src/main/resources/file.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-backend/src/main/resources/keys.arff" afterPath="$PROJECT_DIR$/rbir-backend/src/main/resources/keys.arff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/SpringBootWebApplication.java" afterPath="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/SpringBootWebApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java" afterPath="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/rbir-backend/target/" />
     <ignored path="$PROJECT_DIR$/rbir-database/target/" />
@@ -24,80 +31,30 @@
       <file leaf-file-name="KMeanClusterer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/KMeanClusterer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="33" column="62" lean-forward="false" selection-start-line="33" selection-start-column="62" selection-end-line="33" selection-end-column="62" />
-              <folding />
+            <state relative-caret-position="153">
+              <caret line="11" column="39" lean-forward="false" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DocumentController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DocumentController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1802">
+            <state relative-caret-position="322">
               <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpringBootWebApplication.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/SpringBootWebApplication.java">
+      <file leaf-file-name="file.bin" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/resources/file.bin">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Learner.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/Learner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="44" column="36" lean-forward="false" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Classifier.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/Classifier.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1938">
-              <caret line="119" column="33" lean-forward="false" selection-start-line="119" selection-start-column="33" selection-end-line="119" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="keys.arff" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/resources/keys.arff">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="32" lean-forward="false" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HibernateUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rbir-database/src/main/java/aztec/rbir_database/configurations/HibernateUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -106,9 +63,21 @@
       <file leaf-file-name="DocumentsList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/DocumentsList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1105">
-              <caret line="71" column="35" lean-forward="false" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
+            <state relative-caret-position="1071">
+              <caret line="72" column="76" lean-forward="false" selection-start-line="72" selection-start-column="76" selection-end-line="72" selection-end-column="76" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Learner.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/Learner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1921">
+              <caret line="125" column="77" lean-forward="false" selection-start-line="125" selection-start-column="44" selection-end-line="125" selection-end-column="77" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -121,6 +90,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Paths</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -147,11 +121,12 @@
         <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/TfIdfEncoderClassifier.java" />
         <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/WordFrequency.java" />
         <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/Learner.java" />
-        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/DocumentsList.java" />
-        <option value="$PROJECT_DIR$/rbir-backend/src/main/resources/keys.arff" />
         <option value="$PROJECT_DIR$/rbir-rest2/pom.xml" />
-        <option value="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java" />
         <option value="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/SpringBootWebApplication.java" />
+        <option value="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java" />
+        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/DocumentsList.java" />
+        <option value="$PROJECT_DIR$/rbir-backend/src/main/resources/file.bin" />
+        <option value="$PROJECT_DIR$/rbir-backend/src/main/resources/keys.arff" />
       </list>
     </option>
   </component>
@@ -197,7 +172,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -282,80 +258,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rbir-parent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FYP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rbir-database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FYP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rbir-database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FYP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rbir-database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FYP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rbir-database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FYP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="rbir-backend" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -391,26 +293,8 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="FYP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rbir-backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -429,21 +313,12 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classifier" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -473,8 +348,108 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="aztec.rbir_rest2.SpringBootWebApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <module name="rbir-rest2" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.56" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <file path="$PROJECT_DIR$">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </file>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_FYP" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="35173" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method />
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote" APPLICATION_SERVER_NAME="Tomcat 7.0.561" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="stagingRemotePath" value="" />
+          <option name="transportHostId" value="" />
+          <option name="transportStagingTarget">
+            <TransportTarget>
+              <option name="id" value="239957af-4b51-4096-852e-9769b7ad5e64" />
+              <id>239957af-4b51-4096-852e-9769b7ad5e64</id>
+            </TransportTarget>
+          </option>
+          <transport-target>
+            <TransportTarget>
+              <option name="id" value="239957af-4b51-4096-852e-9769b7ad5e64" />
+              <id>239957af-4b51-4096-852e-9769b7ad5e64</id>
+            </TransportTarget>
+          </transport-target>
+          <staging-path />
+          <host-id />
+        </data>
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="35331" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -838,6 +813,67 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="TomeeConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_FYP_2" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="35773" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -909,14 +945,17 @@
       <workItem from="1503587795242" duration="1204000" />
       <workItem from="1504013435139" duration="8144000" />
       <workItem from="1504107849880" duration="54000" />
+      <workItem from="1504107997206" duration="6140000" />
+      <workItem from="1504400491049" duration="579000" />
+      <workItem from="1504757678850" duration="590000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54208000" />
+    <option name="totallyTimeSpent" value="61517000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -934,7 +973,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25340393" sideWeight="0.48895028" order="0" side_tool="false" content_ui="combo" x="383" y="159" width="600" height="410" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2647504" sideWeight="0.48895028" order="0" side_tool="false" content_ui="combo" x="383" y="159" width="600" height="410" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -951,6 +990,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.4969743" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41734862" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30610687" sideWeight="0.51104975" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1145,20 +1185,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/rbir-frontend/src/app/pages/document/searchResult/searchResult.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="46" column="61" lean-forward="false" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-frontend/src/app/pages/document/searchResult/searchResult.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="9" column="63" lean-forward="false" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/queryprocess/Searcher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -1362,7 +1388,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1373,45 +1398,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/Classify.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="43" lean-forward="false" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/TfIdfEncoderClassifier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1598">
           <caret line="104" column="29" lean-forward="false" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/TrainingModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="42" column="20" lean-forward="false" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/KMeanClusterer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="33" column="62" lean-forward="false" selection-start-line="33" selection-start-column="62" selection-end-line="33" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/DocumentsList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="71" column="35" lean-forward="false" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1440,7 +1430,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1207">
           <caret line="71" column="31" lean-forward="false" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1448,15 +1437,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/resources/keys.arff">
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/Classifier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="523">
+          <caret line="119" column="33" lean-forward="false" selection-start-line="119" selection-start-column="33" selection-end-line="119" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1464,41 +1451,89 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="32" lean-forward="false" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/KMeanClusterer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="39" lean-forward="false" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/SpringBootWebApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="59" column="8" lean-forward="false" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/Learner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="44" column="36" lean-forward="false" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="36" />
+        <state relative-caret-position="1921">
+          <caret line="125" column="77" lean-forward="false" selection-start-line="125" selection-start-column="44" selection-end-line="125" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/Classify.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="43" lean-forward="false" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/TrainingModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-74">
+          <caret line="56" column="98" lean-forward="true" selection-start-line="56" selection-start-column="40" selection-end-line="56" selection-end-column="98" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/Classifier.java">
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/resources/file.bin">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1938">
-          <caret line="119" column="33" lean-forward="false" selection-start-line="119" selection-start-column="33" selection-end-line="119" selection-end-column="33" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/resources/keys.arff">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/crawler/URLParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/DocumentsList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="72" column="76" lean-forward="false" selection-start-line="72" selection-start-column="76" selection-end-line="72" selection-end-column="76" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1802">
+        <state relative-caret-position="322">
           <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/SpringBootWebApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
