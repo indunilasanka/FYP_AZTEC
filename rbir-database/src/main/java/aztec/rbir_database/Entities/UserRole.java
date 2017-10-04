@@ -10,6 +10,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+import java.sql.Timestamp;
+
+
 @Entity
 @Table(name = "user_role")
 public class UserRole {
@@ -31,6 +36,30 @@ public class UserRole {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "granted_user_id", nullable = false)
 	User grantedUser;
+	
+    @Column
+	@CreationTimestamp
+	private Timestamp createDateTime;
+
+	@Column
+	@UpdateTimestamp
+    private Timestamp updateDateTime;
+
+	public Timestamp getCreateDateTime() {
+		return createDateTime;
+	}
+
+	public void setCreateDateTime(Timestamp createDateTime) {
+		this.createDateTime = createDateTime;
+	}
+
+	public Timestamp getUpdateDateTime() {
+		return updateDateTime;
+	}
+
+	public void setUpdateDateTime(Timestamp updateDateTime) {
+		this.updateDateTime = updateDateTime;
+	}
 
 	public Long getId() {
 		return id;
@@ -63,7 +92,4 @@ public class UserRole {
 	public void setGrantedUser(User grantedUser) {
 		this.grantedUser = grantedUser;
 	}
-	
-	
-	
 }

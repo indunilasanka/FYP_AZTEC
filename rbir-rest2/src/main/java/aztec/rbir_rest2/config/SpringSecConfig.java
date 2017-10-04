@@ -79,7 +79,8 @@ public class SpringSecConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers(HttpMethod.OPTIONS, "/**").antMatchers(HttpMethod.GET,"/webjars/**","/swagger-ui.html","/swagger-resources/**", "/v2/api-docs/**")
-        .antMatchers("/documents/**");
+        .antMatchers("/documents/**")
+        .antMatchers("/request/public-request");
     }
     
     @Bean
