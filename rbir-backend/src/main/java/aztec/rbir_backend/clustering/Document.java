@@ -14,6 +14,7 @@ public class Document implements Comparable<Document> {
     private String category;
     private String filePath;
     private String predictedCategory;
+    private String[] metaDataNames;
 
     // whether document has been allocated to a cluster
     private boolean allocated;
