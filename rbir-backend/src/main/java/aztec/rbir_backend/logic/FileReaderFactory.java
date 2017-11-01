@@ -15,7 +15,7 @@ public final class FileReaderFactory {
         return null;
     }
 
-    private static MyFileReader getFileReaderInstance(String fileType){
+    public static MyFileReader getFileReaderInstance(String fileType){
         switch (fileType){
             case "PDF":
             case "pdf":

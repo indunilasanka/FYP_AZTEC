@@ -1,6 +1,7 @@
 package aztec.rbir_rest2.controllers;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import java.util.Set;
 import javax.servlet.http.HttpServletRequest;
 
 import aztec.rbir_backend.classifier.Classify;
+import aztec.rbir_backend.indexer.IndexerLucence;
 import aztec.rbir_rest2.models.*;
 import aztec.rbir_backend.classifier.*;
 import aztec.rbir_backend.clustering.*;
@@ -20,6 +22,9 @@ import aztec.rbir_backend.logic.FileReaderFactory;
 import aztec.rbir_backend.queryprocess.Searcher;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
+import org.apache.commons.io.FileUtils;
+import org.apache.lucene.document.*;
+import org.apache.lucene.document.Document;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -39,26 +44,15 @@ public class DocumentController {
     @ResponseBody
     ResponseEntity<Set<DocumentModel>> list(@RequestParam("query") String query) {
         System.out.println("Query "+query);
-        Set<String> result = new HashSet<String>();
-        if(query.split(" ").length == 1)
-            result = Searcher.searchOWQ(query);
-        else if(query.indexOf('"') != -1){
-            String search = query.substring(1,query.length()-1);
-            result = Searcher.searchPQ(search);
-        }
-        else{
-            result = Searcher.searchFTQ(query);
-        }
 
-        Set<DocumentModel> response = new HashSet<DocumentModel>();
-        if(result != null) {
-            for (String doc : result) {
-                String content = FileReaderFactory.read(doc);
-                DocumentModel document = new DocumentModel(doc, content.substring(0, content.length() > 200?200:content.length()), Global.getHashtableFiles().get(doc));
-                response.add(document);
-            }
+        Set<DocumentModel> result = new HashSet<DocumentModel>();
+
+        ArrayList<Document> hitDocs = IndexerLucence.searchIndex(query);
+        for(Document doc : hitDocs){
+            DocumentModel resultDoc = new DocumentModel(doc.get("path"),doc.get("contents"),doc.get("category"));
+            result.add(resultDoc);
         }
-        return new ResponseEntity<Set<DocumentModel>>(response, HttpStatus.OK);
+        return new ResponseEntity<Set<DocumentModel>>(result, HttpStatus.OK);
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
@@ -89,12 +83,12 @@ public class DocumentController {
     {
         System.out.println();
 
-        DocumentsList documentList1 = new DocumentsList(files, categories);
+    /*    DocumentsList documentList1 = new DocumentsList(files, categories);
         DocumentsList documentList2 = new DocumentsList();
 
         for(Document doc: documentList1){
             documentList2.add(doc);
-        }
+        }*/
 
        // Thread clusteringThread = new Thread(new Runnable() {
       //      @Override
@@ -111,14 +105,42 @@ public class DocumentController {
      //   Thread classificationThread = new Thread(new Runnable() {
      ///       @Override
      //       public void run() {
-                TrainingModel.calculateTrainingWords(documentList2);
+   /*             TrainingModel.calculateTrainingWords(documentList2);
                 documentList2.forEach(e -> {
                     String predictedCategory = Classifier.getCategory(e.getContents());
                     e.setPredictedCategory(predictedCategory);
-                });
+                });*/
       //      }
      //   });
 
+    /*    documentList2.forEach(e -> {
+            System.out.println(e.getFilePath());
+            File file = new File(e.getFilePath());
+            File destinationDir = new File("E:/FYPSavingFolder/indexedFiles/"+e.getPredictedCategory()+"/");
+            try {
+                FileUtils.moveFileToDirectory(file, destinationDir, true);
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        });*/
+
+
+        File indexedFilesDir = new File("E:/FYPSavingFolder/indexedFiles/");
+        File[] directories = indexedFilesDir.listFiles();
+
+        for (File folder : directories) {
+            try {
+                String files_directory = folder.getCanonicalPath();
+                System.out.println(files_directory + "  " + files_directory.substring(files_directory.lastIndexOf('\\')+1));
+                String category = files_directory.substring(files_directory.lastIndexOf('\\')+1);
+                new File(files_directory+"/index/").mkdir();
+                String index_directory = files_directory + "/index/";
+                System.out.println(files_directory+"   "+index_directory);
+                IndexerLucence.createIndex(files_directory,index_directory,category);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
        /* clusteringThread.start();
         classificationThread.start();
         try {

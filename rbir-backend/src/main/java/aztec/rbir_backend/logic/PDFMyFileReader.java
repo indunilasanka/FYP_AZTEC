@@ -3,14 +3,13 @@ package aztec.rbir_backend.logic;
 import org.apache.tika.Tika;
 import org.apache.tika.exception.TikaException;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 /**
  * Created by subhahs on 28/05/2017.
  */
-public class PDFMyFileReader implements MyFileReader {
+public class PDFMyFileReader implements MyFileReader{
+
     @Override
     public String read(String filePath) {
         System.out.println("Reading PDF file...");
