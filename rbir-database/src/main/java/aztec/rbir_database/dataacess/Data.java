@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import aztec.rbir_database.Entities.Document;
 import aztec.rbir_database.Entities.Keyword;
 import aztec.rbir_database.Entities.KeywordsInDocument;
+import aztec.rbir_database.Entities.User;
 import aztec.rbir_database.configurations.HibernateUtil;
 
 public class Data {
@@ -18,6 +19,11 @@ public class Data {
 		session.beginTransaction();
 		
 		session.save(doc);
+		
+		User user = new User();
+		user = session.get(User.class, (long)4);
+		user.setUsername("kelum");
+		
 		
 		
 		ArrayList<KeywordsInDocument> kwds =  new ArrayList<KeywordsInDocument>();
