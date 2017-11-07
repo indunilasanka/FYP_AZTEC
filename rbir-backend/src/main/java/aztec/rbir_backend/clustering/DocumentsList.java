@@ -1,7 +1,9 @@
 package aztec.rbir_backend.clustering;
 
 
+import aztec.rbir_backend.globals.Global;
 import aztec.rbir_backend.indexer.Terms;
+import aztec.rbir_backend.logic.FileReaderFactory;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
@@ -18,9 +20,6 @@ import java.util.Date;
 
 /*documents to be clustered */
 public class DocumentsList extends ArrayList<Document> {
-
-    private static final String FILES_TO_INDEX_DIRECTORY = "fileStore";
-    private ResourceLoader resourceLoader;
 
     public DocumentsList(ArrayList<MultipartFile> files, ArrayList<String> categories) {
 
@@ -39,12 +38,15 @@ public class DocumentsList extends ArrayList<Document> {
             System.out.println(newFile.getAbsolutePath());
             try {
                 files.get(i).transferTo(newFile);
-                long documentID = i;
-                String title = newFile.getName();
-                String contents = Terms.getTerms(newFile.getAbsolutePath());
-                String category = categories.get(i);
+                long documentID = Global.getLastDocId();
+                String title = filename;
                 String filePath = newFile.getAbsolutePath();
-                add(new Document(documentID, title, contents, category, filePath));
+                String content = Terms.getTerms(filePath);
+                String preprocessedContent = Terms.preprocess(content);
+                String type = FileReaderFactory.IdentifyType(filePath,content);
+                String category = categories.get(i);
+
+                add(new Document(documentID, title, type, content, preprocessedContent, category, filePath));
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -68,11 +70,13 @@ public class DocumentsList extends ArrayList<Document> {
             System.out.println(newFile.getAbsolutePath());
             try {
                 files.get(i).transferTo(newFile);
-                long documentID = i;
-                String title = newFile.getName();
-                String contents = Terms.getTerms(newFile.getAbsolutePath());
+                long documentID = Global.getLastDocId();
+                String title = filename;
                 String filePath = newFile.getAbsolutePath();
-                add(new Document(documentID, title, contents,null, filePath));
+                String content = Terms.getTerms(filePath);
+                String preprocessedContent = Terms.preprocess(content);
+                String type = FileReaderFactory.IdentifyType(filePath,content);
+                add(new Document(documentID, title, type, content,preprocessedContent,null, filePath));
             } catch (Exception e) {
                 e.printStackTrace();
             }

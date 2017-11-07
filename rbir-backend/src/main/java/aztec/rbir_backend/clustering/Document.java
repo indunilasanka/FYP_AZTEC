@@ -13,7 +13,9 @@ import java.io.Serializable;
 public class Document implements Comparable<Document>, Serializable {
 
     private String title;
-    private String contents;
+    private String type;
+    private String content;
+    private String preprocessedContent;
     private long id;
     private String category;
     private String filePath;
@@ -30,14 +32,22 @@ public class Document implements Comparable<Document>, Serializable {
     // precalculated document vector norms
     private double norm;
 
-    public Document(){
-
+    public Document(Document document){
+        id = document.getId();
+        title = document.getTitle();
+        type = document.getType();
+        content = document.getContent();
+        preprocessedContent = document.getPreprocessedContent();
+        category = document.getCategory();
+        filePath = document.getFilePath();
     }
 
-    public Document(long id, String title, String contents, String category, String filePath) {
+    public Document(long id, String title, String type, String content, String preprocessedContent, String category, String filePath) {
         this.id = id;
         this.title = title;
-        this.contents = contents;
+        this.type = type;
+        this.content = content;
+        this.preprocessedContent = preprocessedContent;
         this.category = category;
         this.filePath = filePath;
     }
@@ -74,9 +84,10 @@ public class Document implements Comparable<Document>, Serializable {
     public long getId() {
         return id;
     }
-    public String getContents() {
-        return contents;
+    public String getContent() {
+        return content;
     }
+    public String getPreprocessedContent(){ return preprocessedContent;}
     public Vector getVector() {
         return vector;
     }
@@ -94,6 +105,10 @@ public class Document implements Comparable<Document>, Serializable {
         return predictedCategory;
     }
 
+    public String getTitle() {
+        return title;
+    }
+    public String getType(){return type;}
 
     //compare documents ids
     public int compareTo(Document document) {

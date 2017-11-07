@@ -25,7 +25,7 @@ public class TrainingModel {
 
     public static void calculateTrainingWords(DocumentsList newDocList)
     {
-        int numFeatures = 1000;
+        int numFeatures = 10000;
         Learner learner = new Learner();
         ArrayList<String> finalWordList  = new ArrayList<String>();
         ArrayList<String> categoryList  = new ArrayList<String>();
@@ -77,7 +77,7 @@ public class TrainingModel {
         }
 
         System.out.println("Starting to train the naive baysian model");
-        learner.trainModel();
+        learner.trainModel(categoryList.size());
         System.out.println("End of training naive baysian model");
 
     }

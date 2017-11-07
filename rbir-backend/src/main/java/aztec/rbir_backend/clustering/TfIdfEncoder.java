@@ -20,7 +20,7 @@ public class TfIdfEncoder implements Encoder {
     // Calculate word histogram for document
     private void calcHistogram(Document document) {
 
-        String[] words = document.getContents().split("[^\\w]+");
+        String[] words = document.getPreprocessedContent().split("[^\\w]+");
 
         Vector histogram = new Vector(numFeatures);
 

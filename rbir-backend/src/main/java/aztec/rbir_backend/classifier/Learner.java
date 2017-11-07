@@ -56,7 +56,7 @@ public class Learner {
      * documentation, the classifier is defined but not trained yet. Evaluation
      * of previously trained classifiers can lead to unexpected results.
      */
-    public void evaluate() {
+    public void evaluate(int numOfCategories) {
         try {
             trainData.setClassIndex(0);
             filter = new StringToWordVector();
@@ -67,7 +67,7 @@ public class Learner {
             classifier.setClassifier(new NaiveBayes());
 
             Evaluation eval = new Evaluation(trainData);
-            int folds = 4;
+            int folds = numOfCategories;
             eval.crossValidateModel(classifier, trainData, folds , new Random(1));
 
             System.out.println("===== Evaluating on filtered (training) dataset =====");
@@ -115,7 +115,7 @@ public class Learner {
         }
     }
 
-    public void trainModel() {
+    public void trainModel(int numOfCategories) {
 
         Learner learner;
 
@@ -133,7 +133,7 @@ public class Learner {
         // Evaluation mus be done before training
         // More info in:
         // http://weka.wikispaces.com/Use+WEKA+in+your+Java+code
-        learner.evaluate();
+        learner.evaluate(numOfCategories);
         learner.learn();
         learner.saveModel();
     }

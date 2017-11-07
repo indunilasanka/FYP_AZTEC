@@ -29,7 +29,7 @@ public class Terms {
         String content = FileReaderFactory.read(filePath);
         if(content == null)
             return "Invalid File Type";
-      //  content = preprocess(content);
+        //content = preprocess(content);
         return content.trim();
     }
 
@@ -44,7 +44,7 @@ public class Terms {
         return content.trim();
     }
 
-    private static String preprocess(String content){
+    public static String preprocess(String content){
         String cleanedStr = content.replaceAll("[^a-zA-Z0-9 ]", " ").toLowerCase();
 
         EnglishAnalyzer analyzer = new EnglishAnalyzer(); //stop words

@@ -22,8 +22,6 @@ public final class FileReaderFactory {
         String content = null;
         if(reader != null) {
             content = reader.read(filePath);
-            //below method to identify document type
-            System.out.println(IdentifyType(filePath,content));
         }
         return content;
     }
@@ -62,7 +60,7 @@ public final class FileReaderFactory {
         return (dotIndex == -1) ? "" : fileName.substring(dotIndex + 1);
     }
 
-    private static String IdentifyType(String filePath,String Content)
+    public static String IdentifyType(String filePath,String Content)
     {
         String TopContent = Content.substring(0,100).toUpperCase();
         String metaContent = ReadMetaData(filePath);

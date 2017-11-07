@@ -1,10 +1,11 @@
 package aztec.rbir_backend.classifier;
 
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
+import java.io.*;
+
 import aztec.rbir_backend.indexer.Terms;
 import weka.classifiers.meta.FilteredClassifier;
 import weka.core.*;
+import weka.core.converters.ArffLoader;
 
 
 public class Classifier {
@@ -65,10 +66,12 @@ public class Classifier {
 
     public void makeInstance() {
         // Create the attributes, class and text
-        FastVector fvNominalVal = new FastVector(2);
-        fvNominalVal.addElement("security_level_1");
-        fvNominalVal.addElement("security_level_2");
-        fvNominalVal.addElement("security_level_3");
+        String[] categories = readArffCategories();
+        FastVector fvNominalVal = new FastVector(categories.length);
+
+        for(String category: categories){
+            fvNominalVal.addElement(category);
+        }
 
         Attribute attribute1 = new Attribute("class", fvNominalVal);
         Attribute attribute2 = new Attribute("text", (FastVector) null);
@@ -108,6 +111,23 @@ public class Classifier {
             System.out.println("Problem found when classifying the text");
             return "fail";
         }
+    }
+
+    public String[] readArffCategories() {
+        InputStream arffFile = null;
+
+        try {
+            arffFile = new FileInputStream("rbir-backend/src/main/resources/keys.arff");//classLoader.getResource("keys.arff").openStream();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(arffFile));
+            ArffLoader.ArffReader arff = new ArffLoader.ArffReader(reader);
+            String content = arff.getData().toString();
+            String result = content.substring(content.indexOf("{") + 1, content.indexOf("}"));
+            String[] parts = result.split(",");
+            return parts;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 

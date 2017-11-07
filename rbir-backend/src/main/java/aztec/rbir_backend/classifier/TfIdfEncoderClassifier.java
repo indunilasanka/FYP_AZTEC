@@ -34,7 +34,7 @@ public class TfIdfEncoderClassifier {
     // Calculate word histogram for document
     public void calcHistogram(Document document) {
 
-        String[] words = document.getContents().split("[^\\w]+");
+        String[] words = document.getPreprocessedContent().split("[^\\w]+");
         Vector histogram = new Vector(numFeatures);
 
         termFrequencyMap = new HashMap<Integer, ArrayList<String>>();
@@ -110,9 +110,9 @@ public class TfIdfEncoderClassifier {
         tfMap = new HashMap<Integer, Double>();
         idfMap = new HashMap<Integer, Double>();
         ArrayList<String> finalWordList  = new ArrayList<String>();
-        HashSet<String> keys_set = new HashSet<String>();
+       // HashSet<String> keys_set = new HashSet<String>();
 
-        keys_set = read();
+      //  keys_set = read();
 
         for (Document document: documentList){
             calcHistogram(document);
@@ -120,7 +120,7 @@ public class TfIdfEncoderClassifier {
 
         for (Document document: documentList)
         {
-            String[] words = document.getContents().split("[^\\w]+");
+            String[] words = document.getPreprocessedContent().split("[^\\w]+");
 
             for (int i = 0; i < words.length; i++) {
                 int hashCode = hashWord(words[i]);
@@ -156,14 +156,14 @@ public class TfIdfEncoderClassifier {
             tokens = termFrequencyMap.get(key);
             tokenSet = new HashSet<>();
             tokenSet.addAll(tokens); // add the arraylist to hashset to remove common terms
-            tokenSet.removeAll(keys_set); // remove tokens already in the arff file
+          //  tokenSet.removeAll(keys_set); // remove tokens already in the arff file
 
             for(String token : tokenSet)
             {
                 if((!finalWordList.contains(token))&(!NumberUtils.isNumber(token))&(token.length() != 1))
                 {
                     finalWordList.add(token);
-                    keys_set.add(token);
+                  //  keys_set.add(token);
                 }
             }
 
@@ -180,14 +180,14 @@ public class TfIdfEncoderClassifier {
             tokenSet = new HashSet<>();
             tokenSet.addAll(tokens);
             tokenSet.addAll(tokens); // add the arraylist to hashset to remove common terms
-            tokenSet.removeAll(keys_set); // remove tokens already in the arff file
+          //  tokenSet.removeAll(keys_set); // remove tokens already in the arff file
 
             for(String token : tokenSet)
             {
                 if((!finalWordList.contains(token))&(!NumberUtils.isNumber(token))&(token.length() != 1))
                 {
                     finalWordList.add(token);
-                    keys_set.add(token);
+               //     keys_set.add(token);
                 }
             }
 
@@ -197,11 +197,11 @@ public class TfIdfEncoderClassifier {
             }
         }
 
-        try {
+       /* try {
             write(keys_set);
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
         return finalWordList;
     }
 

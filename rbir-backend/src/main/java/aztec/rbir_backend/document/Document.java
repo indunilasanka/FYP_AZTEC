@@ -50,7 +50,7 @@ public class Document {
                     public void afterBulk(long executionId,
                                           BulkRequest request,
                                           BulkResponse response) {
-                        System.out.println("Last Execution Id : " + executionId);
+                        System.out.println(response);
                     }
 
                     @Override
@@ -59,7 +59,7 @@ public class Document {
                                           Throwable failure) {}
                 })
                 .setBulkActions(10000)
-                .setBulkSize(new ByteSizeValue(5, ByteSizeUnit.MB))
+                .setBulkSize(new ByteSizeValue(1000, ByteSizeUnit.MB))
                 .setFlushInterval(TimeValue.timeValueSeconds(5))
                 .setConcurrentRequests(1)
                 .setBackoffPolicy(

@@ -61,7 +61,7 @@ public class DocumentController {
 
         if(Global.getClassificationAlgo() == "Naive"){
             documentList.forEach(e -> {
-                    String  predictedCategory = Classifier.getCategory(e.getContents());
+                    String  predictedCategory = Classifier.getCategory(e.getPreprocessedContent());
                     e.setPredictedCategory(predictedCategory);
             });
         }
@@ -86,7 +86,7 @@ public class DocumentController {
                 Map document = new HashMap<String, Object>();
                 document.put("name",file.getName());
                 document.put("path",destinationDir.getCanonicalPath() + "\\" + file.getName());
-                document.put("content",e.getContents());
+                document.put("content",e.getContent());
                 document.put("category", e.getPredictedCategory());
                 bulkProcessor.add(new IndexRequest(e.getPredictedCategory(),"document").source(document));
             } catch (IOException e1) {
@@ -128,45 +128,21 @@ public class DocumentController {
         DocumentsList documentList2 = new DocumentsList();
 
         for(aztec.rbir_backend.clustering.Document doc: documentList1){
-            Document doc1 = new Document();
-            doc1 = doc;
-            documentList2.add(doc1);
+            documentList2.add(new Document(doc));
         }
 
-        //clustering algorithm thread
-        Thread clusteringThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Encoder encoder = new TfIdfEncoder(10000);
-                encoder.encode(documentList1);
-                Distance distance = new CosineDistance();
-                Clusterer clusterer = new KMeanClusterer(distance, 0.6, 1000);
-                ClustersList clusterList = clusterer.cluster(documentList1,3);
-                System.out.println(clusterList.toString());
-                KMeanClusterer.saveModel(clusterList);
-            }
-        });
+        Encoder encoder = new TfIdfEncoder(10000);
+        encoder.encode(documentList1);
+        Distance distance = new CosineDistance();
+        Clusterer clusterer = new KMeanClusterer(distance, 0.6, 1000);
+        ClustersList clusterList = clusterer.cluster(documentList1,3);
+        KMeanClusterer.saveModel(clusterList);
 
-        //classification algorithm thread
-        Thread classificationThread = new Thread(new Runnable() {
-           @Override
-           public void run() {
-               TrainingModel.calculateTrainingWords(documentList2);
-                documentList2.forEach(e -> {
-                    String predictedCategory = Classifier.getCategory(e.getContents());
-                    e.setPredictedCategory(predictedCategory);
-                });
-           }
+        TrainingModel.calculateTrainingWords(documentList2);
+        documentList2.forEach(e -> {
+            String predictedCategory = Classifier.getCategory(e.getPreprocessedContent());
+            e.setPredictedCategory(predictedCategory);
         });
-
-        clusteringThread.start();
-        classificationThread.start();
-        try {
-            clusteringThread.join();
-            classificationThread.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
 
         System.out.println( "----------main thread--------");
@@ -186,8 +162,11 @@ public class DocumentController {
 
         numCorrectClassification = 0;
 
-        for(aztec.rbir_backend.clustering.Document doc2 : documentList2){
-            if(doc2.getCategory().equals(doc2.getPredictedCategory())) {
+        System.out.println();
+
+        for(aztec.rbir_backend.clustering.Document doc : documentList2){
+            System.out.println(doc.getCategory() + "  " + doc.getPredictedCategory());
+            if(doc.getCategory().equals(doc.getPredictedCategory())) {
                 numCorrectClassification++;
             }
         }
@@ -214,13 +193,14 @@ public class DocumentController {
             File file = new File(e.getFilePath());
             File destinationDir = new File("E:/FYPSavingFolder/indexedFiles/"+e.getPredictedCategory()+"/");
             try {
-                FileUtils.moveFileToDirectory(file, destinationDir, true);
                 Map document = new HashMap<String, Object>();
-                document.put("name",file.getName());
+                document.put("name",e.getTitle());
+                document.put("type",e.getType());
                 document.put("path",destinationDir.getCanonicalPath() + "\\" + file.getName());
-                document.put("content",e.getContents());
+                document.put("content",e.getContent());
                 document.put("category", e.getPredictedCategory());
-                bulkProcessor.add(new IndexRequest(e.getPredictedCategory(),"document").source(document));
+                bulkProcessor.add(new IndexRequest(e.getPredictedCategory(),"document",e.getId()+"").source(document));
+                FileUtils.moveFileToDirectory(file, destinationDir, true);
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
