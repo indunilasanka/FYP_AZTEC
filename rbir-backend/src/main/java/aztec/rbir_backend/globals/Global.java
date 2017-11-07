@@ -8,61 +8,34 @@ import java.util.Hashtable;
  * Created by subhahs on 10/06/2017.
  */
 public class Global {
-    private static  Hashtable<String,Hashtable<String,ArrayList<Integer>>> hashtableIndex;
-    private static  Hashtable<String,String> hashtableFiles;
+    private static String classificationAlgo;
 
     public Global(){
-        FileInputStream fis = null;
-        try {
-            fis = new FileInputStream("E:/index.tmp");
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            this.hashtableIndex = (Hashtable<String,Hashtable<String,ArrayList<Integer>>>)ois.readObject();
-            System.out.println(hashtableIndex);
-            ois.close();
-        } catch (FileNotFoundException e) {
-            this.hashtableIndex = new Hashtable<String,Hashtable<String, ArrayList<Integer>>>();
-        } catch (IOException e) {
-            this.hashtableIndex = new Hashtable<String,Hashtable<String, ArrayList<Integer>>>();
-        } catch (ClassNotFoundException e) {
-            this.hashtableIndex = new Hashtable<String,Hashtable<String, ArrayList<Integer>>>();
-        }
+            try {
+                ObjectInputStream in = new ObjectInputStream(new FileInputStream("rbir-backend/src/main/resources/classifierName.dat"));
+                this.classificationAlgo = (String) in.readObject();
+                System.out.println(classificationAlgo);
+                in.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+    }
+    public static String getClassificationAlgo(){
+        return classificationAlgo;
+    }
 
-        try {
-            fis = new FileInputStream("E:/fileCategories.tmp");
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            this.hashtableFiles = (Hashtable<String,String>)ois.readObject();
-            System.out.println(hashtableFiles);
-            ois.close();
-        } catch (FileNotFoundException e) {
-            this.hashtableFiles = new Hashtable<String,String>();
-        } catch (IOException e) {
-            this.hashtableFiles = new Hashtable<String,String>();
-        } catch (ClassNotFoundException e) {
-            this.hashtableFiles = new Hashtable<String,String>();
-        }
+    public static void setClassificationAlgo(String classificationAlgoName){
+        classificationAlgo = classificationAlgoName;
     }
-    public static Hashtable<String,Hashtable<String,ArrayList<Integer>>> getHashtableIndex(){
-        return hashtableIndex;
-    }
-    public static Hashtable<String,String> getHashtableFiles(){return hashtableFiles;}
     public static void writeToFile(){
-        FileOutputStream fos = null;
         try {
-            fos = new FileOutputStream("E:/index.tmp");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(hashtableIndex);
-            oos.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            fos = new FileOutputStream("E:/fileCategories.tmp");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(hashtableFiles);
-            oos.close();
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("rbir-backend/src/main/resources/classifierName.dat"));
+            out.writeObject(classificationAlgo);
+            out.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

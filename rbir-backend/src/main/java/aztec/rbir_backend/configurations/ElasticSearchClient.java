@@ -21,10 +21,7 @@ public class ElasticSearchClient {
         if(esc==null){
             try {
                 hostName = InetAddress.getLocalHost();
-            } catch (UnknownHostException e) {
-                e.printStackTrace();
-            }
-            try {
+
                 esc = new PreBuiltTransportClient(Settings.EMPTY)
                         .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("localhost"), 9300));
             } catch (UnknownHostException e) {

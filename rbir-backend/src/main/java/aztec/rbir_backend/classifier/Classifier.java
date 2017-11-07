@@ -67,11 +67,10 @@ public class Classifier {
     public void makeInstance() {
         // Create the attributes, class and text
         FastVector fvNominalVal = new FastVector(2);
-        fvNominalVal.addElement("Security_Level_1");
-        fvNominalVal.addElement("Security_Level_2");
-        fvNominalVal.addElement("Security_Level_3");
-        fvNominalVal.addElement("Security_Level_4");
-        fvNominalVal.addElement("Security_Level_5");
+        fvNominalVal.addElement("security_level_1");
+        fvNominalVal.addElement("security_level_2");
+        fvNominalVal.addElement("security_level_3");
+
         Attribute attribute1 = new Attribute("class", fvNominalVal);
         Attribute attribute2 = new Attribute("text", (FastVector) null);
         // Create list of instances with one element
@@ -117,7 +116,7 @@ public class Classifier {
 
         Classifier classifier;
         //String testFile = "rbir-backend/src/main/resources/document.txt";
-        String dataModel = "rbir-backend/src/main/resources/myClassifier.dat";
+        String dataModel = "rbir-backend/src/main/resources/naiveClassifier.dat";
         classifier = new Classifier();
         classifier.load(content);
         classifier.loadModel(dataModel);

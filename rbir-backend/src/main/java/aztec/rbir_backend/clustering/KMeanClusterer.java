@@ -1,5 +1,8 @@
 package aztec.rbir_backend.clustering;
 
+import weka.classifiers.meta.FilteredClassifier;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
@@ -51,6 +54,7 @@ public class KMeanClusterer extends Clusterer {
                 break;
             }
         }
+
         return clusterList;
     }
 
@@ -87,7 +91,7 @@ public class KMeanClusterer extends Clusterer {
                 }
             }
             // update centroids and centroidNorms
-            clusterList.updateCentroids();
+            //clusterList.updateCentroids();
             // prepare for reallocation in next iteration
             if (iter < clusteringIterations - 1) {
                 documentList.clearIsAllocated();
@@ -97,10 +101,10 @@ public class KMeanClusterer extends Clusterer {
         return clusterList;
     }
 
-    public String findCluster(Document document, ClustersList clusterList){
+    public static String findCluster(Document document, ClustersList clusterList, Distance distance){
         Cluster nearestCluster = clusterList.findNearestCluster(distance, document);
         nearestCluster.add(document);
-        nearestCluster.updateCentroid();
+        //nearestCluster.updateCentroid();
         return document.getPredictedCategory();
     }
 
@@ -112,5 +116,36 @@ public class KMeanClusterer extends Clusterer {
         clusterList.updateCentroids();
         return documentList;
     }
+
+    public static void saveModel(ClustersList clustersList){
+        try {
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("rbir-backend/src/main/resources/kMeansClassifier.dat"));
+            out.writeObject(clustersList);
+            out.close();
+            System.out.println("===== Saved model: KMeans"  + " =====");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Problem found when writing: kMeans");
+        }
+    }
+
+    public static ClustersList loadModel(){
+        ClustersList clustersList = null;
+        try {
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream("rbir-backend/src/main/resources/kMeansClassifier.dat"));
+            Object tmp = in.readObject();
+            clustersList = (ClustersList) tmp;
+            in.close();
+            System.out.println("===== Loaded model: " + " KMeans " + " =====");
+        } catch (Exception e) {
+            // Given the cast, a ClassNotFoundException must be caught along
+            // with the IOException
+            System.out.println("Problem found when reading: " + " KMeans ");
+        }
+
+        return clustersList;
+    }
+
+
 
 }

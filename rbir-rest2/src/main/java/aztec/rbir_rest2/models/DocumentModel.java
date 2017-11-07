@@ -11,19 +11,19 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
  */
 @JsonSerialize
 public class DocumentModel {
-	public String title;
-	public MultipartFile file;
-	public String category;
-	public String summary;
-	public String securityLevel;
+	private String title;
+	private File file;
+	private String category;
+	private String summary;
+	private String securityLevel;
 	
-    public MultipartFile getFile() {
+    public File getFile() {
 		return file;
 	}
 
 
 
-	public void setFile(MultipartFile file) {
+	public void setFile(File file) {
 		this.file = file;
 	}
 
