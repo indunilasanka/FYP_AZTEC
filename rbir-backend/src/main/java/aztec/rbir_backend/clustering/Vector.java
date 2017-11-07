@@ -1,9 +1,11 @@
 package aztec.rbir_backend.clustering;
 
+import java.io.Serializable;
+
 /**
  * Created by subhahs on 03/08/2017.
  */
-public class Vector {
+public class Vector implements Serializable{
 
     private final int n;         // length of the vector
     private double[] data;       // array of vector's components

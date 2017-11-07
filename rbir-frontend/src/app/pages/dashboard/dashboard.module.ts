@@ -17,6 +17,7 @@ import { Todo } from './todo';
 import { Calendar } from './calendar';
 import { CalendarService } from './calendar/calendar.service';
 import { FeedService } from './feed/feed.service';
+import { Feed } from './feed';
 import { LineChartService } from './lineChart/lineChart.service';
 import { PieChartService } from './pieChart/pieChart.service';
 import { TodoService } from './todo/todo.service';
@@ -46,7 +47,8 @@ import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
     Todo,
     Calendar,
     Dashboard,
-    FileUploader
+    FileUploader,
+	Feed,
   ],
   providers: [
     CalendarService,

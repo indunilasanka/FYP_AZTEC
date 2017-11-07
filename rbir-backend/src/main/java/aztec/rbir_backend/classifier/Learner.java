@@ -75,7 +75,7 @@ public class Learner {
             System.out.println(eval.toClassDetailsString());
 
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
             System.out.println("Problem found when evaluating");
         }
     }
@@ -106,7 +106,7 @@ public class Learner {
 
         try {
             ObjectOutputStream out = new ObjectOutputStream(
-                    new FileOutputStream("rbir-backend/src/main/resources/myClassifier.dat"));
+                    new FileOutputStream("rbir-backend/src/main/resources/naiveClassifier.dat"));
             out.writeObject(classifier);
             out.close();
             System.out.println("===== Saved model: "  + " =====");

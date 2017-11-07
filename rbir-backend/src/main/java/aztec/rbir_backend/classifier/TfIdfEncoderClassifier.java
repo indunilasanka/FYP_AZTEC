@@ -21,15 +21,15 @@ public class TfIdfEncoderClassifier {
     private final int numFeatures;
     // inverse document frequency used for normalization of feature vectors
     private Vector inverseDocumentFrequency = null;
+    private HashMap<Integer, ArrayList<String>> termFrequencyMap;
+    private HashMap<Integer, Double> tfMap;
+    private HashMap<Integer, Double> idfMap;
 
     public TfIdfEncoderClassifier(int numFeatures)
     {
         this.numFeatures = numFeatures;
     }
 
-    private HashMap<Integer, ArrayList<String>> termFrequencyMap;
-    private HashMap<Integer, Double> tfMap;
-    private HashMap<Integer, Double> idfMap;
 
     // Calculate word histogram for document
     public void calcHistogram(Document document) {
@@ -147,7 +147,6 @@ public class TfIdfEncoderClassifier {
                 idfMap.put(i, inverseDocumentFrequency.get(i));
             }
         }
-
 
         ArrayList<String> tokens = new ArrayList<String>();
         Set<String> tokenSet;

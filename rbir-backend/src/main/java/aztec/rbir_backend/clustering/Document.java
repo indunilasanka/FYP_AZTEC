@@ -1,19 +1,24 @@
 package aztec.rbir_backend.clustering;
 
 
+import com.sun.xml.internal.ws.developer.Serialization;
+
+import java.io.Serializable;
+
 /**
  * Created by subhahs on 03/08/2017.
  */
 
 /* class for each document */
-public class Document implements Comparable<Document> {
+public class Document implements Comparable<Document>, Serializable {
 
-    private final String title;
-    private final String contents;
-    private final long id;
+    private String title;
+    private String contents;
+    private long id;
     private String category;
     private String filePath;
     private String predictedCategory;
+    private String[] metaDataNames;
 
     // whether document has been allocated to a cluster
     private boolean allocated;
@@ -24,6 +29,10 @@ public class Document implements Comparable<Document> {
     private Vector vector;
     // precalculated document vector norms
     private double norm;
+
+    public Document(){
+
+    }
 
     public Document(long id, String title, String contents, String category, String filePath) {
         this.id = id;

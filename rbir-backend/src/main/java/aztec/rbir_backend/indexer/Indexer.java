@@ -21,10 +21,6 @@ public class Indexer {
         //calculateTrainingWords(content);
         //
 
-        Boolean result = Index.index(content,filePath, Global.getHashtableIndex());
-        Hashtable<String,Hashtable<String,ArrayList<Integer>>> test = Global.getHashtableIndex();
-        if(result)
-            return "success";
         return "fail";
     }
 

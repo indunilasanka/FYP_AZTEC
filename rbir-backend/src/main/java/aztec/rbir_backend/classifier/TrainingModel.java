@@ -7,6 +7,10 @@ import org.apache.commons.lang.math.NumberUtils;
 import weka.core.converters.ArffLoader;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -36,6 +40,34 @@ public class TrainingModel {
             }
         }
 
+
+        File file = new File("rbir-backend/src/main/resources/keys.arff");
+        PrintWriter emptyWriter = null;
+        try {
+            emptyWriter = new PrintWriter(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        emptyWriter.print("");
+
+        emptyWriter.append("@relation security_category\n");
+        emptyWriter.flush();
+
+        String attributeStr = "@attribute class {";
+        for(String category: categoryList){
+            attributeStr = attributeStr + category + ",";
+        }
+        attributeStr = attributeStr.substring(0,attributeStr.length()-1);
+        attributeStr+="}\n";
+
+        emptyWriter.append(attributeStr);
+        emptyWriter.flush();
+
+        emptyWriter.append("@attribute text String\n@data\n");
+        emptyWriter.flush();
+        emptyWriter.close();
+
+        //find new words with categories to add to the training word list
         for (String category : categoryList)
         {
             ArrayList<Document> CategorizedList = new ArrayList<>(Collections2.filter(newDocList, doc -> doc.getCategory().equals(category)));
@@ -66,6 +98,7 @@ public class TrainingModel {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
 /*

@@ -20,11 +20,12 @@ public class Cluster extends ArrayList<Document> implements Comparable<Cluster>{
     //cluster initialization with single document
     public Cluster(Document document) {
         super();
-        add(document);
+        super.add(document);
         centroid = document.getVector();
         centroidNorm = centroid.magnitude();
         name = document.getCategory();
         document.setPredictedCategory(name);
+        document.setIsAllocated();
     }
 
     //sorting of clusters
@@ -35,6 +36,9 @@ public class Cluster extends ArrayList<Document> implements Comparable<Cluster>{
     //add document to cluster
     public boolean add(Document document) {
         super.add(document);
+        centroid.plus(document.getVector());
+        centroid.divide(size());
+        centroidNorm = centroid.magnitude();
         document.setPredictedCategory(name);
         document.setIsAllocated();
         return true;

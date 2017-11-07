@@ -20,5 +20,7 @@
         <mapping class="aztec.rbir_database.Entities.User"></mapping>
         <mapping class="aztec.rbir_database.Entities.Role"></mapping>
         <mapping class="aztec.rbir_database.Entities.UserRole"></mapping>
+        <mapping class="aztec.rbir_database.Entities.PublicUser"></mapping>
+        <mapping class="aztec.rbir_database.Entities.Request"></mapping>
     </session-factory>
 </hibernate-configuration>

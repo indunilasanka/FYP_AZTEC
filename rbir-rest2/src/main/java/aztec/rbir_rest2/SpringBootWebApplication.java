@@ -57,12 +57,6 @@ public class SpringBootWebApplication {
 			session.getTransaction().rollback();
 		}
 
-
-
-
         SpringApplication.run(SpringBootWebApplication.class, args);
     }
-    
-    
-
 }

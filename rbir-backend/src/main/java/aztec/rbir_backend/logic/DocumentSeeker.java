@@ -35,7 +35,7 @@ public class DocumentSeeker {
         Iterator iterator = response.getHits().iterator();
         while (iterator.hasNext()){
             SearchHit hit = (SearchHit) iterator.next();
-            result.add(hit.getSource().get("name").toString()+"."+hit.getSource().get("file_type").toString());
+            result.add(hit.getSourceAsMap().get("name").toString()+"."+hit.getSourceAsMap().get("file_type").toString());
         }
 
         System.out.println(result);

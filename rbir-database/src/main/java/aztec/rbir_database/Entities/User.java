@@ -9,6 +9,10 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+import java.sql.Timestamp;
+
 @Entity
 @Table(name = "user")
 public class User {
@@ -34,6 +38,34 @@ public class User {
     
     @Column(name= "email")
     private String email;
+    
+    @Column
+	@CreationTimestamp
+	private Timestamp createDateTime;
+
+	@Column
+	@UpdateTimestamp
+    private Timestamp updateDateTime;
+
+
+	public Timestamp getCreateDateTime() {
+		return createDateTime;
+	}
+
+
+	public void setCreateDateTime(Timestamp createDateTime) {
+		this.createDateTime = createDateTime;
+	}
+
+
+	public Timestamp getUpdateDateTime() {
+		return updateDateTime;
+	}
+
+
+	public void setUpdateDateTime(Timestamp updateDateTime) {
+		this.updateDateTime = updateDateTime;
+	}
 
 
 	public Long getUserId() {
