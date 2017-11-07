@@ -2,11 +2,9 @@ package aztec.rbir_backend.logic;
 
 import org.apache.tika.Tika;
 import org.apache.tika.exception.TikaException;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-
 /**
  * Created by subhahs on 28/05/2017.
  */

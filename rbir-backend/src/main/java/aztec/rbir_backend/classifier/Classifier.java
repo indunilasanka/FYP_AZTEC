@@ -24,7 +24,6 @@ public class Classifier {
 
 
     public void load(String content) {
-
         text = Terms.getProcessedContent(content);
         System.out.println(text);
         System.out
