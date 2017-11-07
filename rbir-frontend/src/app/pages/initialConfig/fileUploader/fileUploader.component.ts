@@ -68,12 +68,12 @@ export class FileUploader {
           const fielType: String = files.item(i).type;
           if (fielType.includes('pdf') || fielType.includes('officedocument.word')) {
             const document: DocumentModel = new DocumentModel();
-            document.securityLevel = this.selectedLvl.split(' ').join('_');
+            document.securityLevel = this.selectedLvl.split(' ').join('_').toLowerCase();
+
             console.log('document.securityLevel -----' , document.securityLevel);
             document.file = files.item(i);
             this.documents.push(document);
           }
-          // console.log(fielType);
         }
       }
     }
@@ -87,7 +87,7 @@ export class FileUploader {
   startFileupload() {
 
     if (this.documents) {
-      this.fileUploadService.uploadFolder(this.documents).subscribe(
+      this.fileUploadService.uploadFolder(this.documents, this.securityLvls).subscribe(
 
 
         data => {

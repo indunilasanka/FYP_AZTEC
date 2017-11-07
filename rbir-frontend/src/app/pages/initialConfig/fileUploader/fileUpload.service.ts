@@ -7,6 +7,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { DocumentModel } from '../../../models/document.model';
+import {element} from "protractor";
 
 
 @Injectable()
@@ -54,13 +55,17 @@ export class FileUploadService {
   }
 
 
-  uploadFolder(files: DocumentModel[]): Observable<Object[]> {
+  uploadFolder(files: DocumentModel[], securityLvls: string[]): Observable<Object[]> {
     const formData: FormData = new FormData();
     const fileCount: number = files.length;
     if (fileCount > 0) {
       files.forEach(element => {
         formData.append('file', element.file );
         formData.append('level', element.securityLevel );
+      });
+
+      securityLvls.forEach(element => {
+        formData.append('securitylvls', element );
       });
 
       const headers = new Headers();
@@ -72,7 +77,7 @@ export class FileUploadService {
         .map(response => response.text())
         .catch(this.handleError);
     }
-  }  
+  }
 
 
   private handleError (error: Response | any) {
