@@ -16,8 +16,7 @@ import { Request } from './request';
 import { Todo } from './todo';
 import { Calendar } from './calendar';
 import { CalendarService } from './calendar/calendar.service';
-import { FeedService } from './feed/feed.service';
-import { Feed } from './feed';
+
 import { LineChartService } from './lineChart/lineChart.service';
 import { PieChartService } from './pieChart/pieChart.service';
 import { TodoService } from './todo/todo.service';
@@ -25,7 +24,7 @@ import { TrafficChartService } from './trafficChart/trafficChart.service';
 import { UsersMapService } from './usersMap/usersMap.service';
 import {FileUploader} from './fileUploader';
 import {FileUploadService} from './fileUploader/fileUpload.service';
-import {RequestService} from "app/pages/dashboard/request/request.service";
+import {RequestService} from 'app/pages/dashboard/request/request.service';
 import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
 
 @NgModule({
@@ -35,7 +34,7 @@ import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
     AppTranslationModule,
     NgaModule,
     routing,
-    Ng2Bs3ModalModule
+    Ng2Bs3ModalModule,
   ],
   declarations: [
     PopularApp,
@@ -48,18 +47,16 @@ import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
     Calendar,
     Dashboard,
     FileUploader,
-	Feed,
   ],
   providers: [
     CalendarService,
-    FeedService,
     LineChartService,
     PieChartService,
     TodoService,
     TrafficChartService,
     UsersMapService,
     RequestService,
-    FileUploadService
+    FileUploadService,
   ]
 })
 export class DashboardModule {}

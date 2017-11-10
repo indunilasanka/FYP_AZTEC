@@ -12,20 +12,20 @@ import { DocumentService } from './document.service';
 export class Document {
 
   data: Array<Object> = null;
-  searchResults : Array<DocumentModel>;
-  doc1 : DocumentModel;
-  doc2 : DocumentModel;
+  searchResults: Array<DocumentModel>;
+  doc1: DocumentModel;
+  doc2: DocumentModel;
   request: RequestModel = null;
   quary: string = '';
+  isChecked: boolean = false;
 
   constructor(private documentServece: DocumentService) {
   }
 
   ngOnInit() {
-
   }
 
-  searchDocuments(searchQuary : string){
+  searchDocuments(searchQuary: string) {
     console.log("searchDocuments()", searchQuary);
     this.documentServece.getDocuments(searchQuary).subscribe(
       data => {
@@ -36,8 +36,7 @@ export class Document {
     );
   }
 
-  loadDocuments(){
-
+  loadDocuments() {
     this.searchResults = new Array<DocumentModel>();
     for (let entry of this.data) {
       console.log(entry);

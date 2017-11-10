@@ -13,6 +13,7 @@
       <input aria-describedby="basic-addon1" class="form-control with-primary-addon" placeholder="Search for..."
              type="text" #searchQuary value={{quary}} (keyup.enter)="(searchQuary.value)">
     </div>
+    <ba-checkbox [(ngModel)]="isChecked" [label]="'Give me exact search.'" [ngModelOptions]="{standalone: true}"></ba-checkbox>
     <ba-card title="Search result"
              baCardClass="large-card with-scroll feed-panel">
       <search-result [searchResults]="searchResults"></search-result>

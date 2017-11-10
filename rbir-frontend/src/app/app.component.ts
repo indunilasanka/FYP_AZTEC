@@ -20,6 +20,12 @@ import { layoutPaths } from './theme/theme.constants';
     </main>
   `
 })
+
+// <main [class.menu-collapsed]="isMenuCollapsed" baThemeRun>
+// <div class="additional-bg"></div>
+// <router-outlet></router-outlet>
+// </main>
+
 export class App {
 
   isMenuCollapsed: boolean = false;

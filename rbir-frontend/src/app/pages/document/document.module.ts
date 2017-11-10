@@ -4,6 +4,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgaModule } from '../../theme/nga.module';
+import { FormsModule as AngularFormsModule } from '@angular/forms';
+
 import { routing } from './document.routing';
 import { Document } from './document.component';
 import { DocumentService } from './document.service';
@@ -17,6 +19,7 @@ import {RequestService} from './request/request.service';
     CommonModule,
     NgaModule,
     routing,
+    AngularFormsModule,
   ],
   declarations: [
     Document,
