@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {FormGroup, AbstractControl, FormBuilder, Validators, FormControl} from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormGroup, AbstractControl, FormBuilder, Validators, FormControl} from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { AuthenticationService } from '../../services/authentication.service';
@@ -15,6 +15,8 @@ export class Login {
   public email:AbstractControl;
   public password:AbstractControl;
   public submitted:boolean = false;
+  public error: string;
+
 
   constructor(fb:FormBuilder,private router: Router,
     private authenticationService: AuthenticationService) {
@@ -25,8 +27,6 @@ export class Login {
 
     this.email = this.form.controls['email'];
     this.password = this.form.controls['password'];
-
-    
   }
 
   ngOnInit() {
