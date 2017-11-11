@@ -16,17 +16,16 @@ public class Global {
 
     public static ClassLoader loader = Global.class.getClassLoader();
 
-    public static String localPath = "E:/FYP/";
-    public static String serverPath = "/home/rbir/";
+    public static String path = "E:/FYP/";//"/home/rbir/";
 
 
     public Global(){
             try {
-                ObjectInputStream in = new ObjectInputStream(loader.getResourceAsStream("classifierName.dat"));
+                ObjectInputStream in = new ObjectInputStream(new FileInputStream(path+"classifierName.dat"));
                 this.classificationAlgo = (String) in.readObject();
                 System.out.println(classificationAlgo);
                 in.close();
-                in = new ObjectInputStream(loader.getResourceAsStream("lastDocId.dat"));
+                in = new ObjectInputStream(new FileInputStream(path+"lastDocId.dat"));
                 this.lastDocId = (long) in.readObject();
                 System.out.println(lastDocId);
                 in.close();
@@ -55,12 +54,10 @@ public class Global {
 
     public static void writeToFile(){
         try {
-            File file = new File(loader.getResourceAsStream("classifierName.dat").toString());
-            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(path+"classifierName.dat"));
             out.writeObject(classificationAlgo);
             out.close();
-            file = new File(loader.getResourceAsStream("lastDocId.dat").toString());
-            out = new ObjectOutputStream(new FileOutputStream(file));
+            out = new ObjectOutputStream(new FileOutputStream(path+"lastDocId.dat"));
             out.writeObject(lastDocId);
             out.close();
         } catch (FileNotFoundException e) {

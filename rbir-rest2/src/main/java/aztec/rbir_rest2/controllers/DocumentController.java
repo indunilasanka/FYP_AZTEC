@@ -28,8 +28,6 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/documents")
 public class DocumentController {
 
-    private String path = Global.localPath;  //change according to hosted or local
-
     @CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value = "/list", method = RequestMethod.POST)
     public
@@ -85,7 +83,7 @@ public class DocumentController {
             if (!dir.exists()) {
                 dir.mkdir();
             }
-            File destinationDir = new File(path+dir+"/"+e.getPredictedCategory()+"/");
+            File destinationDir = new File(Global.path+dir+"/"+e.getPredictedCategory()+"/");
             try {
                 System.out.println("Test");
                 Map document = new HashMap<String, Object>();
@@ -205,7 +203,7 @@ public class DocumentController {
                 dir.mkdir();
             }
 
-            File destinationDir = new File(path+dir+"/"+e.getPredictedCategory()+"/");
+            File destinationDir = new File(Global.path+dir+"/"+e.getPredictedCategory()+"/");
             try {
                 Map document = new HashMap<String, Object>();
                 document.put("name",e.getTitle());

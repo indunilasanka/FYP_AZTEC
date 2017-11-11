@@ -18,8 +18,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class SpringBootWebApplication {
-	
-	Session session;
+
 	
     @SuppressWarnings("unchecked")
 	public static void main(String[] args) {

@@ -106,7 +106,7 @@ public class Learner {
     public void saveModel() {
 
         try {
-            File file = new File(Global.loader.getResourceAsStream("naiveClassifier.dat").toString());
+            File file = new File(Global.path +"naiveClassifier.dat");
             ObjectOutputStream out = new ObjectOutputStream(
                     new FileOutputStream(file));
             out.writeObject(classifier);
@@ -123,7 +123,11 @@ public class Learner {
 
         InputStream arffFile = null;
 
-        arffFile =  Global.loader.getResourceAsStream("keys.arff");//new FileInputStream("src/main/resources/keys.arff");//
+        try {
+            arffFile =  new FileInputStream(Global.path+"keys.arff");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
 
         learner = new Learner();

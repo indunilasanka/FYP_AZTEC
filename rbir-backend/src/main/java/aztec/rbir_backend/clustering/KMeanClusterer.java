@@ -120,7 +120,7 @@ public class KMeanClusterer extends Clusterer {
 
     public static void saveModel(ClustersList clustersList){
         try {
-            File file = new File(Global.loader.getResource("kMeansClassifier.dat").toString());
+            File file = new File(Global.path + "kMeansClassifier.dat");
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
             out.writeObject(clustersList);
             out.close();
@@ -134,7 +134,7 @@ public class KMeanClusterer extends Clusterer {
     public static ClustersList loadModel(){
         ClustersList clustersList = null;
         try {
-            ObjectInputStream in = new ObjectInputStream(Global.loader.getResourceAsStream("kMeansClassifier.dat"));
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream(Global.path + "kMeansClassifier.dat"));
             Object tmp = in.readObject();
             clustersList = (ClustersList) tmp;
             in.close();

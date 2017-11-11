@@ -42,7 +42,7 @@ public class TrainingModel {
         }
 
 
-        File file = new File(Global.loader.getResource("keys.arff").toString());
+        File file = new File(Global.path+"keys.arff");
         PrintWriter emptyWriter = null;
         try {
             emptyWriter = new PrintWriter(file);
@@ -87,7 +87,7 @@ public class TrainingModel {
 
         BufferedWriter writer = null;
         try {
-            writer = new BufferedWriter(new FileWriter(Global.loader.getResource("keys.arff").toString(),true));
+            writer = new BufferedWriter(new FileWriter(Global.path+"keys.arff",true));
 
             for(String str : dataSet)
             {

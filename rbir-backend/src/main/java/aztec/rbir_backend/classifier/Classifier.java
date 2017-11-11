@@ -118,7 +118,7 @@ public class Classifier {
         InputStream arffFile = null;
 
         try {
-            arffFile = new FileInputStream("src/main/resources/keys.arff");//classLoader.getResource("keys.arff").openStream();
+            arffFile = new FileInputStream(Global.path+"keys.arff");
             BufferedReader reader = new BufferedReader(new InputStreamReader(arffFile));
             ArffLoader.ArffReader arff = new ArffLoader.ArffReader(reader);
             String content = arff.getData().toString();
@@ -136,7 +136,7 @@ public class Classifier {
 
         Classifier classifier;
         //String testFile = "rbir-backend/src/main/resources/document.txt";
-        String dataModel =  Global.loader.getResource("naiveClassifier.dat").toString();
+        String dataModel =  Global.path +"naiveClassifier.dat";
         classifier = new Classifier();
         classifier.load(content);
         classifier.loadModel(dataModel);

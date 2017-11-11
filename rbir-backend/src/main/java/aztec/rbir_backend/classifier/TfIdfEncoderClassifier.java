@@ -210,7 +210,7 @@ public class TfIdfEncoderClassifier {
 
         HashSet<String> keys_set = null;
         try {
-            ObjectInputStream input = new ObjectInputStream(Global.loader.getResourceAsStream("file.bin"));
+            ObjectInputStream input = new ObjectInputStream(new FileInputStream(Global.path+"file.bin"));
             keys_set = (HashSet<String>) (input.readObject());
         }
         catch (Exception e) {
@@ -223,7 +223,7 @@ public class TfIdfEncoderClassifier {
 
     public void write (HashSet<String> keys_set) throws IOException {
         try {
-            File file = new File(Global.loader.getResource("file.bin").toString());
+            File file = new File(Global.path+"file.bin");
             FileOutputStream fos = new FileOutputStream(file);
             ObjectOutputStream out = new ObjectOutputStream(fos);
             out.writeObject(keys_set);
