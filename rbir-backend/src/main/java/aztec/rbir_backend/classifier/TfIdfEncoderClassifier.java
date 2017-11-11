@@ -209,7 +209,7 @@ public class TfIdfEncoderClassifier {
 
         HashSet<String> keys_set = null;
         try {
-            ObjectInputStream input = new ObjectInputStream( new FileInputStream("rbir-backend/src/main/resources/file.bin"));
+            ObjectInputStream input = new ObjectInputStream( new FileInputStream("src/main/resources/file.bin"));
             keys_set = (HashSet<String>) (input.readObject());
         }
         catch (Exception e) {
@@ -222,7 +222,7 @@ public class TfIdfEncoderClassifier {
 
     public void write (HashSet<String> keys_set) throws IOException {
         try {
-            FileOutputStream fos = new FileOutputStream("rbir-backend/src/main/resources/file.bin");
+            FileOutputStream fos = new FileOutputStream("src/main/resources/file.bin");
             ObjectOutputStream out = new ObjectOutputStream(fos);
             out.writeObject(keys_set);
             out.flush();

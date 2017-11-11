@@ -41,7 +41,7 @@ public class TrainingModel {
         }
 
 
-        File file = new File("rbir-backend/src/main/resources/keys.arff");
+        File file = new File("src/main/resources/keys.arff");
         PrintWriter emptyWriter = null;
         try {
             emptyWriter = new PrintWriter(file);
@@ -86,7 +86,7 @@ public class TrainingModel {
 
         BufferedWriter writer = null;
         try {
-            writer = new BufferedWriter(new FileWriter("rbir-backend/src/main/resources/keys.arff",true));
+            writer = new BufferedWriter(new FileWriter("src/main/resources/keys.arff",true));
 
             for(String str : dataSet)
             {

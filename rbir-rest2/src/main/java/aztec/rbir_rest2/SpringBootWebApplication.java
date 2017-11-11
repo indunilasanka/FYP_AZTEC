@@ -7,6 +7,7 @@ import aztec.rbir_database.Entities.User;
 import aztec.rbir_database.Entities.UserRole;
 import aztec.rbir_database.configurations.HibernateUtil;
 
+import java.io.File;
 import java.util.List;
 
 import org.hibernate.HibernateException;

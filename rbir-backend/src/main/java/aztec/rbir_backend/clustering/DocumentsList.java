@@ -34,7 +34,13 @@ public class DocumentsList extends ArrayList<Document> {
             String newFileName = filename+"_"+dateFormat.format(date)+"."+fileextention;
             System.out.println(newFileName);
 
-            File newFile = new File("E:/FYPSavingFolder/nonIndexedFiles/"+newFileName);
+            File dir = new File("/nonIndexedFiles");
+            if (!dir.exists()) {
+                dir.mkdir();
+            }
+
+            File newFile = new File(dir+"/"+newFileName);
+
             System.out.println(newFile.getAbsolutePath());
             try {
                 files.get(i).transferTo(newFile);
@@ -66,7 +72,13 @@ public class DocumentsList extends ArrayList<Document> {
             String newFileName = filename+"_"+dateFormat.format(date)+"."+fileextention;
             System.out.println(newFileName);
 
-            File newFile = new File("E:/FYPSavingFolder/nonIndexedFiles/" + newFileName);
+            File dir = new File("/nonIndexedFiles");
+            if (!dir.exists()) {
+                dir.mkdir();
+            }
+
+            File newFile = new File(dir+"/"+newFileName);
+
             System.out.println(newFile.getAbsolutePath());
             try {
                 files.get(i).transferTo(newFile);

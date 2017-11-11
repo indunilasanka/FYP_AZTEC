@@ -13,7 +13,7 @@ import {element} from "protractor";
 @Injectable()
 export class FileUploadService {
 
-  private baseUrl: string = 'http://localhost:8080/documents';
+  private baseUrl: string = 'http://rbir.projects.mrt.ac.lk:8080/documents';
 
   constructor(private http : Http){
   }
@@ -65,7 +65,7 @@ export class FileUploadService {
       });
 
       securityLvls.forEach(element => {
-        formData.append('securitylvls', element );
+        formData.append('securitylvls', element.split(' ').join('_').toLowerCase());
       });
 
       const headers = new Headers();

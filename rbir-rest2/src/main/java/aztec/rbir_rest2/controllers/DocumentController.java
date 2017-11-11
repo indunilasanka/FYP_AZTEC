@@ -10,6 +10,7 @@ import aztec.rbir_rest2.models.*;
 import aztec.rbir_backend.classifier.*;
 import aztec.rbir_backend.clustering.*;
 import aztec.rbir_backend.globals.Global;
+import com.google.common.collect.Collections2;
 import org.apache.commons.collections4.map.HashedMap;
 import org.apache.commons.io.FileUtils;
 import org.elasticsearch.action.bulk.BulkProcessor;
@@ -79,16 +80,20 @@ public class DocumentController {
 
         documentList.forEach(e -> {
             File file = new File(e.getFilePath());
-            File destinationDir = new File("E:/FYPSavingFolder/indexedFiles/"+e.getPredictedCategory()+"/");
+            File dir = new File("home/rbir/FYPSavingFolder/indexedFiles");
+            if (!dir.exists()) {
+                dir.mkdir();
+            }
+            File destinationDir = new File(dir+"/"+e.getPredictedCategory()+"/");
             try {
-                FileUtils.moveFileToDirectory(file, destinationDir, true);
                 System.out.println("Test");
                 Map document = new HashMap<String, Object>();
                 document.put("name",file.getName());
-                document.put("path",destinationDir.getCanonicalPath() + "\\" + file.getName());
+                document.put("path",destinationDir.getCanonicalPath() + "/" + file.getName());
                 document.put("content",e.getContent());
                 document.put("category", e.getPredictedCategory());
                 bulkProcessor.add(new IndexRequest(e.getPredictedCategory(),"document").source(document));
+                FileUtils.moveFileToDirectory(file, destinationDir, true);
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -121,9 +126,8 @@ public class DocumentController {
     @RequestMapping(value = "/setup", method = RequestMethod.POST)
     public
     @ResponseBody
-    ResponseEntity<SetupResponse> handleInitialSetup(@RequestParam("file") ArrayList<MultipartFile> files, @RequestParam("level") ArrayList<String> categories)
+    ResponseEntity<SetupResponse> handleInitialSetup(@RequestParam("file") ArrayList<MultipartFile> files, @RequestParam("level") ArrayList<String> categories, @RequestParam("securitylvls") ArrayList<String> levels)
     {
-
         DocumentsList documentList1 = new DocumentsList(files, categories);
         DocumentsList documentList2 = new DocumentsList();
 
@@ -188,15 +192,24 @@ public class DocumentController {
 
         BulkProcessor bulkProcessor = aztec.rbir_backend.document.Document.getBulkProcessor();
 
+        Map<String, String> docCategory = new HashedMap<String, String>();
+
         indexingDocList.forEach(e -> {
+            docCategory.put(e.getTitle(),e.getPredictedCategory());
             System.out.println(e.getFilePath());
             File file = new File(e.getFilePath());
-            File destinationDir = new File("E:/FYPSavingFolder/indexedFiles/"+e.getPredictedCategory()+"/");
+
+            File dir = new File("home/rbir/FYPSavingFolder/indexedFiles");
+            if (!dir.exists()) {
+                dir.mkdir();
+            }
+
+            File destinationDir = new File(dir+"/"+e.getPredictedCategory()+"/");
             try {
                 Map document = new HashMap<String, Object>();
                 document.put("name",e.getTitle());
                 document.put("type",e.getType());
-                document.put("path",destinationDir.getCanonicalPath() + "\\" + file.getName());
+                document.put("path",destinationDir.getCanonicalPath() + "/" + file.getName());
                 document.put("content",e.getContent());
                 document.put("category", e.getPredictedCategory());
                 bulkProcessor.add(new IndexRequest(e.getPredictedCategory(),"document",e.getId()+"").source(document));
@@ -216,9 +229,18 @@ public class DocumentController {
         classifyAccuracy.put("NaiveBaysian", classificationAccuracy);
         classifyAccuracy.put("KMeans", clusteringAccuracy);
 
+        Map<String, Integer> numDocCategory = new HashMap<String, Integer>();
+
+        for (String category: levels){
+            numDocCategory.put(category, Collections2.filter(indexingDocList, doc -> doc.getCategory().equals(category)).size());
+        }
+
+
         SetupResponse response = new SetupResponse();
         response.setSuccess(true);
         response.setClassifier_accuracy(classifyAccuracy);
+        response.setDoc_category(docCategory);
+        response.setNum_doc_category(numDocCategory);
 
         return new ResponseEntity<SetupResponse>(response, HttpStatus.OK);
     }

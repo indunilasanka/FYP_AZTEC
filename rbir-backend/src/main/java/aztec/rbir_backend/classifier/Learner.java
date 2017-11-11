@@ -106,7 +106,7 @@ public class Learner {
 
         try {
             ObjectOutputStream out = new ObjectOutputStream(
-                    new FileOutputStream("rbir-backend/src/main/resources/naiveClassifier.dat"));
+                    new FileOutputStream("src/main/resources/naiveClassifier.dat"));
             out.writeObject(classifier);
             out.close();
             System.out.println("===== Saved model: "  + " =====");
@@ -123,7 +123,7 @@ public class Learner {
         InputStream arffFile = null;
         try {
 
-            arffFile =  new FileInputStream("rbir-backend/src/main/resources/keys.arff");//classLoader.getResource("keys.arff").openStream();
+            arffFile =  new FileInputStream("src/main/resources/keys.arff");//classLoader.getResource("keys.arff").openStream();
         } catch (IOException e) {
             e.printStackTrace();
         }
