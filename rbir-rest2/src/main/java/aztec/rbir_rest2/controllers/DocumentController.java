@@ -6,6 +6,8 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 
+import aztec.rbir_backend.clustering.Document;
+import aztec.rbir_backend.document.*;
 import aztec.rbir_rest2.models.*;
 import aztec.rbir_backend.classifier.*;
 import aztec.rbir_backend.clustering.*;
@@ -59,6 +61,9 @@ public class DocumentController {
         String result = null;
         DocumentsList documentList = new DocumentsList(files);
 
+        Encoder encoder = new TfIdfEncoder(10000);
+        encoder.encode(documentList);
+
         if(Global.getClassificationAlgo() == "Naive"){
             documentList.forEach(e -> {
                     String  predictedCategory = Classifier.getCategory(e.getPreprocessedContent());
@@ -79,11 +84,11 @@ public class DocumentController {
 
         documentList.forEach(e -> {
             File file = new File(e.getFilePath());
-            File dir = new File("indexedFiles");
+            File dir = new File(Global.path+"indexedFiles");
             if (!dir.exists()) {
                 dir.mkdir();
             }
-            File destinationDir = new File(Global.path+dir+"/"+e.getPredictedCategory()+"/");
+            File destinationDir = new File(dir+"/"+e.getPredictedCategory()+"/");
             try {
                 System.out.println("Test");
                 Map document = new HashMap<String, Object>();
@@ -92,17 +97,18 @@ public class DocumentController {
                 document.put("content",e.getContent());
                 document.put("category", e.getPredictedCategory());
                 bulkProcessor.add(new IndexRequest(e.getPredictedCategory(),"document").source(document));
+               // aztec.rbir_backend.document.Document.create(document,e.getCategory());
                 FileUtils.moveFileToDirectory(file, destinationDir, true);
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
         });
 
-        try {
+      /*  try {
             bulkProcessor.awaitClose(10, TimeUnit.MINUTES);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
 
         Map<String, String> doc_cat = new HashMap<String, String>();
 
@@ -198,12 +204,12 @@ public class DocumentController {
             System.out.println(e.getFilePath());
             File file = new File(e.getFilePath());
 
-            File dir = new File("indexedFiles");
+            File dir = new File(Global.path+"indexedFiles");
             if (!dir.exists()) {
                 dir.mkdir();
             }
 
-            File destinationDir = new File(Global.path+dir+"/"+e.getPredictedCategory()+"/");
+            File destinationDir = new File(dir+"/"+e.getPredictedCategory()+"/");
             try {
                 Map document = new HashMap<String, Object>();
                 document.put("name",e.getTitle());

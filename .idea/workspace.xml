@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2063dfd8-8076-4440-a978-83fb969036f8" name="Default" comment="Add new libraries, &#10;Change the backend with facilitating elastic search&#10;Change .ignore file">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/Classifier.java" afterPath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/Classifier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/Learner.java" afterPath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/Learner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/TfIdfEncoderClassifier.java" afterPath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/TfIdfEncoderClassifier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/TrainingModel.java" afterPath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/TrainingModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-rest2/target/classes/aztec/rbir_rest2/controllers/DocumentController.class" afterPath="$PROJECT_DIR$/rbir-rest2/target/classes/aztec/rbir_rest2/controllers/DocumentController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/DocumentsList.java" afterPath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/DocumentsList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/KMeanClusterer.java" afterPath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/KMeanClusterer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/configurations/ElasticSearchClient.java" afterPath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/configurations/ElasticSearchClient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/globals/Global.java" afterPath="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/globals/Global.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/SpringBootWebApplication.java" afterPath="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/SpringBootWebApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-database/target/surefire-reports/aztec.rbir_database.AppTest.txt" afterPath="$PROJECT_DIR$/rbir-database/target/surefire-reports/aztec.rbir_database.AppTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java" afterPath="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/rbir-backend/target/" />
@@ -70,7 +68,6 @@
         <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/indexer/IndexerLucence.java" />
         <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/logic/DocumentSeeker.java" />
         <option value="$PROJECT_DIR$/rbir-backend/pom.xml" />
-        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/configurations/ElasticSearchClient.java" />
         <option value="$PROJECT_DIR$/rbir-rest2/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/models/DocumentModel.java" />
         <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/Vector.java" />
@@ -92,10 +89,11 @@
         <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/Learner.java" />
         <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/TfIdfEncoderClassifier.java" />
         <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/TrainingModel.java" />
-        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/DocumentsList.java" />
         <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/KMeanClusterer.java" />
-        <option value="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java" />
+        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/configurations/ElasticSearchClient.java" />
         <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/globals/Global.java" />
+        <option value="$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/DocumentsList.java" />
+        <option value="$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java" />
       </list>
     </option>
   </component>
@@ -169,6 +167,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -367,6 +367,10 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -420,10 +424,34 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ClassTreeNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FYP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rbir-backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clustering" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1104,12 +1132,13 @@
       <workItem from="1510027869836" duration="11507000" />
       <workItem from="1510046208324" duration="3617000" />
       <workItem from="1510052966898" duration="5508000" />
-      <workItem from="1510379578319" duration="21010000" />
+      <workItem from="1510379578319" duration="24646000" />
+      <workItem from="1510416714261" duration="3544000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206244000" />
+    <option name="totallyTimeSpent" value="213424000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1136,19 +1165,19 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39443535" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39432177" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288364" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32334384" sideWeight="0.4969743" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33280757" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33280757" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32492113" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3023426" sideWeight="0.48895028" order="0" side_tool="false" content_ui="combo" x="383" y="159" width="600" height="410" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30161053" sideWeight="0.48895028" order="0" side_tool="false" content_ui="combo" x="383" y="159" width="600" height="410" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32492113" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32492113" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1292,48 +1321,60 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java</url>
-          <line>38</line>
+          <line>40</line>
           <properties />
           <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java</url>
-          <line>43</line>
+          <line>45</line>
           <properties />
           <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java</url>
-          <line>77</line>
+          <url>file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/KMeanClusterer.java</url>
+          <line>105</line>
           <properties />
-          <option name="timeStamp" value="72" />
+          <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java</url>
-          <line>150</line>
+          <url>file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/KMeanClusterer.java</url>
+          <line>106</line>
           <properties />
-          <option name="timeStamp" value="75" />
+          <option name="timeStamp" value="82" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java</url>
-          <line>141</line>
+          <url>file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/KMeanClusterer.java</url>
+          <line>112</line>
           <properties />
-          <option name="timeStamp" value="76" />
+          <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/document/Document.java</url>
-          <line>49</line>
+          <url>file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/CosineDistance.java</url>
+          <line>12</line>
           <properties />
-          <option name="timeStamp" value="79" />
+          <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java</url>
-          <line>129</line>
+          <url>file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/Distance.java</url>
+          <line>12</line>
           <properties />
-          <option name="timeStamp" value="80" />
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/ClustersList.java</url>
+          <line>53</line>
+          <properties />
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/KMeanClusterer.java</url>
+          <line>111</line>
+          <properties class="aztec.rbir_backend.clustering.KMeanClusterer" method="findCluster" />
+          <option name="timeStamp" value="83" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="81" />
+      <option name="time" value="88" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
@@ -1342,6 +1383,7 @@
         <watch expression="clusterList.get(0)" />
         <watch expression="clusterList.get(0)" language="JAVA" />
         <watch expression="clusterList" />
+        <watch expression="clusterList.get(0).get(1)" language="JAVA" />
       </configuration>
       <configuration name="Application">
         <watch expression="((java.util.ArrayList)((ListItr)iterator).this$0).get(1)" custom="java.util.ArrayList.ListItr,java.util.ArrayList" />
@@ -1385,13 +1427,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1428">
           <caret line="102" column="39" lean-forward="false" selection-start-line="102" selection-start-column="39" selection-end-line="102" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/resources/file.bin">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1525,9 +1560,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="410">
           <caret line="41" column="50" lean-forward="false" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
-          <folding>
-            <element signature="e#1105#1106#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1535,7 +1567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="64" lean-forward="false" selection-start-line="10" selection-start-column="64" selection-end-line="10" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1543,7 +1574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1551,7 +1581,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1567,7 +1596,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4464">
           <caret line="6" column="48" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1575,7 +1603,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="44" lean-forward="false" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1584,7 +1611,7 @@
         <state relative-caret-position="187">
           <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <element signature="e#611#641#0" expanded="true" />
+            <element signature="e#611#641#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1593,7 +1620,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
           <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1609,7 +1635,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1621,22 +1646,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/TfIdfEncoderClassifier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="227" column="58" lean-forward="true" selection-start-line="227" selection-start-column="58" selection-end-line="227" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/TrainingModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="112" column="30" lean-forward="true" selection-start-line="112" selection-start-column="30" selection-end-line="112" selection-end-column="30" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1657,42 +1672,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/JaccardDdistance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/Vector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="45" column="38" lean-forward="false" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/configurations/ElasticSearchClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/globals/Global.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/ClustersList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/CosineDistance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/Distance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/Document.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/DocumentsList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="49" lean-forward="false" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="49" />
+        <state relative-caret-position="365">
+          <caret line="64" column="18" lean-forward="false" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -1705,74 +1719,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/JaccardDdistance.java">
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/TfIdfEncoder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="158">
+          <caret line="49" column="54" lean-forward="false" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/DocumentsList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="54" column="28" lean-forward="false" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/Document.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="42" column="11" lean-forward="false" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="64" column="35" lean-forward="false" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/Distance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/CosineDistance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/KMeanClusterer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="122" column="71" lean-forward="false" selection-start-line="122" selection-start-column="71" selection-end-line="122" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/TfIdfEncoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/clustering/Vector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="45" column="38" lean-forward="false" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="38" />
-          <folding>
-            <element signature="e#1219#1220#0" expanded="true" />
-            <element signature="e#1267#1268#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/configurations/ElasticSearchClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        <state relative-caret-position="187">
+          <caret line="53" column="41" lean-forward="false" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/document/Document.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="32" column="21" lean-forward="false" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+        <state relative-caret-position="-590">
+          <caret line="62" column="86" lean-forward="false" selection-start-line="62" selection-start-column="83" selection-end-line="62" selection-end-column="86" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-rest2/src/main/java/aztec/rbir_rest2/controllers/DocumentController.java">
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/resources/file.bin">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/globals/Global.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbir-backend/src/main/java/aztec/rbir_backend/classifier/TfIdfEncoderClassifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-136">
+          <caret line="216" column="34" lean-forward="false" selection-start-line="216" selection-start-column="34" selection-end-line="216" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

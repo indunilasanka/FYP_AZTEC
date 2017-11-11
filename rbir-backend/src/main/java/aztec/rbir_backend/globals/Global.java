@@ -16,7 +16,8 @@ public class Global {
 
     public static ClassLoader loader = Global.class.getClassLoader();
 
-    public static String path = "E:/FYP/";//"/home/rbir/";
+   // public static String path = "/home/rbir/";
+    public static String path = "E:/FYP/";
 
 
     public Global(){

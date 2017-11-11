@@ -23,7 +23,7 @@ public class ElasticSearchClient {
                 hostName = InetAddress.getLocalHost();
 
                 esc = new PreBuiltTransportClient(Settings.EMPTY)
-                        .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("localhost"), 9300));
+                        .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("127.0.0.1"), 9300));
             } catch (UnknownHostException e) {
                 e.printStackTrace();
             }

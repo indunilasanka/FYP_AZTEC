@@ -10,7 +10,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class FileUploadService {
 
-  private baseUrl: string = 'http://localhost:8080/documents';
+  private baseUrl: string = 'http://localhost:8080/documents';  //'http://rbir.projects.mrt.ac.lk:8080/documents';
 
   constructor(private http: Http) {
   }
