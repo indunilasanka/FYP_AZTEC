@@ -29,10 +29,11 @@ public class DocumentModel {
 
 
 
-	public DocumentModel(String title, String summary, String category){
+	public DocumentModel(String title, String summary, String category, String securityLevel){
         this.title = title;
         this.summary = summary;
         this.category = category;
+        this.securityLevel = securityLevel;
     }
     
     

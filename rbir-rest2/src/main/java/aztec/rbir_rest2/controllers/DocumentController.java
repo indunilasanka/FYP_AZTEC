@@ -43,7 +43,8 @@ public class DocumentController {
         Set<DocumentModel> result = new HashSet<DocumentModel>();
 
         for(SearchHit hit : res){
-            DocumentModel resultDoc = new DocumentModel(hit.getSource().get("path").toString(),hit.getSource().get("content").toString(),hit.getSource().get("category").toString());
+            System.out.println(hit.getSource());
+            DocumentModel resultDoc = new DocumentModel(hit.getSource().get("name").toString(),hit.getSource().get("content").toString(),hit.getSource().get("type").toString(),hit.getSource().get("category").toString());
             System.out.println(hit.getSource().get("path").toString());
             File file = new File(hit.getSource().get("path").toString());
             resultDoc.setFile(file);
@@ -93,7 +94,8 @@ public class DocumentController {
                 System.out.println("Test");
                 Map document = new HashMap<String, Object>();
                 document.put("name",file.getName());
-                document.put("path",destinationDir.getCanonicalPath() + "/" + file.getName());
+                document.put("type",e.getType());
+                document.put("path",destinationDir.getCanonicalPath() + "\\" + file.getName());
                 document.put("content",e.getContent());
                 document.put("category", e.getPredictedCategory());
                 bulkProcessor.add(new IndexRequest(e.getPredictedCategory(),"document").source(document));
@@ -101,6 +103,7 @@ public class DocumentController {
                 FileUtils.moveFileToDirectory(file, destinationDir, true);
             } catch (IOException e1) {
                 e1.printStackTrace();
+
             }
         });
 
@@ -214,12 +217,13 @@ public class DocumentController {
                 Map document = new HashMap<String, Object>();
                 document.put("name",e.getTitle());
                 document.put("type",e.getType());
-                document.put("path",destinationDir.getCanonicalPath() + "/" + file.getName());
+                document.put("path",destinationDir.getCanonicalPath() + "\\" + file.getName());
                 document.put("content",e.getContent());
                 document.put("category", e.getPredictedCategory());
                 bulkProcessor.add(new IndexRequest(e.getPredictedCategory(),"document",e.getId()+"").source(document));
                 FileUtils.moveFileToDirectory(file, destinationDir, true);
             } catch (IOException e1) {
+                file.delete();
                 e1.printStackTrace();
             }
         });
