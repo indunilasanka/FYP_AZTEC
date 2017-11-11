@@ -2,6 +2,7 @@ package aztec.rbir_backend.classifier;
 
 import java.io.*;
 
+import aztec.rbir_backend.globals.Global;
 import aztec.rbir_backend.indexer.Terms;
 import weka.classifiers.meta.FilteredClassifier;
 import weka.core.*;
@@ -135,7 +136,7 @@ public class Classifier {
 
         Classifier classifier;
         //String testFile = "rbir-backend/src/main/resources/document.txt";
-        String dataModel = "src/main/resources/naiveClassifier.dat";
+        String dataModel =  Global.loader.getResource("naiveClassifier.dat").toString();
         classifier = new Classifier();
         classifier.load(content);
         classifier.loadModel(dataModel);

@@ -1,5 +1,6 @@
 package aztec.rbir_backend.clustering;
 
+import aztec.rbir_backend.globals.Global;
 import weka.classifiers.meta.FilteredClassifier;
 
 import java.io.*;
@@ -119,7 +120,8 @@ public class KMeanClusterer extends Clusterer {
 
     public static void saveModel(ClustersList clustersList){
         try {
-            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("rbir-backend/src/main/resources/kMeansClassifier.dat"));
+            File file = new File(Global.loader.getResource("kMeansClassifier.dat").toString());
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
             out.writeObject(clustersList);
             out.close();
             System.out.println("===== Saved model: KMeans"  + " =====");
@@ -132,7 +134,7 @@ public class KMeanClusterer extends Clusterer {
     public static ClustersList loadModel(){
         ClustersList clustersList = null;
         try {
-            ObjectInputStream in = new ObjectInputStream(new FileInputStream("rbir-backend/src/main/resources/kMeansClassifier.dat"));
+            ObjectInputStream in = new ObjectInputStream(Global.loader.getResourceAsStream("kMeansClassifier.dat"));
             Object tmp = in.readObject();
             clustersList = (ClustersList) tmp;
             in.close();

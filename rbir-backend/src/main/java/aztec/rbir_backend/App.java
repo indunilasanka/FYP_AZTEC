@@ -12,6 +12,7 @@ public class App
 {
     public static void main( String[] args )
     {
+        new Global();
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             public void run() {
                 System.out.println("In shutdown hook");

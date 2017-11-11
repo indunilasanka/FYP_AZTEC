@@ -7,6 +7,7 @@ import java.util.Random;
 import java.io.FileWriter;
 import java.util.Scanner;
 
+import aztec.rbir_backend.globals.Global;
 import weka.classifiers.Evaluation;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.meta.FilteredClassifier;
@@ -105,8 +106,9 @@ public class Learner {
     public void saveModel() {
 
         try {
+            File file = new File(Global.loader.getResourceAsStream("naiveClassifier.dat").toString());
             ObjectOutputStream out = new ObjectOutputStream(
-                    new FileOutputStream("src/main/resources/naiveClassifier.dat"));
+                    new FileOutputStream(file));
             out.writeObject(classifier);
             out.close();
             System.out.println("===== Saved model: "  + " =====");
@@ -119,14 +121,10 @@ public class Learner {
 
         Learner learner;
 
-        ClassLoader classLoader = getClass().getClassLoader();
         InputStream arffFile = null;
-        try {
 
-            arffFile =  new FileInputStream("src/main/resources/keys.arff");//classLoader.getResource("keys.arff").openStream();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        arffFile =  Global.loader.getResourceAsStream("keys.arff");//new FileInputStream("src/main/resources/keys.arff");//
+
 
         learner = new Learner();
         learner.loadDataset(arffFile);

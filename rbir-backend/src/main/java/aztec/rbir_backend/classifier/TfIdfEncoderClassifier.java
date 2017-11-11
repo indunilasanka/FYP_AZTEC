@@ -2,6 +2,7 @@ package aztec.rbir_backend.classifier;
 
 import aztec.rbir_backend.clustering.*;
 import aztec.rbir_backend.clustering.Vector;
+import aztec.rbir_backend.globals.Global;
 import aztec.rbir_backend.logic.WordFrequency;
 
 import java.io.*;
@@ -209,7 +210,7 @@ public class TfIdfEncoderClassifier {
 
         HashSet<String> keys_set = null;
         try {
-            ObjectInputStream input = new ObjectInputStream( new FileInputStream("src/main/resources/file.bin"));
+            ObjectInputStream input = new ObjectInputStream(Global.loader.getResourceAsStream("file.bin"));
             keys_set = (HashSet<String>) (input.readObject());
         }
         catch (Exception e) {
@@ -222,7 +223,8 @@ public class TfIdfEncoderClassifier {
 
     public void write (HashSet<String> keys_set) throws IOException {
         try {
-            FileOutputStream fos = new FileOutputStream("src/main/resources/file.bin");
+            File file = new File(Global.loader.getResource("file.bin").toString());
+            FileOutputStream fos = new FileOutputStream(file);
             ObjectOutputStream out = new ObjectOutputStream(fos);
             out.writeObject(keys_set);
             out.flush();

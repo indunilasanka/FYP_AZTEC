@@ -21,6 +21,8 @@ import java.util.Date;
 /*documents to be clustered */
 public class DocumentsList extends ArrayList<Document> {
 
+    private String path = Global.localPath;
+
     public DocumentsList(ArrayList<MultipartFile> files, ArrayList<String> categories) {
 
         for (int i=0; i<files.size(); i++){
@@ -34,12 +36,12 @@ public class DocumentsList extends ArrayList<Document> {
             String newFileName = filename+"_"+dateFormat.format(date)+"."+fileextention;
             System.out.println(newFileName);
 
-            File dir = new File("/nonIndexedFiles");
+            File dir = new File("nonIndexedFiles");
             if (!dir.exists()) {
                 dir.mkdir();
             }
 
-            File newFile = new File(dir+"/"+newFileName);
+            File newFile = new File(path+dir+"/"+newFileName);
 
             System.out.println(newFile.getAbsolutePath());
             try {
@@ -72,12 +74,12 @@ public class DocumentsList extends ArrayList<Document> {
             String newFileName = filename+"_"+dateFormat.format(date)+"."+fileextention;
             System.out.println(newFileName);
 
-            File dir = new File("/nonIndexedFiles");
+            File dir = new File("nonIndexedFiles");
             if (!dir.exists()) {
                 dir.mkdir();
             }
 
-            File newFile = new File(dir+"/"+newFileName);
+            File newFile = new File(path+dir+"/"+newFileName);
 
             System.out.println(newFile.getAbsolutePath());
             try {
