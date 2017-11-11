@@ -30,6 +30,9 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/documents")
 public class DocumentController {
 
+    private String fileDir = Global.path + "indexedFiles"; //uncomment for local server
+   // private String fileDir = "indexedFiles"; //uncomment for hosted server
+
     @CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value = "/list", method = RequestMethod.POST)
     public
@@ -85,11 +88,12 @@ public class DocumentController {
 
         documentList.forEach(e -> {
             File file = new File(e.getFilePath());
-            File dir = new File(Global.path+"indexedFiles");
+            File dir = new File(fileDir);
             if (!dir.exists()) {
                 dir.mkdir();
             }
-            File destinationDir = new File(dir+"/"+e.getPredictedCategory()+"/");
+            //File destinationDir = new File(Global.path+dir+"/"+e.getPredictedCategory()+"/"); //uncomment for hosted server
+            File destinationDir = new File(dir+"/"+e.getPredictedCategory()+"/"); //uncomment for local server
             try {
                 System.out.println("Test");
                 Map document = new HashMap<String, Object>();
@@ -207,12 +211,13 @@ public class DocumentController {
             System.out.println(e.getFilePath());
             File file = new File(e.getFilePath());
 
-            File dir = new File(Global.path+"indexedFiles");
+            File dir = new File(fileDir);
             if (!dir.exists()) {
                 dir.mkdir();
             }
 
-            File destinationDir = new File(dir+"/"+e.getPredictedCategory()+"/");
+            //File destinationDir = new File(Global.path+dir+"/"+e.getPredictedCategory()+"/"); //uncomment for hosted server
+            File destinationDir = new File(dir+"/"+e.getPredictedCategory()+"/"); //uncomment for local server
             try {
                 Map document = new HashMap<String, Object>();
                 document.put("name",e.getTitle());

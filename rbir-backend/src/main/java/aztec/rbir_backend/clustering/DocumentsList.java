@@ -21,6 +21,9 @@ import java.util.Date;
 /*documents to be clustered */
 public class DocumentsList extends ArrayList<Document> {
 
+    private String fileDir = Global.path+"nonIndexedFiles"; //uncomment for local server
+   // private String fileDir = "nonIndexedFiles"; //uncomment for hosted server
+
     public DocumentsList(ArrayList<MultipartFile> files, ArrayList<String> categories) {
 
         for (int i=0; i<files.size(); i++){
@@ -34,12 +37,13 @@ public class DocumentsList extends ArrayList<Document> {
             String newFileName = filename+"_"+dateFormat.format(date)+"."+fileextention;
             System.out.println(newFileName);
 
-            File dir = new File(Global.path+"nonIndexedFiles");
+            File dir = new File(fileDir);
             if (!dir.exists()) {
                 dir.mkdir();
             }
 
-            File newFile = new File(dir+"/"+newFileName);
+            File newFile = new File(dir+"/"+newFileName); //uncomment for local server
+            //File newFile = new File(Global.path+dir+"/"+newFileName); //uncomment for hosted server
 
             System.out.println(newFile.getAbsolutePath());
             try {
@@ -72,12 +76,13 @@ public class DocumentsList extends ArrayList<Document> {
             String newFileName = filename+"_"+dateFormat.format(date)+"."+fileextention;
             System.out.println(newFileName);
 
-            File dir = new File(Global.path+"nonIndexedFiles");
+            File dir = new File(fileDir);
             if (!dir.exists()) {
                 dir.mkdir();
             }
 
-            File newFile = new File(dir+"/"+newFileName);
+            File newFile = new File(dir+"/"+newFileName); //uncomment for local server
+           // File newFile = new File(Global.path+dir+"/"+newFileName); //uncomment for hosted server
 
             System.out.println(newFile.getAbsolutePath());
             try {
