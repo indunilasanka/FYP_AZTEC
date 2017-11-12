@@ -1,7 +1,9 @@
 package aztec.rbir_database.Entities;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,9 +18,14 @@ import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Table(name = "request")
-public class Request {
+public class Request implements Serializable {
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "request_id")
@@ -27,8 +34,8 @@ public class Request {
 	@Column(name= "request")
 	String request;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "public_user", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@JoinColumn(name = "public_user_id", nullable = false)
 	PublicUser pUser;
 	
 	@Column

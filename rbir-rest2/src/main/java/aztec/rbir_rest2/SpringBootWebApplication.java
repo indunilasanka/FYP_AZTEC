@@ -7,16 +7,17 @@ import aztec.rbir_database.Entities.User;
 import aztec.rbir_database.Entities.UserRole;
 import aztec.rbir_database.configurations.HibernateUtil;
 
-import java.io.File;
 import java.util.List;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 
 @SpringBootApplication
+@ComponentScan("aztec")
 public class SpringBootWebApplication {
 
 	

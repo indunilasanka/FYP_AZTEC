@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 
 import {GlobalState} from '../../../global.state';
 
+import { UserService } from '../../../services/user.service';
+
 @Component({
   selector: 'ba-page-top',
   templateUrl: './baPageTop.html',
@@ -9,10 +11,23 @@ import {GlobalState} from '../../../global.state';
 })
 export class BaPageTop {
 
+
+  data: Array<Object> = null;
+
+  ngOnInit() {
+      this.userService.getUser().subscribe(
+      data => {
+        console.log(data);
+        this.data = data;
+      },
+      error => console.log(error)
+    );
+  }
+
   public isScrolled:boolean = false;
   public isMenuCollapsed:boolean = false;
 
-  constructor(private _state:GlobalState) {
+  constructor(private _state:GlobalState,private userService: UserService) {
     this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
       this.isMenuCollapsed = isCollapsed;
     });

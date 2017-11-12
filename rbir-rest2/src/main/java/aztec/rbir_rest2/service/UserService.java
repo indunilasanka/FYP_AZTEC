@@ -2,6 +2,8 @@ package aztec.rbir_rest2.service;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,10 +19,13 @@ import aztec.rbir_database.service.UserDataService;
 public class UserService implements UserDetailsService {
 
 	
+    @Autowired
+    private UserDataService userDataService;
+	
 	@Override
 	public UserDetails loadUserByUsername(String arg0) throws UsernameNotFoundException {
 		//userData =  new UserDataService();
-		User user = UserDataService.retrieveFromUserName(arg0);
+		User user = userDataService.retrieveFromUserName(arg0);
 		
 		List<GrantedAuthority> authorities = new ArrayList<>();
 
@@ -32,9 +37,15 @@ public class UserService implements UserDetailsService {
 			authorities.add(new SimpleGrantedAuthority(userRole.getRole().getRoleName()));
 		}
 
-		UserDetails userDetails = new org.springframework.security.core.userdetails.
+		UserDetails userDetails1 = new org.springframework.security.core.userdetails.
                 User(user.getUsername(),user.getPassword(), authorities);
 		
+		CustomUserDetails userDetails =  new CustomUserDetails();
+		userDetails.setUserName(user.getUsername());
+		userDetails.setPassword(user.getPassword());
+		userDetails.setCustomerAuthorities(userRoles);
+		userDetails.setEmail("test@gmail.com");
+		userDetails.setImage(user.getImage());
 		
 		return userDetails;
 	}

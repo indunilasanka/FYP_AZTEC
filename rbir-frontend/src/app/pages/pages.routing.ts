@@ -10,11 +10,11 @@ import { AuthGuard } from '../guards/auth.guard';
 export const routes: Routes = [
   {
     path: 'login',
-    loadChildren: 'app/pages/login/login.module#LoginModule'
+    loadChildren: 'app/pages/login/login.module#LoginModule',
   },
   {
     path: 'register',
-    loadChildren: 'app/pages/register/register.module#RegisterModule'
+    loadChildren: 'app/pages/register/register.module#RegisterModule',
   },
   {
     path: 'pages',
@@ -30,7 +30,7 @@ export const routes: Routes = [
       { path: 'forms', loadChildren: './forms/forms.module#FormsModule' },
       { path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
       { path: 'maps', loadChildren: './maps/maps.module#MapsModule' },
-      { path: 'document', loadChildren: './document/document.module#DocumentModule'},
+      { path: 'document', loadChildren: './document/document.module#DocumentModule' },
       { path: 'initial-config', loadChildren: './initialConfig/initialConfig.module#InitialConfigModule' },
     ],
   },

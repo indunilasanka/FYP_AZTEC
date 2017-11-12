@@ -1,19 +1,38 @@
 <!--<input #fileUpload ngFileSelect type="file" [options]="fileUploaderOptions" (onUpload)="_onFileUpload($event)" (beforeUpload)="beforeFileUpload($event)" hidden="true">-->
-<input #fileUpload ngFileSelect type="file" webkitdirectory directory multiple (change)="beforeFileUpload($event)" hidden="true">
+
+
+<div *ngIf="!selectSingleFile">
+  <input  #fileUpload ngFileSelect type="file" webkitdirectory directory multiple (change)="beforeFileUpload($event)" hidden="true">
+
 <div class="input-group" [ngClass]="{uploading: uploadFileInProgress}">
   <input #inputText type="text" value= {{fileName}} class="form-control" readonly>
   <span class="input-group-btn">
       <button class="btn btn-success btn-raised" type="button" (click)="bringFileSelector();">Browse</button>
   </span>
 </div>
+</div>
 
-<ba-card title="Hover Rows" baCardClass="xmedium-card with-scroll table-panel">
-  <div class="horizontal-scroll">
+<div *ngIf="selectSingleFile">
+    <input  #singleFileUpload ngFileSelect type="file" (change)="beforeFileUpload($event)" hidden="true">
+    
+    <div class="input-group" [ngClass]="{uploading: uploadFileInProgress}">
+      <input #singleInputText type="text" value= {{fileName}} class="form-control" readonly>
+      <span class="input-group-btn">
+          <button class="btn btn-success btn-raised" type="button" (click)="bringFileSelector();">Browse</button>
+      </span>
+    </div>
+  </div>
+
+<ba-checkbox [(ngModel)]="selectSingleFile" [label]="'Choose single file.'" [ngModelOptions]="{standalone: true}"></ba-checkbox>
+
+<!-- <ba-card title="Hover Rows" baCardClass="xmedium-card with-scroll table-panel" (window:resize)="onResize($event)">  -->
+<ba-card title="Hover Rows" baCardClass="xmedium-card with-scroll table-panel" > 
+  <div class="horizontal-scroll" >
     <table class="table table-hover">
       <tbody>
         <tr *ngFor="let document of fileList" class="no-top-border">
-          <td class="col-md-11" style="text-align: left">
-           {{ document.name }}
+          <td class="col-md-11" style="text-align: lef  t">
+           {{ document.name | trimFileName: 400}}
           </td>
         <td class="col-md-1">
           <button type="button" class="btn btn btn-danger btn-icon" (click)="removeDocument(document)"><i class="ion-close-round"></i></button>

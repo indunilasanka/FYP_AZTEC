@@ -1,4 +1,4 @@
-import { Component, ViewChild, Input, Output, EventEmitter, ElementRef, Renderer } from '@angular/core';
+import { Component, ViewChild, Input, Output, EventEmitter, ElementRef, Renderer, AfterViewInit } from '@angular/core';
 
 import { FileUploadService } from './fileUpload.service';
 import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
@@ -8,7 +8,7 @@ import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
   styleUrls: ['./fileUploader.scss'],
   templateUrl: './fileUploader.html',
 })
-export class FileUploader {
+export class FileUploader implements AfterViewInit {
 
 
   // @Input() fileUploaderOptions: NgUploaderOptions = { url: '' };
@@ -17,6 +17,7 @@ export class FileUploader {
   @Input() defaultValue: string = '';
 
   @ViewChild('fileUpload') public _fileUpload: ElementRef;
+  @ViewChild('singleFileUpload') public _singleFileUpload: ElementRef;
   @ViewChild('inputText') public _inputText: ElementRef;
   @ViewChild('modal') public _model: ElementRef;
 
@@ -25,20 +26,34 @@ export class FileUploader {
   popupTitle: String = '';
   popupMessage: String = '';
   fileList: File[] = null;
+  selectSingleFile: boolean = true;
 
   public uploadFileInProgress: boolean;
-
   constructor(private renderer: Renderer, private fileUploadService: FileUploadService) {
     // constructor(private renderer: Renderer) {
   }
 
+  ngAfterViewInit() {
+    // console.log( "After init width   " + this._hscroll.nativeElement.width);
+  }
+
   bringFileSelector(): boolean {
-    this.renderer.invokeElementMethod(this._fileUpload.nativeElement, 'click');
+    if (this.selectSingleFile) {
+      this.renderer.invokeElementMethod(this._singleFileUpload.nativeElement, 'click');
+    }else {
+      this.renderer.invokeElementMethod(this._fileUpload.nativeElement, 'click');
+    }
     return false;
   }
 
   beforeFileUpload($event) {
-    const files = this._fileUpload.nativeElement.files;
+    let files;
+    if (this.selectSingleFile) {
+      files = this._singleFileUpload.nativeElement.files;
+    }else {
+      files = this._fileUpload.nativeElement.files;
+    }
+    
     this.fileList = [];
     if (files.length) {
       const fileCount = files.length;
@@ -89,11 +104,16 @@ export class FileUploader {
     }
   }
 
+  onResize($event) {
+    console.log("Windoe rezied --- ");
+  }
   popUp(title: String, message: String) {
     console.log("test");
     this.popupTitle = title;
     this.popupMessage = message;
     jQuery(this._model).trigger("open");
   }
+
+
 }
 

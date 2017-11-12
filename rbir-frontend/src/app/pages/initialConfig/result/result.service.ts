@@ -19,7 +19,7 @@ export class ResultService {
 
   private _data = {
     labelsPieData: {
-      labels: ['Bananas', 'Apples', 'Grapes', 'Baaa'  ],
+      labels: ['Security Level 1', 'Security Level 2', 'Security Level 3', 'Security Level 4'  ],
       series: [100, 15, 40, 70],
     },
     labelsPieOptions: {
@@ -28,7 +28,7 @@ export class ResultService {
       weight: '300px',
       labelDirection: 'explode',
       labelInterpolationFnc: function (value) {
-        return value[0];
+        return  'L' +value.substr(-1);
       },
     },
   }
@@ -39,6 +39,7 @@ export class ResultService {
   public getAll() {
     return this._data;
   }
+
 
   public getResult() {
     return this._results;
@@ -70,5 +71,9 @@ export class ResultService {
         },
       }],
     ];
+  }
+
+  private setData(){
+
   }
 }

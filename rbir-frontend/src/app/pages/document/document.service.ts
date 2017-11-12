@@ -3,12 +3,19 @@ import { Http,RequestOptions, Response,Headers} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import { environment } from '../../../environments/environment';
+
+
 
 @Injectable()
 export class DocumentService {
-	
-  private checked: string ;
-  private baseUrl: string =  'http://localhost:8080/documents';  //'http://rbir.projects.mrt.ac.lk:8080';
+
+  private host: string = environment.host;
+  private port: string = environment.port;
+  private endcall: string = '/documents';
+    
+  private baseUrl: string = this.host +':'+ this.port + this.endcall;
+
   constructor(private http : Http) {
   }
 
@@ -19,21 +26,15 @@ export class DocumentService {
     headers.append('Accept', 'application/json');
     return headers;
   }
-  
 
-  getDocuments(query : string,isChecked : boolean): Observable<Object[]> {
-	if(isChecked){
-         this.checked = "true";
-    }else{
-         this.checked = "false";
-    }
+
+  getDocuments(query : string): Observable<Object[]> {
 
     // console.log(this.http.get(this.baseUrl+'/list', {headers: this.getHeaders()})
     //   .map(response => response.json())
     //   .catch(this.handleError));
     let formData:FormData = new FormData();
     formData.append('query', query);
-	formData.append('checked', this.checked);
     let headers = new Headers();
     headers.append('Accept', 'application/json');
     headers.append('Access-Control-Allow-Origin', '*');

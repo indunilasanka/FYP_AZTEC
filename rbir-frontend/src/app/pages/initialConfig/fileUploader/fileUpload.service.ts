@@ -9,11 +9,24 @@ import 'rxjs/add/operator/map';
 import { DocumentModel } from '../../../models/document.model';
 import {element} from "protractor";
 
+import { environment } from '../../../../environments/environment';
+
 
 @Injectable()
 export class FileUploadService {
 
-  private baseUrl: string =  'http://localhost:8080/documents';
+<<<<<<< HEAD
+
+
+  private host: string = environment.host;
+  private port: string = environment.port;
+  private endcall: string = '/documents';
+    
+  private baseUrl: string = this.host +':'+ this.port + this.endcall;
+
+=======
+  private baseUrl: string = 'http://localhost:8080/documents';
+>>>>>>> parent of ad9cd7e2... Merge branch 'RND' of https://github.com/indunilasanka/FYP_AZTEC into RND
 
   constructor(private http : Http){
   }
@@ -65,7 +78,7 @@ export class FileUploadService {
       });
 
       securityLvls.forEach(element => {
-        formData.append('securitylvls', element.split(' ').join('_').toLowerCase());
+        formData.append('securitylvls', element );
       });
 
       const headers = new Headers();

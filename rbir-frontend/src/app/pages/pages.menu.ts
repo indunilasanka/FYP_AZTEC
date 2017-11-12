@@ -10,9 +10,9 @@ export const PAGES_MENU = [
             icon: 'ion-android-home',
             selected: false,
             expanded: false,
-            order: 0
-          }
-        }
+            order: 0,
+          },
+        },
       },
       {
         path: 'document',
@@ -22,9 +22,9 @@ export const PAGES_MENU = [
             icon: 'ion-clipboard',
             selected: false,
             expanded: false,
-            order: 200
-          }
-        }
+            order: 200,
+          },
+        },
       },
       {
         path: 'initial-config',
@@ -34,13 +34,54 @@ export const PAGES_MENU = [
             icon: 'ion-gear-a',
             selected: false,
             expanded: false,
-            order: 200
-          }
-        }
-      }
-    ]
-  }
+            order: 200,
+          },
+        },
+      },
+    ],
+  },
 ];
+
+// export const PAGES_MENU = [
+//   {
+//     path: 'pages',
+//     children: [
+//       {
+//         path: 'dashboard',
+//         data: {
+//           menu: {
+//             title: 'Dashboard',
+//             icon: 'ion-android-home',
+//             selected: false,
+//             expanded: false,
+//             order: 0
+//           }
+//         }
+//       },
+//       {
+//         path: 'document',
+//         data: {
+//           menu: {
+//             title: 'Document',
+//             icon: 'ion-clipboard',
+//             selected: false,
+//             expanded: false,
+//             order: 200
+//           }
+//         }
+//       },
+//       {
+//         path: 'initial-config',
+//         data: {
+//           menu: {
+//             title: 'Initial Configuration',
+//             icon: 'ion-gear-a',
+//             selected: false,
+//             expanded: false,
+//             order: 200
+//           }
+//         }
+//       },
 //       {
 //         path: 'editors',
 //         data: {

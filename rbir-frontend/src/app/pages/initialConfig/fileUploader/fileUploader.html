@@ -9,10 +9,11 @@
 <div class="form-group">
   <label> Select Security Level </label>
   <select #lvlSelect class="form-control" (click)="setSelectedLvl(lvlSelect.value)">
-    <option  [value]="levl" *ngFor = "let levl of securityLvls;"  >{{levl}}</option>
+    <option  [value]="levl" *ngFor = "let levl of securityLvls;"  >{{levl| replaceUnderscore}}</option>
   </select>
 </div>
 
+<div *ngIf="!selectSingleFile">
 <input #fileUpload ngFileSelect type="file" webkitdirectory directory multiple  (change)="beforeFileUpload($event)" hidden="true">
 <div class="input-group" [ngClass]="{uploading: uploadFileInProgress}">
   <input #inputText type="text" value= {{fileName}} class="form-control" readonly>
@@ -20,6 +21,20 @@
       <button class="btn btn-success btn-raised" type="button" [disabled]="!selectedLvl" (click)="bringFileSelector();">Browse</button>
   </span>
 </div>
+</div>
+
+<div *ngIf="selectSingleFile">
+  <input  #singleFileUpload ngFileSelect type="file" (change)="beforeFileUpload($event)" hidden="true">
+  
+  <div class="input-group" [ngClass]="{uploading: uploadFileInProgress}">
+    <input #singleInputText type="text" value= {{fileName}} class="form-control" readonly>
+    <span class="input-group-btn">
+        <button class="btn btn-success btn-raised" type="button" [disabled]="!selectedLvl" (click)="bringFileSelector();">Browse</button>
+    </span>
+  </div>
+</div>
+
+<ba-checkbox [(ngModel)]="selectSingleFile" [label]="'Choose single file'" [ngModelOptions]="{standalone: true}"></ba-checkbox>
 
 <ba-card title="INITIAL DOCUMENTS" baCardClass="medium-card with-scroll table-panel">
   <div class="horizontal-scroll">
@@ -30,7 +45,7 @@
            {{ document.file.name }}
           </td>
           <td >
-            {{document.securityLevel}}
+            {{document.securityLevel | secLvelel}}
           </td>
           <td >
             <button type="button" class="btn btn btn-danger btn-icon" (click)="removeDocument(document)"><i class="ion-close-round"></i></button>

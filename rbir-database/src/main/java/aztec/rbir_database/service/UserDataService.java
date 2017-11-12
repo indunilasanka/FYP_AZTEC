@@ -4,16 +4,16 @@ import java.util.List;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-
+import org.springframework.stereotype.Service;
 
 import aztec.rbir_database.Entities.User;
 import aztec.rbir_database.Entities.UserRole;
 import aztec.rbir_database.configurations.HibernateUtil;
 
-
+@Service
 public class UserDataService {
 
-	public static User retrieveFromUserName(String userName) {
+	public User retrieveFromUserName(String userName) {
 		
 		Session session = HibernateUtil.getSessionFactory().openSession();		
 		User user = null;

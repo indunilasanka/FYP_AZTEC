@@ -18,6 +18,7 @@ export class FileUploader {
   @Input() defaultValue: string = '';
 
   @ViewChild('fileUpload') public _fileUpload: ElementRef;
+  @ViewChild('singleFileUpload') public _singleFileUpload: ElementRef;
   @ViewChild('inputText') public _inputText: ElementRef;
   @ViewChild('modal') public _model: ElementRef;
 
@@ -30,6 +31,7 @@ export class FileUploader {
   popupMessage: String = '';
   documents: DocumentModel[] = [];
   fileList: File[] = null;
+  selectSingleFile: boolean = true;
 
   uploadFileInProgress: boolean;
 
@@ -39,8 +41,8 @@ export class FileUploader {
     this.numberOfLevel = numberOfLevels;
     this.securityLvls = [];
     for (let i = 1; i <= this.numberOfLevel; i++) {
-      this.securityLvls.push('Security Level ' + i);
-    } this.selectedLvl = 'Security Level 1';
+      this.securityLvls.push('security_level_' + i);
+    } this.selectedLvl = 'security_level_1';
   }
 
   setSelectedLvl(lvl: string) {
@@ -48,13 +50,21 @@ export class FileUploader {
   }
 
   bringFileSelector(): boolean {
-    console.log("bringFileSelector()");
-    this.renderer.invokeElementMethod(this._fileUpload.nativeElement, 'click');
+    if (this.selectSingleFile) {
+      this.renderer.invokeElementMethod(this._singleFileUpload.nativeElement, 'click');
+    }else {
+      this.renderer.invokeElementMethod(this._fileUpload.nativeElement, 'click');
+    }
     return false;
   }
 
   beforeFileUpload($event) {
-    const files = this._fileUpload.nativeElement.files;
+    let files;
+    if (this.selectSingleFile) {
+      files = this._singleFileUpload.nativeElement.files;
+    }else {
+      files = this._fileUpload.nativeElement.files;
+    }
     if (files.length) {
       const fileCount = files.length;
       if (fileCount > 0) {
@@ -68,7 +78,7 @@ export class FileUploader {
           const fielType: String = files.item(i).type;
           if (fielType.includes('pdf') || fielType.includes('officedocument.word')) {
             const document: DocumentModel = new DocumentModel();
-            document.securityLevel = this.selectedLvl.split(' ').join('_').toLowerCase();
+            document.securityLevel = this.selectedLvl;
 
             console.log('document.securityLevel -----' , document.securityLevel);
             document.file = files.item(i);
@@ -113,5 +123,6 @@ export class FileUploader {
     this.popupMessage = message;
     jQuery(this._model).trigger("open");
   }
+  
 }
 
