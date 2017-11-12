@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import aztec.rbir_backend.clustering.Document;
 import aztec.rbir_backend.document.*;
+import aztec.rbir_backend.indexer.Terms;
 import aztec.rbir_rest2.models.*;
 import aztec.rbir_backend.classifier.*;
 import aztec.rbir_backend.clustering.*;
@@ -15,6 +16,7 @@ import aztec.rbir_backend.globals.Global;
 import com.google.common.collect.Collections2;
 import org.apache.commons.collections4.map.HashedMap;
 import org.apache.commons.io.FileUtils;
+import org.apache.lucene.index.Term;
 import org.elasticsearch.action.bulk.BulkProcessor;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.search.SearchHit;
@@ -47,6 +49,8 @@ public class DocumentController {
 
         for(SearchHit hit : res){
             System.out.println(hit.getSource());
+           // String actualContent = Terms.getTerms(hit.getSource().get("path").toString());
+
             DocumentModel resultDoc = new DocumentModel(hit.getSource().get("name").toString(),hit.getSource().get("content").toString(),hit.getSource().get("type").toString(),hit.getSource().get("category").toString());
             System.out.println(hit.getSource().get("path").toString());
             File file = new File(hit.getSource().get("path").toString());
