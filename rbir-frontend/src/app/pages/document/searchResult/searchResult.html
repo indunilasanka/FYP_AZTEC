@@ -11,7 +11,8 @@
         </div>
         <div class="message-content line-clamp" [ngClass]="{'line-clamp-2' : !document.expanded}">
           <span >
-            {{document.summary}}
+             <div [innerHTML]="document.summary">
+             </div>
           </span>
         </div>
         <!--<div class="preview" [ngClass]="{'hidden': !document.expanded}" *ngIf="document.preview">-->

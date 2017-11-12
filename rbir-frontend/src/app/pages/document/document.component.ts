@@ -27,7 +27,7 @@ export class Document {
 
   searchDocuments(searchQuary: string) {
     console.log("searchDocuments()", searchQuary);
-    this.documentServece.getDocuments(searchQuary).subscribe(
+    this.documentServece.getDocuments(searchQuary,this.isChecked).subscribe(
       data => {
         this.data = data;
         this.loadDocuments();

@@ -15,18 +15,12 @@ import { environment } from '../../../../environments/environment';
 @Injectable()
 export class FileUploadService {
 
-<<<<<<< HEAD
-
 
   private host: string = environment.host;
   private port: string = environment.port;
   private endcall: string = '/documents';
     
   private baseUrl: string = this.host +':'+ this.port + this.endcall;
-
-=======
-  private baseUrl: string = 'http://localhost:8080/documents';
->>>>>>> parent of ad9cd7e2... Merge branch 'RND' of https://github.com/indunilasanka/FYP_AZTEC into RND
 
   constructor(private http : Http){
   }
