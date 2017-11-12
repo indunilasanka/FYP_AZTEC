@@ -13,6 +13,7 @@
   </select>
 </div>
 
+<div *ngIf="!selectSingleFile">
 <input #fileUpload ngFileSelect type="file" webkitdirectory directory multiple  (change)="beforeFileUpload($event)" hidden="true">
 <div class="input-group" [ngClass]="{uploading: uploadFileInProgress}">
   <input #inputText type="text" value= {{fileName}} class="form-control" readonly>
@@ -20,6 +21,20 @@
       <button class="btn btn-success btn-raised" type="button" [disabled]="!selectedLvl" (click)="bringFileSelector();">Browse</button>
   </span>
 </div>
+</div>
+
+<div *ngIf="selectSingleFile">
+  <input  #singleFileUpload ngFileSelect type="file" (change)="beforeFileUpload($event)" hidden="true">
+  
+  <div class="input-group" [ngClass]="{uploading: uploadFileInProgress}">
+    <input #singleInputText type="text" value= {{fileName}} class="form-control" readonly>
+    <span class="input-group-btn">
+        <button class="btn btn-success btn-raised" type="button" [disabled]="!selectedLvl" (click)="bringFileSelector();">Browse</button>
+    </span>
+  </div>
+</div>
+
+<ba-checkbox [(ngModel)]="selectSingleFile" [label]="'Choose single file'" [ngModelOptions]="{standalone: true}"></ba-checkbox>
 
 <ba-card title="INITIAL DOCUMENTS" baCardClass="medium-card with-scroll table-panel">
   <div class="horizontal-scroll">
