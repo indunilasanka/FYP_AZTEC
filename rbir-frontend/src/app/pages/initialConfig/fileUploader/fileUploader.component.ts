@@ -18,6 +18,7 @@ export class FileUploader {
   @Input() defaultValue: string = '';
 
   @ViewChild('fileUpload') public _fileUpload: ElementRef;
+  @ViewChild('singleFileUpload') public _singleFileUpload: ElementRef;
   @ViewChild('inputText') public _inputText: ElementRef;
   @ViewChild('modal') public _model: ElementRef;
 
@@ -30,6 +31,7 @@ export class FileUploader {
   popupMessage: String = '';
   documents: DocumentModel[] = [];
   fileList: File[] = null;
+  selectSingleFile: boolean = true;
 
   uploadFileInProgress: boolean;
 
@@ -48,13 +50,21 @@ export class FileUploader {
   }
 
   bringFileSelector(): boolean {
-    console.log("bringFileSelector()");
-    this.renderer.invokeElementMethod(this._fileUpload.nativeElement, 'click');
+    if (this.selectSingleFile) {
+      this.renderer.invokeElementMethod(this._singleFileUpload.nativeElement, 'click');
+    }else {
+      this.renderer.invokeElementMethod(this._fileUpload.nativeElement, 'click');
+    }
     return false;
   }
 
   beforeFileUpload($event) {
-    const files = this._fileUpload.nativeElement.files;
+    let files;
+    if (this.selectSingleFile) {
+      files = this._singleFileUpload.nativeElement.files;
+    }else {
+      files = this._fileUpload.nativeElement.files;
+    }
     if (files.length) {
       const fileCount = files.length;
       if (fileCount > 0) {

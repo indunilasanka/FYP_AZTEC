@@ -42,11 +42,8 @@ public class TrainingModel {
         }
 
 
-<<<<<<< HEAD
         File file = new File(Global.path+"keys.arff");
-=======
-        File file = new File("rbir-backend/src/main/resources/keys.arff");
->>>>>>> parent of ad9cd7e2... Merge branch 'RND' of https://github.com/indunilasanka/FYP_AZTEC into RND
+
         PrintWriter emptyWriter = null;
         try {
             emptyWriter = new PrintWriter(file);
@@ -91,11 +88,9 @@ public class TrainingModel {
 
         BufferedWriter writer = null;
         try {
-<<<<<<< HEAD
+
             writer = new BufferedWriter(new FileWriter(Global.path+"keys.arff",true));
-=======
-            writer = new BufferedWriter(new FileWriter("rbir-backend/src/main/resources/keys.arff",true));
->>>>>>> parent of ad9cd7e2... Merge branch 'RND' of https://github.com/indunilasanka/FYP_AZTEC into RND
+
 
             for(String str : dataSet)
             {

@@ -22,7 +22,6 @@ export class AuthenticationService {
  
     constructor(private http: Http) {
         // set token if saved in local storage
-        console.log("base url ------------",this.baseUrl);
         var currentUser = JSON.parse(localStorage.getItem('currentUser'));
         this.token = currentUser && currentUser.token;
     }

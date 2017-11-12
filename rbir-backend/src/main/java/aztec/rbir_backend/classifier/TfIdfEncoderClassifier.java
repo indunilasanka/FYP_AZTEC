@@ -210,11 +210,9 @@ public class TfIdfEncoderClassifier {
 
         HashSet<String> keys_set = null;
         try {
-<<<<<<< HEAD
+
             ObjectInputStream input = new ObjectInputStream(new FileInputStream(Global.path+"file.bin"));
-=======
-            ObjectInputStream input = new ObjectInputStream( new FileInputStream("rbir-backend/src/main/resources/file.bin"));
->>>>>>> parent of ad9cd7e2... Merge branch 'RND' of https://github.com/indunilasanka/FYP_AZTEC into RND
+
             keys_set = (HashSet<String>) (input.readObject());
         }
         catch (Exception e) {
@@ -227,12 +225,10 @@ public class TfIdfEncoderClassifier {
 
     public void write (HashSet<String> keys_set) throws IOException {
         try {
-<<<<<<< HEAD
+
             File file = new File(Global.path+"file.bin");
             FileOutputStream fos = new FileOutputStream(file);
-=======
-            FileOutputStream fos = new FileOutputStream("rbir-backend/src/main/resources/file.bin");
->>>>>>> parent of ad9cd7e2... Merge branch 'RND' of https://github.com/indunilasanka/FYP_AZTEC into RND
+
             ObjectOutputStream out = new ObjectOutputStream(fos);
             out.writeObject(keys_set);
             out.flush();
