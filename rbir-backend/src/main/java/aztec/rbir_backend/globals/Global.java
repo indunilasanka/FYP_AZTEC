@@ -14,13 +14,19 @@ public class Global {
     private static String classificationAlgo;
     private static long lastDocId;
 
+    public static ClassLoader loader = Global.class.getClassLoader();
+
+    public static String path = "/home/rbir/";
+    //public static String path = "E:/FYP/";
+
+
     public Global(){
             try {
-                ObjectInputStream in = new ObjectInputStream(new FileInputStream("rbir-backend/src/main/resources/classifierName.dat"));
+                ObjectInputStream in = new ObjectInputStream(new FileInputStream(path+"classifierName.dat"));
                 this.classificationAlgo = (String) in.readObject();
                 System.out.println(classificationAlgo);
                 in.close();
-                in = new ObjectInputStream(new FileInputStream("rbir-backend/src/main/resources/lastDocId.dat"));
+                in = new ObjectInputStream(new FileInputStream(path+"lastDocId.dat"));
                 this.lastDocId = (long) in.readObject();
                 System.out.println(lastDocId);
                 in.close();
@@ -49,10 +55,10 @@ public class Global {
 
     public static void writeToFile(){
         try {
-            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("rbir-backend/src/main/resources/classifierName.dat"));
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(path+"classifierName.dat"));
             out.writeObject(classificationAlgo);
             out.close();
-            out = new ObjectOutputStream(new FileOutputStream("rbir-backend/src/main/resources/lastDocId.dat"));
+            out = new ObjectOutputStream(new FileOutputStream(path+"lastDocId.dat"));
             out.writeObject(lastDocId);
             out.close();
         } catch (FileNotFoundException e) {

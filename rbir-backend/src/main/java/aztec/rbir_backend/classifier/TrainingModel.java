@@ -2,6 +2,7 @@ package aztec.rbir_backend.classifier;
 
 import aztec.rbir_backend.clustering.Document;
 import aztec.rbir_backend.clustering.DocumentsList;
+import aztec.rbir_backend.globals.Global;
 import com.google.common.collect.Collections2;
 import org.apache.commons.lang.math.NumberUtils;
 import weka.core.converters.ArffLoader;
@@ -41,7 +42,7 @@ public class TrainingModel {
         }
 
 
-        File file = new File("rbir-backend/src/main/resources/keys.arff");
+        File file = new File(Global.path+"keys.arff");
         PrintWriter emptyWriter = null;
         try {
             emptyWriter = new PrintWriter(file);
@@ -86,7 +87,7 @@ public class TrainingModel {
 
         BufferedWriter writer = null;
         try {
-            writer = new BufferedWriter(new FileWriter("rbir-backend/src/main/resources/keys.arff",true));
+            writer = new BufferedWriter(new FileWriter(Global.path+"keys.arff",true));
 
             for(String str : dataSet)
             {

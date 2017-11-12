@@ -2,13 +2,11 @@ package aztec.rbir_backend.document;
 
 import aztec.rbir_backend.configurations.ElasticSearchClient;
 import aztec.rbir_backend.indexer.Terms;
-import org.dom4j.swing.DocumentTreeModel;
 import org.elasticsearch.action.bulk.BackoffPolicy;
 import org.elasticsearch.action.bulk.BulkProcessor;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.bulk.BulkResponse;
 import org.elasticsearch.action.delete.DeleteResponse;
-import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;
@@ -18,9 +16,9 @@ import org.elasticsearch.common.unit.ByteSizeUnit;
 import org.elasticsearch.common.unit.ByteSizeValue;
 import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.common.xcontent.XContentFactory;
-import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
+import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
 
 import java.io.IOException;
 import java.util.HashSet;
@@ -93,7 +91,7 @@ public class Document {
         String preproceQuery = Terms.getTermsQuery(query);
         String[] terms = preproceQuery.split(" ");
 
-        SearchResponse response = client.prepareSearch("security_level_1","security_level_2")
+        SearchResponse response = client.prepareSearch("_all")
                 .setTypes("document")
                 .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
                 .setQuery(QueryBuilders.termsQuery("content",terms))                 // Query
@@ -109,11 +107,14 @@ public class Document {
 
     public static Set<SearchHit> phraseTextSearch(String query){
         String preproceQuery = Terms.getTermsQuery(query);
+        System.out.println(preproceQuery);
 
-        SearchResponse response = client.prepareSearch("security_level_1","security_level_2")
+        HighlightBuilder highlightBuilder = new HighlightBuilder().field("content").phraseLimit(5);
+
+        SearchResponse response = client.prepareSearch("_all")
                 .setTypes("document")
                 .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
-                .setQuery(QueryBuilders.matchPhraseQuery("content",preproceQuery))                 // Query
+                .setQuery(QueryBuilders.matchPhraseQuery("content",preproceQuery)).highlighter(highlightBuilder)             // Query
                 .get();
 
         Set<SearchHit> result = new HashSet<SearchHit>();
