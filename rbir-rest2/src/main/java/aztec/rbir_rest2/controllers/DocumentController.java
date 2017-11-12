@@ -34,8 +34,8 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/documents")
 public class DocumentController {
 
-    private String fileDir = Global.path + "indexedFiles"; //uncomment for local server
-    //private String fileDir = "indexedFiles"; //uncomment for hosted server
+    //private String fileDir = Global.path + "indexedFiles"; //uncomment for local server
+    private String fileDir = "indexedFiles"; //uncomment for hosted server
 
     @CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value = "/list", method = RequestMethod.POST)
@@ -108,8 +108,8 @@ public class DocumentController {
             if (!dir.exists()) {
                 dir.mkdir();
             }
-            //File destinationDir = new File(Global.path+dir+"/"+e.getPredictedCategory()+"/"); //uncomment for hosted server
-            File destinationDir = new File(dir+"/"+e.getPredictedCategory()+"/"); //uncomment for local server
+            File destinationDir = new File(Global.path+dir+"/"+e.getPredictedCategory()+"/"); //uncomment for hosted server
+            //File destinationDir = new File(dir+"/"+e.getPredictedCategory()+"/"); //uncomment for local server
             try {
                 System.out.println("Test");
                 Map document = new HashMap<String, Object>();
@@ -241,8 +241,8 @@ public class DocumentController {
                 dir.mkdir();
             }
 
-            //File destinationDir = new File(Global.path+dir+"/"+e.getPredictedCategory()+"/"); //uncomment for hosted server
-            File destinationDir = new File(dir+"/"+e.getPredictedCategory()+"/"); //uncomment for local server
+            File destinationDir = new File(Global.path+dir+"/"+e.getPredictedCategory()+"/"); //uncomment for hosted server
+            //File destinationDir = new File(dir+"/"+e.getPredictedCategory()+"/"); //uncomment for local server
             try {
                 Map document = new HashMap<String, Object>();
                 document.put("name",e.getTitle());
