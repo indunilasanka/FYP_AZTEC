@@ -15,7 +15,6 @@ import { environment } from '../../../../environments/environment';
 @Injectable()
 export class FileUploadService {
 
-
   private host: string = environment.host;
   private port: string = environment.port;
   private endcall: string = '/documents';
