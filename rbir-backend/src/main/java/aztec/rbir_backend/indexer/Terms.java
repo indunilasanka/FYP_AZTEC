@@ -29,7 +29,7 @@ public class Terms {
         String content = FileReaderFactory.read(filePath);
         if(content == null)
             return "Invalid File Type";
-        content = preprocess(content);
+        //content = preprocess(content);
         return content.trim();
     }
 
