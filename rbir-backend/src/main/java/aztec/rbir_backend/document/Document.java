@@ -2,7 +2,6 @@ package aztec.rbir_backend.document;
 
 import aztec.rbir_backend.configurations.ElasticSearchClient;
 import aztec.rbir_backend.indexer.Terms;
-import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequestBuilder;
 import org.elasticsearch.action.bulk.BackoffPolicy;
 import org.elasticsearch.action.bulk.BulkProcessor;
