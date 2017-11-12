@@ -11,6 +11,7 @@ export class InitialConfig {
   numberOfLevel: number;
   securityLvl: String[];
   selectLvl: String;
+  bindResult: any;
 
   public fileUploaderOptions: NgUploaderOptions = {
     // url: 'http://website.com/upload'

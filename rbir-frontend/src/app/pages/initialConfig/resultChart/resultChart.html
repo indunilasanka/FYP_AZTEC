@@ -1,24 +1,5 @@
 <div class="column">
-  
-    <pie-chart></pie-chart>
-
-
-    <!-- <div class="row pie-charts">
-        <ba-card *ngFor="let chart of charts" class="col-xlg-6 col-lg-6 col-md-6 col-sm-6 col-6">
-            <div class="pie-chart-item">
-                <div class="chart" [attr.data-rel]="chart.color" data-percent="60">
-                  <span class="percent"></span>
-                </div>
-                <div class="description">
-                  <div translate>{{ chart.description }}</div>
-                  <div class="description-stats">{{ chart.stats }}</div>
-                </div>
-                <i class="chart-icon i-{{ chart.icon }}"></i>
-              </div>
-        </ba-card >
-    </div> -->
-
-
+    <pie-chart #childComponent></pie-chart>
 <div class="channels-block">
 
   <div class="chart-bg"></div>
@@ -26,7 +7,7 @@
     <div class="canvas-holder">
       <canvas class="chart-area" width="300px" height="300px"></canvas>
       <div class="traffic-text">
-        528
+        {{totalDoc}}
         <span translate>Document Total</span>
       </div>
     </div>
@@ -51,16 +32,13 @@
 <ba-card baCardClass="xsmall-card with-scroll table-panel">
     <div class="horizontal-scroll">
       <table class="table table-hover">
-        <tbody>
-          <tr *ngFor="let result of results" class="no-top-border">
+        <tbody *ngIf="finalResult">
+          <tr *ngFor="let result of finalResult" class="no-top-border">
             <td style="text-align: left">
-             {{ result.fileName }}
+             {{ result.document }}
             </td>
             <td >
-              {{result.fileCategory}}
-            </td>
-            <td >
-              {{result.securityLvl}}
+              {{result.category}}
             </td>
           </tr>
         </tbody>
