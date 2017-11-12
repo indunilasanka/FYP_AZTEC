@@ -37,6 +37,7 @@ public class DocumentsList extends ArrayList<Document> {
             String newFileName = filename+"_"+dateFormat.format(date)+"."+fileextention;
             System.out.println(newFileName);
 
+<<<<<<< HEAD
             File dir = new File(fileDir);
             if (!dir.exists()) {
                 dir.mkdir();
@@ -45,6 +46,9 @@ public class DocumentsList extends ArrayList<Document> {
             File newFile = new File(dir+"/"+newFileName); //uncomment for local server
             //File newFile = new File(Global.path+dir+"/"+newFileName); //uncomment for hosted server
 
+=======
+            File newFile = new File("E:/FYPSavingFolder/nonIndexedFiles/"+newFileName);
+>>>>>>> parent of ad9cd7e2... Merge branch 'RND' of https://github.com/indunilasanka/FYP_AZTEC into RND
             System.out.println(newFile.getAbsolutePath());
             try {
                 files.get(i).transferTo(newFile);
@@ -76,6 +80,7 @@ public class DocumentsList extends ArrayList<Document> {
             String newFileName = filename+"_"+dateFormat.format(date)+"."+fileextention;
             System.out.println(newFileName);
 
+<<<<<<< HEAD
             File dir = new File(fileDir);
             if (!dir.exists()) {
                 dir.mkdir();
@@ -84,6 +89,9 @@ public class DocumentsList extends ArrayList<Document> {
             File newFile = new File(dir+"/"+newFileName); //uncomment for local server
            // File newFile = new File(Global.path+dir+"/"+newFileName); //uncomment for hosted server
 
+=======
+            File newFile = new File("E:/FYPSavingFolder/nonIndexedFiles/" + newFileName);
+>>>>>>> parent of ad9cd7e2... Merge branch 'RND' of https://github.com/indunilasanka/FYP_AZTEC into RND
             System.out.println(newFile.getAbsolutePath());
             try {
                 files.get(i).transferTo(newFile);

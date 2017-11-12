@@ -26,6 +26,7 @@ import { AuthGuard } from './guards/auth.guard';
 import {LoginModule} from './pages/login/login.module';
 
 import { AuthenticationService } from './services/authentication.service';
+import { UserService } from './services/user.service';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -62,7 +63,8 @@ export type StoreType = {
   providers: [ // expose our Services and Providers into Angular's dependency injection
     APP_PROVIDERS,
     AuthGuard,
-    AuthenticationService
+    AuthenticationService,
+    UserService
     
   ]
 })
