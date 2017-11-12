@@ -39,8 +39,8 @@ export class FileUploader {
     this.numberOfLevel = numberOfLevels;
     this.securityLvls = [];
     for (let i = 1; i <= this.numberOfLevel; i++) {
-      this.securityLvls.push('Security Level ' + i);
-    } this.selectedLvl = 'Security Level 1';
+      this.securityLvls.push('security_level_' + i);
+    } this.selectedLvl = 'security_level_1';
   }
 
   setSelectedLvl(lvl: string) {
@@ -68,7 +68,7 @@ export class FileUploader {
           const fielType: String = files.item(i).type;
           if (fielType.includes('pdf') || fielType.includes('officedocument.word')) {
             const document: DocumentModel = new DocumentModel();
-            document.securityLevel = this.selectedLvl.split(' ').join('_').toLowerCase();
+            document.securityLevel = this.selectedLvl;
 
             console.log('document.securityLevel -----' , document.securityLevel);
             document.file = files.item(i);
@@ -113,5 +113,6 @@ export class FileUploader {
     this.popupMessage = message;
     jQuery(this._model).trigger("open");
   }
+  
 }
 

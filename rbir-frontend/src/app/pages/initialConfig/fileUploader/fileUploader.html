@@ -9,7 +9,7 @@
 <div class="form-group">
   <label> Select Security Level </label>
   <select #lvlSelect class="form-control" (click)="setSelectedLvl(lvlSelect.value)">
-    <option  [value]="levl" *ngFor = "let levl of securityLvls;"  >{{levl}}</option>
+    <option  [value]="levl" *ngFor = "let levl of securityLvls;"  >{{levl| replaceUnderscore}}</option>
   </select>
 </div>
 
@@ -30,7 +30,7 @@
            {{ document.file.name }}
           </td>
           <td >
-            {{document.securityLevel}}
+            {{document.securityLevel | secLvelel}}
           </td>
           <td >
             <button type="button" class="btn btn btn-danger btn-icon" (click)="removeDocument(document)"><i class="ion-close-round"></i></button>

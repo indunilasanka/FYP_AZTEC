@@ -13,6 +13,7 @@ export class Result {
   public feed: Array<Object>;
   data: any;
   results: Array<CateResult>;
+  cateResult: any;
 
   constructor(private _resultService: ResultService) {
   }

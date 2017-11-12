@@ -51,7 +51,8 @@ export class PieChart {
     let getRandomArbitrary = (min, max) => { return Math.random() * (max - min) + min; };
 
     jQuery('.pie-charts .chart').each(function(index, chart) {
-      jQuery(chart).data('easyPieChart').update(getRandomArbitrary(55, 90));
+      console.log("Pie chaer index ---------------- " + index);
+      jQuery(chart).data('easyPieChart').update(getRandomArbitrary(90, 100));
     });
   }
 }
