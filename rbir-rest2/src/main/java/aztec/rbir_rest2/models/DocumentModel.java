@@ -1,6 +1,7 @@
 package aztec.rbir_rest2.models;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -14,7 +15,7 @@ public class DocumentModel {
 	private String title;
 	private File file;
 	private String category;
-	private String summary;
+	private ArrayList<String> summary;
 	private String securityLevel;
 	
     public File getFile() {
@@ -29,7 +30,7 @@ public class DocumentModel {
 
 
 
-	public DocumentModel(String title, String summary, String category, String securityLevel){
+	public DocumentModel(String title, ArrayList<String> summary, String category, String securityLevel){
         this.title = title;
         this.summary = summary;
         this.category = category;
@@ -65,10 +66,10 @@ public class DocumentModel {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public String getSummary() {
+	public ArrayList<String> getSummary() {
 		return summary;
 	}
-	public void setSummary(String summary) {
+	public void setSummary(ArrayList<String> summary) {
 		this.summary = summary;
 	}
 	public String getSecurityLevel() {

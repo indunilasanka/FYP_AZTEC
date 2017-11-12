@@ -2,6 +2,7 @@ package aztec.rbir_rest2.models;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 /**
@@ -12,14 +13,14 @@ import java.util.Map;
 public class SetupResponse {
     private boolean success;
     private Map<String, Integer> classifier_accuracy;
-    private Map<String, Integer> num_doc_category;
-    private Map<String, String> doc_category;
+    private ArrayList<Map<String, String>> num_doc_category;
+    private ArrayList<Map<String, String>> doc_category;
 
     public void setClassifier_accuracy(Map<String, Integer> classifier_accuracy) {
         this.classifier_accuracy = classifier_accuracy;
     }
 
-    public void setNum_doc_category(Map<String, Integer> num_doc_category) {
+    public void setNum_doc_category(ArrayList<Map<String, String>> num_doc_category) {
         this.num_doc_category = num_doc_category;
     }
 
@@ -27,7 +28,7 @@ public class SetupResponse {
         return classifier_accuracy;
     }
 
-    public Map<String, Integer> getNum_doc_category() {
+    public ArrayList<Map<String, String>> getNum_doc_category() {
         return num_doc_category;
     }
 
@@ -39,11 +40,11 @@ public class SetupResponse {
         this.success = success;
     }
 
-    public Map<String, String> getDoc_category() {
+    public ArrayList<Map<String, String>> getDoc_category() {
         return doc_category;
     }
 
-    public void setDoc_category(Map<String, String> doc_category) {
+    public void setDoc_category(ArrayList<Map<String, String>> doc_category) {
         this.doc_category = doc_category;
     }
 }

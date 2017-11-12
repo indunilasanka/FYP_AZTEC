@@ -16,9 +16,11 @@ import aztec.rbir_backend.globals.Global;
 import com.google.common.collect.Collections2;
 import org.apache.commons.collections4.map.HashedMap;
 import org.apache.commons.io.FileUtils;
+import org.apache.cxf.ws.addressing.MAPAggregator;
 import org.apache.lucene.index.Term;
 import org.elasticsearch.action.bulk.BulkProcessor;
 import org.elasticsearch.action.index.IndexRequest;
+import org.elasticsearch.common.text.Text;
 import org.elasticsearch.search.SearchHit;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,25 +35,35 @@ import org.springframework.web.multipart.MultipartFile;
 public class DocumentController {
 
     private String fileDir = Global.path + "indexedFiles"; //uncomment for local server
-   // private String fileDir = "indexedFiles"; //uncomment for hosted server
+    //private String fileDir = "indexedFiles"; //uncomment for hosted server
 
     @CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value = "/list", method = RequestMethod.POST)
     public
     @ResponseBody
-    ResponseEntity<Set<DocumentModel>> list(@RequestParam("query") String query) {
+    ResponseEntity<Set<DocumentModel>> list(@RequestParam("query") String query,@RequestParam("checked") String checked) {
         System.out.println("Query " + query);
 
-        Set<SearchHit> res = aztec.rbir_backend.document.Document.phraseTextSearch(query);
-        System.out.println(res);
+        Set<SearchHit> res = null;
+
+        if(checked.equals("true")) {
+            res = aztec.rbir_backend.document.Document.phraseTextSearch(query);
+        }
+        else {
+            res = aztec.rbir_backend.document.Document.freeTextSearch(query);
+        }
 
         Set<DocumentModel> result = new HashSet<DocumentModel>();
 
         for(SearchHit hit : res){
-            System.out.println(hit.getSource());
-           // String actualContent = Terms.getTerms(hit.getSource().get("path").toString());
+            Text[] summary = hit.getHighlightFields().get("content").fragments();
 
-            DocumentModel resultDoc = new DocumentModel(hit.getSource().get("name").toString(),hit.getSource().get("content").toString(),hit.getSource().get("type").toString(),hit.getSource().get("category").toString());
+            ArrayList<String> content = new ArrayList<String>();
+            for(Text text: summary){
+                content.add(text.toString());
+            }
+
+            DocumentModel resultDoc = new DocumentModel(hit.getSource().get("name").toString(),content,hit.getSource().get("type").toString(),hit.getSource().get("category").toString());
             System.out.println(hit.getSource().get("path").toString());
             File file = new File(hit.getSource().get("path").toString());
             resultDoc.setFile(file);
@@ -106,7 +118,7 @@ public class DocumentController {
                 document.put("path",destinationDir.getCanonicalPath() + "\\" + file.getName());
                 document.put("content",e.getContent());
                 document.put("category", e.getPredictedCategory());
-                bulkProcessor.add(new IndexRequest(e.getPredictedCategory(),"document").source(document));
+                bulkProcessor.add(new IndexRequest(e.getPredictedCategory(),"document",e.getId()+"").source(document));
                // aztec.rbir_backend.document.Document.create(document,e.getCategory());
                 FileUtils.moveFileToDirectory(file, destinationDir, true);
             } catch (IOException e1) {
@@ -121,15 +133,17 @@ public class DocumentController {
             e.printStackTrace();
         }*/
 
-        Map<String, String> doc_cat = new HashMap<String, String>();
+        ArrayList<Map<String, String>> docCat = new ArrayList<Map<String, String>>();
 
         documentList.forEach(e->{
-            doc_cat.put(e.getFilePath(),e.getPredictedCategory());
+            Map<String,String> doc_cat = new HashMap<String,String>();
+            doc_cat.put("category",e.getPredictedCategory());
+            doc_cat.put("document",e.getTitle());
         });
 
         SetupResponse response = new SetupResponse();
         response.setSuccess(true);
-        response.setDoc_category(doc_cat);
+        response.setDoc_category(docCat);
 
         System.out.println("test");
 
@@ -206,12 +220,19 @@ public class DocumentController {
 
         Global.writeToFile();
 
+        levels.forEach(e->{
+            aztec.rbir_backend.document.Document.setAnalysisSettings(e);
+        });
+
         BulkProcessor bulkProcessor = aztec.rbir_backend.document.Document.getBulkProcessor();
 
-        Map<String, String> docCategory = new HashedMap<String, String>();
+        ArrayList<Map<String,String>> docCategory = new ArrayList<Map<String,String>>();
 
         indexingDocList.forEach(e -> {
-            docCategory.put(e.getTitle(),e.getPredictedCategory());
+            Map<String, String> doc_category = new HashMap<>();
+            doc_category.put("category",e.getPredictedCategory());
+            doc_category.put("document",e.getTitle());
+            docCategory.add(doc_category);
             System.out.println(e.getFilePath());
             File file = new File(e.getFilePath());
 
@@ -247,10 +268,15 @@ public class DocumentController {
         classifyAccuracy.put("NaiveBaysian", classificationAccuracy);
         classifyAccuracy.put("KMeans", clusteringAccuracy);
 
-        Map<String, Integer> numDocCategory = new HashMap<String, Integer>();
+
+        ArrayList<Map<String,String>> numDocCategory = new ArrayList<Map<String, String>>();
+
 
         for (String category: levels){
-            numDocCategory.put(category, Collections2.filter(indexingDocList, doc -> doc.getCategory().equals(category)).size());
+            Map<String, String> num_doc_category = new HashMap<String, String>();
+            num_doc_category.put("category",category);
+            num_doc_category.put("size", Collections2.filter(indexingDocList, doc -> doc.getCategory().equals(category)).size()+"");
+            numDocCategory.add(num_doc_category);
         }
 
 

@@ -6,8 +6,9 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class DocumentService {
-
-  private baseUrl: string = 'http://rbir.projects.mrt.ac.lk:8080/documents'; //'http://localhost:8080/documents';
+	
+  private checked: string ;
+  private baseUrl: string =  'http://localhost:8080/documents';  //'http://rbir.projects.mrt.ac.lk:8080';
   constructor(private http : Http) {
   }
 
@@ -18,15 +19,21 @@ export class DocumentService {
     headers.append('Accept', 'application/json');
     return headers;
   }
+  
 
-
-  getDocuments(query : string): Observable<Object[]> {
+  getDocuments(query : string,isChecked : boolean): Observable<Object[]> {
+	if(isChecked){
+         this.checked = "true";
+    }else{
+         this.checked = "false";
+    }
 
     // console.log(this.http.get(this.baseUrl+'/list', {headers: this.getHeaders()})
     //   .map(response => response.json())
     //   .catch(this.handleError));
     let formData:FormData = new FormData();
     formData.append('query', query);
+	formData.append('checked', this.checked);
     let headers = new Headers();
     headers.append('Accept', 'application/json');
     headers.append('Access-Control-Allow-Origin', '*');
