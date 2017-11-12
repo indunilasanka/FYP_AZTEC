@@ -2,9 +2,12 @@ package aztec.rbir_database.Entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -19,6 +22,10 @@ public class Searches {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "search_id")
     private Long searchId;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "user_id", nullable = false)
+	User user;
 	
 	@Column(name = "search_keyword")
 	private String searchKeyword;

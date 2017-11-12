@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -39,7 +40,11 @@ public class User {
     @Column(name= "email")
     private String email;
     
-    @Column
+    @Column( name = "IMAGE" )
+    @Lob
+    private byte[] image;
+
+	@Column
 	@CreationTimestamp
 	private Timestamp createDateTime;
 
@@ -125,6 +130,15 @@ public class User {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+    public byte[] getImage() {
+		return image;
+	}
+
+
+	public void setImage(byte[] image) {
+		this.image = image;
 	}
     
     

@@ -1,8 +1,13 @@
 package aztec.rbir_rest2.controllers;
 
 import org.springframework.web.bind.annotation.RestController;
+
+import aztec.rbir_database.Entities.User;
+import aztec.rbir_database.service.UserDataService;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import javax.servlet.http.HttpServletRequest;
@@ -32,6 +37,11 @@ public class LoginController {
     @Autowired
     private TokenStore tokenStore;
     
+    @Autowired
+    private UserDataService userDataService;
+    
+    
+    
     private ApprovalStore approvalStore;
     
 
@@ -45,10 +55,10 @@ public class LoginController {
         dataType = "string",
         paramType = "header"),
     })
-	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	@RequestMapping(value = "/getProfile", method = RequestMethod.GET)
 	@PreAuthorize("hasAuthority('ADMIN_USER')")
-	protected String register(final HttpServletRequest req) {
-	   return "works";
+	protected User register(@RequestParam("username") String username) {
+    	return userDataService.retrieveFromUserName(username);
 	}
     
 

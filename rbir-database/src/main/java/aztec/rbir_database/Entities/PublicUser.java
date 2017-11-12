@@ -1,10 +1,17 @@
 package aztec.rbir_database.Entities;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -12,8 +19,13 @@ import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Table(name = "public_user")
-public class PublicUser {
+public class PublicUser implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4706834137488474753L;
+
 	@Id
     @Column(name= "email")
     private String email;
@@ -24,9 +36,22 @@ public class PublicUser {
     @Column
 	@CreationTimestamp
 	private Timestamp createDateTime;
-    
+
     @Column(name= "reputation")
     private int reputation;
+    
+    @Column(name= "image_url")
+    private String image;
+
+    
+    
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
 
 	public int getReputation() {
 		return reputation;
@@ -58,11 +83,5 @@ public class PublicUser {
 
 	public void setCreateDateTime(Timestamp createDateTime) {
 		this.createDateTime = createDateTime;
-	}
-    
-    
-    
-    
-    
-    
+	}   
 }

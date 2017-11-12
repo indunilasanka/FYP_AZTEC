@@ -3,11 +3,19 @@ import { Http,RequestOptions, Response,Headers} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import { environment } from '../../../environments/environment';
+
+
 
 @Injectable()
 export class DocumentService {
 
-  private baseUrl: string = 'http://rbir.projects.mrt.ac.lk:8080/documents'; //'http://localhost:8080/documents';
+  private host: string = environment.host;
+  private port: string = environment.port;
+  private endcall: string = '/documents';
+    
+  private baseUrl: string = this.host +':'+ this.port + this.endcall;
+
   constructor(private http : Http) {
   }
 
