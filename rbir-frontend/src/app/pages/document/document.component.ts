@@ -25,9 +25,9 @@ export class Document {
   ngOnInit() {
   }
 
-  searchDocuments(searchQuary: string) {
+ searchDocuments(searchQuary: string) {
     console.log("searchDocuments()", searchQuary);
-    this.documentServece.getDocuments(searchQuary).subscribe(
+    this.documentServece.getDocuments(searchQuary,this.isChecked).subscribe(
       data => {
         this.data = data;
         this.loadDocuments();

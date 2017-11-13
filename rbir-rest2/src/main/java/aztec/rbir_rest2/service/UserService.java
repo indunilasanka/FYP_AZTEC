@@ -40,14 +40,9 @@ public class UserService implements UserDetailsService {
 		UserDetails userDetails1 = new org.springframework.security.core.userdetails.
                 User(user.getUsername(),user.getPassword(), authorities);
 		
-		CustomUserDetails userDetails =  new CustomUserDetails();
-		userDetails.setUserName(user.getUsername());
-		userDetails.setPassword(user.getPassword());
-		userDetails.setCustomerAuthorities(userRoles);
-		userDetails.setEmail("test@gmail.com");
-		userDetails.setImage(user.getImage());
+
 		
-		return userDetails;
+		return userDetails1;
 	}
 
 }
