@@ -1,14 +1,11 @@
 package aztec.rbir_database.service;
 
 import java.util.List;
-
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.stereotype.Service;
-
 import aztec.rbir_database.Entities.PublicUser;
 import aztec.rbir_database.Entities.Request;
-import aztec.rbir_database.Entities.UserRole;
 import aztec.rbir_database.configurations.HibernateUtil;
 
 @Service

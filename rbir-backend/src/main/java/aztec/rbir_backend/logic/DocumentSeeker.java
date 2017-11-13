@@ -1,7 +1,6 @@
 package aztec.rbir_backend.logic;
 
 import aztec.rbir_backend.configurations.ElasticSearchClient;
-//import org.apache.commons.vfs2.cache.OnCallRefreshFileObject;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.index.query.QueryBuilder;
@@ -9,10 +8,6 @@ import org.elasticsearch.search.SearchHit;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Map;
-
-import static org.elasticsearch.index.query.QueryBuilders.matchQuery;
-import static org.elasticsearch.index.query.QueryBuilders.termsLookupQuery;
 import static org.elasticsearch.index.query.QueryBuilders.termsQuery;
 
 /**

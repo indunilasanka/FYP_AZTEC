@@ -2,7 +2,6 @@ package aztec.rbir_backend.logic;
 
 import org.apache.tika.Tika;
 import org.apache.tika.exception.TikaException;
-
 import java.io.*;
 
 /**

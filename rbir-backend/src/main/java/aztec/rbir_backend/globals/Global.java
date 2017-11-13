@@ -1,11 +1,6 @@
 package aztec.rbir_backend.globals;
 
-import groovy.transform.Synchronized;
-import org.hibernate.annotations.Synchronize;
-
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Hashtable;
 
 /**
  * Created by subhahs on 10/06/2017.

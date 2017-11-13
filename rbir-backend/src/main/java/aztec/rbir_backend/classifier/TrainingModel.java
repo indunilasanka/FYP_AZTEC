@@ -4,20 +4,8 @@ import aztec.rbir_backend.clustering.Document;
 import aztec.rbir_backend.clustering.DocumentsList;
 import aztec.rbir_backend.globals.Global;
 import com.google.common.collect.Collections2;
-import org.apache.commons.lang.math.NumberUtils;
-import weka.core.converters.ArffLoader;
-
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashSet;
-
-import static com.google.common.primitives.Ints.min;
 
 /**
  * Created by subhahs on 22/08/2017.

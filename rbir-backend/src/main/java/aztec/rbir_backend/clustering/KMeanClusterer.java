@@ -1,8 +1,6 @@
 package aztec.rbir_backend.clustering;
 
 import aztec.rbir_backend.globals.Global;
-import weka.classifiers.meta.FilteredClassifier;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;

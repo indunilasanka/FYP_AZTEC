@@ -1,33 +1,18 @@
 package aztec.rbir_rest2.controllers;
 
 import org.springframework.web.bind.annotation.RestController;
-
 import aztec.rbir_database.Entities.User;
 import aztec.rbir_database.service.UserDataService;
-
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseStatus;
-
-import javax.servlet.http.HttpServletRequest;
-
-//import aztec.rbir.rest2.security.TokenAuthentication;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.oauth2.common.OAuth2AccessToken;
-import org.springframework.security.oauth2.common.OAuth2RefreshToken;
 import org.springframework.security.oauth2.provider.token.ConsumerTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
-import org.springframework.security.oauth2.provider.approval.Approval;
-import org.springframework.security.oauth2.provider.approval.Approval.ApprovalStatus;
 import org.springframework.security.oauth2.provider.approval.ApprovalStore;
-import org.springframework.security.oauth2.provider.OAuth2Authentication;
-import org.springframework.security.core.Authentication;
-import java.util.*;
 
 
 @RestController

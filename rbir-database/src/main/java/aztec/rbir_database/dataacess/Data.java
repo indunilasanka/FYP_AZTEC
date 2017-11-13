@@ -1,9 +1,7 @@
 package aztec.rbir_database.dataacess;
 
 import java.util.ArrayList;
-
 import org.hibernate.Session;
-
 import aztec.rbir_database.Entities.Document;
 import aztec.rbir_database.Entities.Keyword;
 import aztec.rbir_database.Entities.KeywordsInDocument;

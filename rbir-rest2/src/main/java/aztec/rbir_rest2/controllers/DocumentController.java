@@ -4,11 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
-
-
 import aztec.rbir_backend.clustering.Document;
-import aztec.rbir_backend.document.*;
-import aztec.rbir_backend.indexer.Terms;
 import aztec.rbir_rest2.models.*;
 import aztec.rbir_backend.classifier.*;
 import aztec.rbir_backend.clustering.*;
@@ -16,8 +12,6 @@ import aztec.rbir_backend.globals.Global;
 import com.google.common.collect.Collections2;
 import org.apache.commons.collections4.map.HashedMap;
 import org.apache.commons.io.FileUtils;
-import org.apache.cxf.ws.addressing.MAPAggregator;
-import org.apache.lucene.index.Term;
 import org.elasticsearch.action.bulk.BulkProcessor;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.common.text.Text;
@@ -26,8 +20,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
-
 
 
 @RestController

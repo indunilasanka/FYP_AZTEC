@@ -1,10 +1,6 @@
 package aztec.rbir_rest2.controllers;
 
 import java.util.List;
-
-
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,8 +8,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-
 import aztec.rbir_database.Entities.PublicUser;
 import aztec.rbir_database.Entities.Request;
 import aztec.rbir_database.service.RequestService;

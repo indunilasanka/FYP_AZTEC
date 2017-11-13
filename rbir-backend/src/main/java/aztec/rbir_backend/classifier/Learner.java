@@ -1,12 +1,7 @@
 package aztec.rbir_backend.classifier;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Random;
-import java.io.FileWriter;
-import java.util.Scanner;
-
 import aztec.rbir_backend.globals.Global;
 import weka.classifiers.Evaluation;
 import weka.classifiers.bayes.NaiveBayes;

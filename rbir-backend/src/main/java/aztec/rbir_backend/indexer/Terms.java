@@ -5,22 +5,12 @@ package aztec.rbir_backend.indexer;
  */
 
 import aztec.rbir_backend.logic.FileReaderFactory;
-import com.uttesh.exude.ExudeData;
-import com.uttesh.exude.exception.InvalidDataException;
 import org.apache.lucene.analysis.StopFilter;
 import org.apache.lucene.analysis.TokenStream;
-import org.apache.lucene.analysis.Tokenizer;
-import org.apache.lucene.analysis.core.StopAnalyzer;
 import org.apache.lucene.analysis.en.EnglishAnalyzer;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
-import org.apache.lucene.analysis.standard.StandardTokenizer;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
-import org.apache.lucene.util.Version;
-
 import java.io.IOException;
 import java.io.StringReader;
-import java.util.*;
-import java.util.stream.Collectors;
 
 
 public class Terms {

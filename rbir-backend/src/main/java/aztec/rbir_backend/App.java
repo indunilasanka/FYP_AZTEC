@@ -1,7 +1,6 @@
 package aztec.rbir_backend;
 
 import aztec.rbir_backend.globals.Global;
-import aztec.rbir_backend.logic.FileReaderFactory;
 
 
 /**

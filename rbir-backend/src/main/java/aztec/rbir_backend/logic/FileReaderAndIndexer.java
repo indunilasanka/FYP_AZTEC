@@ -3,7 +3,6 @@ package aztec.rbir_backend.logic;
 import aztec.rbir_backend.configurations.ElasticSearchClient;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.client.transport.TransportClient;
-
 import java.io.File;
 import java.util.Date;
 import java.util.HashMap;

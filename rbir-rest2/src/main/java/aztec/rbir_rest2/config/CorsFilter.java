@@ -1,7 +1,6 @@
 package aztec.rbir_rest2.config;
 
 import org.springframework.web.filter.OncePerRequestFilter;
-
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

@@ -1,4 +1,5 @@
 package aztec.rbir_database.Entities;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;

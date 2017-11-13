@@ -1,7 +1,6 @@
 package aztec.rbir_rest2.models;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 import java.util.ArrayList;
 import java.util.Map;
 

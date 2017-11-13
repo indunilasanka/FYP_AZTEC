@@ -1,7 +1,6 @@
 package aztec.rbir_database;
 
 import java.util.ArrayList;
-
 import aztec.rbir_database.Entities.Document;
 import aztec.rbir_database.Entities.Keyword;
 import aztec.rbir_database.dataacess.Data;

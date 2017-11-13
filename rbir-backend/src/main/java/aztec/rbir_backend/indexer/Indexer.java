@@ -1,13 +1,6 @@
 package aztec.rbir_backend.indexer;
 
 
-import aztec.rbir_backend.clustering.DocumentsList;
-import aztec.rbir_backend.globals.Global;
-import org.apache.commons.lang.math.NumberUtils;
-import static com.google.common.primitives.Ints.min;
-import java.util.*;
-import aztec.rbir_backend.classifier.*;
-
 /**
  * Created by subhahs on 10/06/2017.
  */

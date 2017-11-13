@@ -4,10 +4,8 @@ import aztec.rbir_backend.clustering.*;
 import aztec.rbir_backend.clustering.Vector;
 import aztec.rbir_backend.globals.Global;
 import aztec.rbir_backend.logic.WordFrequency;
-
 import java.io.*;
 import java.util.*;
-
 import static com.google.common.primitives.Ints.min;
 import org.apache.commons.lang.math.NumberUtils;
 

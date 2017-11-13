@@ -2,9 +2,6 @@ package aztec.rbir_rest2.models;
 
 import java.io.File;
 import java.util.ArrayList;
-
-import org.springframework.web.multipart.MultipartFile;
-
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
