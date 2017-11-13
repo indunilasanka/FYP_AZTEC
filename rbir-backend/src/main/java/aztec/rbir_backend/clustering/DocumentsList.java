@@ -21,8 +21,8 @@ import java.util.Date;
 /*documents to be clustered */
 public class DocumentsList extends ArrayList<Document> {
 
-    //private String fileDir = Global.path+"nonIndexedFiles"; //uncomment for local server
-     private String fileDir = "nonIndexedFiles"; //uncomment for hosted server
+    private String fileDir = Global.path+"nonIndexedFiles"; //uncomment for local server
+    // private String fileDir = "nonIndexedFiles"; //uncomment for hosted server
 
     public DocumentsList(ArrayList<MultipartFile> files, ArrayList<String> categories) {
 
@@ -43,8 +43,8 @@ public class DocumentsList extends ArrayList<Document> {
                 dir.mkdir();
             }
 
-           // File newFile = new File(dir+"/"+newFileName); //uncomment for local server
-            File newFile = new File(Global.path+dir+"/"+newFileName); //uncomment for hosted server
+            File newFile = new File(dir+"/"+newFileName); //uncomment for local server
+           // File newFile = new File(Global.path+dir+"/"+newFileName); //uncomment for hosted server
 
 
             System.out.println(newFile.getAbsolutePath());
@@ -83,8 +83,8 @@ public class DocumentsList extends ArrayList<Document> {
                 dir.mkdir();
             }
 
-            //File newFile = new File(dir+"/"+newFileName); //uncomment for local server
-            File newFile = new File(Global.path+dir+"/"+newFileName); //uncomment for hosted server
+            File newFile = new File(dir+"/"+newFileName); //uncomment for local server
+            //File newFile = new File(Global.path+dir+"/"+newFileName); //uncomment for hosted server
 
             System.out.println(newFile.getAbsolutePath());
             try {

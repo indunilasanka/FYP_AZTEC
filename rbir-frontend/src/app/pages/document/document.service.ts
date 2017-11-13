@@ -46,7 +46,7 @@ export class DocumentService {
 
     let formData:FormData = new FormData();
     formData.append('query', query);
-    formData.append('isChecked', this.checked);
+    formData.append('checked', this.checked);
     let headers = new Headers();
     headers.append('Accept', 'application/json');
     headers.append('Access-Control-Allow-Origin', '*');

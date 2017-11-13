@@ -94,7 +94,7 @@ public class Document {
         String preproceQuery = Terms.getTermsQuery(query);
         String[] terms = query.split(" ");
 
-        String tag = "<br class='highlight'>";
+        String tag = "<b class='highlight'>";
         HighlightBuilder highlightBuilder = new HighlightBuilder().field("content").preTags(tag).postTags("</b>").fragmentSize(200);
         SearchResponse response = client.prepareSearch("_all")
                 .setTypes("document")
@@ -114,7 +114,7 @@ public class Document {
         String preproceQuery = Terms.getTermsQuery(query);
         System.out.println(preproceQuery);
 
-        String tag = "<br class='highlight'>";
+        String tag = "<b class='highlight'>";
         HighlightBuilder highlightBuilder = new HighlightBuilder().field("content").preTags(tag).postTags("</b>").fragmentSize(200);
 
       /*  SearchResponse response = client.prepareSearch("_all")
