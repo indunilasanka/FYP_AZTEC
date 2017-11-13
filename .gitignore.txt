@@ -33,13 +33,13 @@
 /rbir-rest2/.idea
 /rbir-rest2/rbir-rest2.iml
 /rbir-rest2/.settings
-/rbir-rest2/target
+/rbir-rest2/target/
 /rbir-rest2/target/rbir-rest2-0.0.1-SNAPSHOT.jar
 /rbir-rest2/.classpath
 /rbir-rest2/.project
 /elasticsearch-5.4.0
 /kibana-5.4.0-windows-x86
-/lib
+/lib/
 /rbir-frontend/node_modules
 /rbir-frontend/.vscode
 /rbir-frontend/.idea
