@@ -2,23 +2,22 @@ package aztec.rbir_backend.document;
 
 import aztec.rbir_backend.configurations.ElasticSearchClient;
 import aztec.rbir_backend.indexer.Terms;
-import org.dom4j.swing.DocumentTreeModel;
+import org.elasticsearch.action.admin.indices.create.CreateIndexRequestBuilder;
 import org.elasticsearch.action.bulk.BackoffPolicy;
 import org.elasticsearch.action.bulk.BulkProcessor;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.bulk.BulkResponse;
 import org.elasticsearch.action.delete.DeleteResponse;
-import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.action.update.UpdateResponse;
 import org.elasticsearch.client.transport.TransportClient;
+import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.unit.ByteSizeUnit;
 import org.elasticsearch.common.unit.ByteSizeValue;
 import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.common.xcontent.XContentFactory;
-import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
@@ -29,6 +28,7 @@ import java.util.Map;
 import java.util.Set;
 
 import static aztec.rbir_backend.indexer.Terms.getTermsQuery;
+import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 import static org.elasticsearch.index.query.QueryBuilders.termsQuery;
 
 /**
@@ -77,7 +77,7 @@ public class Document {
     public static UpdateResponse update(String category, String id){
         UpdateResponse response = null;
         try {
-            response  = client.prepareUpdate(category,"document",id).setDoc(XContentFactory.jsonBuilder().startObject().field("category",category).endObject()).get();
+            response  = client.prepareUpdate(category,"document",id).setDoc(jsonBuilder().startObject().field("category",category).endObject()).get();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -92,12 +92,14 @@ public class Document {
     public static Set<SearchHit> freeTextSearch(String query){
         //GetResponse response = client.prepareGet(category,"document",id).get();
         String preproceQuery = Terms.getTermsQuery(query);
-        String[] terms = preproceQuery.split(" ");
+        String[] terms = query.split(" ");
 
+        String tag = "<b class='highlight'>";
+        HighlightBuilder highlightBuilder = new HighlightBuilder().field("content").preTags(tag).postTags("</b>").fragmentSize(200);
         SearchResponse response = client.prepareSearch("_all")
                 .setTypes("document")
                 .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
-                .setQuery(QueryBuilders.termsQuery("content",terms))                 // Query
+                .setQuery(QueryBuilders.termsQuery("content",terms)).highlighter(highlightBuilder)                 // Query
                 .get();
 
         Set<SearchHit> result = new HashSet<SearchHit>();
@@ -112,12 +114,20 @@ public class Document {
         String preproceQuery = Terms.getTermsQuery(query);
         System.out.println(preproceQuery);
 
-        HighlightBuilder highlightBuilder = new HighlightBuilder().field("content").phraseLimit(5);
+        String tag = "<b class='highlight'>";
+        HighlightBuilder highlightBuilder = new HighlightBuilder().field("content").preTags(tag).postTags("</b>").fragmentSize(200);
+
+      /*  SearchResponse response = client.prepareSearch("_all")
+                .setTypes("document")
+                .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
+                .setQuery(QueryBuilders.moreLikeThisQuery(preproceQuery.split(" "))).highlighter(highlightBuilder)             // Query
+                .get();*/
+
 
         SearchResponse response = client.prepareSearch("_all")
                 .setTypes("document")
                 .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
-                .setQuery(QueryBuilders.matchPhraseQuery("content",preproceQuery)).highlighter(highlightBuilder)             // Query
+                .setQuery(QueryBuilders.matchPhraseQuery("content",query).slop(5)).highlighter(highlightBuilder)             // Query
                 .get();
 
         Set<SearchHit> result = new HashSet<SearchHit>();
@@ -126,6 +136,59 @@ public class Document {
         }
 
         return result;
+    }
+
+    public static void setAnalysisSettings(String securityLevel){
+        Settings settings = null;
+        try {
+            settings = Settings.builder().loadFromSource(jsonBuilder()
+                    .startObject()
+                    //Add analyzer settings
+                    .startObject("analysis")
+                    .startObject("filter")
+                    .startObject("test_filter_snowball_en")
+                    .field("type", "snowball")
+                    .field("language", "English")
+                    .endObject()
+                    .startObject("test_filter_ngram")
+                    .field("type", "edgeNGram")
+                    .field("min_gram", 2)
+                    .field("max_gram", 30)
+                    .endObject()
+                    .endObject()
+                    .startObject("analyzer")
+                    .startObject("test")
+                    .field("type", "custom")
+                    .field("stopwords", "_english_")
+                    .field("tokenizer", "standard")
+                    .field("filter", new String[]{"lowercase",
+                            "porter_stem"})
+                    .endObject()
+                    .endObject()
+                    .endObject()
+                    .endObject().string()).build();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        CreateIndexRequestBuilder createIndexRequestBuilder = client.admin().indices().prepareCreate(securityLevel);
+        createIndexRequestBuilder.setSettings(settings);
+
+            createIndexRequestBuilder.addMapping(
+                    "{\n" +
+                            "    \"document\": {\n" +
+                            "      \"properties\": {\n" +
+                            "        \"content\": {\n" +
+                            "          \"search_analyzer\": \"test\"\n" +
+                            "        }\n" +
+                            "      }\n" +
+                            "    }\n" +
+                            "  }");
+
+
+        createIndexRequestBuilder.get();
+
+        System.out.println("test");
     }
 
 }

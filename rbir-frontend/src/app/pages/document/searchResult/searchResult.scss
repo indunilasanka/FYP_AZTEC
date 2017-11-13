@@ -1,6 +1,11 @@
 @import '../../../theme/sass/conf/conf';
 
 :host /deep/ .feed-messages-container {
+	
+	.highlight {
+        background-color: yellow;
+        color:black;
+    }
 
   .feed-message {
     $text-message-color: $content-text;

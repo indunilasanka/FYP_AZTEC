@@ -29,7 +29,7 @@ public class RequestController {
 	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/public-request", method = RequestMethod.POST)
 	@ResponseBody
-	public boolean handlePublicRequest(@RequestParam("e-mail") String email,@RequestParam("username") String username,@RequestParam("request") String request,@RequestParam("image_url") String imgUrl){
+	public boolean handlePublicRequest(@RequestParam("email") String email,@RequestParam("username") String username,@RequestParam("request") String request,@RequestParam("image_url") String imgUrl){
 		
 		PublicUser pUser;
 		
