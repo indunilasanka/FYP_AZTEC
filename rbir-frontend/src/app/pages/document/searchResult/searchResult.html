@@ -7,13 +7,11 @@
       <div class="text-block text-message">
         <div class="message-header">
           <span class="author">{{ document.title }} </span>
-          <span class="category">{{ document.securityLevel}} </span>
+          <span class="category">{{ document.category}} </span>
         </div>
         <div class="message-content line-clamp" [ngClass]="{'line-clamp-2' : !document.expanded}">
-          <span *ngFor="let sum of document.summary">
-             <br>            
-             <div style="font-size: larger;" [innerHTML]="sum">
-             </div>
+          <span >
+            {{document.summary}}
           </span>
         </div>
         <!--<div class="preview" [ngClass]="{'hidden': !document.expanded}" *ngIf="document.preview">-->

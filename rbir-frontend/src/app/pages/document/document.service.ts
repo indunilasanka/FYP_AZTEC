@@ -13,9 +13,6 @@ export class DocumentService {
   private host: string = environment.host;
   private port: string = environment.port;
   private endcall: string = '/documents';
-
-  private checked: string ;
-
     
   private baseUrl: string = this.host +':'+ this.port + this.endcall;
 
@@ -27,26 +24,17 @@ export class DocumentService {
     // will request text/html instead of application/json
     let headers = new Headers();
     headers.append('Accept', 'application/json');
-    headers.append('Access-Control-Allow-Origin', '*');
     return headers;
   }
 
 
-  getDocuments(query : string,isChecked:boolean): Observable<Object[]> {
+  getDocuments(query : string): Observable<Object[]> {
 
     // console.log(this.http.get(this.baseUrl+'/list', {headers: this.getHeaders()})
     //   .map(response => response.json())
     //   .catch(this.handleError));
-
-    if(isChecked){
-         this.checked = "true";
-    }else{
-         this.checked = "false";
-    }
-
     let formData:FormData = new FormData();
     formData.append('query', query);
-    formData.append('checked', this.checked);
     let headers = new Headers();
     headers.append('Accept', 'application/json');
     headers.append('Access-Control-Allow-Origin', '*');

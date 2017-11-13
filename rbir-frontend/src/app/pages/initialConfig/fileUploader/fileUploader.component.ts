@@ -1,4 +1,4 @@
-import { Component, ViewChild, Input, Output, EventEmitter, ElementRef, Renderer } from '@angular/core';
+import { Component, ViewChild, Input, Output, EventEmitter, ElementRef, Renderer , OnInit } from '@angular/core';
 
 import { FileUploadService } from './fileUpload.service';
 import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
@@ -12,10 +12,10 @@ import { DocumentModel } from '../../../models/document.model';
 export class FileUploader {
 
 
-  // @Input() fileUploaderOptions: NgUploaderOptions = { url: '' };
-  // @Output() onFileUpload = new EventEmitter<any>();
-  @Output() onFileUploadCompleted = new EventEmitter<any>();
-  @Input() defaultValue: string = '';
+  // @Output() _sendResult = new EventEmitter<any>();
+  // @Output() buttonClicked = new EventEmitter<any>();
+  // @Input() siblings: any;
+  @ViewChild('childComponent2') childComponent;
 
   @ViewChild('fileUpload') public _fileUpload: ElementRef;
   @ViewChild('singleFileUpload') public _singleFileUpload: ElementRef;
@@ -25,19 +25,24 @@ export class FileUploader {
   numberOfLevel: number;
   securityLvls: string[];
   selectedLvl: string;
-  data: Object = null;
+  data: any = null;
   fileName: string = '';
   popupTitle: String = '';
   popupMessage: String = '';
   documents: DocumentModel[] = [];
   fileList: File[] = null;
-  selectSingleFile: boolean = true;
+  selectSingleFile: boolean = false;
+  
+  result: any;
+  accuracy: number[];
 
   uploadFileInProgress: boolean;
-
-  constructor(private renderer: Renderer, private fileUploadService: FileUploadService) { }
+  
+  constructor(private renderer: Renderer, private fileUploadService: FileUploadService) {
+   }
 
   setSecurityLevel(numberOfLevels: number) {
+    
     this.numberOfLevel = numberOfLevels;
     this.securityLvls = [];
     for (let i = 1; i <= this.numberOfLevel; i++) {
@@ -79,8 +84,6 @@ export class FileUploader {
           if (fielType.includes('pdf') || fielType.includes('officedocument.word')) {
             const document: DocumentModel = new DocumentModel();
             document.securityLevel = this.selectedLvl;
-
-            console.log('document.securityLevel -----' , document.securityLevel);
             document.file = files.item(i);
             this.documents.push(document);
           }
@@ -97,25 +100,40 @@ export class FileUploader {
   startFileupload() {
 
     if (this.documents) {
-      this.fileUploadService.uploadFolder(this.documents, this.securityLvls).subscribe(
+        this.fileUploadService.uploadFolder(this.documents, this.securityLvls).subscribe(
 
-
-        data => {
+        data => { 
           this.data = data;
-          if (this.data.toString() === 'success') {
-            this.popUp('Success', 'File Successfully Indexed!');
-          } else {
-            this.popUp('Fail', 'File Indexing Failed!');
-          }
+          this.result = JSON.parse(this.data);
+          console.log("Indexed result -----------------", this.data);
+          
+          // if (this.data.success) {
+            this.childComponent.doSomething(this.result);
+          // }
+            
+          // if (this.data.success == true) {
+          //   console.log("Indexed result ----------------- sucssse");
+          //   // this.popUp('Success', 'File Successfully Indexed!');
+          //   // console.log("Popup closed -----------------",data);
+          //   // this.childComponent.doSomething(data);  
+          // } else {
+          //   console.log("Indexed result ----------------- else");
+          //   // this.popUp('Fail', 'File Indexing Failed!');
+          // }
         },
         error => {
           this.data = error.toString();
-          this.popUp('Fail', this.data.toString());
+          console.log("Indexed result -----------------error", this.data);
+          // this.popUp('Fail', this.data.toString());
         },
       );
 
     }
   }
+
+  // refreshFileupload(){
+  //   this.childComponent.doSomething(this.result);  
+  // }
 
   popUp(title: String, message: String) {
     console.log("test");
@@ -123,6 +141,5 @@ export class FileUploader {
     this.popupMessage = message;
     jQuery(this._model).trigger("open");
   }
-  
 }
 

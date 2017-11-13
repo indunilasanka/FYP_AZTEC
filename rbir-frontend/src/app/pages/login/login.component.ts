@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 
 import { AuthenticationService } from '../../services/authentication.service';
 
-
 @Component({
   selector: 'login',
   templateUrl: './login.html',
@@ -17,9 +16,6 @@ export class Login {
   public password:AbstractControl;
   public submitted:boolean = false;
   public error: string;
-  private _selector:string = 'preloader';
-  private _element:HTMLElement;
-  public loginInProgress:boolean;
 
 
   constructor(fb:FormBuilder,private router: Router,
@@ -36,34 +32,19 @@ export class Login {
   ngOnInit() {
         // reset login status
         this.authenticationService.logout();
-        this._element = document.getElementById(this._selector);
-        this.loginInProgress=false;
   }
-
-  public show():void {
-    this._element.style['display'] = 'block';
-  }
-
-  public hide(delay:number = 0):void {
-    setTimeout(() => {
-      this._element.style['display'] = 'none';
-    }, delay);
-  }
-
 
   public onSubmit(values:Object):void {
     this.submitted = true;
     if (this.form.valid) {
       console.log("submitting password for service");
-      this.loginInProgress=true;
+      
       this.authenticationService.login(this.email.value,this.password.value).subscribe(
       result => {
          if (result === true) {
                     // login successful
               console.log("navigating to dashboard")
-              this.loginInProgress=false;
               this.router.navigate(['/pages/dashboard']);
-
         } 
         
       },

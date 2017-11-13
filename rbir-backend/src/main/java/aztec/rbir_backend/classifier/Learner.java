@@ -107,8 +107,12 @@ public class Learner {
 
         try {
             File file = new File(Global.path +"naiveClassifier.dat");
-            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
-
+            ObjectOutputStream out = new ObjectOutputStream(
+<<<<<<< HEAD
+                    new FileOutputStream(file));
+=======
+                    new FileOutputStream("rbir-backend/src/main/resources/naiveClassifier.dat"));
+>>>>>>> parent of ad9cd7e2... Merge branch 'RND' of https://github.com/indunilasanka/FYP_AZTEC into RND
             out.writeObject(classifier);
             out.close();
             System.out.println("===== Saved model: "  + " =====");
@@ -123,11 +127,14 @@ public class Learner {
 
         InputStream arffFile = null;
 
+<<<<<<< HEAD
         try {
             arffFile =  new FileInputStream(Global.path+"keys.arff");
         } catch (FileNotFoundException e) {
-
+=======
+            arffFile =  new FileInputStream("rbir-backend/src/main/resources/keys.arff");//classLoader.getResource("keys.arff").openStream();
         } catch (IOException e) {
+>>>>>>> parent of ad9cd7e2... Merge branch 'RND' of https://github.com/indunilasanka/FYP_AZTEC into RND
             e.printStackTrace();
         }
 

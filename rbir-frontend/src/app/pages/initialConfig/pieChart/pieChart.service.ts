@@ -18,17 +18,6 @@ export class PieChartService {
         color: pieColor,
         description: 'Second Method',
       },
-      // }, {
-      //   color: pieColor,
-      //   description: 'dashboard.active_users',
-      //   stats: '178,391',
-      //   icon: 'face',
-      // }, {
-      //   color: pieColor,
-      //   description: 'dashboard.returned',
-      //   stats: '32,592',
-      //   icon: 'refresh',
-      // }
     ];
   }
 

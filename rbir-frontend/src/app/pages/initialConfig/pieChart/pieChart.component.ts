@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-import {PieChartService} from './pieChart.service';
+import { PieChartService } from './pieChart.service';
 
 import 'easy-pie-chart/dist/jquery.easypiechart.js';
 
@@ -12,6 +12,9 @@ import 'easy-pie-chart/dist/jquery.easypiechart.js';
 // TODO: move easypiechart to component
 export class PieChart {
 
+  acuracyData: number[];
+  
+
   public charts: Array<Object>;
   private _init = false;
 
@@ -22,7 +25,10 @@ export class PieChart {
   ngAfterViewInit() {
     if (!this._init) {
       this._loadPieCharts();
-      this._updatePieCharts();
+      this.acuracyData = [];
+      this.acuracyData.push(0);
+      this.acuracyData.push(0);
+      this._updatePieCharts(this.acuracyData);
       this._init = true;
     }
   }
@@ -47,12 +53,12 @@ export class PieChart {
     });
   }
 
-  private _updatePieCharts() {
-    let getRandomArbitrary = (min, max) => { return Math.random() * (max - min) + min; };
+  private _updatePieCharts(acuracyData: number[]) {
+    // let getRandomArbitrary = (min, max) => { return Math.random() * (max - min) + min; };
 
     jQuery('.pie-charts .chart').each(function(index, chart) {
-      console.log("Pie chaer index ---------------- " + index);
-      jQuery(chart).data('easyPieChart').update(getRandomArbitrary(90, 100));
+      // jQuery(chart).data('easyPieChart').update(getRandomArbitrary(90, 100));
+      jQuery(chart).data('easyPieChart').update(acuracyData[index]);      
     });
   }
 }
