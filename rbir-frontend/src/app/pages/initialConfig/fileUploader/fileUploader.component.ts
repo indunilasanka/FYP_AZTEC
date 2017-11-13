@@ -124,7 +124,7 @@ export class FileUploader {
         error => {
           this.data = error.toString();
           console.log("Indexed result -----------------error", this.data);
-          // this.popUp('Fail', this.data.toString());
+          this.popUp('Fail', this.data.toString());
         },
       );
 

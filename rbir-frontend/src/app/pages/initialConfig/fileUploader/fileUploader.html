@@ -65,16 +65,7 @@
         <button type="button" class="btn btn-success btn-raised"  (click)="startFileupload()">Submit</button>
       </div>
       
-      <modal #modal>
-        <modal-header [show-close]="true">
-          <h4 class="modal-title">{{popupTitle}}</h4>
-        </modal-header>
-        <modal-body>
-          {{popupMessage}}
-        </modal-body>
-        <modal-footer [show-default-buttons]="true"></modal-footer>
-      </modal>
-      
+            
       <!-- <file-uploader-com  (buttonClicked)="main.doSomething($event)" (_sendResult) = "bindResult =  $event"></file-uploader-com> --> 
     </ba-card>
   </div>
@@ -86,4 +77,15 @@
     </ba-card>
   </div>
 </div>
+
+
+<modal #modal>
+  <modal-header [show-close]="true">
+    <h4 class="modal-title">{{popupTitle}}</h4>
+  </modal-header>
+  <modal-body>
+    {{popupMessage}}
+  </modal-body>
+  <modal-footer [show-default-buttons]="true"></modal-footer>
+</modal>
 
