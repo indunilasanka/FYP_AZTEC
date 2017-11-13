@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="rbir-backend-0.0.1-SNAPSHOT">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/rbir-backend/target/rbir-backend-0.0.1-SNAPSHOT.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
