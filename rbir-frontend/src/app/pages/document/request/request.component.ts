@@ -13,7 +13,7 @@ import {UserModel} from '../../../models/user.model';
 export class Request {
 
   public requests: Array<RequestModel>;
-  @Output() requestSender = new EventEmitter<String>();
+  @Output() requestSender = new EventEmitter<string>();
 
   data: Array<Object> = null;
 
@@ -38,7 +38,7 @@ export class Request {
     );
   }
 
-  startSearch(request: String) {
+  startSearch(request: string) {
     this.requestSender.emit(request);
   }
 

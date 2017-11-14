@@ -49,9 +49,9 @@ export class Document {
     console.log(this.data);
   }
 
-  someMethod(event: RequestModel) {
-    this.request = event;
-    this.quary = this.request.content;
+  someMethod(event: string) {
+   
+    this.quary = event;
     console.log("parent clicked",event);
   }
 }
