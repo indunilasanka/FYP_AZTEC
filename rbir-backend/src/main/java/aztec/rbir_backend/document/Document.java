@@ -1,7 +1,6 @@
 package aztec.rbir_backend.document;
 
 import aztec.rbir_backend.configurations.ElasticSearchClient;
-import aztec.rbir_backend.indexer.Terms;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequestBuilder;
 import org.elasticsearch.action.bulk.BackoffPolicy;
 import org.elasticsearch.action.bulk.BulkProcessor;
@@ -84,14 +83,13 @@ public class Document {
         return response;
     }
 
-    public static Set<SearchHit> freeTextSearch(String query){
-        //GetResponse response = client.prepareGet(category,"document",id).get();
-        String preproceQuery = Terms.getTermsQuery(query);
+    public static Set<SearchHit> freeTextSearch(String query, String category){
+        System.out.println("free text query");
         String[] terms = query.split(" ");
 
         String tag = "<b class='highlight'>";
         HighlightBuilder highlightBuilder = new HighlightBuilder().field("content").preTags(tag).postTags("</b>").fragmentSize(200);
-        SearchResponse response = client.prepareSearch("_all")
+        SearchResponse response = client.prepareSearch(category)
                 .setTypes("document")
                 .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
                 .setQuery(QueryBuilders.termsQuery("content",terms)).highlighter(highlightBuilder)                 // Query
@@ -105,24 +103,16 @@ public class Document {
         return result;
     }
 
-    public static Set<SearchHit> phraseTextSearch(String query){
-        String preproceQuery = Terms.getTermsQuery(query);
-        System.out.println(preproceQuery);
+    public static Set<SearchHit> phraseTextSearch(String query, String category){
+        System.out.println("phrase query test");
 
         String tag = "<b class='highlight'>";
         HighlightBuilder highlightBuilder = new HighlightBuilder().field("content").preTags(tag).postTags("</b>").fragmentSize(200);
 
-      /*  SearchResponse response = client.prepareSearch("_all")
+        SearchResponse response = client.prepareSearch(category)
                 .setTypes("document")
                 .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
-                .setQuery(QueryBuilders.moreLikeThisQuery(preproceQuery.split(" "))).highlighter(highlightBuilder)             // Query
-                .get();*/
-
-
-        SearchResponse response = client.prepareSearch("_all")
-                .setTypes("document")
-                .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
-                .setQuery(QueryBuilders.matchPhraseQuery("content",query).slop(5)).highlighter(highlightBuilder)             // Query
+                .setQuery(QueryBuilders.matchPhraseQuery("content",query)).highlighter(highlightBuilder)             // Query
                 .get();
 
         Set<SearchHit> result = new HashSet<SearchHit>();
@@ -131,6 +121,12 @@ public class Document {
         }
 
         return result;
+    }
+
+    public static long getNumDocs(String index){
+        SearchResponse response = client.prepareSearch(index)
+                .setTypes("document").get();
+        return response.getHits().totalHits;
     }
 
     public static void setAnalysisSettings(String securityLevel){
@@ -175,6 +171,8 @@ public class Document {
                             "      \"properties\": {\n" +
                             "        \"content\": {\n" +
                             "          \"search_analyzer\": \"test\"\n" +
+                            "          \"search_quote_analyzer\": \"test\"\n" +
+                            "          \"analyzer\": \"test\"\n" +
                             "        }\n" +
                             "      }\n" +
                             "    }\n" +

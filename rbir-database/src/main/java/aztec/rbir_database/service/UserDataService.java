@@ -4,6 +4,8 @@ import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.stereotype.Service;
+
+import aztec.rbir_database.Entities.PublicUser;
 import aztec.rbir_database.Entities.User;
 import aztec.rbir_database.Entities.UserRole;
 import aztec.rbir_database.configurations.HibernateUtil;
@@ -29,6 +31,45 @@ public class UserDataService {
 		}		
 		return user;
 	}
+	
+	public PublicUser retrievePublicUserFromName(String email) {
+		
+		Session session = HibernateUtil.getSessionFactory().openSession();		
+		PublicUser pUser = null;
+		try {
+			session.beginTransaction();			
+			String hql = "from PublicUser puser where puser.email = :email";
+			pUser = (PublicUser) session.createQuery(hql)
+			                    .setString("email", email)
+			                    .uniqueResult();
+
+			session.getTransaction().commit();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			session.getTransaction().rollback();
+		}		
+		return pUser;
+	}
+	
+	public List<User> retrieveUsersForConfirmation(String level) {
+		
+		Session session = HibernateUtil.getSessionFactory().openSession();		
+		List<User> user = null;
+		try {
+			session.beginTransaction();			
+			String hql = "select user from UserRole ur where ur.role.roleName != :roleName";
+			user = (List<User>) session.createQuery(hql)
+			                    .setString("roleName", level)
+			                    .list();
+
+			session.getTransaction().commit();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			session.getTransaction().rollback();
+		}		
+		return user;
+	}
+	
 	
 	
 	public static void addUser(String userName, String password, String email, long roleId){}

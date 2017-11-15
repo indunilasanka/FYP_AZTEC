@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.oauth2.provider.token.ConsumerTokenServices;
@@ -46,6 +49,11 @@ public class LoginController {
     	return userDataService.retrieveFromUserName(username);
 	}
     
+    
+    @RequestMapping(value = "/getRankedOfficers", method = RequestMethod.GET)
+	protected List<User> getRankedOfficers(@RequestParam("documentlevel") String level) {
+    	return userDataService.retrieveUsersForConfirmation(level);
+	}
 
     
     

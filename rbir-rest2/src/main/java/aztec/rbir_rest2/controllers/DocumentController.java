@@ -33,16 +33,16 @@ public class DocumentController {
     @RequestMapping(value = "/list", method = RequestMethod.POST)
     public
     @ResponseBody
-    ResponseEntity<Set<DocumentModel>> list(@RequestParam("query") String query,@RequestParam("checked") String checked) {
+    ResponseEntity<Set<DocumentModel>> list(@RequestParam("query") String query,@RequestParam("checked") String checked, @RequestParam("level") String secLevel) {
         System.out.println("Query " + query);
 
         Set<SearchHit> res = null;
 
         if(checked.equals("true")) {
-            res = aztec.rbir_backend.document.Document.phraseTextSearch(query);
+            res = aztec.rbir_backend.document.Document.phraseTextSearch(secLevel, query);
         }
         else {
-            res = aztec.rbir_backend.document.Document.freeTextSearch(query);
+            res = aztec.rbir_backend.document.Document.freeTextSearch(secLevel, query);
         }
 
         Set<DocumentModel> result = new HashSet<DocumentModel>();
@@ -52,10 +52,10 @@ public class DocumentController {
 
             ArrayList<String> content = new ArrayList<String>();
             for(Text text: summary){
-                content.add(text.toString());
+                content.add(text.toString().replace("\n","<br></br>"));
             }
 
-            DocumentModel resultDoc = new DocumentModel(hit.getSource().get("name").toString(),content,hit.getSource().get("type").toString(),hit.getSource().get("category").toString());
+            DocumentModel resultDoc = new DocumentModel(hit.getId(),hit.getSource().get("name").toString(),content,hit.getSource().get("type").toString(),hit.getSource().get("category").toString());
             System.out.println(hit.getSource().get("path").toString());
             File file = new File(hit.getSource().get("path").toString());
             resultDoc.setFile(file);
@@ -133,9 +133,20 @@ public class DocumentController {
             doc_cat.put("document",e.getTitle());
         });
 
+        ArrayList<Map<String,String>> numDocCategory = new ArrayList<Map<String, String>>();
+
+        for (String category: Global.getCategories()){
+            Map<String, String> num_doc_category = new HashMap<String, String>();
+            num_doc_category.put("category",category);
+            num_doc_category.put("size", aztec.rbir_backend.document.Document.getNumDocs(category)+"");
+            numDocCategory.add(num_doc_category);
+        }
+
         SetupResponse response = new SetupResponse();
         response.setSuccess(true);
         response.setDoc_category(docCat);
+        response.setDocToatl(aztec.rbir_backend.document.Document.getNumDocs("_all"));
+        response.setNum_doc_category(numDocCategory);
 
         System.out.println("test");
 
@@ -150,6 +161,8 @@ public class DocumentController {
     @ResponseBody
     ResponseEntity<SetupResponse> handleInitialSetup(@RequestParam("file") ArrayList<MultipartFile> files, @RequestParam("level") ArrayList<String> categories, @RequestParam("securitylvls") ArrayList<String> levels)
     {
+        Global.setCategories(levels);
+
         DocumentsList documentList1 = new DocumentsList(files, categories);
         DocumentsList documentList2 = new DocumentsList();
 
@@ -277,6 +290,30 @@ public class DocumentController {
         response.setClassifier_accuracy(classifyAccuracy);
         response.setDoc_category(docCategory);
         response.setNum_doc_category(numDocCategory);
+        response.setDocToatl(indexingDocList.size());
+
+        return new ResponseEntity<SetupResponse>(response, HttpStatus.OK);
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @RequestMapping(value = "/details", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    ResponseEntity<SetupResponse> getDetails() {
+        SetupResponse response = new SetupResponse();
+
+        response.setSuccess(true);
+
+        ArrayList<Map<String,String>> numDocCategory = new ArrayList<Map<String, String>>();
+
+        for (String category: Global.getCategories()){
+            Map<String, String> num_doc_category = new HashMap<String, String>();
+            num_doc_category.put("category",category);
+            num_doc_category.put("size", aztec.rbir_backend.document.Document.getNumDocs(category)+"");
+            numDocCategory.add(num_doc_category);
+        }
+
+        response.setDocToatl(aztec.rbir_backend.document.Document.getNumDocs("_all"));
 
         return new ResponseEntity<SetupResponse>(response, HttpStatus.OK);
     }

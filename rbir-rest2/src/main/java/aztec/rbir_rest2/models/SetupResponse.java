@@ -10,6 +10,7 @@ import java.util.Map;
 
 @JsonSerialize
 public class SetupResponse {
+    private long docToatl;
     private boolean success;
     private Map<String, Integer> classifier_accuracy;
     private ArrayList<Map<String,String>> num_doc_category;
@@ -45,5 +46,13 @@ public class SetupResponse {
 
     public void setDoc_category(ArrayList<Map<String, String>> doc_category) {
         this.doc_category = doc_category;
+    }
+
+    public long getDocToatl() {
+        return docToatl;
+    }
+
+    public void setDocToatl(long docToatl) {
+        this.docToatl = docToatl;
     }
 }
