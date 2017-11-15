@@ -39,10 +39,10 @@ public class DocumentController {
         Set<SearchHit> res = null;
 
         if(checked.equals("true")) {
-            res = aztec.rbir_backend.document.Document.phraseTextSearch(secLevel, query);
+            res = aztec.rbir_backend.document.Document.phraseTextSearch(query, secLevel);
         }
         else {
-            res = aztec.rbir_backend.document.Document.freeTextSearch(secLevel, query);
+            res = aztec.rbir_backend.document.Document.freeTextSearch(query, secLevel);
         }
 
         Set<DocumentModel> result = new HashSet<DocumentModel>();
@@ -52,7 +52,7 @@ public class DocumentController {
 
             ArrayList<String> content = new ArrayList<String>();
             for(Text text: summary){
-                content.add(text.toString().replace("\n","<br></br>"));
+                content.add(text.toString().replace("\n","<br/>"));
             }
 
             DocumentModel resultDoc = new DocumentModel(hit.getId(),hit.getSource().get("name").toString(),content,hit.getSource().get("type").toString(),hit.getSource().get("category").toString());

@@ -68,7 +68,7 @@ public class Global {
     public static void writeToFile(){
         try {
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(path+"categories.dat"));
-            out.writeObject(classificationAlgo);
+            out.writeObject(categories);
             out.close();
             out = new ObjectOutputStream(new FileOutputStream(path+"classifierName.dat"));
             out.writeObject(classificationAlgo);
