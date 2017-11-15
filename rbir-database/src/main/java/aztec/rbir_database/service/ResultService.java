@@ -1,13 +1,10 @@
 package aztec.rbir_database.service;
 
 import java.util.List;
-
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import aztec.rbir_database.Entities.PublicUser;
 import aztec.rbir_database.Entities.Request;
 import aztec.rbir_database.Entities.SearchResultToConfirm;
 import aztec.rbir_database.Entities.User;
@@ -47,7 +44,7 @@ public class ResultService {
 		return resultstoconfirm;
 	}
 
-	public void addResultsToConfirm(String adminUserEmail, int reqId, String searchId) {
+	public void addResultsToConfirm(String adminUserEmail, int reqId, String searchId, String securityLevel) {
 		
 		User user = uds.retrieveFromUserName(adminUserEmail);		
 		Request request = rqs.getRequest(reqId);
@@ -57,6 +54,7 @@ public class ResultService {
 		searchResult.setUser(user);
 		searchResult.setRequest(request);
 		searchResult.setResultId(searchId);
+		searchResult.setSecurityLevel(securityLevel);
 		
         Session session = HibernateUtil.getSessionFactory().openSession();
 		
@@ -71,7 +69,7 @@ public class ResultService {
 		
 	}
 	
-    public static void deleteRequest (int requestId) {
+    public void deleteRequest (int requestId) {
 		
 		Session session = HibernateUtil.getSessionFactory().openSession();		
 		//Request request = null;

@@ -1,10 +1,6 @@
 package aztec.rbir_database.Entities;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 public class SearchResultToConfirm {
 
@@ -18,6 +14,14 @@ public class SearchResultToConfirm {
 	
 	@Column(name = "result_id")
 	String resultId;
+
+	@Column(name = "security_level")
+	String securityLevel;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	long id;
 
 	public User getUser() {
 		return user;
@@ -42,7 +46,21 @@ public class SearchResultToConfirm {
 	public void setResultId(String resultId) {
 		this.resultId = resultId;
 	}
-	
-	
-	
+
+
+	public String getSecurityLevel() {
+		return securityLevel;
+	}
+
+	public void setSecurityLevel(String securityLevel) {
+		this.securityLevel = securityLevel;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 }

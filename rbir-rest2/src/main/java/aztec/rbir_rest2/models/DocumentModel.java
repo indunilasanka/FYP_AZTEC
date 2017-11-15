@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
  */
 @JsonSerialize
 public class DocumentModel {
+	private String id;
 	private String title;
 	private File file;
 	private String category;
@@ -27,11 +28,12 @@ public class DocumentModel {
 
 
 
-	public DocumentModel(String title, ArrayList<String> summary, String category, String securityLevel){
+	public DocumentModel(String id,String title, ArrayList<String> summary, String category, String securityLevel){
         this.title = title;
         this.summary = summary;
         this.category = category;
         this.securityLevel = securityLevel;
+        this.id = id;
     }
     
     
@@ -44,19 +46,13 @@ public class DocumentModel {
 	public DocumentModel(String title){
     	this.title = title;
     }
-	
+
 	public String getTitle() {
 		return title;
 	}
 	public void setTitle(String title) {
 		this.title = title;
 	}
-//	public File getFile() {
-//		return file;
-//	}
-//	public void setFile(File file) {
-//		this.file = file;
-//	}
 	public String getCategory() {
 		return category;
 	}
@@ -75,5 +71,11 @@ public class DocumentModel {
 	public void setSecurityLevel(String securityLevel) {
 		this.securityLevel = securityLevel;
 	}
+	public String getId() {
+		return id;
+	}
 
+	public void setId(String id) {
+		this.id = id;
+	}
 }

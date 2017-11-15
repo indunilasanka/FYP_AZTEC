@@ -33,16 +33,16 @@ public class DocumentController {
     @RequestMapping(value = "/list", method = RequestMethod.POST)
     public
     @ResponseBody
-    ResponseEntity<Set<DocumentModel>> list(@RequestParam("query") String query,@RequestParam("checked") String checked) {
+    ResponseEntity<Set<DocumentModel>> list(@RequestParam("query") String query,@RequestParam("checked") String checked, @RequestParam("level") String secLevel) {
         System.out.println("Query " + query);
 
         Set<SearchHit> res = null;
 
         if(checked.equals("true")) {
-            res = aztec.rbir_backend.document.Document.phraseTextSearch(query);
+            res = aztec.rbir_backend.document.Document.phraseTextSearch(secLevel, query);
         }
         else {
-            res = aztec.rbir_backend.document.Document.freeTextSearch(query);
+            res = aztec.rbir_backend.document.Document.freeTextSearch(secLevel, query);
         }
 
         Set<DocumentModel> result = new HashSet<DocumentModel>();
@@ -55,7 +55,7 @@ public class DocumentController {
                 content.add(text.toString().replace("\n","<br></br>"));
             }
 
-            DocumentModel resultDoc = new DocumentModel(hit.getSource().get("name").toString(),content,hit.getSource().get("type").toString(),hit.getSource().get("category").toString());
+            DocumentModel resultDoc = new DocumentModel(hit.getId(),hit.getSource().get("name").toString(),content,hit.getSource().get("type").toString(),hit.getSource().get("category").toString());
             System.out.println(hit.getSource().get("path").toString());
             File file = new File(hit.getSource().get("path").toString());
             resultDoc.setFile(file);
