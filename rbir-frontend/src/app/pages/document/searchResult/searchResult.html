@@ -8,6 +8,10 @@
         <div class="message-header">
           <span class="author">{{ document.title }} </span>
           <span class="category">{{ document.securityLevel}} </span>
+          <!-- <div class="message-options">
+            <i class="socicon starticon" (click)="startSearch(message.request)">L</i>
+            <i class="ion-close-round cancelicon" (click)="closeSearch(i,message.pUser.email,message.requestId,message.request)"></i>
+          </div> -->
         </div>
         <div class="message-content line-clamp" [ngClass]="{'line-clamp-2' : !document.expanded}">
           <span *ngFor="let sum of document.summary">

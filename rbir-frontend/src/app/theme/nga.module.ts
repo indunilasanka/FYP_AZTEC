@@ -4,6 +4,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgUploaderModule } from 'ngx-uploader';
 import { AppTranslationModule } from '../app.translation.module';
+import { ChangePassward } from '../pages/changePassward/changePassward.component';
 
 import {
   BaThemeConfig
@@ -104,7 +105,8 @@ const NGA_VALIDATORS = [
   declarations: [
     ...NGA_PIPES,
     ...NGA_DIRECTIVES,
-    ...NGA_COMPONENTS
+    ...NGA_COMPONENTS,
+    ChangePassward,
   ],
   imports: [
     CommonModule,
@@ -112,7 +114,10 @@ const NGA_VALIDATORS = [
     FormsModule,
     ReactiveFormsModule,
     AppTranslationModule,
-    NgUploaderModule
+    NgUploaderModule,
+  ],
+  entryComponents: [
+    ChangePassward,
   ],
   exports: [
     ...NGA_PIPES,
