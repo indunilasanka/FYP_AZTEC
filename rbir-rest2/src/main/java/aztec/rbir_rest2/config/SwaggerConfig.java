@@ -21,7 +21,7 @@ public class SwaggerConfig {
                 .select()
                 .apis(RequestHandlerSelectors.any())
                 //.apis(RequestHandlerSelectors.basePackage("aztec.rbir_rest2.controllers"))
-                .paths(PathSelectors.regex("/request.*|/documents.*|/user.*|/oauth/token.*"))
+                .paths(PathSelectors.regex("/request.*|/documents.*|/user.*|/oauth/token.*|/result.*"))
                 .build()
                 .apiInfo(metaData());
     }

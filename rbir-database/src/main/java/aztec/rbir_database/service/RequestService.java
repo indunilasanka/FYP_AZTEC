@@ -67,7 +67,7 @@ public class RequestService {
 			session.getTransaction().rollback();
 		}
         
-		for(int i=0;i<100000;i++){}
+		//for(int i=0;i<100000;i++){}
 		
 		
 		return requests;
@@ -93,7 +93,24 @@ public class RequestService {
 		return request;
 	}
 	
-	
+    public Request getRequest (int requestId) {
+		
+		Session session = HibernateUtil.getSessionFactory().openSession();		
+		Request request = null;
+		try {
+			session.beginTransaction();			
+			String hql = "from Request r where r.requestId = :requestId";
+			request = (Request) session.createQuery(hql)
+			                    .setInteger("requestId", requestId)
+			                    .uniqueResult();
+
+			session.getTransaction().commit();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			session.getTransaction().rollback();
+		}		
+		return request;
+ 	}
 	
 	
 	public static void saveUser(PublicUser pUser){
