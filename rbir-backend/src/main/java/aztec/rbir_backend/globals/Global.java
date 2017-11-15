@@ -1,6 +1,7 @@
 package aztec.rbir_backend.globals;
 
 import java.io.*;
+import java.util.ArrayList;
 
 /**
  * Created by subhahs on 10/06/2017.
@@ -8,8 +9,8 @@ import java.io.*;
 public class Global {
     private static String classificationAlgo;
     private static long lastDocId;
+    private static ArrayList<String> categories;
 
-    public static ClassLoader loader = Global.class.getClassLoader();
 
     //public static String path = "/home/rbir/";
     public static String path = "E:/FYP/";
@@ -17,7 +18,11 @@ public class Global {
 
     public Global(){
             try {
-                ObjectInputStream in = new ObjectInputStream(new FileInputStream(path+"classifierName.dat"));
+                ObjectInputStream in = new ObjectInputStream(new FileInputStream(path+"categories.dat"));
+                this.categories = (ArrayList<String>) in.readObject();
+                System.out.println(categories);
+                in.close();
+                in = new ObjectInputStream(new FileInputStream(path+"classifierName.dat"));
                 this.classificationAlgo = (String) in.readObject();
                 System.out.println(classificationAlgo);
                 in.close();
@@ -26,16 +31,28 @@ public class Global {
                 System.out.println(lastDocId);
                 in.close();
             } catch (FileNotFoundException e) {
+                categories = null;
                 this.classificationAlgo = null;
                 lastDocId = 0;
             } catch (IOException e) {
+                categories = null;
                 this.classificationAlgo = null;
                 lastDocId = 0;
             } catch (ClassNotFoundException e) {
+                categories = null;
                 this.classificationAlgo = null;
                 lastDocId = 0;
             }
     }
+
+    public static ArrayList<String> getCategories() {
+        return categories;
+    }
+
+    public static void setCategories(ArrayList<String> categories) {
+        Global.categories = categories;
+    }
+
     public static String getClassificationAlgo(){
         return classificationAlgo;
     }
@@ -50,7 +67,10 @@ public class Global {
 
     public static void writeToFile(){
         try {
-            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(path+"classifierName.dat"));
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(path+"categories.dat"));
+            out.writeObject(classificationAlgo);
+            out.close();
+            out = new ObjectOutputStream(new FileOutputStream(path+"classifierName.dat"));
             out.writeObject(classificationAlgo);
             out.close();
             out = new ObjectOutputStream(new FileOutputStream(path+"lastDocId.dat"));

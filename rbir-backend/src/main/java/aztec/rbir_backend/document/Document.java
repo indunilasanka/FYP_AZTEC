@@ -8,11 +8,14 @@ import org.elasticsearch.action.bulk.BulkProcessor;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.bulk.BulkResponse;
 import org.elasticsearch.action.delete.DeleteResponse;
+import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.action.update.UpdateResponse;
 import org.elasticsearch.client.transport.TransportClient;
+import org.elasticsearch.cluster.metadata.IndexMetaData;
+import org.elasticsearch.cluster.metadata.MetaData;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.unit.ByteSizeUnit;
 import org.elasticsearch.common.unit.ByteSizeValue;
@@ -22,6 +25,7 @@ import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
@@ -85,8 +89,7 @@ public class Document {
     }
 
     public static Set<SearchHit> freeTextSearch(String query){
-        //GetResponse response = client.prepareGet(category,"document",id).get();
-        String preproceQuery = Terms.getTermsQuery(query);
+        System.out.println("free text query");
         String[] terms = query.split(" ");
 
         String tag = "<b class='highlight'>";
@@ -106,8 +109,7 @@ public class Document {
     }
 
     public static Set<SearchHit> phraseTextSearch(String query){
-        String preproceQuery = Terms.getTermsQuery(query);
-        System.out.println(preproceQuery);
+        System.out.println("phrase query test");
 
         String tag = "<b class='highlight'>";
         HighlightBuilder highlightBuilder = new HighlightBuilder().field("content").preTags(tag).postTags("</b>").fragmentSize(200);
@@ -122,7 +124,7 @@ public class Document {
         SearchResponse response = client.prepareSearch("_all")
                 .setTypes("document")
                 .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
-                .setQuery(QueryBuilders.matchPhraseQuery("content",query).slop(5)).highlighter(highlightBuilder)             // Query
+                .setQuery(QueryBuilders.matchPhraseQuery("content",query)).highlighter(highlightBuilder)             // Query
                 .get();
 
         Set<SearchHit> result = new HashSet<SearchHit>();
@@ -131,6 +133,12 @@ public class Document {
         }
 
         return result;
+    }
+
+    public static long getNumDocs(String index){
+        SearchResponse response = client.prepareSearch(index)
+                .setTypes("document").get();
+        return response.getHits().totalHits;
     }
 
     public static void setAnalysisSettings(String securityLevel){
@@ -175,6 +183,8 @@ public class Document {
                             "      \"properties\": {\n" +
                             "        \"content\": {\n" +
                             "          \"search_analyzer\": \"test\"\n" +
+                            "          \"search_quote_analyzer\": \"test\"\n" +
+                            "          \"analyzer\": \"test\"\n" +
                             "        }\n" +
                             "      }\n" +
                             "    }\n" +
