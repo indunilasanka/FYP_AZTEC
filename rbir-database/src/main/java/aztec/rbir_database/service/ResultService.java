@@ -19,19 +19,24 @@ public class ResultService {
 	@Autowired
 	RequestService rqs;
 
-	public List<SearchResultToConfirm> getResults(){
+	public List<SearchResultToConfirm> getResults(String adminUserEmail){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		List<SearchResultToConfirm> resultstoconfirm = null;
 		
 		try {
 			session.beginTransaction();
 			
-			String hql = "from SearchResultToConfirm srtc";
+			//String hql = "from SearchResultToConfirm srtc";
 			
 			//session.createQuery(hql).setFirstResult(0);
 			//session.createQuery(hql).setMaxResults(10);
 			
-			resultstoconfirm = (List<SearchResultToConfirm>)session.createCriteria(SearchResultToConfirm.class).list();
+			//resultstoconfirm = (List<SearchResultToConfirm>)session.createCriteria(SearchResultToConfirm.class).list();
+			
+			String hql = "from SearchResultToConfirm srtc where srtc.user.username = :username";
+			resultstoconfirm = (List<SearchResultToConfirm>) session.createQuery(hql)
+			                    .setString("username", adminUserEmail)
+			                    .list();
 			
 			session.getTransaction().commit();
 			session.close();

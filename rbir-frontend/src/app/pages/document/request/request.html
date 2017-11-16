@@ -15,7 +15,7 @@
           <!--<a href="{{ message.user.email }}" target="_blank"> {{ message.user.email }}</a>-->
         </span>
         <div class="message-options">
-          <i class="socicon starticon" (click)="startSearch(message.request)">L</i>
+          <i class="socicon starticon" (click)="startSearch(message.request,message.requestId)">L</i>
           <i class="ion-close-round cancelicon" (click)="closeSearch(i,message.pUser.email,message.requestId,message.request)"></i>
         </div>
       </div>
@@ -29,7 +29,7 @@
       </div>
       <div [ngClass]="{'hidden': !message.expanded}" class="message-time">
 
-        <div class="post-time">
+         <div class="post-time">
           Requested at - {{ message.createDateTime | date:'yyyy-MM-dd HH:mm a' }}
         </div>
         <div class="ago-time">

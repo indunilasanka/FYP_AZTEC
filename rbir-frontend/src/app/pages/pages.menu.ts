@@ -39,6 +39,18 @@ export const PAGES_MENU = [
         },
       },
       {
+        path: 'results',
+        data: {
+          menu: {
+            title: 'Confirm',
+            icon: 'ion-gear-a',
+            selected: false,
+            expanded: false,
+            order: 200,
+          },
+        },
+      },
+      {
         path: 'initial-config',
         data: {
           menu: {
@@ -49,7 +61,9 @@ export const PAGES_MENU = [
             order: 0,
           },
         },
+        
       },
+      
     ],
   },
 ];

@@ -29,6 +29,7 @@ export const routes: Routes = [
       { path: 'document', loadChildren: './document/document.module#DocumentModule' },
       { path: 'create-user', loadChildren: './createUser/createUser.module#CreateUserModule' },
       { path: 'initial-config', loadChildren: './initialConfig/initialConfig.module#InitialConfigModule' },
+      { path: 'results', loadChildren: './Results/results.module#ResultsModule' },
     ],
   },
 ];

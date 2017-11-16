@@ -21,6 +21,9 @@ public class Role {
 	
 	@Column(name = "role_description")
 	private String roleDescription;
+	
+	@Column(name = "rank")
+	private int rank;
 
 
 	public Long getRoleId() {
@@ -46,6 +49,16 @@ public class Role {
 	public void setRoleDescription(String roleDescription) {
 		this.roleDescription = roleDescription;
 	}
+
+	public int getRank() {
+		return rank;
+	}
+
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+	
+	
 	
 	
 

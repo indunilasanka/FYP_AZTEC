@@ -23,5 +23,6 @@
         <mapping class="aztec.rbir_database.Entities.PublicUser"></mapping>
         <mapping class="aztec.rbir_database.Entities.Request"></mapping>
         <mapping class="aztec.rbir_database.Entities.Searches"></mapping>
+        <mapping class="aztec.rbir_database.Entities.SearchResultToConfirm"></mapping>
     </session-factory>
 </hibernate-configuration>

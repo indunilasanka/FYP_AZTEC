@@ -59,6 +59,7 @@ public class SpringSecConfig extends WebSecurityConfigurerAdapter {
         web.ignoring().antMatchers(HttpMethod.OPTIONS, "/**").antMatchers(HttpMethod.GET,"/webjars/**","/swagger-ui.html","/swagger-resources/**", "/v2/api-docs/**")
         .antMatchers("/documents/**")
         .antMatchers("/user/**")
+        .antMatchers("/result/**")
         .antMatchers("/request/**");
     }
     

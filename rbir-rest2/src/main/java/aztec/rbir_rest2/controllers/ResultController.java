@@ -39,28 +39,28 @@ public class ResultController {
 	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	@ResponseBody
-	public void addResultsToConfirm(String adminUserEmail,int reqId, String searchId, String securityLevel){
+	public void addResultsToConfirm(@RequestParam("adminUserEmail")String adminUserEmail,@RequestParam("reqId")int reqId,@RequestParam("searchId") String searchId,@RequestParam("securityLevel") String securityLevel){
 
+		
 		rs.addResultsToConfirm(adminUserEmail,reqId,searchId, securityLevel);
 
 	}
 	
 	
 	@CrossOrigin(origins = "http://localhost:4200")
-	@PreAuthorize("hasAuthority('ADMIN_USER')")
 	@RequestMapping(value = "/get", method = RequestMethod.GET)
 	public
 	@ResponseBody
-	ResponseEntity<List<DocumentsToConfirm>> getResultsToConfirm(){
+	ResponseEntity<List<DocumentsToConfirm>> getResultsToConfirm(@RequestParam("adminUserEmail")String adminUserEmail){
 
 		List<DocumentsToConfirm> documets = new ArrayList<DocumentsToConfirm>();
-		List<SearchResultToConfirm> results =  rs.getResults();
+		List<SearchResultToConfirm> results =  rs.getResults(adminUserEmail);
 
 		results.forEach(result->{
 			String id = result.getResultId();
 			String securityLevel = result.getSecurityLevel();
 			String query = result.getRequest().getRequest();
-			Set<SearchHit> searchHits = Document.freeTextSearch(securityLevel, query);
+			Set<SearchHit> searchHits = Document.freeTextSearch(query , securityLevel);
 			for(SearchHit hit : searchHits){
 				if(hit.getId().equals(id)){
 					Text[] summary = hit.getHighlightFields().get("content").fragments();

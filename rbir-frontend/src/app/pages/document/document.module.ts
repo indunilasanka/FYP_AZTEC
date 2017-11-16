@@ -14,6 +14,7 @@ import {SearchResult} from './searchResult/searchResult.component';
 import {Request} from './request/request.component';
 import {RequestService} from './request/request.service';
 import { UserSelectModel } from './userSelectModel/userSelectModel.component';
+import {UserSelectModelService} from './userSelectModel/userSelectModel.service';
 
 @NgModule({
   imports: [
@@ -22,7 +23,7 @@ import { UserSelectModel } from './userSelectModel/userSelectModel.component';
     routing,
     AngularFormsModule,
     NgbDropdownModule,
-    NgbModalModule,
+    NgbModalModule
   ],
   declarations: [
     Document,
@@ -36,6 +37,7 @@ import { UserSelectModel } from './userSelectModel/userSelectModel.component';
   providers: [
     DocumentService,
     RequestService,
+    UserSelectModelService,
   ],
 
 })

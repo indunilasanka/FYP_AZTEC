@@ -20,6 +20,7 @@ export class Document {
   doc2: DocumentModel;
   request: RequestModel = null;
   quary: string = '';
+  reqId: string = '';
   isChecked: boolean = false;
 
   constructor(private documentServece: DocumentService, private modalService: NgbModal) {
@@ -44,9 +45,11 @@ export class Document {
     for (let entry of this.data) {
       console.log(entry);
       let doc:DocumentModel = new DocumentModel;
+      doc.id = entry["id"];
       doc.title = entry["title"];
       doc.category = entry["category"];
       doc.summary = entry["summary"];
+      doc.securityLevel = entry["securityLevel"];
       this.searchResults.push(doc);
     }
     console.log(this.data);
@@ -55,7 +58,13 @@ export class Document {
   someMethod(event: string) {
    
     this.quary = event;
-    console.log("parent clicked",event);
+    console.log("query = ",event);
+  }
+
+  someMethod2(event: string) {
+   
+    this.reqId = event;
+    console.log("req Id = ",event);
   }
 
   click() {

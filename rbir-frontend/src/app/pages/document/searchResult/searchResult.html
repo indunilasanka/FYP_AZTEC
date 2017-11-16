@@ -6,12 +6,12 @@
       </div>
       <div class="text-block text-message">
         <div class="message-header">
-          <span class="author">{{ document.title }} </span>
-          <span class="category">{{ document.securityLevel}} </span>
-          <!-- <div class="message-options">
-            <i class="socicon starticon" (click)="startSearch(message.request)">L</i>
-            <i class="ion-close-round cancelicon" (click)="closeSearch(i,message.pUser.email,message.requestId,message.request)"></i>
-          </div> -->
+          <span class="author">{{ document.title }}</span>
+          <span class="category">{{document.securityLevel}}</span>
+          <div class="message-options">
+               <!-- Trigger the modal with a button -->
+               <button type="button" class="btn btn-success btn-icon" (click)="openmodel(document.id,document.securityLevel)"><i class="ion-android-checkmark-circle"></i></button>
+          </div>
         </div>
         <div class="message-content line-clamp" [ngClass]="{'line-clamp-2' : !document.expanded}">
           <span *ngFor="let sum of document.summary">
@@ -39,6 +39,9 @@
   </div>
 
 </div>
+
+
+
 
 
 
