@@ -1,13 +1,16 @@
 package aztec.rbir_rest2.controllers;
 
-import java.util.List;
+import java.io.File;
+import java.util.*;
+
+import aztec.rbir_backend.document.Document;
+import aztec.rbir_rest2.models.DocumentModel;
+import org.elasticsearch.common.text.Text;
+import org.elasticsearch.search.SearchHit;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import aztec.rbir_database.Entities.PublicUser;
 import aztec.rbir_database.Entities.Request;
 import aztec.rbir_database.service.RequestService;
@@ -22,40 +25,65 @@ public class RequestController {
 
 	@Autowired
 	MailClient mc;
+
+	@Autowired
+	RequestService rqs;
 	
 	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/public-request", method = RequestMethod.POST)
+	public
 	@ResponseBody
-	public boolean handlePublicRequest(@RequestParam("email") String email,@RequestParam("username") String username,@RequestParam("request") String request,@RequestParam("image_url") String imgUrl){
-		
+	ResponseEntity<Set<DocumentModel>> handlePublicRequest(@RequestBody Map<String, String> message){
+
+		Set<SearchHit> results = Document.freeTextSearch(message.get("request"), "security_level_1");
+
+		if(results.size() > 0) {
+			Set<DocumentModel> result = new HashSet<DocumentModel>();
+
+			for (SearchHit hit : results) {
+				Text[] summary = hit.getHighlightFields().get("content").fragments();
+				ArrayList<String> content = new ArrayList<String>();
+				for (Text text : summary) {
+					content.add(text.toString());
+				}
+
+				DocumentModel resultDoc = new DocumentModel(hit.getId(), hit.getSource().get("name").toString(), content, hit.getSource().get("type").toString(), hit.getSource().get("category").toString());
+				System.out.println(hit.getSource().get("path").toString());
+				File file = new File(hit.getSource().get("path").toString());
+				resultDoc.setFile(file);
+				result.add(resultDoc);
+			}
+
+			return new ResponseEntity<Set<DocumentModel>>(result, HttpStatus.OK);
+		}
+
 		PublicUser pUser;
 		
-		pUser= RequestService.checkUserofEmail(email);
+		pUser= rqs.checkUserofEmail(message.get("email"));
 		
 		if(pUser==null){
 			
 			pUser = new PublicUser();
-			pUser.setUsername(username);
-			pUser.setEmail(email);
+			pUser.setUsername(message.get("username"));
+			pUser.setEmail(message.get("email"));
 			pUser.setReputation(1);
-			pUser.setImage(imgUrl);
-			RequestService.saveUser(pUser);
+			pUser.setImage(message.get("image_url"));
+			rqs.saveUser(pUser);
 
 		}else{
 			
 			int currentReputation = pUser.getReputation();
 			pUser.setReputation(currentReputation+1);
-			
 
 		}
-		
-		
-		Request req = new Request();		
+
+		Request req = new Request();
 		req.setpUser(pUser);
-		req.setRequest(request);
-		RequestService.saveRequest(req);
-		
-		return true;
+		req.setRequest(message.get("request"));
+		req.setState("pending");
+		rqs.saveRequest(req);
+
+		return null;
 	
 	}
 	
@@ -65,7 +93,7 @@ public class RequestController {
 	@ResponseBody
 	public List<Request> getRequests(){
 		
-		List<Request> requests =  RequestService.getRequests();
+		List<Request> requests =  rqs.getRequests();
 		return requests;
 		
 	}
@@ -76,7 +104,7 @@ public class RequestController {
 	@ResponseBody
 	public void deleteRequest(@RequestParam("email") String email,@RequestParam("request") String req, @RequestParam("requestid") int reqId){
 		
-		RequestService.deleteRequest(reqId);
+		rqs.deleteRequest(reqId);
   		try {
  			mc.generateAndSendRejectEmail(email, req);
  		} catch (AddressException e) {

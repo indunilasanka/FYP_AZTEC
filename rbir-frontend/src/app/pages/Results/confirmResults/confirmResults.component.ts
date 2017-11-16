@@ -10,7 +10,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./confirmResults.scss']
 })
 export class ConfirmResults {
-
+  path:String = layoutPaths.images.profile+"doc.jpg";
   data: Array<Object> = null;
   searchResults: Array<DocumentModel>;
   searchId:string;
@@ -19,6 +19,10 @@ export class ConfirmResults {
   }
 
  ngOnInit() {
+      this.loadResults();
+  }
+
+  loadResults(){
     this.confirmResultsService.getResults().subscribe(
       data => {
         console.log(data);
@@ -41,13 +45,37 @@ export class ConfirmResults {
       doc.category = entry["document"].category;
       doc.summary = entry["document"].summary;
       doc.securityLevel = entry["document"].securityLevel;
+      doc.filePath = entry["document"].file;
       this.searchResults.push(doc);
     }
     console.log(this.data);
   }
 
-  confirm(){
+  confirm(filePath:string){
+    this.confirmResultsService.confirmRequest(this.searchId,filePath).subscribe(
+      data => {
+        console.log(data);
+      },
+      error => console.log(error)
+    );
+  }
 
+    cancel(){
+    this.confirmResultsService.cancelRequest(this.searchId).subscribe(
+      data => {
+        console.log(data);
+      },
+      error => console.log(error)
+    );
+  }
+
+    reject(){
+    this.confirmResultsService.rejectRequest(this.searchId).subscribe(
+      data => {
+        console.log(data);
+      },
+      error => console.log(error)
+    );
   }
 
   expandMessage (message){

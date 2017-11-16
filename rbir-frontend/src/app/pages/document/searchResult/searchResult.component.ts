@@ -11,7 +11,7 @@ import { UserSelectModel } from '../userSelectModel/userSelectModel.component';
 })
 export class SearchResult {
 
-  path:String = layoutPaths.images.profile+"doc.jpg";
+  path:String = layoutPaths.images.docIcons;
   @Input() searchResults:Array<Object>;
   @Input() reqId:string;
 

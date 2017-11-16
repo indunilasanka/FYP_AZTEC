@@ -10,7 +10,13 @@
           <span class="category">{{document.securityLevel}}</span>
           <div class="message-options">
                <!-- Trigger the modal with a button -->
-               <button type="button" class="btn btn-success btn-icon" (click)="confirm()"><i class="ion-android-checkmark-circle"></i></button>
+               <div class="button-wrapper">
+                <button type="button" class="btn btn-success  btn-xs" (click)="confirm(document.filePath)">Confirm</button>
+                <button type="button" class="btn btn-warning  btn-xs" (click)="cancel()">Cancel</button>
+                <button type="button" class="btn btn-danger  btn-xs" (click)="reject()">Reject</button>
+              </div>
+            
+               <!--<button type="button" class="btn btn-success btn-icon" ><i class="ion-android-checkmark-circle"></i></button>-->
           </div>
         </div>
         <div class="message-content line-clamp" [ngClass]="{'line-clamp-2' : !document.expanded}">

@@ -12,7 +12,7 @@ import aztec.rbir_database.configurations.HibernateUtil;
 public class RequestService {
 
 	
-	public static PublicUser checkUserofEmail(String email) {
+	public PublicUser checkUserofEmail(String email) {
 		
 		Session session = HibernateUtil.getSessionFactory().openSession();		
 		PublicUser user = null;
@@ -32,12 +32,12 @@ public class RequestService {
 	}
 	
 	
-	public static void saveRequest(Request req){
+	public void saveRequest(Request req){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		
 		try {
 			session.beginTransaction();
-			session.save(req);
+			session.saveOrUpdate(req);
 			session.getTransaction().commit();
 		}catch(HibernateException e){
 			e.printStackTrace();
@@ -46,19 +46,23 @@ public class RequestService {
 
 	}
 	
-	public static List<Request> getRequests(){
+	public List<Request> getRequests(){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		List<Request> requests = null;
 		
 		try {
 			session.beginTransaction();
 			
-			String hql = "from Request r";
+			//String hql = "from Request r where";
+
+			String hql = "from Request r where r.state = 'pending'";
+			requests = (List<Request>) session.createQuery(hql)
+					.list();
 			
 			//session.createQuery(hql).setFirstResult(0);
 			//session.createQuery(hql).setMaxResults(10);
 			
-			requests = (List<Request>)session.createCriteria(Request.class).list();
+			//requests = (List<Request>)session.createCriteria(Request.class).list();
 			
 			session.getTransaction().commit();
 			session.close();
@@ -74,7 +78,7 @@ public class RequestService {
 	}
 	
 	
-    public static Request deleteRequest (int requestId) {
+    public Request deleteRequest (int requestId) {
 		
 		Session session = HibernateUtil.getSessionFactory().openSession();		
 		Request request = null;
@@ -113,7 +117,7 @@ public class RequestService {
  	}
 	
 	
-	public static void saveUser(PublicUser pUser){
+	public void saveUser(PublicUser pUser){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		
 		try {

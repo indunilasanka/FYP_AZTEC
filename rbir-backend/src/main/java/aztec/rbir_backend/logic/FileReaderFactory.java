@@ -14,7 +14,7 @@ import java.io.InputStream;
  */
 public final class FileReaderFactory {
 
-    public static String[] documentTypes = {"ACT","PROCUREMENT","APPOINTMENT","GAZETTE","CIRCULAR"};
+    public static String[] documentTypes = {"RESEARCH","ACT","PROCUREMENT","APPOINTMENT","GAZETTE","CIRCULAR"};
 
     public static String read(String filePath){
         String fileType = getFileExtension(filePath);
@@ -62,7 +62,7 @@ public final class FileReaderFactory {
 
     public static String IdentifyType(String filePath,String Content)
     {
-        String TopContent = Content.substring(0,100).toUpperCase();
+        String TopContent = Content.substring(0,200).toUpperCase();
         String metaContent = ReadMetaData(filePath);
         //check in top of the document content
         for (String item : documentTypes) {
@@ -78,7 +78,7 @@ public final class FileReaderFactory {
                 return item;
             }
         }
-        return "This Document type still not supporting!";
+        return "OTHER";
     }
 
     public static String ReadMetaData(String filePath)

@@ -37,24 +37,42 @@ export class ConfirmResultsService {
       .catch(this.handleError);
   }
 
-  deleteRequest(email:string, requestId:string,request:string): Observable<Object[]> {
+  confirmRequest(resultId:string, filePath:string): Observable<Object[]> {
 
-    console.log(email,requestId,request);
-
-    let urlSearchParams = new URLSearchParams();
-    urlSearchParams.append('email', email);    
-    urlSearchParams.append('request', request);
-    urlSearchParams.append('requestid', requestId);
+    console.log(resultId,filePath);
 
     let formData:FormData = new FormData();
-    formData.append('email', email);
-    formData.append('request', request);
-    formData.append('requestid', requestId);
+    formData.append('searchResultId', resultId);
+    formData.append('filePath', filePath);
 
 
+    return this.http.post(this.baseUrl+"/confirm",formData,{headers: this.getHeaders()})
+      .map(response => response.json())
+      .catch(this.handleError);
+  }
+
+    cancelRequest(resultId:string): Observable<Object[]> {
+
+    console.log(resultId);
+
+    let formData:FormData = new FormData();
+    formData.append('searchResultId', resultId);
 
 
-    return this.http.post(this.baseUrl+"/delete-request",formData,{headers: this.getHeaders()})
+    return this.http.post(this.baseUrl+"/cancel",formData,{headers: this.getHeaders()})
+      .map(response => response.json())
+      .catch(this.handleError);
+    }
+
+    rejectRequest(resultId:string): Observable<Object[]> {
+
+    console.log(resultId);
+
+    let formData:FormData = new FormData();
+    formData.append('searchResultId', resultId);
+
+
+    return this.http.post(this.baseUrl+"/reject",formData,{headers: this.getHeaders()})
       .map(response => response.json())
       .catch(this.handleError);
   }

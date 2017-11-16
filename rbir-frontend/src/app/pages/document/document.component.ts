@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input ,ViewChild } from '@angular/core';
 import { DocumentModel } from '../../models/document.model';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RequestModel } from '../../models/request.model';
 import { DocumentService } from './document.service';
 import { CreateUser } from '../createUser/createUser.component';
 import { UserSelectModel } from './userSelectModel/userSelectModel.component';
+import {RequestService} from '../document/request/request.service';
 
 @Component({
   selector: 'document',
@@ -22,8 +23,10 @@ export class Document {
   quary: string = '';
   reqId: string = '';
   isChecked: boolean = false;
+  @ViewChild('childComponent') childComponent;
 
-  constructor(private documentServece: DocumentService, private modalService: NgbModal) {
+
+  constructor(private documentServece: DocumentService, private modalService: NgbModal,private _requestService: RequestService) {
   }
 
   ngOnInit() {
@@ -38,6 +41,10 @@ export class Document {
       },
       error => console.log(error)
     );
+  }
+
+  refreshRequest(){
+    this.childComponent.loadFeed();
   }
 
   loadDocuments() {

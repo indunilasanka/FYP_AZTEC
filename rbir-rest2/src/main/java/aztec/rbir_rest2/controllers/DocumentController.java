@@ -52,7 +52,7 @@ public class DocumentController {
 
             ArrayList<String> content = new ArrayList<String>();
             for(Text text: summary){
-                content.add(text.toString().replace("\n","<br>"));
+                content.add(text.toString());
             }
 
             DocumentModel resultDoc = new DocumentModel(hit.getId(),hit.getSource().get("name").toString(),content,hit.getSource().get("type").toString(),hit.getSource().get("category").toString());

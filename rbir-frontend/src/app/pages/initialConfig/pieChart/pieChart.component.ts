@@ -25,10 +25,7 @@ export class PieChart {
   ngAfterViewInit() {
     if (!this._init) {
       this._loadPieCharts();
-      this.acuracyData = [];
-      this.acuracyData.push(0);
-      this.acuracyData.push(0);
-      this._updatePieCharts(this.acuracyData);
+     
       this._init = true;
     }
   }
@@ -51,6 +48,12 @@ export class PieChart {
         lineCap: 'round',
       });
     });
+     this.acuracyData = [];
+      this.acuracyData.push(0);
+      this.acuracyData.push(0);
+      this.acuracyData.push(0);
+      this.acuracyData.push(0);
+      this._updatePieCharts(this.acuracyData);
   }
 
   private _updatePieCharts(acuracyData: number[]) {

@@ -41,6 +41,9 @@ public class Request implements Serializable {
 	@CreationTimestamp
 	private Timestamp createDateTime;
 
+	@Column(name= "state")
+	String state;
+
 	public int getRequestId() {
 		return requestId;
 	}
@@ -72,8 +75,12 @@ public class Request implements Serializable {
 	public void setCreateDateTime(Timestamp createDateTime) {
 		this.createDateTime = createDateTime;
 	}
-	
-	
-	
-	
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
 }

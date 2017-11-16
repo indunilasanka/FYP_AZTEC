@@ -6,7 +6,7 @@
 export class DocumentModel {
   public id:string;
   public title: string;
-  public file: File;
+  public filePath: string;
   public category: String;
   public summary: string;
   public securityLevel: string;
