@@ -2,6 +2,8 @@ package aztec.rbir_database.Entities;
 
 import javax.persistence.*;
 
+@Entity
+@Table(name = "search_result_to_confirm")
 public class SearchResultToConfirm {
 
 	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)

@@ -1,7 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { DocumentModel } from '../../models/document.model';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RequestModel } from '../../models/request.model';
 import { DocumentService } from './document.service';
+import { CreateUser } from '../createUser/createUser.component';
+import { UserSelectModel } from './userSelectModel/userSelectModel.component';
 
 @Component({
   selector: 'document',
@@ -20,7 +23,7 @@ export class Document {
   reqId: string = '';
   isChecked: boolean = false;
 
-  constructor(private documentServece: DocumentService) {
+  constructor(private documentServece: DocumentService, private modalService: NgbModal) {
   }
 
   ngOnInit() {
@@ -28,7 +31,7 @@ export class Document {
 
  searchDocuments(searchQuary: string) {
     console.log("searchDocuments()", searchQuary);
-    this.documentServece.getDocuments(searchQuary,this.isChecked).subscribe(
+    this.documentServece.getDocuments(searchQuary, this.isChecked).subscribe(
       data => {
         this.data = data;
         this.loadDocuments();
@@ -62,5 +65,14 @@ export class Document {
    
     this.reqId = event;
     console.log("req Id = ",event);
+  }
+
+  click() {
+    console.log("click.........");
+    
+    const activeModal = this.modalService.open(UserSelectModel, { size: 'sm', backdrop: 'static' }); 
+    activeModal.componentInstance.modalHeader = 'Static modal';
+    activeModal.componentInstance.modalContent = `This is static modal, backdrop click 
+    will not close it. Click × or confirmation button to close modal.`;
   }
 }

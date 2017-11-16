@@ -1,8 +1,11 @@
 import {Component} from '@angular/core';
-
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {GlobalState} from '../../../global.state';
 
+
 import { UserService } from '../../../services/user.service';
+
+import { ChangePassward } from '../../../pages/changePassward/changePassward.component';
 
 @Component({
   selector: 'ba-page-top',
@@ -27,7 +30,7 @@ export class BaPageTop {
   public isScrolled:boolean = false;
   public isMenuCollapsed:boolean = false;
 
-  constructor(private _state:GlobalState,private userService: UserService) {
+  constructor(private _state:GlobalState,private userService: UserService,private modalService: NgbModal) {
     this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
       this.isMenuCollapsed = isCollapsed;
     });
@@ -41,5 +44,14 @@ export class BaPageTop {
 
   public scrolledChanged(isScrolled) {
     this.isScrolled = isScrolled;
+  }
+
+  changePassward() {
+    console.log("clicked....");
+    
+    const activeModal = this.modalService.open(ChangePassward, { size: 'sm', backdrop: 'static' }); 
+    activeModal.componentInstance.modalHeader = 'Static modal';
+    activeModal.componentInstance.modalContent = `This is static modal, backdrop click 
+    will not close it. Click × or confirmation button to close modal.`;
   }
 }

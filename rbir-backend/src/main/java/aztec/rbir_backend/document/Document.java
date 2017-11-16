@@ -1,6 +1,7 @@
 package aztec.rbir_backend.document;
 
 import aztec.rbir_backend.configurations.ElasticSearchClient;
+import aztec.rbir_backend.indexer.Terms;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequestBuilder;
 import org.elasticsearch.action.bulk.BackoffPolicy;
 import org.elasticsearch.action.bulk.BulkProcessor;
@@ -85,7 +86,7 @@ public class Document {
 
     public static Set<SearchHit> freeTextSearch(String query, String category){
         System.out.println("free text query");
-        String[] terms = query.split(" ");
+        String[] terms = query.toLowerCase().split(" ");
 
         String tag = "<b class='highlight'>";
         HighlightBuilder highlightBuilder = new HighlightBuilder().field("content").preTags(tag).postTags("</b>").fragmentSize(200);
@@ -112,7 +113,7 @@ public class Document {
         SearchResponse response = client.prepareSearch(category)
                 .setTypes("document")
                 .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
-                .setQuery(QueryBuilders.matchPhraseQuery("content",query)).highlighter(highlightBuilder)             // Query
+                .setQuery(QueryBuilders.matchPhraseQuery("content", query.toLowerCase())).highlighter(highlightBuilder)             // Query
                 .get();
 
         Set<SearchHit> result = new HashSet<SearchHit>();

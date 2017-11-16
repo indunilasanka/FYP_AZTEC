@@ -1,6 +1,4 @@
 <!--<input #fileUpload ngFileSelect type="file" [options]="fileUploaderOptions" (onUpload)="_onFileUpload($event)" (beforeUpload)="beforeFileUpload($event)" hidden="true">-->
-
-
 <div *ngIf="!selectSingleFile">
   <input  #fileUpload ngFileSelect type="file" webkitdirectory directory multiple (change)="beforeFileUpload($event)" hidden="true">
 

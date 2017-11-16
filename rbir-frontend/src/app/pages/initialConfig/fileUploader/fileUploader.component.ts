@@ -11,12 +11,7 @@ import { DocumentModel } from '../../../models/document.model';
 })
 export class FileUploader {
 
-
-  // @Output() _sendResult = new EventEmitter<any>();
-  // @Output() buttonClicked = new EventEmitter<any>();
-  // @Input() siblings: any;
   @ViewChild('childComponent2') childComponent;
-
   @ViewChild('fileUpload') public _fileUpload: ElementRef;
   @ViewChild('singleFileUpload') public _singleFileUpload: ElementRef;
   @ViewChild('inputText') public _inputText: ElementRef;
@@ -32,6 +27,7 @@ export class FileUploader {
   documents: DocumentModel[] = [];
   fileList: File[] = null;
   selectSingleFile: boolean = false;
+  submited: boolean = false;
   
   result: any;
   accuracy: number[];
@@ -47,7 +43,11 @@ export class FileUploader {
     this.securityLvls = [];
     for (let i = 1; i <= this.numberOfLevel; i++) {
       this.securityLvls.push('security_level_' + i);
-    } this.selectedLvl = 'security_level_1';
+    }
+    if (numberOfLevels) {
+      this.selectedLvl = 'security_level_1';
+    } 
+   
   }
 
   setSelectedLvl(lvl: string) {
@@ -73,7 +73,7 @@ export class FileUploader {
     if (files.length) {
       const fileCount = files.length;
       if (fileCount > 0) {
-
+        
         const firstFile: File = files[0];
         this.fileName = firstFile.webkitRelativePath;
         const fileNamepart: string[] = this.fileName.split('/');
@@ -98,9 +98,10 @@ export class FileUploader {
   }
 
   startFileupload() {
-
-    if (this.documents) {
-        this.fileUploadService.uploadFolder(this.documents, this.securityLvls).subscribe(
+    
+    if (this.documents.length !== 0) {
+      this.submited = true;
+      this.fileUploadService.uploadFolder(this.documents, this.securityLvls).subscribe(
 
         data => { 
           this.data = data;
@@ -122,6 +123,7 @@ export class FileUploader {
           // }
         },
         error => {
+          this.submited = false;
           this.data = error.toString();
           console.log("Indexed result -----------------error", this.data);
           this.popUp('Fail', this.data.toString());
