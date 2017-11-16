@@ -2,7 +2,7 @@
   <div class="col-xlg-9 col-xl-6 col-lg-6  col-md-12 col-sm-12 col-12">
     <ba-card title="Information Request"
              baCardClass="large-card with-scroll feed-panel">
-      <request (requestSender)="someMethod($event)"></request>
+      <request (requestSender)="someMethod($event)" (requestIdSender)="someMethod2($event)"></request>
     </ba-card>
   </div>
 
@@ -16,7 +16,9 @@
     <ba-checkbox [(ngModel)]="isChecked" [label]="'Give me exact search.'" [ngModelOptions]="{standalone: true}"></ba-checkbox>
     <ba-card title="Search result"
              baCardClass="large-card with-scroll feed-panel">
-      <search-result [searchResults]="searchResults"></search-result>
+      <search-result [reqId]="reqId" [searchResults]="searchResults"></search-result>
     </ba-card>
   </div>
 </div>
+
+

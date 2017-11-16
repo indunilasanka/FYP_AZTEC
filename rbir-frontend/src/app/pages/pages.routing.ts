@@ -32,6 +32,7 @@ export const routes: Routes = [
       { path: 'maps', loadChildren: './maps/maps.module#MapsModule' },
       { path: 'document', loadChildren: './document/document.module#DocumentModule' },
       { path: 'initial-config', loadChildren: './initialConfig/initialConfig.module#InitialConfigModule' },
+      { path: 'results', loadChildren: './Results/results.module#ResultsModule' },
     ],
   },
 ];

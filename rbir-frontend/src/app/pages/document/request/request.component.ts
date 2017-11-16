@@ -14,6 +14,7 @@ export class Request {
 
   public requests: Array<RequestModel>;
   @Output() requestSender = new EventEmitter<string>();
+  @Output() requestIdSender = new EventEmitter<string>();
 
   data: Array<Object> = null;
 
@@ -38,8 +39,11 @@ export class Request {
     );
   }
 
-  startSearch(request: string) {
+  startSearch(request: string,reqId: string) {
+    console.log("reqIdPasses"+reqId);
+    this.requestIdSender.emit(reqId);
     this.requestSender.emit(request);
+    
   }
 
   closeSearch(i:number,email:string, requestId:string,request:string) {

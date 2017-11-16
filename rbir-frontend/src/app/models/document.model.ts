@@ -4,6 +4,7 @@
 
 
 export class DocumentModel {
+  public id:string;
   public title: string;
   public file: File;
   public category: String;
