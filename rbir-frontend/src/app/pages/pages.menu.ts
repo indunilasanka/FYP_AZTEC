@@ -43,7 +43,7 @@ export const PAGES_MENU = [
         data: {
           menu: {
             title: 'Confirm',
-            icon: 'ion-gear-a',
+            icon: 'ion-ios-checkmark-outline',
             selected: false,
             expanded: false,
             order: 200,
