@@ -53,7 +53,7 @@ public class ResultService {
 		
 		User user = uds.retrieveFromUserName(adminUserEmail);		
 		Request request = rqs.getRequest(reqId);
-		
+		request.setState("done");
 		
 		SearchResultToConfirm searchResult =  new  SearchResultToConfirm();
 		searchResult.setUser(user);
@@ -74,15 +74,15 @@ public class ResultService {
 		
 	}
 	
-    public void deleteRequest (int requestId) {
+    public void deleteResult (int resultId) {
 		
 		Session session = HibernateUtil.getSessionFactory().openSession();		
 		//Request request = null;
 		try {
 			session.beginTransaction();			
-			String hql = "delete SearchResultToConfirm srtc where srtc.requestId = :requestId";
+			String hql = "delete SearchResultToConfirm srtc where srtc.id = :id";
 			session.createQuery(hql)
-			                    .setInteger("requestId", requestId)
+			                    .setInteger("id", resultId)
 			                    .executeUpdate();
 
 			session.getTransaction().commit();
@@ -91,7 +91,30 @@ public class ResultService {
 			session.getTransaction().rollback();
 		}		
 	}
-	
-	
-	
+
+
+	public SearchResultToConfirm getResult(int resultId){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		SearchResultToConfirm resultstoconfirm = null;
+
+		try {
+			session.beginTransaction();
+
+			String hql = "from SearchResultToConfirm srtc where srtc.id = :id";
+			resultstoconfirm = (SearchResultToConfirm) session.createQuery(hql)
+					.setInteger("id", resultId)
+					.uniqueResult();
+
+			session.getTransaction().commit();
+			session.close();
+		}catch(HibernateException e){
+			e.printStackTrace();
+			session.getTransaction().rollback();
+		}
+
+
+		return resultstoconfirm;
+	}
+
+
 }

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormGroup, AbstractControl, FormBuilder, Validators, FormControl} from '@angular/forms';
 import { Router } from '@angular/router';
 
+import { BaThemePreloader } from '../../theme/services';
+
 import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
@@ -35,21 +37,34 @@ export class Login {
   }
 
   public onSubmit(values:Object):void {
+
+
     this.submitted = true;
     if (this.form.valid) {
-      console.log("submitting password for service");
-      
-      this.authenticationService.login(this.email.value,this.password.value).subscribe(
-      result => {
-         if (result === true) {
-                    // login successful
-              console.log("navigating to dashboard")
-              this.router.navigate(['/pages/dashboard']);
-        } 
-        
-      },
-      error => console.log(error)
-    );
+      console.log("valid data ................");
+      BaThemePreloader.registerLoader(this.logIn());
     }
   }
+
+  logIn(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      
+      this.authenticationService.login(this.email.value, this.password.value).subscribe(
+        result => {
+           if (result === true) {
+                      // login successful
+                console.log("navigating to dashboard")
+                resolve();
+                this.router.navigate(['/pages/dashboard']);
+          } 
+        },
+        error => {
+          console.log(error);
+          resolve();
+        },
+      );
+    });
+  }
 }
+
+

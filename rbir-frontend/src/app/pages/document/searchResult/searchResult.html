@@ -2,7 +2,7 @@
   <div class="feed-messages-container">
     <div class="feed-message" *ngFor="let document of searchResults" (click)="expandMessage(document)">
       <div class="message-icon" >
-        <img class="photo-icon" src="{{path}}">
+        <img class="photo-icon" src="{{path}}{{document.category}}.png">
       </div>
       <div class="text-block text-message">
         <div class="message-header">

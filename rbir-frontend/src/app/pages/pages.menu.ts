@@ -27,18 +27,6 @@ export const PAGES_MENU = [
         },
       },
       {
-        path: 'create-user',
-        data: {
-          menu: {
-            title: 'Create User',
-            icon: 'ion-person-add',
-            selected: false,
-            expanded: false,
-            order: 0,
-          },
-        },
-      },
-      {
         path: 'results',
         data: {
           menu: {
@@ -47,6 +35,18 @@ export const PAGES_MENU = [
             selected: false,
             expanded: false,
             order: 200,
+          },
+        },
+      },
+      {
+        path: 'create-user',
+        data: {
+          menu: {
+            title: 'Create User',
+            icon: 'ion-person-add',
+            selected: false,
+            expanded: false,
+            order: 0,
           },
         },
       },
@@ -96,6 +96,18 @@ export const PAGES_MENU = [
 //           }
 //         }
 //       },
+//          {
+//         path: 'results',
+//         data: {
+//           menu: {
+//             title: 'Confirm',
+//             icon: 'ion-gear-a',
+//             selected: false,
+//             expanded: false,
+//             order: 200,
+//           },
+//         },
+//         },
 //       {
 //         path: 'initial-config',
 //         data: {

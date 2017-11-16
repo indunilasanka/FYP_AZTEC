@@ -74,9 +74,9 @@ public class UserDataService {
 			session.beginTransaction();
 			String[] strings = level.split("_");
 
-			int rank = Integer.parseInt(strings[strings.length-1]);
+			int rank = Integer.parseInt(level.substring(level.lastIndexOf('_')+1));
 
-			String hql = "select user from UserRole ur where ur.role.roleName != :rank";
+			String hql = "select user from UserRole ur where ur.role.rank >= :rank";
 
 			user = (List<User>) session.createQuery(hql).setInteger("rank", rank).list();
 
