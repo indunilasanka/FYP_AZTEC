@@ -13,15 +13,11 @@ export const routes: Routes = [
     loadChildren: 'app/pages/login/login.module#LoginModule',
   },
   {
-    path: 'register',
-    loadChildren: 'app/pages/register/register.module#RegisterModule',
-  },
-  {
     path: 'pages',
     component: Pages,
     canActivate: [AuthGuard],
     children: [
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: '', redirectTo: 'document', pathMatch: 'full' },
       { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
       { path: 'editors', loadChildren: './editors/editors.module#EditorsModule' },
       { path: 'components', loadChildren: './components/components.module#ComponentsModule' },
@@ -31,6 +27,7 @@ export const routes: Routes = [
       { path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
       { path: 'maps', loadChildren: './maps/maps.module#MapsModule' },
       { path: 'document', loadChildren: './document/document.module#DocumentModule' },
+      { path: 'create-user', loadChildren: './createUser/createUser.module#CreateUserModule' },
       { path: 'initial-config', loadChildren: './initialConfig/initialConfig.module#InitialConfigModule' },
     ],
   },

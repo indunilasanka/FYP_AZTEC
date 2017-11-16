@@ -1,16 +1,22 @@
-<div class="auth-main">
-  <div class="auth-block">
-    <h1>Sign up to ng2-admin</h1>
-    <a routerLink="/login" class="auth-link">Already have an ng2-admin account? Sign in!</a>
-
+<ba-card title="Creat User" baCardClass="large-card col-xlg-6 col-xl-6 col-lg-6  col-md-12 col-sm-12 col-6">
+  
     <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-horizontal">
       <div class="form-group row" [ngClass]="{'has-error': (!name.valid && name.touched), 'has-success': (name.valid && name.touched)}">
-        <label for="inputName3" class="col-sm-2 control-label">Name</label>
+        <label for="inputName3" class="col-sm-2 control-label">First Name</label>
 
         <div class="col-sm-10">
-          <input [formControl]="name" type="text" class="form-control" id="inputName3" placeholder="Full Name">
+          <input [formControl]="first_name" type="text" class="form-control" id="inputName3" placeholder="Full Name">
         </div>
       </div>
+
+      <div class="form-group row" [ngClass]="{'has-error': (!name.valid && name.touched), 'has-success': (name.valid && name.touched)}">
+          <label for="inputName3" class="col-sm-2 control-label">Last Name</label>
+  
+          <div class="col-sm-10">
+            <input [formControl]="name" type="text" class="form-control" id="inputName3" placeholder="Full Name">
+          </div>
+        </div>
+
       <div class="form-group row" [ngClass]="{'has-error': (!email.valid && email.touched), 'has-success': (email.valid && email.touched)}">
         <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
 
@@ -39,15 +45,4 @@
         </div>
       </div>
     </form>
-
-    <div class="auth-sep"><span><span>or Sign up with one click</span></span></div>
-
-    <div class="al-share-auth">
-      <ul class="al-share clearfix">
-        <li><i class="socicon socicon-facebook" title="Share on Facebook"></i></li>
-        <li><i class="socicon socicon-twitter" title="Share on Twitter"></i></li>
-        <li><i class="socicon socicon-google" title="Share on Google Plus"></i></li>
-      </ul>
-    </div>
-  </div>
-</div>
+</ba-card>

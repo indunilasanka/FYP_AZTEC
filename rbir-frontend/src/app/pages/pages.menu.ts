@@ -3,18 +3,6 @@ export const PAGES_MENU = [
     path: 'pages',
     children: [
       {
-        path: 'dashboard',
-        data: {
-          menu: {
-            title: 'Dashboard',
-            icon: 'ion-android-home',
-            selected: false,
-            expanded: false,
-            order: 0,
-          },
-        },
-      },
-      {
         path: 'document',
         data: {
           menu: {
@@ -27,6 +15,30 @@ export const PAGES_MENU = [
         },
       },
       {
+        path: 'dashboard',
+        data: {
+          menu: {
+            title: 'Add Document',
+            icon: 'ion-android-home',
+            selected: false,
+            expanded: false,
+            order: 0,
+          },
+        },
+      },
+      {
+        path: 'create-user',
+        data: {
+          menu: {
+            title: 'Create User',
+            icon: 'ion-person-add',
+            selected: false,
+            expanded: false,
+            order: 0,
+          },
+        },
+      },
+      {
         path: 'initial-config',
         data: {
           menu: {
@@ -34,7 +46,7 @@ export const PAGES_MENU = [
             icon: 'ion-gear-a',
             selected: false,
             expanded: false,
-            order: 200,
+            order: 0,
           },
         },
       },
