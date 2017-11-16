@@ -5,7 +5,11 @@
 import { Component } from '@angular/core';
 import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { EmailValidator, EqualPasswordsValidator } from '../../theme/validators';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
+import { CreateUserService } from './createUser.service';
+import { DefaultModal } from '../ui/components/modals/default-modal/default-modal.component';
+ 
 @Component({
   selector: 'create_user',
   templateUrl: './createUser.html',
@@ -24,7 +28,7 @@ export class CreateUser {
 
   public submitted: boolean = false;
 
-  constructor(fb:FormBuilder) {
+  constructor(fb: FormBuilder, private createUserService: CreateUserService, private modalService: NgbModal ) {
     
         this.form = fb.group({
           'name': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
@@ -44,14 +48,35 @@ export class CreateUser {
         this.repeatPassword = this.passwords.controls['repeatPassword'];
         this.lname = this.form.controls['lname'];
         this.level = this.form.controls['level'];
+
   }
 
-
-  public onSubmit(values:Object):void {
+  onSubmit(values: Object ): void {
     this.submitted = true;
     if (this.form.valid) {
+
+      this.createUserService.createUser(this.name.value , this.lname.value, this.email.value ,
+        this.password.value , this.level.value).subscribe(
+        result => {
+          const activeModal = this.modalService.open(DefaultModal, {size: 'sm',
+                                                                  backdrop: 'static'});
+          activeModal.componentInstance.modalHeader = 'Create user';
+          activeModal.componentInstance.modalContent = 'User created successfully';
+          console.log("created new user..." );
+
+        },
+        error => {
+
+          const activeModal = this.modalService.open(DefaultModal, {size: 'sm',
+          backdrop: 'static'});
+          activeModal.componentInstance.modalHeader = 'Create user';
+          activeModal.componentInstance.modalContent = 'Create user unsuccessfull';
+          console.log( "error create new user...." );
+        }
+      );
+  
+      }          
+    }
       // your code goes here
       // console.log(values);
-    }
   }
-}

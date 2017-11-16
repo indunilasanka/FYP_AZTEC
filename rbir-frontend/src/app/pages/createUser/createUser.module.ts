@@ -5,7 +5,9 @@ import { NgaModule } from '../../theme/nga.module';
 
 import { CreateUser } from './createUser.component';
 import { routing } from './createUser.routing';
-
+import { NgbDropdownModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { DefaultModal } from '../ui/components/modals/default-modal/default-modal.component';
+import { CreateUserService } from './createUser.service';
 
 @NgModule({
   imports: [
@@ -14,9 +16,18 @@ import { routing } from './createUser.routing';
     FormsModule,
     NgaModule,
     routing,
+    NgbDropdownModule,
+    NgbModalModule,
   ],
   declarations: [
     CreateUser,
+    DefaultModal,
+  ],
+  entryComponents: [
+    DefaultModal,
+  ],
+  providers: [
+    CreateUserService,
   ],
 })
 export class CreateUserModule {}

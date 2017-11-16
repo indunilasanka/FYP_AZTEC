@@ -16,6 +16,7 @@ export class FileUploader implements AfterViewInit {
   @Output() onFileUploadCompleted = new EventEmitter<any>();
   @Input() defaultValue: string = '';
 
+  @ViewChild('childComponent') childComponent;
   @ViewChild('fileUpload') public _fileUpload: ElementRef;
   @ViewChild('singleFileUpload') public _singleFileUpload: ElementRef;
   @ViewChild('inputText') public _inputText: ElementRef;
@@ -90,6 +91,8 @@ export class FileUploader implements AfterViewInit {
         data => {
           this.data = data;
           if (this.data.toString() === 'success') {
+            console.log("File Successfully Indexed! ", this.data);
+            this.childComponent.doSomething(this.data);
             this.popUp('Success', 'File Successfully Indexed!');
           } else {
             this.popUp('Fail', 'File Indexing Failed!');

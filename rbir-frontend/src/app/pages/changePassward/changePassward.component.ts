@@ -18,14 +18,17 @@ export class ChangePassward implements OnInit {
   public password: AbstractControl;
   public repeatPassword: AbstractControl;
   public passwords: FormGroup;
+  public oldPassword: AbstractControl;
 
   constructor(private activeModal: NgbActiveModal, fb: FormBuilder) {
     this.form = fb.group({
+      'oldPassword': ['', Validators.compose([Validators.required, Validators.minLength(4)])], 
       'passwords': fb.group({
         'password': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
-        'repeatPassword': ['', Validators.compose([Validators.required, Validators.minLength(4)])]
-      }, { validator: EqualPasswordsValidator.validate('password', 'repeatPassword')})
+        'repeatPassword': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
+      }, { validator: EqualPasswordsValidator.validate('password', 'repeatPassword')}),
     });
+    this.oldPassword = this.form.controls['oldPassword'];
     this.passwords = <FormGroup> this.form.controls['passwords'];
     this.password = this.passwords.controls['password'];
     this.repeatPassword = this.passwords.controls['repeatPassword'];

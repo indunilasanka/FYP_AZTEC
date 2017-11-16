@@ -23,7 +23,7 @@ import { FileUploadService } from './fileUploader/fileUpload.service';
 import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
 import { ResultChartService } from './resultChart/resultChart.service';
 import { LineChartService } from './lineChart/lineChart.service';
-
+import { SecLvelel } from './fileUploader/secLvelel.pipe';
 
 @NgModule({
   imports: [
@@ -37,6 +37,7 @@ import { LineChartService } from './lineChart/lineChart.service';
   ],
   declarations: [
     ResultChart,
+    SecLvelel,
     Dashboard,
     FileUploader,
     Calendar,
